@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syndicate — Find the creator you should be working with</title>
+  <meta name="description" content="Syndicate scores thousands of creators to find your perfect collaboration partner. Stop guessing who shares your audience.">
+  <meta property="og:title" content="Syndicate — Creator Collaboration Platform">
+  <meta property="og:description" content="Find the creator you should be working with. AI-powered match scoring for independent creators.">
+  <meta property="og:image" content="assets/og-preview.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#121316">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%239FB89F'/%3E%3Cstop offset='100%25' stop-color='%23A8A3CD'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%23121316'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Inter,system-ui,sans-serif' font-weight='700' font-size='20' fill='url(%23g)'%3ES%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts — Inter + Instrument Serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons (open source, MIT) -->
+  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Custom cursor -->
+  <div id="cursor-glow" class="cursor-glow"></div>
+  <div id="cursor-dot" class="cursor-dot"></div>
+
+  <!-- Ambient background particles -->
+  <canvas id="particles-canvas" class="particles-canvas"></canvas>
+
+  <!-- Theme toggle (floating) -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+    <i data-lucide="moon" class="theme-icon-dark"></i>
+    <i data-lucide="sun" class="theme-icon-light"></i>
+  </button>
+
+  <!-- LangSmith Eval Status Bar -->
+  <div id="eval-status-bar" class="eval-status-bar hidden">
+    <div class="eval-status-inner">
+      <div class="eval-pulse"></div>
+      <span id="eval-status-text">LangSmith evaluation running...</span>
+      <button class="eval-close" data-action="close-eval-bar"><i data-lucide="x" style="width:14px;height:14px;"></i></button>
+    </div>
+  </div>
+
+  <header class="global-header" id="global-header">
+    <div class="container header-inner">
+      <div class="logo-area">
+        <img src="assets/logo.jpg" alt="Syndicate" class="logo-img" width="32" height="32">
+        <a href="#/" class="logo-text">Syndicate</a>
+      </div>
+      <nav class="nav-links" id="nav-links">
+        <a href="#/discover" class="nav-link" data-route="discover">
+          <i data-lucide="compass" style="width:16px;height:16px;"></i>
+          Discover
+        </a>
+        <a href="#/shortlist" class="nav-link" data-route="shortlist" id="nav-saved">
+          <i data-lucide="bookmark" style="width:16px;height:16px;"></i>
+          Saved <span class="nav-badge" id="nav-badge">0</span>
+        </a>
+        <a href="#/projects" class="nav-link" data-route="projects">
+          <i data-lucide="folder" style="width:16px;height:16px;"></i>
+          Projects
+        </a>
+        <a href="#/how-it-works" class="nav-link" data-route="how-it-works">
+          <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
+          How it works
+        </a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-glow" data-action="go-profile" id="nav-profile">
+          <i data-lucide="user-plus" style="width:16px;height:16px;"></i>
+          Create profile
+        </button>
+        <button class="btn-icon hamburger" aria-label="Menu" data-action="toggle-menu" id="hamburger-btn">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="#/discover" class="mobile-link" data-action="close-menu"><i data-lucide="compass"></i> Discover</a>
+      <a href="#/shortlist" class="mobile-link" data-action="close-menu"><i data-lucide="bookmark"></i> Saved</a>
+      <a href="#/projects" class="mobile-link" data-action="close-menu"><i data-lucide="folder"></i> Projects</a>
+      <a href="#/how-it-works" class="mobile-link" data-action="close-menu"><i data-lucide="sparkles"></i> How it works</a>
+      <div class="mobile-menu-divider"></div>
+      <button class="btn btn-glow w-full" data-action="go-profile">Create profile</button>
+    </div>
+  </div>
+
+  <main id="app-root"></main>
+
+  <footer class="global-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.jpg" alt="Syndicate" class="footer-logo" width="40" height="40">
+          <p class="footer-tagline">Find the creator you should be working with.</p>
+        </div>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>Product</h3>
+            <a href="#/discover">Discover</a>
+            <a href="#/how-it-works">How it works</a>
+            <a href="#/profile">Profile</a>
+          </div>
+          <div class="footer-col">
+            <h3>Resources</h3>
+            <a href="#/help">Help & Support</a>
+            <a href="#/help">Keyboard shortcuts</a>
+          </div>
+          <div class="footer-col">
+            <h3>Company</h3>
+            <a href="#/">About</a>
+            <a href="#/">Blog</a>
+          </div>
+          <div class="footer-col">
+            <h3>Legal</h3>
+            <a href="#/">Privacy</a>
+            <a href="#/">Terms</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Syndicate. An independent software studio product.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="GitHub"><i data-lucide="github" style="width:18px;height:18px;"></i></a>
+          <a href="#" aria-label="Twitter"><i data-lucide="twitter" style="width:18px;height:18px;"></i></a>
+          <a href="#" aria-label="Mail"><i data-lucide="mail" style="width:18px;height:18px;"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="backdrop" id="backdrop" data-action="close-overlays"></div>
+  <div id="overlay-container"></div>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

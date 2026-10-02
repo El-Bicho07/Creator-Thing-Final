@@ -1,0 +1,13 @@
+{
+  "name": "@contentyou/scheduling",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@contentyou/schemas": "workspace:*",
+    "@contentyou/db": "workspace:*",
+    "@contentyou/ai": "workspace:*"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.0"
+  }
+}

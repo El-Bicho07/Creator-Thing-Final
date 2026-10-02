@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reel Script Builder — YouTube Shorts & Reels Studio</title>
+  <meta name="description" content="Turn any raw idea into a high-retention 30–70s YouTube Short or Instagram Reel with structured Hook, Body beats, CTA, and seamless audio loop." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #07070a;
+      --bg-card: rgba(18, 14, 20, 0.75);
+      --red-primary: #ff0033;
+      --red-secondary: #ff3366;
+      --red-glow: rgba(255, 0, 51, 0.35);
+      --red-ultra-soft: rgba(255, 0, 51, 0.08);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(255, 0, 51, 0.3);
+      --white: #ffffff;
+      --white-90: rgba(255, 255, 255, 0.9);
+      --white-70: rgba(255, 255, 255, 0.7);
+      --white-50: rgba(255, 255, 255, 0.5);
+      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--white-90);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(255, 0, 51, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(138, 43, 226, 0.05) 0%, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 45px 45px, 45px 45px;
+    }
+
+    header.app-header {
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(7, 7, 10, 0.8);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-brand {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    .logo-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--red-primary);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--red-primary);
+    }
+    .header-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--white-50);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .hero-banner {
+      text-align: center;
+      padding: 3.5rem 1.5rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--red-secondary);
+      background: rgba(255, 0, 51, 0.1);
+      border: 1px solid var(--border-accent);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.2rem;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, #ff0033 0%, #ff6b8b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--white-70);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .studio-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 1024px) {
+      .studio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--red-ultra-soft);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .card:hover {
+      border-color: rgba(255, 0, 51, 0.45);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px var(--red-glow);
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--red-primary), transparent);
+    }
+
+    .preset-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--white-50);
+      text-transform: uppercase;
+    }
+    .preset-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .preset-chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--white-70);
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .preset-chip:hover {
+      background: rgba(255, 0, 51, 0.15);
+      border-color: var(--red-primary);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    .preset-chip.active {
+      background: var(--red-primary);
+      border-color: var(--red-secondary);
+      color: var(--white);
+      box-shadow: 0 0 15px var(--red-glow);
+    }
+
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+    .field-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--white-90);
+      margin-bottom: 0.5rem;
+    }
+    .text-input {
+      width: 100%;
+      min-height: 110px;
+      background: rgba(7, 7, 10, 0.8);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      resize: vertical;
+      outline: none;
+      transition: var(--transition);
+    }
+    .text-input:focus {
+      border-color: var(--red-primary);
+      box-shadow: 0 0 20px var(--red-glow);
+    }
+
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .select-wrap {
+      position: relative;
+    }
+    .select-input {
+      width: 100%;
+      background: rgba(14, 10, 16, 0.9);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--white-90);
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      outline: none;
+      cursor: pointer;
+      appearance: none;
+      transition: var(--transition);
+    }
+    .select-input:focus {
+      border-color: var(--red-primary);
+      box-shadow: 0 0 15px var(--red-glow);
+    }
+    .select-arrow {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: var(--white-50);
+      font-size: 0.7rem;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .btn-primary {
+      flex: 1;
+      min-width: 200px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem 1.75rem;
+      background: linear-gradient(135deg, var(--red-primary), #b30024);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 25px var(--red-glow);
+      transition: var(--transition);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--red-secondary), var(--red-primary));
+      transform: translateY(-2px);
+      box-shadow: 0 10px 35px var(--red-glow);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--white-90);
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius-md);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 0, 51, 0.15);
+      border-color: var(--red-primary);
+      color: var(--white);
+    }
+
+    .metrics-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .metric-name {
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      color: var(--white-50);
+      text-transform: uppercase;
+    }
+    .metric-val {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+    .metric-val.highlight {
+      color: var(--red-secondary);
+      text-shadow: 0 0 10px var(--red-glow);
+    }
+
+    .phase-card {
+      background: rgba(12, 8, 14, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      transition: var(--transition);
+    }
+    .phase-card:hover {
+      border-color: rgba(255, 0, 51, 0.35);
+      background: rgba(18, 12, 20, 0.85);
+    }
+    .phase-title-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .phase-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .phase-time {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--red-secondary);
+      background: rgba(255, 0, 51, 0.1);
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-sm);
+    }
+    .cue-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    .cue-row {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .cue-tag {
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--white-50);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      height: fit-content;
+      text-transform: uppercase;
+    }
+    .cue-tag.visual { color: #60a5fa; background: rgba(96, 165, 250, 0.1); }
+    .cue-tag.ost { color: #f59e0b; background: rgba(245, 158, 11, 0.1); }
+    .cue-tag.audio { color: #a78bfa; background: rgba(167, 139, 250, 0.1); }
+    .cue-tag.voiceover { color: #34d399; background: rgba(52, 211, 153, 0.1); }
+    .cue-tag.loop { color: #f43f5e; background: rgba(244, 63, 94, 0.1); }
+    .cue-content {
+      color: var(--white-90);
+      flex: 1;
+    }
+    .speech-box {
+      font-size: 0.95rem;
+      color: #ffffff;
+      font-style: italic;
+      background: rgba(0, 0, 0, 0.35);
+      border-left: 3px solid var(--red-primary);
+      padding: 0.65rem 0.9rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-top: 0.3rem;
+    }
+
+    .preview-sticky {
+      position: sticky;
+      top: 85px;
+    }
+    .phone-mockup {
+      width: 320px;
+      height: 590px;
+      margin: 0 auto;
+      background: #000;
+      border: 8px solid #222;
+      border-radius: 40px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px var(--red-ultra-soft);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .phone-notch {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 18px;
+      background: #222;
+      border-radius: 12px;
+      z-index: 10;
+    }
+    .phone-screen {
+      flex: 1;
+      position: relative;
+      background: radial-gradient(circle at center, #1b0a14 0%, #060206 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem;
+      overflow: hidden;
+    }
+    .bg-choice-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--white-70);
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .bg-choice-btn:hover {
+      background: rgba(255, 0, 51, 0.15);
+      color: var(--white);
+      border-color: var(--red-primary);
+    }
+    .bg-choice-btn.active {
+      background: var(--red-primary);
+      border-color: var(--red-secondary);
+      color: var(--white);
+      box-shadow: 0 0 10px var(--red-glow);
+    }
+    .shorts-bg-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      border-radius: 32px;
+    }
+    .screen-ambient-glow {
+      position: absolute;
+      inset: 0;
+      opacity: 0.2;
+      background: linear-gradient(45deg, #ff0033, #7c3aed, #000);
+      filter: blur(40px);
+      animation: pulseHue 8s infinite alternate ease-in-out;
+      z-index: 2;
+      pointer-events: none;
+    }
+    @keyframes pulseHue {
+      0% { transform: scale(1) rotate(0deg); opacity: 0.2; }
+      100% { transform: scale(1.3) rotate(45deg); opacity: 0.35; }
+    }
+
+    .yt-sidebar {
+      position: absolute;
+      right: 10px;
+      bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      z-index: 15;
+    }
+    .yt-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      color: #fff;
+      font-size: 0.65rem;
+      cursor: pointer;
+    }
+    .yt-btn-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .caption-box {
+      z-index: 10;
+      margin-bottom: 2.2rem;
+      max-width: 82%;
+    }
+    .floating-pill {
+      display: inline-block;
+      background: #ff0033;
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      padding: 0.35rem 0.65rem;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      margin-bottom: 0.5rem;
+    }
+    .caption-text {
+      color: #ffffff;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      font-weight: 600;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+      min-height: 48px;
+    }
+    .creator-bar {
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .creator-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--red-primary);
+      border: 1px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .creator-handle {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .creator-sub-btn {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.65rem;
+      font-weight: 700;
+    }
+
+    .timeline-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.2);
+      z-index: 20;
+    }
+    .timeline-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--red-primary);
+      box-shadow: 0 0 10px var(--red-secondary);
+    }
+
+    .playback-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .btn-play-sim {
+      background: var(--red-primary);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1.25rem;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 4px 15px var(--red-glow);
+      transition: var(--transition);
+    }
+    .btn-play-sim:hover {
+      background: var(--red-secondary);
+      transform: scale(1.03);
+    }
+
+    .tele-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.96);
+      z-index: 9999;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2rem;
+    }
+    .tele-modal.active {
+      display: flex;
+    }
+    .tele-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .tele-viewport {
+      flex: 1;
+      max-width: 850px;
+      margin: 0 auto;
+      width: 100%;
+      overflow-y: hidden;
+      position: relative;
+      padding: 4rem 1rem;
+    }
+    .tele-content {
+      font-size: 2.2rem;
+      line-height: 1.6;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+      transition: transform 0.1s linear;
+    }
+    .tele-focus-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 70px;
+      transform: translateY(-50%);
+      border-top: 2px dashed rgba(255, 0, 51, 0.6);
+      border-bottom: 2px dashed rgba(255, 0, 51, 0.6);
+      pointer-events: none;
+      background: rgba(255, 0, 51, 0.05);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: rgba(20, 10, 16, 0.95);
+      border: 1px solid var(--red-primary);
+      color: var(--white);
+      padding: 0.85rem 1.4rem;
+      border-radius: var(--radius-md);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--red-glow);
+      z-index: 10000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="header-inner">
+      <a href="#" class="logo-brand">
+        <span class="logo-dot"></span>
+        REEL SCRIPT BUILDER
+      </a>
+      <div class="header-tag">// YOUTUBE SHORTS & REELS ENGINE</div>
+    </div>
+  </header>
+
+  <section class="hero-banner">
+    <div class="pill-badge">⚡ Short-Form Architecture Studio</div>
+    <h1 class="hero-title">Turn Any Idea Into a High-Retention <span>60-Second Script</span></h1>
+    <p class="hero-subtitle">
+      Short-form creators lose 70% of viewers in the first 3 seconds. Generate algorithmic 
+      Hooks, 3-Beat Bodies, and seamless infinite Loop CTAs tailored for YouTube Shorts & Reels.
+    </p>
+  </section>
+
+  <main class="studio-container">
+    <div class="studio-grid">
+
+      <div class="workspace-col">
+
+        <div class="card" style="margin-bottom: 2rem;">
+          <div class="pill-badge" style="margin-bottom: 0.8rem;">Stage 1: Idea Ingestion</div>
+          <h2 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:0.75rem;color:var(--white);">Topic or Problem Statement</h2>
+
+          <div class="preset-header">
+            <span>Instant Presets</span>
+            <span style="color:var(--red-secondary);">Click to Load</span>
+          </div>
+          <div class="preset-chips">
+            <button class="preset-chip active" data-preset="yt-coding">💻 YouTube: Coding Tutorial Hell</button>
+            <button class="preset-chip" data-preset="productivity">⚡ 2-Minute Rule Trick</button>
+            <button class="preset-chip" data-preset="fitness">🏋️ Gym Consistency Trap</button>
+            <button class="preset-chip" data-preset="ai-tools">🤖 3 Free AI Automations</button>
+            <button class="preset-chip" data-preset="salary">💼 Salary Negotiation Hack</button>
+          </div>
+
+          <div class="input-group">
+            <label class="field-label" for="ideaInput">// Your Core Premise</label>
+            <textarea id="ideaInput" class="text-input" placeholder="e.g. Why most people quit learning to code in 30 days and how the 80/20 build rule fixes it..."></textarea>
+          </div>
+
+          <div class="controls-grid">
+            <div>
+              <label class="field-label" for="targetDuration">// Length</label>
+              <div class="select-wrap">
+                <select id="targetDuration" class="select-input">
+                  <option value="60" selected>60–70s YouTube Short (~155 words)</option>
+                  <option value="45">45s Punchy Reel (~115 words)</option>
+                  <option value="30">30s Rapid Fire (~75 words)</option>
+                </select>
+                <span class="select-arrow">▼</span>
+              </div>
+            </div>
+
+            <div>
+              <label class="field-label" for="hookStyle">// Hook Archetype</label>
+              <div class="select-wrap">
+                <select id="hookStyle" class="select-input">
+                  <option value="contrarian" selected>Contrarian Myth-Buster ("Stop doing X...")</option>
+                  <option value="speedrun">Speedrun / Shortcut ("Here is the 60s hack...")</option>
+                  <option value="loss">Loss Aversion ("You are losing X every day...")</option>
+                  <option value="curiosity">Curiosity Gap ("Top 1% secret they hide...")</option>
+                </select>
+                <span class="select-arrow">▼</span>
+              </div>
+            </div>
+
+            <div>
+              <label class="field-label" for="targetPlatform">// Primary Platform</label>
+              <div class="select-wrap">
+                <select id="targetPlatform" class="select-input">
+                  <option value="youtube" selected>🔴 YouTube Shorts (Pinned Comment CTA)</option>
+                  <option value="instagram">🟣 Instagram Reels (Save/Share Loop)</option>
+                  <option value="tiktok">🎵 TikTok (Stitch & High Tempo)</option>
+                </select>
+                <span class="select-arrow">▼</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn-primary" id="btnGenerate">
+              <span>⚡ Generate Script</span>
+            </button>
+            <button class="btn-secondary" id="btnRandomize">
+              🎲 Random Idea
+            </button>
+            <button class="btn-secondary" id="btnToggleSound">
+              🔊 Sound: <span id="soundStatusText">ON</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="card" id="outputCard">
+          <div class="pill-badge" style="margin-bottom: 0.8rem;">Stage 2: Production Script</div>
+
+          <div class="metrics-bar">
+            <div class="metric-item">
+              <span class="metric-name">Duration</span>
+              <span class="metric-val highlight" id="metricDuration">65s</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-name">Word Count</span>
+              <span class="metric-val" id="metricWords">162 words</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-name">Pacing</span>
+              <span class="metric-val" id="metricPace">150 WPM</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-name">Retention Est.</span>
+              <span class="metric-val highlight" id="metricRetention">95%</span>
+            </div>
+          </div>
+
+          <div class="phase-card">
+            <div class="phase-title-bar">
+              <div class="phase-title">
+                <span style="color:#ef4444;">●</span> 1. The Hook (Pattern Interrupt)
+              </div>
+              <div class="phase-time" id="hookTimeBadge">0:00 – 0:05 (5s)</div>
+            </div>
+            <div class="cue-grid">
+              <div class="cue-row">
+                <span class="cue-tag visual">Visual Cue</span>
+                <div class="cue-content" id="hookVisual">Creator slams laptop closed aggressively and points right at lens. High zoom-in cut.</div>
+              </div>
+              <div class="cue-row">
+                <span class="cue-tag ost">On-Screen Text</span>
+                <div class="cue-content" id="hookOst"><strong>"STOP WATCHING 10-HR TUTORIALS 🛑"</strong></div>
+              </div>
+              <div class="cue-row">
+                <span class="cue-tag audio">SFX / Audio</span>
+                <div class="cue-content" id="hookAudio">Heavy bass drop + vinyl record scratch.</div>
+              </div>
+              <div class="cue-row">
+                <span class="cue-tag voiceover">Spoken Line</span>
+                <div class="cue-content">
+                  <div class="speech-box" id="hookSpeech">"If you spend more than 15 minutes scripting a 60-second video, you're doing it completely backwards."</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="phase-card">
+            <div class="phase-title-bar">
+              <div class="phase-title">
+                <span style="color:#3b82f6;">●</span> 2. The Body (3 High-Speed Beats)
+              </div>
+              <div class="phase-time" id="bodyTimeBadge">0:05 – 0:52 (47s)</div>
+            </div>
+            <div class="cue-grid" id="bodyBeatsContainer"></div>
+          </div>
+
+          <div class="phase-card">
+            <div class="phase-title-bar">
+              <div class="phase-title">
+                <span style="color:#10b981;">●</span> 3. The CTA & Infinite Loop
+              </div>
+              <div class="phase-time" id="ctaTimeBadge">0:52 – 1:05 (13s)</div>
+            </div>
+            <div class="cue-grid">
+              <div class="cue-row">
+                <span class="cue-tag loop">Retention Loop</span>
+                <div class="cue-content" id="ctaLoopAction">Creator points downward directly towards the comment section; final spoken word seamlessly glues back into the hook's opening word.</div>
+              </div>
+              <div class="cue-row">
+                <span class="cue-tag voiceover">Spoken CTA</span>
+                <div class="cue-content">
+                  <div class="speech-box" id="ctaSpeech">"I dropped the 5 best beginner build-starter projects in the pinned comment below, so you can..."</div>
+                </div>
+              </div>
+              <div class="cue-row">
+                <span class="cue-tag ost">Algorithm Hack</span>
+                <div class="cue-content" id="ctaAlgoNote"><em>YouTube algorithm trigger: Pinned comment directs viewers to engage without external links, maximizing short shelf-life ranking.</em></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-row" style="margin-top:1.5rem;">
+            <button class="btn-secondary" id="btnCopyScript">📋 Copy Plain Text</button>
+            <button class="btn-secondary" id="btnCopyMarkdown">📑 Copy Markdown Grid</button>
+            <button class="btn-secondary" id="btnOpenTeleprompter" style="border-color:var(--red-primary);color:var(--white);">🎥 Open Teleprompter</button>
+            <button class="btn-secondary" id="btnDownloadTxt">💾 Download .txt</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="preview-col">
+        <div class="preview-sticky">
+
+          <div class="card" style="padding:1.5rem;text-align:center;">
+            <div class="pill-badge" style="margin-bottom:0.75rem;">📱 Real-Time Phone Preview</div>
+            <p style="font-size:0.8rem;color:var(--white-50);margin-bottom:1rem;">
+              Simulated 9:16 YouTube Shorts playback with live captions & background footage.
+            </p>
+
+            <!-- Dynamic Shorts Background Selector -->
+            <div style="margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:0.35rem;flex-wrap:wrap;">
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--white-50);text-transform:uppercase;">Shorts Background:</span>
+              <button class="bg-choice-btn active" data-bg="runner">🎮 3D Runner</button>
+              <button class="bg-choice-btn" data-bg="code">💻 Matrix Code</button>
+              <button class="bg-choice-btn" data-bg="hyperspace">🌌 Starfield</button>
+              <button class="bg-choice-btn" data-bg="synthwave">🏎️ Retro Wave</button>
+            </div>
+
+            <div class="phone-mockup">
+              <div class="phone-notch"></div>
+              
+              <div class="phone-screen" id="phoneScreen">
+                <!-- Live Animated Shorts Background Canvas -->
+                <canvas id="shortsBgCanvas" class="shorts-bg-canvas"></canvas>
+                <div class="screen-ambient-glow"></div>
+
+                <div class="yt-sidebar">
+                  <div class="yt-btn">
+                    <div class="yt-btn-icon">👍</div>
+                    <span>42.8K</span>
+                  </div>
+                  <div class="yt-btn">
+                    <div class="yt-btn-icon">👎</div>
+                    <span>Dislike</span>
+                  </div>
+                  <div class="yt-btn">
+                    <div class="yt-btn-icon">💬</div>
+                    <span>1,204</span>
+                  </div>
+                  <div class="yt-btn">
+                    <div class="yt-btn-icon">↗</div>
+                    <span>Share</span>
+                  </div>
+                  <div class="yt-btn">
+                    <div class="yt-btn-icon" style="background:#ff0033;">🎵</div>
+                    <span>Remix</span>
+                  </div>
+                </div>
+
+                <div class="caption-box">
+                  <div class="floating-pill" id="previewPill">STOP WATCHING 🛑</div>
+                  <div class="caption-text" id="previewCaption">
+                    "If you spend more than 15 minutes scripting a 60-second video..."
+                  </div>
+                </div>
+
+                <div class="creator-bar">
+                  <div class="creator-avatar">C</div>
+                  <div class="creator-handle">@creator.studio</div>
+                  <button class="creator-sub-btn">Subscribe</button>
+                </div>
+
+                <div class="timeline-bar">
+                  <div class="timeline-fill" id="previewProgress"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="playback-controls">
+              <button class="btn-play-sim" id="btnPreviewPlay">▶ Play Simulation</button>
+              <button class="btn-secondary" id="btnPreviewReset" style="padding:0.45rem 0.85rem;">↺ Reset</button>
+              <span id="previewTimerText" style="font-family:var(--font-mono);font-size:0.8rem;color:var(--white-70);">0:00 / 1:05</span>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:1.5rem;padding:1.5rem;">
+            <h3 style="font-family:var(--font-display);font-size:0.95rem;color:var(--white);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
+              <span style="color:var(--red-primary);">⚡</span> YouTube Retention Tactics
+            </h3>
+            <ul style="font-size:0.82rem;color:var(--white-70);line-height:1.7;padding-left:1.2rem;margin:0;">
+              <li><strong>Zero Intro:</strong> Delete "Hey guys". Open directly with the conflict or action.</li>
+              <li><strong>3-Second Cut:</strong> Shift visual angles, b-roll, or graphics every 2.5–3s.</li>
+              <li><strong>Infinite Audio Loop:</strong> Omit sign-offs. Seamlessly stitch the final word into the opening word.</li>
+              <li><strong>Pinned Comment CTA:</strong> Keep viewers engaged on platform without penalizing external links.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="tele-modal" id="teleModal">
+    <div class="tele-topbar">
+      <div style="font-family:var(--font-display);font-size:1.1rem;color:var(--white);">
+        TELEPROMPTER <span style="color:var(--red-secondary);font-size:0.8rem;">[LIVE STUDIO]</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <label style="font-size:0.8rem;font-family:var(--font-mono);color:var(--white-70);">
+          Speed: <span id="teleSpeedVal">1.0x</span>
+          <input type="range" id="teleSpeedSlider" min="0.5" max="2.5" step="0.1" value="1.0" style="margin-left:0.5rem;vertical-align:middle;" />
+        </label>
+        <button class="btn-play-sim" id="btnTeleStart">▶ Start</button>
+        <button class="btn-secondary" id="btnTeleClose">✕ Close</button>
+      </div>
+    </div>
+
+    <div class="tele-viewport" id="teleViewport">
+      <div class="tele-focus-line"></div>
+      <div class="tele-content" id="teleContent"></div>
+    </div>
+
+    <div style="text-align:center;font-family:var(--font-mono);font-size:0.75rem;color:var(--white-50);">
+      Press [SPACE] to Play/Pause • Press [ESC] to Exit
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <span>✓</span>
+    <span id="toastText">Script copied to clipboard!</span>
+  </div>
+
+  <script>
+    const SCRIPT_PRESETS = {
+      'yt-coding': {
+        idea: "Why most people quit learning to code in 30 days and how the 80/20 build rule fixes it.",
+        duration: "60",
+        hookStyle: "contrarian",
+        platform: "youtube",
+        data: {
+          durationSec: 65,
+          wordCount: 162,
+          wpm: 150,
+          retention: "95%",
+          hook: {
+            time: "0:00 – 0:05 (5s)",
+            visual: "Creator aggressively slams laptop closed, pointing finger directly at camera lens. High-speed zoom punch.",
+            ost: "STOP WATCHING 10-HR TUTORIALS 🛑",
+            audio: "Heavy sub-bass boom + record scratch.",
+            speech: "If you spend more than 15 minutes scripting a 60-second video, you're doing it completely backwards."
+          },
+          body: [
+            {
+              time: "0:05 – 0:20 (15s)",
+              visual: "Fast-forward screen capture of scrolling endlessly through video playlists with flatlined graph.",
+              speech: "Most creators treat shorts like mini movies. They write paragraphs, lose the viewer's attention by second four, and wonder why retention drops off a cliff."
+            },
+            {
+              time: "0:20 – 0:38 (18s)",
+              visual: "Split screen: terminal code editor on right; paused tutorial on left with big red 'CRASH' overlay.",
+              speech: "Here is the rule senior devs actually use: The 80/20 Build Rule. Never watch a tutorial without breaking it on purpose. Watch 3 minutes, pause, change one parameter, and make it crash."
+            },
+            {
+              time: "0:38 – 0:52 (14s)",
+              visual: "Screen recording of a clean 20-line Python/JS project running smoothly with terminal checkmark.",
+              speech: "Fixing that error is where 90% of real learning happens. Don't try to build the next Facebook. Build a 20-line script you can explain to a 10-year-old."
+            }
+          ],
+          cta: {
+            time: "0:52 – 1:05 (13s)",
+            loopAction: "Creator leans in, pointing down to comment box. Last word flows right back into opening word.",
+            speech: "I dropped the 5 best beginner build-starter projects in the pinned comment below, so you can...",
+            algoNote: "YouTube algorithm trigger: Directing viewers to the pinned comment creates high engagement signals without redirecting away from the Short."
+          }
+        }
+      },
+      'productivity': {
+        idea: "How the 2-minute rule stops severe procrastination before your brain can resist.",
+        duration: "45",
+        hookStyle: "speedrun",
+        platform: "youtube",
+        data: {
+          durationSec: 46,
+          wordCount: 118,
+          wpm: 154,
+          retention: "92%",
+          hook: {
+            time: "0:00 – 0:04 (4s)",
+            visual: "Creator staring blankly at phone screen with alarm buzzing violently; swiping phone away into pillow.",
+            ost: "THE 2-MINUTE CURE 🧠",
+            audio: "Aggressive alarm buzzer cut with sharp whoosh.",
+            speech: "Your brain will violently resist a 2-hour work block, but it is physically incapable of resisting 120 seconds."
+          },
+          body: [
+            {
+              time: "0:04 – 0:18 (14s)",
+              visual: "Stopwatch timer app ticking from 2:00 down to 0:00 with rapid desk setup b-roll.",
+              speech: "It's called the Activation Threshold. The hardest part of any task isn't the work—it is the neural friction of opening the tab."
+            },
+            {
+              time: "0:18 – 0:34 (16s)",
+              visual: "Typing 1 sentence in Notion / opening workout shoes by the door.",
+              speech: "Tell yourself you will only write one sentence, open one file, or put on your left shoe. Once you start, momentum takes over and dopamine fires."
+            },
+            {
+              time: "0:34 – 0:42 (8s)",
+              visual: "Split screen of completed task checklist with green checkboxes popping.",
+              speech: "85% of the time, you'll end up working for the full hour without even noticing."
+            }
+          ],
+          cta: {
+            time: "0:42 – 0:46 (4s)",
+            loopAction: "Creator snaps fingers pointing down. Seamless loop connector back to opening.",
+            speech: "Try this on your biggest to-do today, and comment below if it worked, because..."
+          }
+        }
+      },
+      'fitness': {
+        idea: "Why motivation is a scam and the identity-first habit loop actually builds discipline.",
+        duration: "60",
+        hookStyle: "contrarian",
+        platform: "youtube",
+        data: {
+          durationSec: 62,
+          wordCount: 155,
+          wpm: 150,
+          retention: "96%",
+          hook: {
+            time: "0:00 – 0:05 (5s)",
+            visual: "Creator pouring pre-workout powder that spills everywhere, looking tired. Red warning overlay.",
+            ost: "STOP WAITING FOR MOTIVATION ❌",
+            audio: "Heartbeat thud into loud metallic slam.",
+            speech: "If you only go to the gym when you feel motivated, you will stay average for the rest of your life."
+          },
+          body: [
+            {
+              time: "0:05 – 0:22 (17s)",
+              visual: "B-roll of tying sneakers in the dark, clock showing 6:00 AM.",
+              speech: "Motivation is an emotional high that lasts about 72 hours. Elite athletes don't have more willpower than you; they just removed the decision altogether."
+            },
+            {
+              time: "0:22 – 0:38 (16s)",
+              visual: "Close up of barbell or gym bag packed the night before.",
+              speech: "Every time you show up when you don't feel like it, you cast a vote for your new identity. One 20-minute workout beats ten skipped perfect sessions."
+            },
+            {
+              time: "0:38 – 0:52 (14s)",
+              visual: "Graph showing 1% daily improvement compounding into massive 37x growth.",
+              speech: "Lower the barrier so low it feels embarrassing to fail. Two pushups a day will beat an abandoned 5-day split every single time."
+            }
+          ],
+          cta: {
+            time: "0:52 – 1:02 (10s)",
+            loopAction: "Creator nods into lens, points to pinned comment.",
+            speech: "Save this video for your next lazy morning, or check the pinned comment for my zero-friction workout template..."
+          }
+        }
+      },
+      'ai-tools': {
+        idea: "3 free AI automation tools that save 10 hours a week for creators and engineers.",
+        duration: "45",
+        hookStyle: "speedrun",
+        platform: "youtube",
+        data: {
+          durationSec: 48,
+          wordCount: 122,
+          wpm: 152,
+          retention: "93%",
+          hook: {
+            time: "0:00 – 0:04 (4s)",
+            visual: "Speed-typing on keyboard with robotic sound, suddenly screens light up simultaneously.",
+            ost: "DELETE REPETITIVE WORK 🤖",
+            audio: "Digital futuristic glitch chime.",
+            speech: "If you are still doing these 3 tasks manually in 2026, you are throwing away 10 hours every week."
+          },
+          body: [
+            {
+              time: "0:04 – 0:18 (14s)",
+              visual: "Tool 1 UI: auto-formatting code/text in 1 click.",
+              speech: "Tool 1: Perplexity Pro for instant syntheses instead of reading 50 Google tabs."
+            },
+            {
+              time: "0:18 – 0:32 (14s)",
+              visual: "Tool 2 UI: Whisper AI auto-transcribing voice notes into structured task lists.",
+              speech: "Tool 2: Whisper for turning your 2-minute voice rants into clean GitHub tickets."
+            },
+            {
+              time: "0:32 – 0:42 (10s)",
+              visual: "Tool 3 UI: Automated n8n or Zapier workflow triggering instant deploys.",
+              speech: "Tool 3: n8n local automations to sync your repos and project updates automatically."
+            }
+          ],
+          cta: {
+            time: "0:42 – 0:48 (6s)",
+            loopAction: "Pointing to comments. Seamless transition loop.",
+            speech: "I put the direct links and setup guides in the pinned comment below, so..."
+          }
+        }
+      },
+      'salary': {
+        idea: "The exact 3 sentences to say when negotiating salary that prevent you from being lowballed.",
+        duration: "60",
+        hookStyle: "loss",
+        platform: "youtube",
+        data: {
+          durationSec: 58,
+          wordCount: 148,
+          wpm: 153,
+          retention: "97%",
+          hook: {
+            time: "0:00 – 0:05 (5s)",
+            visual: "Creator shaking hands with an unseen interviewer, smiling, then cutting to offer letter with red marker.",
+            ost: "NEVER SAY YOUR NUMBER FIRST 💼",
+            audio: "Cash register cha-ching cut with low hum.",
+            speech: "The minute you give a number first in a job interview, you just lost up to twenty thousand dollars."
+          },
+          body: [
+            {
+              time: "0:05 – 0:20 (15s)",
+              visual: "Close-up dialogue reenactment looking confident and calm.",
+              speech: "When they ask 'What are your compensation expectations?', here is the magic deflection: 'I'm more focused on finding the right cultural and technical fit, and I know your team offers competitive market rates for this role.'"
+            },
+            {
+              time: "0:20 – 0:38 (18s)",
+              visual: "Table of salary ranges: 80k vs 110k with green difference highlighted.",
+              speech: "If they push again, say: 'Based on my research for this scope in our market, roles typically range between X and Y. Where does this offer fall within that budget?'"
+            },
+            {
+              time: "0:38 – 0:50 (12s)",
+              visual: "Checklist of negotiation rules appearing one by one.",
+              speech: "Now they have to negotiate against their own high-water mark instead of your bottom dollar."
+            }
+          ],
+          cta: {
+            time: "0:50 – 0:58 (8s)",
+            loopAction: "Creator winks, points down.",
+            speech: "Save this video right now before your next interview, because remember..."
+          }
+        }
+      }
+    };
+
+    let audioCtx = null;
+    let soundEnabled = true;
+
+    function playSfx(type) {
+      if (!soundEnabled) return;
+      try {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const now = audioCtx.currentTime;
+
+        if (type === 'click') {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(600, now);
+          osc.frequency.exponentialRampToValueAtTime(300, now + 0.05);
+          gain.gain.setValueAtTime(0.15, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.05);
+        } else if (type === 'success') {
+          const osc1 = audioCtx.createOscillator();
+          const osc2 = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc1.type = 'triangle';
+          osc2.type = 'sine';
+          osc1.frequency.setValueAtTime(440, now);
+          osc1.frequency.setValueAtTime(554.37, now + 0.08);
+          osc1.frequency.setValueAtTime(659.25, now + 0.16);
+          osc2.frequency.setValueAtTime(880, now + 0.16);
+          gain.gain.setValueAtTime(0.12, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+          osc1.connect(gain);
+          osc2.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc1.start(now);
+          osc2.start(now + 0.16);
+          osc1.stop(now + 0.35);
+          osc2.stop(now + 0.35);
+        }
+      } catch (e) {
+        console.warn('Audio not available', e);
+      }
+    }
+
+    let currentScript = SCRIPT_PRESETS['yt-coding'].data;
+
+    function renderScript(data) {
+      currentScript = data;
+      document.getElementById('metricDuration').innerText = data.durationSec + 's';
+      document.getElementById('metricWords').innerText = data.wordCount + ' words';
+      document.getElementById('metricPace').innerText = data.wpm + ' WPM';
+      document.getElementById('metricRetention').innerText = data.retention;
+
+      document.getElementById('hookTimeBadge').innerText = data.hook.time;
+      document.getElementById('hookVisual').innerText = data.hook.visual;
+      document.getElementById('hookOst').innerHTML = `<strong>"${data.hook.ost}"</strong>`;
+      document.getElementById('hookAudio').innerText = data.hook.audio;
+      document.getElementById('hookSpeech').innerText = `"${data.hook.speech}"`;
+
+      const bodyContainer = document.getElementById('bodyBeatsContainer');
+      bodyContainer.innerHTML = '';
+      data.body.forEach((beat, i) => {
+        const beatEl = document.createElement('div');
+        beatEl.className = 'cue-row';
+        beatEl.innerHTML = `
+          <span class="cue-tag visual">Beat ${i+1} (${beat.time})</span>
+          <div class="cue-content">
+            <div><strong>Visual:</strong> ${beat.visual}</div>
+            <div class="speech-box">"${beat.speech}"</div>
+          </div>
+        `;
+        bodyContainer.appendChild(beatEl);
+      });
+
+      document.getElementById('ctaTimeBadge').innerText = data.cta.time;
+      document.getElementById('ctaLoopAction').innerText = data.cta.loopAction;
+      document.getElementById('ctaSpeech').innerText = `"${data.cta.speech}"`;
+      if (data.cta.algoNote) {
+        document.getElementById('ctaAlgoNote').innerHTML = `<em>${data.cta.algoNote}</em>`;
+      }
+
+      document.getElementById('previewPill').innerText = data.hook.ost.replace(/[^\w\s🛑❌🧠🤖💼]/g, '');
+      document.getElementById('previewCaption').innerText = `"${data.hook.speech}"`;
+      document.getElementById('previewTimerText').innerText = `0:00 / 0:${data.durationSec < 10 ? '0' : ''}${data.durationSec}`;
+    }
+
+    function generateFromCustomInput(rawIdea, durationTarget, hookType, platform) {
+      const words = rawIdea.trim();
+      const topicName = words.length > 50 ? words.slice(0, 48) + '...' : words;
+      const isShort = durationTarget === '30';
+      const isMed = durationTarget === '45';
+      const totalSec = isShort ? 30 : (isMed ? 45 : 65);
+
+      let hookOst = "STOP DOING THIS 🛑";
+      let hookSpeech = `If you're still trying to ${topicName.toLowerCase()} the conventional way, stop. You're wasting months of effort.`;
+      
+      if (hookType === 'speedrun') {
+        hookOst = "60-SECOND SHORTCUT ⚡";
+        hookSpeech = `Here is the high-speed framework to master ${topicName.toLowerCase()} in half the normal time.`;
+      } else if (hookType === 'loss') {
+        hookOst = "YOU ARE LOSING VALUE ⚠️";
+        hookSpeech = `Every day you ignore this one principle about ${topicName.toLowerCase()}, you are falling behind.`;
+      } else if (hookType === 'curiosity') {
+        hookOst = "THE 1% SECRET 🔑";
+        hookSpeech = `Top industry pros never talk publicly about how they actually handle ${topicName.toLowerCase()}, but here is the truth.`;
+      }
+
+      let ctaSpeech = "I put the step-by-step checklist in the pinned comment below, so you can...";
+      let algoNote = "YouTube algorithm trigger: Directing viewers to the pinned comment creates high engagement signals.";
+      if (platform === 'instagram') {
+        ctaSpeech = "Save this reel right now so you don't lose the breakdown when you need it!";
+        algoNote = "Instagram algorithm trigger: Saves count as the highest-weight algorithmic signal.";
+      } else if (platform === 'tiktok') {
+        ctaSpeech = "Drop your experience in the comments or stitch this with your result!";
+        algoNote = "TikTok trigger: Stitches and comment velocity boost viral feed distribution.";
+      }
+
+      return {
+        durationSec: totalSec,
+        wordCount: Math.round(totalSec * 2.4),
+        wpm: 148,
+        retention: '94%',
+        hook: {
+          time: `0:00 – 0:05 (5s)`,
+          visual: `Aggressive pattern interrupt: high energy camera punch-in while demonstrating the core problem of ${topicName}.`,
+          ost: hookOst,
+          audio: `Sub-bass impact boom followed by dynamic UI whoosh.`,
+          speech: hookSpeech
+        },
+        body: [
+          {
+            time: `0:05 – 0:20 (15s)`,
+            visual: `Cut to rapid-fire breakdown: highlighting the fatal flaw in how 90% of beginners approach it.`,
+            speech: `First rule: eliminate the bottleneck. Most people overcomplicate the foundation instead of focusing on the single 20% lever that creates 80% of the outcome.`
+          },
+          {
+            time: `0:20 – 0:38 (18s)`,
+            visual: `Screen demo / physical demonstration showing real-time execution step-by-step.`,
+            speech: `Second: execute in micro-bursts. Test your premise immediately, inspect where friction occurs, and refine before adding any extra noise.`
+          },
+          {
+            time: `0:38 – 0:52 (14s)`,
+            visual: `Comparison card: Bad Approach vs Proven Method with green checkmarks.`,
+            speech: `Third: maintain momentum over perfection. Small, consistent iterations compound exponentially faster than waiting for perfect conditions.`
+          }
+        ],
+        cta: {
+          time: `0:52 – 0:${totalSec} (${totalSec - 52}s)`,
+          loopAction: `Creator points directly downward towards comments/saves. Voiceover connects seamlessly back into the opening hook.`,
+          speech: ctaSpeech,
+          algoNote: algoNote
+        }
+      };
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const ideaInput = document.getElementById('ideaInput');
+      const targetDuration = document.getElementById('targetDuration');
+      const hookStyle = document.getElementById('hookStyle');
+      const targetPlatform = document.getElementById('targetPlatform');
+      
+      ideaInput.value = SCRIPT_PRESETS['yt-coding'].idea;
+      renderScript(SCRIPT_PRESETS['yt-coding'].data);
+
+      document.querySelectorAll('.preset-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          playSfx('click');
+          document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const key = chip.dataset.preset;
+          if (SCRIPT_PRESETS[key]) {
+            const p = SCRIPT_PRESETS[key];
+            ideaInput.value = p.idea;
+            targetDuration.value = p.duration;
+            hookStyle.value = p.hookStyle;
+            targetPlatform.value = p.platform;
+            renderScript(p.data);
+            showToast('Loaded preset: ' + chip.innerText.replace(/^[^\s]+\s/, ''));
+          }
+        });
+      });
+
+      document.getElementById('btnGenerate').addEventListener('click', () => {
+        const val = ideaInput.value.trim();
+        if (!val) {
+          showToast('Please type an idea or pick a preset first!');
+          return;
+        }
+        playSfx('success');
+        const generated = generateFromCustomInput(val, targetDuration.value, hookStyle.value, targetPlatform.value);
+        renderScript(generated);
+        showToast('Generated fresh high-retention script!');
+
+        const card = document.getElementById('outputCard');
+        card.style.borderColor = 'var(--red-primary)';
+        setTimeout(() => { card.style.borderColor = ''; }, 600);
+      });
+
+      const randomIdeas = [
+        "Why 99% of people fail to build a daily reading habit and the 5-page rule",
+        "How to debug code 3x faster without endlessly checking StackOverflow",
+        "The reason multi-tasking is actually ruining your focus and brain neuroplasticity",
+        "How to build an automated portfolio website that attracts real recruiter interviews",
+        "The psychological trick that makes you wake up instantly without hitting snooze"
+      ];
+      document.getElementById('btnRandomize').addEventListener('click', () => {
+        playSfx('click');
+        const picked = randomIdeas[Math.floor(Math.random() * randomIdeas.length)];
+        ideaInput.value = picked;
+        document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('active'));
+        const generated = generateFromCustomInput(picked, targetDuration.value, hookStyle.value, targetPlatform.value);
+        renderScript(generated);
+        showToast('Randomized new concept!');
+      });
+
+      document.getElementById('btnToggleSound').addEventListener('click', () => {
+        soundEnabled = !soundEnabled;
+        document.getElementById('soundStatusText').innerText = soundEnabled ? 'ON' : 'OFF';
+        showToast(`Sound FX ${soundEnabled ? 'Enabled' : 'Disabled'}`);
+      });
+
+      document.getElementById('btnCopyScript').addEventListener('click', () => {
+        playSfx('click');
+        let text = `=== REEL / YOUTUBE SHORT SCRIPT ===\n`;
+        text += `Duration: ${currentScript.durationSec}s | Words: ${currentScript.wordCount} | Target WPM: ${currentScript.wpm}\n\n`;
+        text += `[PHASE 1: HOOK] (${currentScript.hook.time})\n`;
+        text += `Visual: ${currentScript.hook.visual}\n`;
+        text += `On-Screen Text: ${currentScript.hook.ost}\n`;
+        text += `Audio: ${currentScript.hook.audio}\n`;
+        text += `Voiceover: "${currentScript.hook.speech}"\n\n`;
+        text += `[PHASE 2: BODY BEATS]\n`;
+        currentScript.body.forEach((b, i) => {
+          text += `Beat ${i+1} (${b.time}):\n`;
+          text += `Visual: ${b.visual}\n`;
+          text += `Voiceover: "${b.speech}"\n\n`;
+        });
+        text += `[PHASE 3: CTA & LOOP] (${currentScript.cta.time})\n`;
+        text += `Action: ${currentScript.cta.loopAction}\n`;
+        text += `Voiceover: "${currentScript.cta.speech}"\n`;
+
+        navigator.clipboard.writeText(text).then(() => {
+          showToast('Plain text script copied to clipboard!');
+        });
+      });
+
+      document.getElementById('btnCopyMarkdown').addEventListener('click', () => {
+        playSfx('click');
+        let md = `| Timestamp | Phase | Visual Cue | SFX / OST | Spoken Script |\n`;
+        md += `| :--- | :--- | :--- | :--- | :--- |\n`;
+        md += `| **${currentScript.hook.time}** | **Hook** | ${currentScript.hook.visual} | ${currentScript.hook.ost} | *"${currentScript.hook.speech}"* |\n`;
+        currentScript.body.forEach((b, i) => {
+          md += `| **${b.time}** | **Beat ${i+1}** | ${b.visual} | Beat Transition | *"${b.speech}"* |\n`;
+        });
+        md += `| **${currentScript.cta.time}** | **CTA/Loop** | ${currentScript.cta.loopAction} | Pinned CTA | *"${currentScript.cta.speech}"* |\n`;
+
+        navigator.clipboard.writeText(md).then(() => {
+          showToast('Markdown table copied to clipboard!');
+        });
+      });
+
+      document.getElementById('btnDownloadTxt').addEventListener('click', () => {
+        playSfx('click');
+        let text = `REEL SCRIPT BUILDER EXPORT\n`;
+        text += `==========================\n`;
+        text += `Hook: "${currentScript.hook.speech}"\n\n`;
+        currentScript.body.forEach((b, i) => {
+          text += `Beat ${i+1}: "${b.speech}"\n\n`;
+        });
+        text += `CTA: "${currentScript.cta.speech}"\n`;
+        const blob = new Blob([text], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'reel-script.txt';
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('Downloaded reel-script.txt');
+      });
+
+      let previewTimer = null;
+      let previewSeconds = 0;
+      let isPlaying = false;
+      const btnPreviewPlay = document.getElementById('btnPreviewPlay');
+      const progressFill = document.getElementById('previewProgress');
+      const timerText = document.getElementById('previewTimerText');
+      const previewPill = document.getElementById('previewPill');
+      const previewCaption = document.getElementById('previewCaption');
+
+      function updatePreviewFrame(sec) {
+        const total = currentScript.durationSec;
+        const pct = Math.min(100, (sec / total) * 100);
+        progressFill.style.width = pct + '%';
+        timerText.innerText = `0:${sec < 10 ? '0' : ''}${sec} / 0:${total < 10 ? '0' : ''}${total}`;
+
+        if (sec <= 5) {
+          previewPill.innerText = currentScript.hook.ost.replace(/[^\w\s🛑❌🧠🤖💼]/g, '');
+          previewCaption.innerText = `"${currentScript.hook.speech}"`;
+        } else if (sec <= 20) {
+          previewPill.innerText = "BEAT 1: SETUP ⚡";
+          previewCaption.innerText = `"${currentScript.body[0] ? currentScript.body[0].speech : ''}"`;
+        } else if (sec <= 38) {
+          previewPill.innerText = "BEAT 2: MECHANISM 🎯";
+          previewCaption.innerText = `"${currentScript.body[1] ? currentScript.body[1].speech : ''}"`;
+        } else if (sec <= 52) {
+          previewPill.innerText = "BEAT 3: TAKEAWAY 💡";
+          previewCaption.innerText = `"${currentScript.body[2] ? currentScript.body[2].speech : ''}"`;
+        } else {
+          previewPill.innerText = "CHECK PINNED COMMENT 👇";
+          previewCaption.innerText = `"${currentScript.cta.speech}"`;
+        }
+      }
+
+      function stopSimulation() {
+        isPlaying = false;
+        clearInterval(previewTimer);
+        btnPreviewPlay.innerHTML = '▶ Play Simulation';
+      }
+
+      btnPreviewPlay.addEventListener('click', () => {
+        playSfx('click');
+        if (isPlaying) {
+          stopSimulation();
+        } else {
+          isPlaying = true;
+          btnPreviewPlay.innerHTML = '⏸ Pause';
+          const total = currentScript.durationSec;
+          previewTimer = setInterval(() => {
+            previewSeconds++;
+            if (previewSeconds > total) {
+              previewSeconds = 0;
+            }
+            updatePreviewFrame(previewSeconds);
+          }, 1000);
+        }
+      });
+
+      document.getElementById('btnPreviewReset').addEventListener('click', () => {
+        playSfx('click');
+        stopSimulation();
+        previewSeconds = 0;
+        updatePreviewFrame(0);
+      });
+
+      const teleModal = document.getElementById('teleModal');
+      const teleContent = document.getElementById('teleContent');
+      const btnTeleStart = document.getElementById('btnTeleStart');
+      const teleSpeedSlider = document.getElementById('teleSpeedSlider');
+      const teleSpeedVal = document.getElementById('teleSpeedVal');
+      let teleScrollInterval = null;
+      let isTeleRunning = false;
+      let teleScrollPos = 0;
+
+      document.getElementById('btnOpenTeleprompter').addEventListener('click', () => {
+        playSfx('click');
+        let fullLines = [
+          `[HOOK]`,
+          currentScript.hook.speech,
+          ``,
+          `[BEAT 1]`,
+          currentScript.body[0] ? currentScript.body[0].speech : '',
+          ``,
+          `[BEAT 2]`,
+          currentScript.body[1] ? currentScript.body[1].speech : '',
+          ``,
+          `[BEAT 3]`,
+          currentScript.body[2] ? currentScript.body[2].speech : '',
+          ``,
+          `[CTA & LOOP]`,
+          currentScript.cta.speech
+        ].join('<br><br>');
+
+        teleContent.innerHTML = fullLines;
+        teleScrollPos = 0;
+        teleContent.style.transform = `translateY(0px)`;
+        teleModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      function closeTeleprompter() {
+        clearInterval(teleScrollInterval);
+        isTeleRunning = false;
+        btnTeleStart.innerHTML = '▶ Start';
+        teleModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      document.getElementById('btnTeleClose').addEventListener('click', closeTeleprompter);
+
+      teleSpeedSlider.addEventListener('input', (e) => {
+        teleSpeedVal.innerText = parseFloat(e.target.value).toFixed(1) + 'x';
+      });
+
+      function toggleTeleprompterPlay() {
+        if (isTeleRunning) {
+          clearInterval(teleScrollInterval);
+          isTeleRunning = false;
+          btnTeleStart.innerHTML = '▶ Start';
+        } else {
+          isTeleRunning = true;
+          btnTeleStart.innerHTML = '⏸ Pause';
+          teleScrollInterval = setInterval(() => {
+            const speed = parseFloat(teleSpeedSlider.value);
+            teleScrollPos -= 1.5 * speed;
+            teleContent.style.transform = `translateY(${teleScrollPos}px)`;
+          }, 30);
+        }
+      }
+
+      btnTeleStart.addEventListener('click', toggleTeleprompterPlay);
+
+      // ── SHORTS BACKGROUND SIMULATOR ENGINE (CANVAS) ──
+      const bgCanvas = document.getElementById('shortsBgCanvas');
+      const bgCtx = bgCanvas.getContext('2d');
+      let currentBg = 'runner';
+
+      function resizeShortsCanvas() {
+        const rect = bgCanvas.getBoundingClientRect();
+        bgCanvas.width = rect.width * (window.devicePixelRatio || 1);
+        bgCanvas.height = rect.height * (window.devicePixelRatio || 1);
+        bgCtx.setTransform(1, 0, 0, 1, 0, 0);
+        bgCtx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+      }
+      setTimeout(resizeShortsCanvas, 100);
+      window.addEventListener('resize', resizeShortsCanvas);
+
+      // Background Selector Buttons
+      document.querySelectorAll('.bg-choice-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          playSfx('click');
+          document.querySelectorAll('.bg-choice-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentBg = btn.dataset.bg;
+          showToast('Shorts background: ' + btn.innerText);
+        });
+      });
+
+      // 1. 3D Runner Data
+      let runnerZ = 0;
+      let runnerCubes = [
+        { x: -35, z: 380, color: '#ff0055' },
+        { x: 30, z: 650, color: '#00ffcc' },
+        { x: 0, z: 900, color: '#ffcc00' }
+      ];
+
+      // 2. Matrix Code Data
+      const matrixChars = '01{}[]=>const let function async await return import export $ # @ *';
+      const matrixCols = 18;
+      const drops = Array(matrixCols).fill(1);
+
+      // 3. Starfield Data
+      const stars = Array.from({ length: 120 }, () => ({
+        x: (Math.random() - 0.5) * 400,
+        y: (Math.random() - 0.5) * 600,
+        z: Math.random() * 600 + 50
+      }));
+
+      // 4. Synthwave Data
+      let synthOffset = 0;
+
+      function renderShortsBackground() {
+        const w = bgCanvas.getBoundingClientRect().width || 304;
+        const h = bgCanvas.getBoundingClientRect().height || 574;
+        bgCtx.clearRect(0, 0, w, h);
+
+        const speedMul = isPlaying ? 2.2 : 0.9;
+
+        if (currentBg === 'runner') {
+          // 3D Runner (Subway Track style)
+          bgCtx.fillStyle = '#06020c';
+          bgCtx.fillRect(0, 0, w, h);
+
+          const horizonY = h * 0.38;
+          const grad = bgCtx.createLinearGradient(0, 0, 0, horizonY);
+          grad.addColorStop(0, '#12041b');
+          grad.addColorStop(1, '#3b0764');
+          bgCtx.fillStyle = grad;
+          bgCtx.fillRect(0, 0, w, horizonY);
+
+          // Track Road
+          bgCtx.beginPath();
+          bgCtx.moveTo(w * 0.45, horizonY);
+          bgCtx.lineTo(w * 0.55, horizonY);
+          bgCtx.lineTo(w * 1.15, h);
+          bgCtx.lineTo(-w * 0.15, h);
+          bgCtx.closePath();
+          bgCtx.fillStyle = '#100c1e';
+          bgCtx.fill();
+          bgCtx.strokeStyle = '#a855f7';
+          bgCtx.lineWidth = 2;
+          bgCtx.stroke();
+
+          // Horizontal Moving Track Rungs
+          runnerZ = (runnerZ + 4 * speedMul) % 60;
+          for (let z = runnerZ; z < 400; z += 35) {
+            const p = z / 400;
+            const y = horizonY + (h - horizonY) * Math.pow(p, 1.8);
+            const roadW = (w * 0.1) + (w * 1.2) * Math.pow(p, 1.8);
+            bgCtx.beginPath();
+            bgCtx.moveTo((w - roadW) / 2, y);
+            bgCtx.lineTo((w + roadW) / 2, y);
+            bgCtx.strokeStyle = `rgba(168, 85, 247, ${0.15 + p * 0.6})`;
+            bgCtx.lineWidth = 1 + p * 2.5;
+            bgCtx.stroke();
+          }
+
+          // Center Track Marker
+          bgCtx.strokeStyle = 'rgba(255, 0, 100, 0.45)';
+          bgCtx.lineWidth = 2;
+          bgCtx.beginPath();
+          bgCtx.moveTo(w * 0.5, horizonY);
+          bgCtx.lineTo(w * 0.5, h);
+          bgCtx.stroke();
+
+          // Floating Runner Obstacles / Coins
+          runnerCubes.forEach(cube => {
+            cube.z -= 4 * speedMul;
+            if (cube.z <= 10) {
+              cube.z = 750 + Math.random() * 200;
+              cube.x = (Math.random() - 0.5) * 80;
+            }
+            const p = 1 - (cube.z / 750);
+            if (p > 0 && p < 1) {
+              const cy = horizonY + (h - horizonY) * Math.pow(p, 1.8);
+              const cx = (w / 2) + cube.x * Math.pow(p, 1.6);
+              const sz = 12 * Math.pow(p, 2);
+              bgCtx.fillStyle = cube.color;
+              bgCtx.shadowColor = cube.color;
+              bgCtx.shadowBlur = 8;
+              bgCtx.fillRect(cx - sz / 2, cy - sz, sz, sz);
+              bgCtx.shadowBlur = 0;
+            }
+          });
+
+        } else if (currentBg === 'code') {
+          // Matrix Code / Cyber Terminal
+          bgCtx.fillStyle = 'rgba(5, 5, 8, 0.28)';
+          bgCtx.fillRect(0, 0, w, h);
+
+          bgCtx.font = '12px monospace';
+          for (let i = 0; i < drops.length; i++) {
+            const char = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+            const x = i * (w / matrixCols);
+            const y = drops[i] * 18;
+
+            bgCtx.fillStyle = Math.random() > 0.85 ? '#ffffff' : (Math.random() > 0.5 ? '#00ffcc' : '#00aa55');
+            bgCtx.fillText(char, x, y);
+
+            if (y > h && Math.random() > 0.975) {
+              drops[i] = 0;
+            }
+            drops[i] += 0.8 * speedMul;
+          }
+
+        } else if (currentBg === 'hyperspace') {
+          // Hyperspace Starfield
+          bgCtx.fillStyle = '#030206';
+          bgCtx.fillRect(0, 0, w, h);
+
+          const cx = w / 2;
+          const cy = h * 0.45;
+
+          stars.forEach(s => {
+            s.z -= 4 * speedMul;
+            if (s.z <= 0) {
+              s.z = 600;
+              s.x = (Math.random() - 0.5) * 400;
+              s.y = (Math.random() - 0.5) * 600;
+            }
+            const k = 180 / s.z;
+            const px = cx + s.x * k;
+            const py = cy + s.y * k;
+
+            if (px >= 0 && px <= w && py >= 0 && py <= h) {
+              const size = Math.max(1, (1 - s.z / 600) * 3);
+              bgCtx.beginPath();
+              bgCtx.arc(px, py, size, 0, Math.PI * 2);
+              bgCtx.fillStyle = `rgba(255, 255, 255, ${Math.min(1, (1 - s.z / 600) * 1.5)})`;
+              bgCtx.fill();
+            }
+          });
+
+        } else if (currentBg === 'synthwave') {
+          // Synthwave Sunset & Neon Highway
+          bgCtx.fillStyle = '#0a0314';
+          bgCtx.fillRect(0, 0, w, h);
+
+          const horizon = h * 0.42;
+
+          // Glowing Sun
+          const sunRadius = 45;
+          const sunGrad = bgCtx.createLinearGradient(0, horizon - sunRadius, 0, horizon + sunRadius);
+          sunGrad.addColorStop(0, '#ffcc00');
+          sunGrad.addColorStop(0.7, '#ff0055');
+          bgCtx.fillStyle = sunGrad;
+          bgCtx.beginPath();
+          bgCtx.arc(w / 2, horizon - 5, sunRadius, 0, Math.PI * 2);
+          bgCtx.fill();
+
+          // Sun retro stripes
+          bgCtx.fillStyle = '#0a0314';
+          for (let sy = horizon - 20; sy < horizon + 10; sy += 5) {
+            bgCtx.fillRect((w / 2) - sunRadius - 5, sy, (sunRadius * 2) + 10, 2);
+          }
+
+          // Grid Plane
+          synthOffset = (synthOffset + 2 * speedMul) % 30;
+          for (let z = synthOffset; z < 300; z += 24) {
+            const p = z / 300;
+            const y = horizon + (h - horizon) * Math.pow(p, 1.7);
+            bgCtx.beginPath();
+            bgCtx.moveTo(0, y);
+            bgCtx.lineTo(w, y);
+            bgCtx.strokeStyle = `rgba(255, 0, 100, ${p * 0.7})`;
+            bgCtx.lineWidth = 1 + p * 1.5;
+            bgCtx.stroke();
+          }
+
+          // Grid Perspective Lines
+          for (let lx = -w; lx <= w * 2; lx += 40) {
+            bgCtx.beginPath();
+            bgCtx.moveTo(w / 2, horizon);
+            bgCtx.lineTo(lx, h);
+            bgCtx.strokeStyle = 'rgba(0, 220, 255, 0.25)';
+            bgCtx.lineWidth = 1;
+            bgCtx.stroke();
+          }
+        }
+
+        requestAnimationFrame(renderShortsBackground);
+      }
+
+      requestAnimationFrame(renderShortsBackground);
+    });
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastText').innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+  </script>
+</body>
+</html>

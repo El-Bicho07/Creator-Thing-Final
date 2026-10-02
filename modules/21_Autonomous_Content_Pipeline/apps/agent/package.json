@@ -1,0 +1,36 @@
+{
+  "name": "agent",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@contentyou/ai": "workspace:*",
+    "@contentyou/db": "workspace:*",
+    "@contentyou/schemas": "workspace:*",
+    "@fastify/cors": "^11.3.0",
+    "@langchain/core": "^1.2.13",
+    "@langchain/langgraph": "^1.4.18",
+    "dotenv": "^18.0.4",
+    "fastify": "5.2.1",
+    "langsmith": "^0.10.5"
+  },
+  "devDependencies": {
+    "eslint": "9.20.1",
+    "tsx": "4.19.2",
+    "typescript": "5.7.3",
+    "vitest": "3.0.5"
+  },
+  "dependencyNotes": {
+    "fastify": "Required web framework for agent process",
+    "tsx": "Required for running dev server",
+    "typescript": "Toolchain for typechecking",
+    "eslint": "Toolchain for linting",
+    "vitest": "Toolchain for testing"
+  }
+}

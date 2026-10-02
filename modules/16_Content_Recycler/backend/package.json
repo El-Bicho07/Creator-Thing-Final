@@ -1,0 +1,31 @@
+{
+  "name": "content-recycler-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Content Recycler - AI-Powered Instagram Content Intelligence and Recycling Platform",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "instagram",
+    "content-recycler",
+    "ai",
+    "tf-idf",
+    "sih",
+    "hackathon"
+  ],
+  "author": "Smart India Hackathon Team",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5",
+    "multer": "^1.4.5-lts.1"
+  }
+}

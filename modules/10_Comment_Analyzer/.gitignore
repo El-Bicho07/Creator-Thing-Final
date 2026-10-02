@@ -1,0 +1,9 @@
+node_modules/
+.vscode/
+.env
+.env.*
+!.env.example
+comments.db
+*.db-shm
+*.db-wal
+npm-debug.log*

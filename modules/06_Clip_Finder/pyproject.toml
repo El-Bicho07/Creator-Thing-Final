@@ -1,0 +1,12 @@
+[project]
+name = "shorts-ai"
+version = "1.0.0"
+requires-python = ">=3.10"
+dependencies = ["anthropic>=0.40", "numpy"]
+[project.optional-dependencies]
+asr = ["faster-whisper"]
+[project.scripts]
+shorts-ai = "shorts_ai.cli:main"
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

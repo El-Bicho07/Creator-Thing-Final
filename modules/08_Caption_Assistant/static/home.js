@@ -1,0 +1,1 @@
+let n=0;const cnt=$('#cnt');const t=setInterval(()=>{n+=Math.ceil(Math.random()*9);if(n>=100){n=100;clearInterval(t);setTimeout(()=>$('#loader').classList.add('out'),250)}cnt.textContent=String(n).padStart(3,'0')},60);

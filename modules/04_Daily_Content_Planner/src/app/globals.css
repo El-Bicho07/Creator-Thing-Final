@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #EEF3F8;
+  --color-card: #FFFFFF;
+  --color-ink: #132238;
+  --color-muted: #55677F;
+  --color-border: #D6E2EE;
+  --color-blockshadow: #9EC3DD;
+  --color-navy: #1F3A63;
+  --color-orange: #F08A0C;
+  --color-yellow: #F2BD4F;
+  --color-red: #9B2226;
+  --color-lightblue: #9EC3DD;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0E1726;
+    --color-card: #162438;
+    --color-ink: #EEF3F8;
+    --color-muted: #94A8C0;
+    --color-border: #2A3F5B;
+    --color-blockshadow: #1F3A63;
+    --color-navy: #9EC3DD;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  min-height: 100vh;
+}
+
+/* Custom Focus Ring */
+:focus-visible {
+  outline: 3px solid #F08A0C !important;
+  outline-offset: 2px !important;
+  border-radius: 8px;
+}
+
+/* Smooth selection */
+::selection {
+  background-color: #F08A0C;
+  color: #FFFFFF;
+}
+
+/* Tactile 3D Block Utilities */
+.btn-block-primary {
+  background-color: #1F3A63;
+  color: #FFFFFF;
+  border: 2px solid #1F3A63;
+  box-shadow: 4px 4px 0px #F08A0C;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-block-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px #F08A0C;
+}
+
+.btn-block-primary:active {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0px #F08A0C;
+}
+
+.btn-block-orange {
+  background-color: #F08A0C;
+  color: #FFFFFF;
+  border: 2px solid #F08A0C;
+  box-shadow: 4px 4px 0px #1F3A63;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-block-orange:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px #1F3A63;
+}
+
+.btn-block-orange:active {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0px #1F3A63;
+}
+
+.btn-block-outline {
+  background-color: var(--color-card);
+  color: var(--color-ink);
+  border: 2px solid var(--color-border);
+  box-shadow: 4px 4px 0px var(--color-blockshadow);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-block-outline:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px var(--color-blockshadow);
+}
+
+.btn-block-outline:active {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0px var(--color-blockshadow);
+}

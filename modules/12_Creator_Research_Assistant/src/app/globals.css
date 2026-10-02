@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Playfair+Display:ital,wght@0,500..900;1,500..900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Newspaper Warm Ink & Paper Palette */
+  --color-paper-bg: #FAF7F2;
+  --color-paper-card: rgba(255, 255, 255, 0.76);
+  --color-paper-border: #E8E2D5;
+  --color-paper-divider: #DED7C8;
+
+  --color-ink-primary: #1C1917;
+  --color-ink-secondary: #57534E;
+  --color-ink-muted: #857F77;
+
+  /* Instagram Gradient Palette */
+  --color-insta-yellow: #FCAF45;
+  --color-insta-orange: #F56040;
+  --color-insta-pink: #E1306C;
+  --color-insta-purple: #C13584;
+  --color-insta-royal: #833AB4;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', 'Newsreader', Georgia, serif;
+  --font-editorial: 'Newsreader', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+  
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+:root {
+  --background: #FAF7F2;
+  --foreground: #1C1917;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  @apply antialiased selection:bg-rose-100 selection:text-rose-900;
+  background-image: 
+    radial-gradient(at 10% 10%, rgba(245, 96, 64, 0.05) 0px, transparent 40%),
+    radial-gradient(at 90% 15%, rgba(193, 53, 132, 0.05) 0px, transparent 40%),
+    radial-gradient(at 50% 80%, rgba(252, 175, 69, 0.04) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Glassmorphism & Newspaper Architecture */
+.glass-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 10px 30px -10px rgba(70, 50, 30, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.glass-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(225, 48, 108, 0.25);
+  box-shadow: 
+    0 20px 40px -15px rgba(225, 48, 108, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.glass-masthead {
+  background: rgba(250, 247, 242, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid #E8E2D5;
+}
+
+.glass-dock {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 14px 35px -10px rgba(120, 80, 50, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* Instagram Gradient Accents */
+.insta-gradient-bg {
+  background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+}
+
+.insta-gradient-text {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.insta-story-ring {
+  background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+}
+
+.insta-badge-glow {
+  box-shadow: 0 4px 14px 0 rgba(225, 48, 108, 0.25);
+}
+
+/* Newspaper / Magazine Typography */
+.font-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-editorial-body {
+  font-family: 'Newsreader', Georgia, serif;
+}
+
+.newspaper-rule {
+  border-top: 1px solid #E4DDD1;
+}
+
+.newspaper-double-rule {
+  border-top: 3px double #D4CCA8;
+}
+
+.editorial-dropcap::first-letter {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  float: left;
+  margin-right: 0.65rem;
+  margin-top: 0.15rem;
+  color: #1C1917;
+  font-weight: 800;
+}

@@ -1,0 +1,1420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Atomic Shorts — AI Long-Form to Viral Clips</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   ATOMIC HABITS SIGNATURE DESIGN SYSTEM & APPLE AESTHETICS
+   ========================================================================== */
+:root {
+  /* Atomic Habits Signature Palette: Warm Cream, Amber Solar, Carbon Charcoal */
+  --canvas: #FAF7F2;
+  --canvas-subtle: #F3EFE6;
+  --surface: #FFFFFF;
+  --surface-glass: rgba(255, 255, 255, 0.78);
+  --surface-hover: #FFFDF9;
+  
+  --ink-primary: #181513;
+  --ink-secondary: #575047;
+  --ink-tertiary: #8C8276;
+  --ink-quaternary: #B8B0A4;
+  
+  --border-hairline: rgba(24, 21, 19, 0.07);
+  --border-subtle: rgba(24, 21, 19, 0.12);
+  --border-amber: rgba(217, 119, 6, 0.28);
+
+  /* Signature Solar Amber & Atomic Gold */
+  --amber-50: #FFFBEB;
+  --amber-100: #FEF3C7;
+  --amber-200: #FDE68A;
+  --amber-400: #FBBF24;
+  --amber-500: #F59E0B;
+  --amber-600: #D97706;
+  --amber-700: #B45309;
+  --amber-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%);
+  --amber-gradient-hover: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+  --amber-soft-bg: rgba(245, 158, 11, 0.08);
+  --amber-glow: 0 14px 32px -8px rgba(217, 119, 6, 0.38);
+
+  /* Apple Elevation & Physics */
+  --shadow-sm: 0 2px 8px rgba(24, 21, 19, 0.04);
+  --shadow-card: 0 16px 40px -12px rgba(44, 34, 22, 0.07), 0 2px 6px rgba(0, 0, 0, 0.02);
+  --shadow-floating: 0 28px 70px -16px rgba(32, 24, 14, 0.14), 0 0 1px rgba(0, 0, 0, 0.08);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-normal: 0.32s;
+
+  --success: #10B981;
+  --danger: #EF4444;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #0F0D0C;
+    --canvas-subtle: #191614;
+    --surface: #171412;
+    --surface-glass: rgba(23, 20, 18, 0.82);
+    --surface-hover: #1F1B18;
+    
+    --ink-primary: #F5F3EF;
+    --ink-secondary: #A8A095;
+    --ink-tertiary: #787065;
+    --ink-quaternary: #544D44;
+    
+    --border-hairline: rgba(245, 243, 239, 0.08);
+    --border-subtle: rgba(245, 243, 239, 0.14);
+    --border-amber: rgba(245, 158, 11, 0.32);
+
+    --amber-soft-bg: rgba(245, 158, 11, 0.12);
+    --shadow-card: 0 20px 50px -15px rgba(0, 0, 0, 0.6);
+    --shadow-floating: 0 32px 80px -18px rgba(0, 0, 0, 0.85);
+  }
+}
+
+/* ==========================================================================
+   RESET & FOUNDATION
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--ink-primary);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Atomic Particle Canvas in Background */
+#atomic-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+/* ==========================================================================
+   APPLE TRANSLUCENT TOPBAR
+   ========================================================================== */
+nav.apple-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(24px, calc(50% - 540px));
+  background: var(--surface-glass);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border-bottom: 1px solid var(--border-hairline);
+  transition: all var(--duration-normal) var(--ease-apple);
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink-primary);
+}
+
+.brand-nucleus {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: var(--amber-gradient);
+  display: grid;
+  place-items: center;
+  color: #FFFFFF;
+  font-size: 16px;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+  transition: transform 0.3s var(--ease-apple);
+}
+.brand-link:hover .brand-nucleus {
+  transform: rotate(45deg) scale(1.05);
+}
+
+.brand-title {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brand-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--amber-soft-bg);
+  color: var(--amber-600);
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--border-amber);
+}
+
+.engine-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  background: var(--surface);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s;
+}
+
+.engine-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--amber-500);
+  box-shadow: 0 0 10px var(--amber-500);
+  transition: all 0.3s;
+}
+.engine-pill.online .engine-status-dot {
+  background: var(--success);
+  box-shadow: 0 0 10px var(--success);
+}
+
+/* ==========================================================================
+   PAGE CONTAINER & HERO SECTION
+   ========================================================================== */
+.container {
+  position: relative;
+  z-index: 10;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px 100px;
+}
+
+.hero {
+  text-align: center;
+  padding: 72px 0 44px;
+}
+
+.atomic-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--amber-soft-bg);
+  border: 1px solid var(--border-amber);
+  color: var(--amber-600);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeInDown 0.6s var(--ease-apple);
+}
+
+h1.hero-title {
+  font-size: clamp(40px, 6.8vw, 76px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--ink-primary);
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gradient-text {
+  background: var(--amber-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.hero-subtitle {
+  font-size: clamp(17px, 2vw, 21px);
+  color: var(--ink-secondary);
+  max-width: 680px;
+  margin: 0 auto 36px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   BUTTONS (APPLE TACTILE FEEL)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--amber-gradient);
+  color: #FFFFFF;
+  border: 0;
+  border-radius: var(--radius-pill);
+  padding: 13px 28px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-apple);
+  text-decoration: none;
+  box-shadow: var(--amber-glow);
+  outline: none;
+  user-select: none;
+}
+.btn:hover {
+  background: var(--amber-gradient-hover);
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 18px 38px -6px rgba(217, 119, 6, 0.45);
+}
+.btn:active {
+  transform: translateY(0) scale(0.985);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--ink-primary);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+.btn-secondary:hover {
+  background: var(--surface-hover);
+  border-color: var(--amber-500);
+  color: var(--amber-600);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   APPLE GLASS CARD & WORKSPACE
+   ========================================================================== */
+.glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  transition: all var(--duration-normal) var(--ease-apple);
+}
+
+.input-workspace {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 36px 40px;
+  position: relative;
+}
+
+/* Apple macOS / iOS Segmented Control */
+.segmented-control {
+  position: relative;
+  display: flex;
+  background: var(--canvas-subtle);
+  padding: 5px;
+  border-radius: 16px;
+  margin-bottom: 28px;
+  border: 1px solid var(--border-hairline);
+}
+
+.seg-pill-bg {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(50% - 5px);
+  height: calc(100% - 10px);
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: transform 0.35s var(--ease-apple);
+  pointer-events: none;
+}
+.seg-pill-bg.right {
+  transform: translateX(100%);
+}
+
+.segmented-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 0;
+  background: transparent;
+  color: var(--ink-secondary);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 0.25s;
+}
+.segmented-tab.active {
+  color: var(--ink-primary);
+}
+
+/* Drop Zone Area */
+.drop-zone {
+  border: 2px dashed rgba(217, 119, 6, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 54px 28px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--amber-soft-bg);
+  transition: all 0.3s var(--ease-apple);
+}
+.drop-zone:hover, .drop-zone.drag-active {
+  border-color: var(--amber-500);
+  background: rgba(245, 158, 11, 0.14);
+  transform: scale(1.008);
+}
+
+.drop-icon-bubble {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: var(--amber-gradient);
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  color: #fff;
+  margin: 0 auto 16px;
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.35);
+  transition: transform 0.3s var(--ease-apple);
+}
+.drop-zone:hover .drop-icon-bubble {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.drop-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 6px;
+}
+.drop-desc {
+  font-size: 14px;
+  color: var(--ink-secondary);
+}
+
+/* YouTube Input Area */
+.yt-pane {
+  display: none;
+  animation: fadeIn 0.3s var(--ease-apple);
+}
+
+.yt-input-shell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--canvas-subtle);
+  border: 1px solid var(--border-hairline);
+  padding: 8px 10px;
+  border-radius: 18px;
+  transition: all 0.25s;
+}
+.yt-input-shell:focus-within {
+  border-color: var(--amber-500);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.16);
+  background: var(--surface);
+}
+
+.yt-prefix-icon {
+  font-size: 20px;
+  margin-left: 10px;
+  color: var(--amber-600);
+}
+
+.yt-input-field {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  color: var(--ink-primary);
+  font-size: 15px;
+  font-family: inherit;
+  padding: 8px 4px;
+  outline: none;
+}
+.yt-input-field::placeholder {
+  color: var(--ink-tertiary);
+}
+
+/* Configuration & Options Bar */
+.config-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-hairline);
+  font-size: 13.5px;
+  color: var(--ink-secondary);
+}
+
+.count-selector {
+  display: inline-flex;
+  align-items: center;
+  background: var(--canvas-subtle);
+  border-radius: 12px;
+  padding: 3px;
+  border: 1px solid var(--border-hairline);
+  margin-left: 8px;
+}
+.count-btn {
+  border: 0;
+  background: transparent;
+  color: var(--ink-secondary);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.count-btn.active {
+  background: var(--surface);
+  color: var(--ink-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Apple iOS Toggle Switch */
+.apple-toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.apple-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 46px;
+  height: 28px;
+  border-radius: 99px;
+  background: var(--canvas-subtle);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-apple);
+}
+.apple-toggle::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s var(--ease-apple);
+}
+.apple-toggle:checked {
+  background: var(--amber-500);
+  border-color: var(--amber-500);
+}
+.apple-toggle:checked::before {
+  transform: translateX(18px);
+}
+
+/* History / Recent Analyses Drawer */
+.history-drawer {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-hairline);
+  display: none;
+}
+.history-label {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-tertiary);
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.history-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.history-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--canvas-subtle);
+  border: 1px solid var(--border-hairline);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  color: var(--ink-primary);
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-apple);
+}
+.history-pill-btn:hover {
+  background: var(--surface);
+  border-color: var(--amber-500);
+  color: var(--amber-600);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   PROGRESS & PIPELINE STEPPER
+   ========================================================================== */
+#pipeline-work {
+  display: none;
+  max-width: 840px;
+  margin: 36px auto 0;
+  padding: 48px 36px;
+  text-align: center;
+}
+
+.pipeline-headline {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.pipeline-filename {
+  font-size: 15px;
+  color: var(--ink-secondary);
+  margin-bottom: 30px;
+}
+
+.progress-track {
+  height: 6px;
+  background: var(--canvas-subtle);
+  border-radius: 99px;
+  overflow: hidden;
+  max-width: 480px;
+  margin: 0 auto 32px;
+}
+.progress-bar-inner {
+  height: 100%;
+  width: 0%;
+  background: var(--amber-gradient);
+  border-radius: 99px;
+  transition: width 0.6s var(--ease-apple);
+}
+
+.stepper-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.step-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--canvas-subtle);
+  color: var(--ink-tertiary);
+  border: 1px solid var(--border-hairline);
+  transition: all 0.3s var(--ease-apple);
+}
+.step-node.active {
+  background: var(--amber-gradient);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+  transform: scale(1.04);
+}
+.step-node.completed {
+  background: var(--surface);
+  color: var(--amber-600);
+  border-color: var(--border-amber);
+}
+
+/* ==========================================================================
+   RESULTS GALLERY & VIRAL CLIP CARDS
+   ========================================================================== */
+#results-section {
+  display: none;
+  padding-top: 64px;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.results-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin-bottom: 10px;
+}
+.results-subhead {
+  color: var(--ink-secondary);
+  font-size: 18px;
+}
+
+.clips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
+  gap: 28px;
+}
+
+.clip-card {
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: var(--radius-xl);
+  transition: all 0.35s var(--ease-apple);
+}
+.clip-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-amber);
+  box-shadow: 0 24px 50px -15px rgba(217, 119, 6, 0.22);
+}
+
+.clip-meta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.rank-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--amber-gradient);
+  color: #fff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.timecode-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--canvas-subtle);
+  padding: 6px 14px;
+  border-radius: 12px;
+  color: var(--ink-secondary);
+  border: 1px solid var(--border-hairline);
+}
+
+/* Atomic Score Gauge */
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.radial-score {
+  --score-percent: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(var(--amber-500) calc(var(--score-percent) * 1%), var(--border-hairline) 0);
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 4px 18px rgba(217, 119, 6, 0.2);
+}
+.radial-score-inner {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--ink-primary);
+}
+
+.clip-headline {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  color: var(--ink-primary);
+}
+.clip-reasoning {
+  font-size: 14px;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+}
+
+/* Micro Virality Metrics */
+.metrics-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 22px 0 26px;
+  padding: 16px;
+  background: var(--canvas-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-hairline);
+}
+@media (max-width: 500px) {
+  .metrics-table { grid-template-columns: repeat(2, 1fr); }
+}
+
+.metric-cell label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+}
+.metric-mini-bar {
+  height: 5px;
+  background: var(--border-subtle);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.metric-mini-fill {
+  height: 100%;
+  background: var(--amber-gradient);
+  border-radius: 99px;
+}
+
+/* Card Action Bar */
+.card-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-hairline);
+}
+
+/* ==========================================================================
+   INLINE SHORT PREVIEW PLAYER
+   ========================================================================== */
+.inline-video-wrap {
+  margin-top: 18px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s var(--ease-apple);
+}
+.inline-video-wrap video {
+  width: 100%;
+  max-height: 380px;
+  display: block;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer.atomic-footer {
+  text-align: center;
+  padding: 60px 24px 40px;
+  font-size: 13.5px;
+  color: var(--ink-tertiary);
+  border-top: 1px solid var(--border-hairline);
+  margin-top: 80px;
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<!-- Dynamic Atomic Stipple Canvas -->
+<canvas id="atomic-canvas"></canvas>
+
+<!-- Apple Translucent Navigation Bar -->
+<nav class="apple-nav">
+  <a href="#" class="brand-link">
+    <div class="brand-nucleus">⚛</div>
+    <div class="brand-title">
+      <span>Clipsmith</span>
+      <span class="brand-badge">Atomic</span>
+    </div>
+  </a>
+
+  <div class="engine-pill" id="engine-status">
+    <div class="engine-status-dot"></div>
+    <span id="engine-text">Initializing AI…</span>
+  </div>
+</nav>
+
+<!-- Main Container -->
+<main class="container">
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="atomic-tag">✦ Atomic Habits Principle · Tiny Moments, Remarkable Reach</div>
+    <h1 class="hero-title">
+      Turn Long Videos Into<br>
+      <span class="gradient-text">Atomic Shorts.</span>
+    </h1>
+    <p class="hero-subtitle">
+      Drop in any podcast, lecture, or YouTube link. Local AI identifies the 1% highest-retention moments — auto-hooked, virality-scored, and framed into 9:16 vertical shorts.
+    </p>
+    <div class="hero-actions">
+      <button class="btn" onclick="document.getElementById('file-picker').click()">
+        <span>Upload Video</span>
+        <span>›</span>
+      </button>
+      <button class="btn btn-secondary" onclick="runDemoMode()">
+        <span>Explore Sample Demo</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Input Studio (Apple Glass Panel) -->
+  <section class="glass-panel input-workspace" id="input-studio">
+    <!-- Segmented Tab Switcher -->
+    <div class="segmented-control">
+      <div class="seg-pill-bg" id="tab-slider"></div>
+      <button class="segmented-tab active" id="btn-tab-upload" onclick="setTab('upload')">
+        <span>📁</span>
+        <span>Upload Video File</span>
+      </button>
+      <button class="segmented-tab" id="btn-tab-youtube" onclick="setTab('youtube')">
+        <span>▶️</span>
+        <span>Paste YouTube Link</span>
+      </button>
+    </div>
+
+    <!-- Upload Tab View -->
+    <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-picker').click()">
+      <div class="drop-icon-bubble">🎬</div>
+      <h3 class="drop-heading">Drag and drop your long-form video</h3>
+      <p class="drop-desc">MP4, MOV, MKV, or WEBM · Processed 100% locally with Whisper (INT8) & Ollama</p>
+    </div>
+    <input type="file" id="file-picker" accept="video/*" style="display:none;">
+
+    <!-- YouTube Tab View -->
+    <div class="yt-pane" id="yt-pane">
+      <div class="yt-input-shell">
+        <span class="yt-prefix-icon">▶</span>
+        <input 
+          type="url" 
+          class="yt-input-field" 
+          id="yt-url-input" 
+          placeholder="Paste YouTube link (e.g. https://www.youtube.com/watch?v=... or https://youtu.be/...)"
+        >
+        <button class="btn btn-sm" onclick="processYouTubeLink()">Transform</button>
+      </div>
+      <p style="font-size: 13px; color: var(--ink-secondary); margin-top: 12px; text-align: center;">
+        Stream extracted directly on your machine via <code>yt-dlp</code> with zero cloud telemetry.
+      </p>
+    </div>
+
+    <!-- Options & Controls Strip -->
+    <div class="config-strip">
+      <div style="display: flex; align-items: center;">
+        <span>Select Clip Count:</span>
+        <div class="count-selector" id="count-picker">
+          <button class="count-btn" data-n="3">3</button>
+          <button class="count-btn active" data-n="6">6</button>
+          <button class="count-btn" data-n="10">10</button>
+        </div>
+      </div>
+
+      <label class="apple-toggle-label">
+        <span>Vertical 9:16 Smart Crop</span>
+        <input type="checkbox" class="apple-toggle" id="crop-toggle" checked>
+      </label>
+    </div>
+
+    <!-- Saved Analyses History (SQLite) -->
+    <div class="history-drawer" id="history-box">
+      <div class="history-label">
+        <span>⚡</span>
+        <span>Saved Analyses in SQLite:</span>
+      </div>
+      <div class="history-pills" id="history-pills-list"></div>
+    </div>
+  </section>
+
+  <!-- Active Pipeline Stepper -->
+  <section class="glass-panel" id="pipeline-work">
+    <h2 class="pipeline-headline" id="pipe-headline">Synthesizing Clips…</h2>
+    <p class="pipeline-filename" id="pipe-filename"></p>
+    <div class="progress-track">
+      <div class="progress-bar-inner" id="pipe-progress-fill"></div>
+    </div>
+    <div class="stepper-row" id="pipe-stepper-nodes"></div>
+  </section>
+
+  <!-- Results Showcase -->
+  <section id="results-section">
+    <div class="results-header">
+      <h2 class="results-title">Your Atomic Moments.</h2>
+      <p class="results-subhead" id="results-lead-text"></p>
+    </div>
+
+    <div class="clips-grid" id="clips-grid"></div>
+
+    <div style="text-align: center; margin-top: 54px;">
+      <button class="btn btn-secondary" onclick="location.reload()">
+        <span>← Process Another Video</span>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="atomic-footer">
+  100% Free & Local AI Stack: FFmpeg · faster-whisper (int8) · Ollama · SQLite. Crafted with Apple aesthetic & Atomic Habits palette.
+</footer>
+
+<!-- JavaScript Logic & Particle Canvas -->
+<script>
+// ==========================================================================
+// 1. ATOMIC HABITS STIPPLE PARTICLE CANVAS (60FPS GENTLE DRIFT)
+// ==========================================================================
+(function initAtomicCanvas() {
+  const canvas = document.getElementById('atomic-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let width, height, particles = [];
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // Create delicate stipple particles
+  const count = Math.min(80, Math.floor(window.innerWidth / 16));
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      size: Math.random() * 2.5 + 1,
+      color: Math.random() > 0.4 ? 'rgba(217, 119, 6, 0.22)' : 'rgba(24, 21, 19, 0.12)'
+    });
+  }
+
+  function render() {
+    ctx.clearRect(0, 0, width, height);
+    for (let p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0) p.x = width;
+      if (p.x > width) p.x = 0;
+      if (p.y < 0) p.y = height;
+      if (p.y > height) p.y = 0;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+    }
+    requestAnimationFrame(render);
+  }
+  render();
+})();
+
+// ==========================================================================
+// 2. CLIENT CONTROLLER & SERVER INTERACTION
+// ==========================================================================
+const API_BASE = location.protocol === 'file:' ? 'http://localhost:8008' : '';
+const STAGES = ['Transcribing Audio', 'Understanding Context', 'Virality Scoring', 'Ranking & Cutting'];
+let isLive = false;
+let clipCount = 6;
+let currentJobId = null;
+
+// Tab Switcher
+function setTab(tab) {
+  const isUpload = tab === 'upload';
+  document.getElementById('btn-tab-upload').classList.toggle('active', isUpload);
+  document.getElementById('btn-tab-youtube').classList.toggle('active', !isUpload);
+  document.getElementById('tab-slider').classList.toggle('right', !isUpload);
+  document.getElementById('drop-zone').style.display = isUpload ? 'block' : 'none';
+  document.getElementById('yt-pane').style.display = !isUpload ? 'block' : 'none';
+}
+
+// Engine Health Verification & SQLite Past Analysis Loader
+fetch(API_BASE + '/health')
+  .then(res => res.json())
+  .then(data => {
+    isLive = true;
+    const pill = document.getElementById('engine-status');
+    const text = document.getElementById('engine-text');
+    pill.classList.add('online');
+    text.textContent = data.model ? `Engine ready (${data.model})` : 'Local AI Engine Ready';
+    loadHistoryList();
+  })
+  .catch(() => {
+    const text = document.getElementById('engine-text');
+    text.textContent = 'Engine Offline (Start Server)';
+  });
+
+function loadHistoryList() {
+  fetch(API_BASE + '/history')
+    .then(res => res.json())
+    .then(data => {
+      if (data.videos && data.videos.length > 0) {
+        const box = document.getElementById('history-box');
+        const list = document.getElementById('history-pills-list');
+        box.style.display = 'block';
+        list.innerHTML = data.videos.map(v => `
+          <button class="history-pill-btn" onclick="loadSavedJob('${v.id}', '${v.filename}')">
+            <span>🎬</span>
+            <span>${escapeHtml(v.filename)}</span>
+            <span style="opacity: 0.6;">(${v.clip_count} clips)</span>
+          </button>
+        `).join('');
+      }
+    })
+    .catch(() => {});
+}
+
+const DEMO_CLIPS = [
+  {
+    rank: 1,
+    start: "00:00:00.000",
+    end: "00:00:16.340",
+    start_sec: 0.0,
+    end_sec: 16.34,
+    duration: 16.3,
+    score: 94,
+    title: "The #1 Mistake Every Founder Makes in Their Early 20s",
+    reason: "Opens with a provocative regret hook, immediately captures curiosity, and delivers an unforgettable insight.",
+    breakdown: { hook: 9.6, engagement: 9.2, info_value: 9.4, emotion: 8.8, clarity: 9.5, standalone: 9.6 }
+  },
+  {
+    rank: 2,
+    start: "00:00:16.340",
+    end: "00:00:32.400",
+    start_sec: 16.34,
+    end_sec: 32.40,
+    duration: 16.1,
+    score: 88,
+    title: "Why 1% Daily Improvements Outperform Massive Quantum Leaps",
+    reason: "Directly articulates the compound interest of habits, citing concrete examples with high viral shareability.",
+    breakdown: { hook: 8.9, engagement: 8.7, info_value: 9.1, emotion: 8.2, clarity: 9.0, standalone: 8.8 }
+  }
+];
+
+function loadSavedJob(id, filename) {
+  currentJobId = id;
+  showPipelineStep(2, filename || 'Saved Video');
+  fetch(API_BASE + '/status?id=' + id)
+    .then(r => r.json())
+    .then(d => {
+      if (d.result && d.result.length > 0) displayClips(d.result);
+      else displayClips(DEMO_CLIPS);
+    })
+    .catch(() => displayClips(DEMO_CLIPS));
+}
+
+// Clip count picker buttons
+document.getElementById('count-picker').onclick = e => {
+  if (e.target.dataset.n) {
+    clipCount = parseInt(e.target.dataset.n);
+    document.querySelectorAll('.count-btn').forEach(btn => {
+      btn.classList.toggle('active', btn === e.target);
+    });
+  }
+};
+
+// Drag and drop handlers
+const dropZone = document.getElementById('drop-zone');
+['dragover', 'dragenter'].forEach(ev => {
+  dropZone.addEventListener(ev, e => {
+    e.preventDefault();
+    dropZone.classList.add('drag-active');
+  });
+});
+['dragleave', 'drop'].forEach(ev => {
+  dropZone.addEventListener(ev, e => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-active');
+  });
+});
+dropZone.addEventListener('drop', e => {
+  const file = e.dataTransfer.files[0];
+  if (file) startFileUpload(file);
+});
+document.getElementById('file-picker').onchange = e => {
+  const file = e.target.files[0];
+  if (file) startFileUpload(file);
+};
+
+// UI State Transition
+function showPipelineStep(stageIndex, name) {
+  document.getElementById('pipeline-work').style.display = 'block';
+  document.getElementById('input-studio').style.display = 'none';
+  document.getElementById('pipe-filename').textContent = name || '';
+
+  const stepper = document.getElementById('pipe-stepper-nodes');
+  stepper.innerHTML = STAGES.map((s, i) => `
+    <span class="step-node ${i < stageIndex ? 'completed' : i === stageIndex ? 'active' : ''}">
+      ${i < stageIndex ? '✓ ' : ''}${s}
+    </span>
+  `).join('');
+
+  const percent = Math.min(100, Math.round(((stageIndex + 1) / STAGES.length) * 100));
+  document.getElementById('pipe-progress-fill').style.width = percent + '%';
+  document.getElementById('pipeline-work').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// File Upload Handler
+async function startFileUpload(file) {
+  if (!file) return;
+  if (!isLive) return runDemoMode();
+
+  showPipelineStep(0, file.name);
+  try {
+    const res = await fetch(API_BASE + '/analyze?top=' + clipCount, {
+      method: 'POST',
+      headers: { 'X-Filename': encodeURIComponent(file.name) },
+      body: file
+    });
+    const data = await res.json();
+    currentJobId = data.id;
+    pollJob(currentJobId, file.name);
+  } catch (err) {
+    document.getElementById('pipe-headline').textContent = 'Engine Error';
+    document.getElementById('pipe-filename').textContent = err.message;
+  }
+}
+
+// YouTube Link Handler
+async function processYouTubeLink() {
+  const url = document.getElementById('yt-url-input').value.trim();
+  if (!url) return alert('Please enter a valid YouTube video URL.');
+
+  showPipelineStep(0, 'YouTube Stream');
+  document.getElementById('pipe-headline').textContent = 'Downloading YouTube Video...';
+
+  try {
+    const res = await fetch(API_BASE + '/analyze_url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url: url, top: clipCount })
+    });
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.detail || 'YouTube processing request failed');
+    }
+    const data = await res.json();
+    currentJobId = data.id;
+    pollJob(currentJobId, 'YouTube Stream');
+  } catch (err) {
+    document.getElementById('pipe-headline').textContent = 'Error';
+    document.getElementById('pipe-filename').textContent = err.message;
+  }
+}
+
+// Job Polling
+function pollJob(id, fallbackName) {
+  const poller = setInterval(async () => {
+    try {
+      const status = await (await fetch(API_BASE + '/status?id=' + id)).json();
+      if (status.error) {
+        clearInterval(poller);
+        document.getElementById('pipe-headline').textContent = 'Error During Processing';
+        document.getElementById('pipe-filename').textContent = status.error;
+      } else if (status.result) {
+        clearInterval(poller);
+        displayClips(status.result);
+      } else {
+        if (status.stage === -1) {
+          document.getElementById('pipe-headline').textContent = 'Downloading YouTube Video...';
+          document.getElementById('pipe-filename').textContent = status.filename || fallbackName;
+        } else {
+          document.getElementById('pipe-headline').textContent = 'Synthesizing Clips…';
+          showPipelineStep(status.stage, status.filename || fallbackName);
+        }
+      }
+    } catch (e) {
+      console.warn('Polling check error:', e);
+    }
+  }, 1500);
+}
+
+// Sample Demo Mode
+function runDemoMode() {
+  loadSavedJob('test_run_01', 'founder_interview.mp4');
+}
+
+// Inline Video Preview Toggle
+function toggleInlinePreview(btn, url) {
+  const card = btn.closest('.clip-card');
+  let existingVideo = card.querySelector('.inline-video-wrap');
+  if (existingVideo) {
+    existingVideo.remove();
+    btn.innerHTML = '<span>▶ Play Preview</span>';
+  } else {
+    const wrap = document.createElement('div');
+    wrap.className = 'inline-video-wrap';
+    wrap.innerHTML = `<video controls autoplay playsinline src="${url}"></video>`;
+    card.querySelector('.card-footer-actions').insertAdjacentElement('afterend', wrap);
+    btn.innerHTML = '<span>✕ Hide Preview</span>';
+  }
+}
+
+// Render Results Grid
+function displayClips(clipList) {
+  document.getElementById('pipeline-work').style.display = 'none';
+  document.getElementById('results-section').style.display = 'block';
+  document.getElementById('results-lead-text').textContent = 
+    `${clipList.length} high-retention atomic moments discovered, ranked by hook strength and clarity.`;
+
+  const grid = document.getElementById('clips-grid');
+  grid.innerHTML = clipList.map((clip, idx) => {
+    const isTopPick = idx === 0;
+    const crop = document.getElementById('crop-toggle').checked ? 1 : 0;
+    const clipUrl = `${API_BASE}/clip?id=${currentJobId}&s=${clip.start_sec}&e=${clip.end_sec}&crop=${crop}`;
+
+    return `
+      <article class="glass-panel clip-card">
+        <div>
+          <div class="clip-meta-top">
+            <span class="rank-pill">${isTopPick ? '★ Top Viral Moment' : '#' + clip.rank}</span>
+            <span class="timecode-pill">${clip.start.slice(0, 8)} → ${clip.end.slice(0, 8)} (${Math.round(clip.duration)}s)</span>
+          </div>
+
+          <div class="score-row">
+            <div class="radial-score" style="--score-percent: ${clip.score}">
+              <div class="radial-score-inner">${Math.round(clip.score)}</div>
+            </div>
+            <div>
+              <h3 class="clip-headline">${escapeHtml(clip.title)}</h3>
+              <p class="clip-reasoning">${escapeHtml(clip.reason)}</p>
+            </div>
+          </div>
+
+          <div class="metrics-table">
+            ${Object.entries(clip.breakdown || {}).map(([key, val]) => `
+              <div class="metric-cell">
+                <label>
+                  <span>${key.replace('_', ' ')}</span>
+                  <span>${Math.round(val)}</span>
+                </label>
+                <div class="metric-mini-bar">
+                  <div class="metric-mini-fill" style="width: ${val * 10}%"></div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div>
+          <div class="card-footer-actions">
+            ${currentJobId ? `
+              <a class="btn btn-sm" href="${clipUrl}" download>
+                <span>⬇ Download 9:16 Short</span>
+              </a>
+              <button class="btn btn-sm btn-secondary" onclick="toggleInlinePreview(this, '${clipUrl}')">
+                <span>▶ Play Preview</span>
+              </button>
+            ` : `
+              <button class="btn btn-sm" onclick="alert('Connect local engine.')">Download clip</button>
+            `}
+            <button class="btn btn-sm btn-secondary" onclick="copyTime(this, '${clip.start} - ${clip.end}')">
+              <span>📋 Copy Timestamps</span>
+            </button>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function copyTime(btn, text) {
+  navigator.clipboard.writeText(text);
+  const orig = btn.innerHTML;
+  btn.innerHTML = '<span>✓ Copied</span>';
+  setTimeout(() => btn.innerHTML = orig, 1800);
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+}
+</script>
+</body>
+</html>

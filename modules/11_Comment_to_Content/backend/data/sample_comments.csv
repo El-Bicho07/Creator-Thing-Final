@@ -1,0 +1,13 @@
+comment_id,post_id,post_format,username,text,likes,reply_count,timestamp,post_caption
+csv_1,post_02,reel,@neha_coder,"Bhai iska part 2 kab aayega? LangGraph me human-in-the-loop workflows pe tutorial banao na!",142,16,2026-09-20T10:15:00Z,"Building an AI Agent from scratch with Python and Claude 🤖 Full breakdown in bio"
+csv_2,post_01,reel,@rohit_dev,"FastAPI background tasks vs Celery: which one for handling 100+ webhook calls per minute? 🤔 @priya_techie",89,9,2026-09-21T14:30:00Z,"FastAPI + Next.js is my favorite full-stack stack in 2026. Here's why 👇"
+csv_3,post_03,reel,@tanvi_ui,"Next.js 15 Server Actions error handling pattern with Zod tutorial needed please!",210,24,2026-09-22T08:45:00Z,"Stop using useEffect for data fetching in React! Here is what to do instead ❌"
+csv_4,post_01,reel,@spam_bot_01,"Earn $500 daily trading crypto! DM me now 🚀💸",0,0,2026-09-22T09:00:00Z,"FastAPI + Next.js is my favorite full-stack stack in 2026. Here's why 👇"
+csv_5,post_09,carousel,@vikram_cloud,"Postgres connection pool exhaustion in serverless: how does PgBouncer help? 🤔",67,5,2026-09-23T11:20:00Z,"How I scaled my PostgreSQL database to 500,000 queries per day on a $10 VPS 💡"
+csv_6,post_01,reel,@ananya_sde,"🔥🔥🔥",5,0,2026-09-23T12:00:00Z,"FastAPI + Next.js is my favorite full-stack stack in 2026. Here's why 👇"
+csv_7,post_08,carousel,@kunal_sys,"Bhai ek video banao on system design of WhatsApp live location tracking feature! @amit_sysdesign dekh",340,38,2026-09-24T16:10:00Z,"Top 5 System Design concepts every Senior Dev must know before an interview 🚀"
+csv_8,post_05,reel,@priya_tech,"Samajh nahi aaya: JWT stateless hai toh revoking token on password change kaise karein? 🤷‍♂️",115,12,2026-09-25T18:25:00Z,"Authentication is broken: Why JWT in localStorage is a huge security risk 🔒"
+csv_9,post_06,reel,@rahul_ops,"Docker multi-stage build size optimization for Next.js standalone output video please! Link? 🐳",94,8,2026-09-26T07:40:00Z,"How I cut my Docker image size from 1.4GB down to 88MB in 3 steps 🚀"
+csv_10,post_02,reel,@amit_singh,"Loved the explanation brother! Best practical breakdown on the internet 🙌🔥",48,2,2026-09-26T19:50:00Z,"Building an AI Agent from scratch with Python and Claude 🤖 Full breakdown in bio"
+csv_11,post_09,carousel,@deepak_m,"Why not use SQLite WAL mode for simple apps instead of spinning up Postgres? 🤔",52,4,2026-09-27T09:15:00Z,"How I scaled my PostgreSQL database to 500,000 queries per day on a $10 VPS 💡"
+csv_12,post_03,reel,@shreya_front,"Hydration failed because server rendered HTML didn't match client... how to debug cleanly? 😭",78,11,2026-09-27T13:30:00Z,"Stop using useEffect for data fetching in React! Here is what to do instead ❌"

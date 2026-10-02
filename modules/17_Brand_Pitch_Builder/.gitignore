@@ -1,0 +1,11 @@
+node_modules/
+.env
+*.log
+dist/
+client/dist/
+server/data/*.db
+server/data/*.db-journal
+.DS_Store
+Thumbs.db
+.vite/
+client/.vite/

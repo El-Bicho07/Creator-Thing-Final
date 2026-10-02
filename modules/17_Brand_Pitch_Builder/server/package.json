@@ -1,0 +1,21 @@
+{
+  "name": "brand-pitch-builder-server",
+  "version": "1.0.0",
+  "description": "Backend API for Brand Pitch Builder",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test tests/proposalLogic.test.js"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.2.13",
+    "@langchain/google-genai": "^2.3.2",
+    "brand-pitch-builder": "file:..",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "langchain": "^1.5.14"
+  },
+  "type": "commonjs"
+}

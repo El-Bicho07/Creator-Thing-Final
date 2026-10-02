@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #070A0F;
+    --card-bg: #111722;
+    --border-color: #1E293B;
+  }
+
+  body {
+    @apply bg-charcoal-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-lime-accent selection:text-charcoal-950;
+    background-color: #070A0F;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(163, 230, 53, 0.04) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.03) 0px, transparent 50%);
+  }
+
+  /* Custom Sleek Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B0F17;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A3E635;
+  }
+}
+
+/* Glassmorphism and Card Styling */
+.card-glass {
+  background: rgba(17, 23, 34, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.card-glass:hover {
+  border-color: rgba(163, 230, 53, 0.25);
+}
+
+.card-lime-highlight {
+  background: linear-gradient(135deg, rgba(163, 230, 53, 0.12) 0%, rgba(17, 23, 34, 0.95) 100%);
+  border: 1px solid rgba(163, 230, 53, 0.3);
+}
+
+/* Shimmer animation for loading states */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s infinite;
+}

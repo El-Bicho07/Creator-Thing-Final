@@ -1,0 +1,27 @@
+{
+  "name": "brand-pitch-builder-client",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "brand-pitch-builder": "file:..",
+    "canvas-confetti": "^1.9.3",
+    "html2pdf.js": "^0.10.2",
+    "lucide-react": "^0.453.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "puppeteer-core": "^25.12.0",
+    "tailwindcss": "^3.4.15",
+    "vite": "^5.4.11"
+  }
+}

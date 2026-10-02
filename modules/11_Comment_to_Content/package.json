@@ -1,0 +1,12 @@
+{
+  "name": "comidea-root",
+  "version": "1.0.0",
+  "description": "ComIdea — Comment-to-Content Engine for Creators",
+  "scripts": {
+    "dev": "node scripts/start_dev.js",
+    "dev:backend": "uvicorn backend.app.main:app --host 0.0.0.0 --port 8000 --reload",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "test:backend": "python backend/tests/test_pipeline.py"
+  }
+}

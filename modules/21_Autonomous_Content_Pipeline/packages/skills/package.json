@@ -1,0 +1,28 @@
+{
+  "name": "@contentyou/skills",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@contentyou/ai": "workspace:*",
+    "@contentyou/schemas": "workspace:*",
+    "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "eslint": "9.20.1",
+    "typescript": "5.7.3",
+    "vitest": "3.0.5"
+  },
+  "dependencyNotes": {
+    "typescript": "Toolchain for typechecking",
+    "eslint": "Toolchain for linting",
+    "vitest": "Toolchain for testing"
+  }
+}

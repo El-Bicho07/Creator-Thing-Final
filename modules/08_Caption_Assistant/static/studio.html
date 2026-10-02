@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>captioncraft studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="studio">
+<nav><a href="index.html" class="logo">caption<i>craft</i></a><div class="links"><a href="index.html" data-r="home">home</a><a href="studio.html" data-r="studio">studio</a></div></nav>
+<main class="view on">
+<div class="studio">
+ <p class="par">( The studio )</p>
+ <h2>Craft your <span class="serif">caption.</span></h2>
+ <div class="grid">
+  <div class="panel">
+   <div class="f"><div class="lb"><span>Your post</span><span id="fn"></span></div>
+    <label class="drop" id="drop"><input type="file" id="file" accept="image/*" hidden><div><b>Drop a photo</b><br><span class="par">or click to upload</span></div></label></div>
+   <div class="f"><label for="desc">Or describe it</label><textarea id="desc" rows="4" placeholder="Sunset chai on my terrace after a brutal week, finally finished my first solo project..."></textarea></div>
+   <div class="f"><div class="lb">Format</div><div class="chips" id="fmt" data-one="1"><button class="chip on" style="--c:var(--lilac)">Photo post</button><button class="chip" style="--c:var(--blush)">Reel</button><button class="chip" style="--c:var(--sky)">Carousel</button></div></div>
+   <div class="f"><div class="lb"><span>Tone</span><span>pick up to 3</span></div><div class="chips" id="tone" data-max="3"></div></div>
+   <div class="f"><div class="lb"><span>Vibe</span></div><div class="chips" id="vibe" data-one="1"></div></div>
+   <div class="f"><div class="lb"><span>Hook style</span></div><div class="chips" id="hook" data-one="1"></div></div>
+   <div class="f"><div class="lb"><span>Goal</span><span>what should it win</span></div><div class="chips" id="goal" data-one="1"></div></div>
+   <div class="two f"><div><label for="niche" class="lb">Niche</label><input type="text" id="niche" placeholder="travel, fitness, tech..."></div>
+    <div><label for="lang" class="lb">Language</label><select id="lang"><option>English</option><option>Hinglish</option><option>Tanglish (Tamil + English)</option><option>Spanish</option><option>French</option></select></div></div>
+   <div class="f"><label for="len"><span>Length</span><span id="lv">Medium</span></label><input type="range" id="len" min="0" max="2" value="1"></div>
+   <div class="f"><label class="sw">Emojis<input type="checkbox" id="emo" checked></label><label class="sw">Hashtags (max 5, relevant)<input type="checkbox" id="hsh" checked></label><label class="sw">SEO keywords in first line<input type="checkbox" id="seo" checked></label><label class="sw">Call to action<input type="checkbox" id="cta" checked></label></div>
+   <button class="btn" id="go" style="width:100%;justify-content:center">Craft captions ✦</button>
+  </div>
+  <div class="panel res"><div id="out"><div class="empty"><div><div class="ball"></div><p class="big" style="font-size:34px;margin:0">Your captions <span class="serif">appear here.</span></p><p class="par" style="margin-top:14px">four takes &middot; pick your favourite</p></div></div></div></div>
+ </div>
+</div>
+</main>
+<script src="common.js"></script>
+<script src="studio.js"></script>
+</body>
+</html>

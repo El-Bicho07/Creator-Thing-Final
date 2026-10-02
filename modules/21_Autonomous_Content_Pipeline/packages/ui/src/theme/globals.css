@@ -1,0 +1,34 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #F9FAFB;
+    --foreground: #06141B;
+    --surface: #FFFFFF;
+    --border: #E5E7EB;
+    
+    /* Light theme accents (from the palette block, preserved as identity) */
+    --accent: #800021;
+    --accent-hover: #881144;
+    --accent-blue: #243A66;
+    --accent-coral: #C24366;
+    --accent-pink: #FF69B4;
+  }
+
+  :root[data-theme="dark"] {
+    /* Dark theme exactly as specified */
+    --background: #06141B;
+    --foreground: #CCD0CF;
+    --surface: #11212D;
+    --surface-raised: #253745;
+    --border: #4A5C6A;
+    --text-muted: #9BA8AB;
+    
+    --accent: #FF69B4;
+    --accent-hover: #C24366;
+    --accent-blue: #243A66;
+  }
+}

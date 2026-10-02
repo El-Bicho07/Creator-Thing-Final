@@ -1,0 +1,20 @@
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    container_name: second_brain_db
+    environment:
+      POSTGRES_USER: brain
+      POSTGRES_PASSWORD: brain
+      POSTGRES_DB: brain
+    ports:
+      - "5433:5432"
+    volumes:
+      - brain_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U brain -d brain"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  brain_pgdata:

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Comment Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- ─── SIDEBAR ──────────────────────────────────── -->
+    <aside class="sidebar">
+      <a href="/index.html" class="sidebar-logo">C:S</a>
+      <nav class="sidebar-nav">
+        <a href="/index.html" class="nav-item">← Home</a>
+        <a href="/dashboard.html" class="nav-item active">Dashboard</a>
+      </nav>
+      <div class="sidebar-footer">Comment<br/>Analyzer</div>
+    </aside>
+
+    <!-- ─── MAIN ─────────────────────────────────────── -->
+    <main class="main">
+
+      <!-- Page Header -->
+      <header class="page-header">
+        <h1 class="page-title">Dashboard</h1>
+        <div class="title-rule"></div>
+      </header>
+
+      <!-- ─── URL INGESTION ─── -->
+      <section class="ingest-card">
+        <p class="ingest-label">PASTE INSTAGRAM LINK</p>
+        <div class="ingest-row">
+          <input
+            id="post-url"
+            type="url"
+            class="url-input"
+            placeholder="https://www.instagram.com/reel/C8XYZ..."
+            autocomplete="off"
+          />
+          <button id="analyze-btn" class="analyze-btn">Analyze →</button>
+        </div>
+
+        <div class="history-row" id="history-row" style="display:none;">
+          <span class="history-label">Previous analyses:</span>
+          <select id="history-select" class="history-select">
+            <option value="">Load a past post…</option>
+          </select>
+        </div>
+
+        <div id="loading-bar"  class="loading-bar hidden">
+          <div class="loading-fill"></div>
+        </div>
+        <p id="loading-text" class="loading-text hidden">
+          Fetching comments &amp; running NLP classification…
+        </p>
+        <p id="error-text" class="error-text hidden"></p>
+      </section>
+
+      <!-- ─── RESULTS ─── -->
+      <div id="results" class="hidden">
+
+        <div class="active-post-row">
+          <span class="active-post-label">ACTIVE POST</span>
+          <span id="active-shortcode" class="active-post-code"></span>
+        </div>
+
+        <!-- Metric Strip -->
+        <section class="metric-strip">
+          <div class="metric-card">
+            <span class="metric-label">TOTAL PROCESSED</span>
+            <span id="m-total" class="metric-value">—</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">QUESTIONS</span>
+            <span id="m-questions" class="metric-value">—</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">COMPLAINTS</span>
+            <span id="m-complaints" class="metric-value complaint-color">—</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">OPPORTUNITIES</span>
+            <span id="m-leads" class="metric-value lead-color">—</span>
+          </div>
+        </section>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="tab active" data-filter="All">All</button>
+          <button class="tab" data-filter="Theme">Themes</button>
+          <button class="tab" data-filter="Question">Questions</button>
+          <button class="tab" data-filter="Complaint">Complaints</button>
+          <button class="tab" data-filter="Opportunity">Opportunities</button>
+        </div>
+
+        <!-- Comment Feed -->
+        <div id="comment-feed" class="comment-feed"></div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

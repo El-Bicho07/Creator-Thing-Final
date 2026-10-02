@@ -1,0 +1,11 @@
+import Link from "next/link";import { ArrowRight, Type, FileText, ListOrdered, Star } from "lucide-react";
+const F=[[Type,"Title","A strong main title plus 3 alternatives to A/B test."],[FileText,"Description","A clear episode description ready for your feed."],[ListOrdered,"Chapters","5–10 timestamped chapters that follow real topic shifts."],[Star,"Highlights","5–8 quotable moments with the reason they matter."]] as const;
+const S=[["Paste","Paste or upload your transcript."],["Generate","AI analyzes the whole episode."],["Publish","Edit, copy and ship."]];
+export default function Home(){return <div>
+<section className="animate-up text-center py-8 sm:py-16"><span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">For podcast creators</span>
+<h1 className="mx-auto mt-5 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-6xl">Turn your podcast transcript into <span className="bg-gradient-to-r from-indigo-600 to-violet-500 bg-clip-text text-transparent">publish-ready content.</span></h1>
+<p className="mx-auto mt-5 max-w-xl text-slate-600">PodCraft reads your full transcript and drafts titles, a description, chapters and highlights, grounded only in what was actually said.</p>
+<Link href="/create" className="btn-p mt-8 px-6 py-3 text-base">Create Episode <ArrowRight className="h-4 w-4"/></Link></section>
+<section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{F.map(([I,t,d],i)=><div key={t} style={{animationDelay:`${i*80}ms`}} className="card animate-up p-5 transition hover:-translate-y-1 hover:shadow-md">
+<span className="grid h-10 w-10 place-items-center rounded-xl bg-indigo-50 text-indigo-600"><I className="h-5 w-5"/></span><h3 className="mt-4 font-semibold">{t}</h3><p className="mt-1 text-sm text-slate-600">{d}</p></div>)}</section>
+<section className="mt-16"><h2 className="text-center text-2xl font-bold">How it works</h2><div className="mt-8 grid gap-4 sm:grid-cols-3">{S.map(([t,d],i)=><div key={t} className="card p-5 text-center"><span className="mx-auto grid h-9 w-9 place-items-center rounded-full bg-indigo-600 font-bold text-white">{i+1}</span><h3 className="mt-3 font-semibold">{t}</h3><p className="text-sm text-slate-600">{d}</p></div>)}</div></section></div>}

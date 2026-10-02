@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": "tech-001",
+      "caption": "5 AI Agent Frameworks You Need to Know in 2026 🚀\n\nBuilding autonomous AI systems is moving faster than ever. If you're still writing custom wrapper scripts from scratch, you are losing hours of development time.\n\nHere are the top 5 frameworks reshaping AI engineering:\n\n• LangGraph — State graph orchestration for resilient multi-agent systems\n• AutoGen — Multi-agent conversation and task delegation\n• CrewAI — Role-playing AI agents working in structured crews\n• Semantic Kernel — Enterprise-grade AI integration by Microsoft\n• LlamaIndex — Data-centric agentic RAG & document knowledge graphs\n\nPro tip: Start by defining clear tool schemas before building your agent graph.\n\nWhich framework are you building with this week? Drop a comment below! 👇",
+      "hashtags": ["#ai", "#python", "#softwareengineering", "#tech", "#aiagents"],
+      "media_path": "",
+      "post_type": "educational",
+      "published_at": "2026-01-10"
+    },
+    {
+      "id": "tech-002",
+      "caption": "Why 90% of LLM Applications Fail in Production (And How to Fix It) 💡\n\nMost developers build a demo in a Jupyter notebook, hit 95% accuracy, and assume it's ready to ship. Then real users hit it with edge cases and costs explode.\n\nHere are the 3 major pitfalls:\n\n1. No Deterministic Guardrails — Relying solely on prompt instructions instead of structured JSON outputs.\n2. Lack of Vector Indexing — Passing massive raw contexts into context windows instead of semantic hybrid search.\n3. Unmonitored Token Spikes — Failing to track usage metrics per user query.\n\nStop shipping fragile demos. Build resilient systems.\n\nSave this post for your next architecture review! 📌",
+      "hashtags": ["#ai", "#developers", "#coding", "#techlead", "#architecture"],
+      "media_path": "",
+      "post_type": "educational",
+      "published_at": "2026-01-14"
+    },
+    {
+      "id": "tech-003",
+      "caption": "How I built a full-stack AI app in 48 hours ⏱️🔥\n\nTwo years ago, building a vector search web app required a team of 4 engineers and weeks of setup.\n\nLast weekend, I launched an AI content analyzer from scratch using FastAPI, Next.js, and pgvector.\n\nThe lesson? Tooling has caught up with developer imagination. Stop overcomplicating your stack.\n\n• Backend: Python + FastAPI\n• Database: PostgreSQL + pgvector\n• Frontend: Next.js App Router + Tailwind\n• Embeddings: Sentence-Transformers\n\nWhat are you launching this month? Let me know in the comments! 👇",
+      "hashtags": ["#buildinpublic", "#indiehacker", "#fullstack", "#nextjs", "#fastapi"],
+      "media_path": "",
+      "post_type": "storytelling",
+      "published_at": "2026-01-18"
+    },
+    {
+      "id": "tech-004",
+      "caption": "The Ultimate System Prompt Template for Clean JSON Outputs 📄🤖\n\nGetting an LLM to return strictly valid JSON without markdown wrapping or conversational filler can be frustrating.\n\nUse this 3-part prompt structure:\n\n1. Explicit Role Declaration — Declare the model as a schema-enforcing parser.\n2. Mandatory JSON Schema — Provide exact target key-value pairs.\n3. Zero-Filler Constraint — Instruct 'Return ONLY valid JSON. No conversational text.'\n\nSave this framework for your next backend API! 📌",
+      "hashtags": ["#promptengineering", "#ai", "#backend", "#python", "#developer"],
+      "media_path": "",
+      "post_type": "educational",
+      "published_at": "2026-01-22"
+    },
+    {
+      "id": "tech-005",
+      "caption": "🚀 Master AI Engineering: Launching our new 2026 Masterclass!\n\nWant to level up from prompt engineer to full-stack AI system architect?\n\nOur flagship course covers:\n• Multi-agent orchestration\n• pgvector & hybrid search\n• Custom tool use & guardrails\n• Production evaluation & observability\n\nLimited spots available for the Q1 cohort.\n\nClick the link in bio to enroll today! 🔗",
+      "hashtags": ["#aifeatures", "#learncode", "#course", "#techcareers", "#aiengineering"],
+      "media_path": "",
+      "post_type": "promotional",
+      "published_at": "2026-01-26"
+    }
+  ]
+}

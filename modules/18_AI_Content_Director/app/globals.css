@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 246 80% 60%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 246 80% 52%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 250 85% 96%;
+    --accent-foreground: 246 80% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 246 80% 60%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 246 85% 65%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 246 85% 58%;
+
+    --secondary: 217.2 32.6% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 14%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 245 40% 16%;
+    --accent-foreground: 246 90% 75%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 16%;
+    --input: 217.2 32.6% 16%;
+    --ring: 246 85% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100dvh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Safe area insets for iOS notches and dynamic home bar */
+  .p-safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .p-safe-top {
+    padding-top: max(0.5rem, env(safe-area-inset-top));
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.45);
+}
+
+/* Responsive Table Container */
+.responsive-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Print Stylesheet for PDF Export */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+
+  .no-print,
+  nav,
+  header,
+  aside,
+  button,
+  .sticky-bottom-bar {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+}
+
+/* Floating Elements Keyframes */
+@keyframes floatParticleSlow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translateY(-18px) translateX(6px) rotate(4deg) scale(1.05);
+  }
+  66% {
+    transform: translateY(-8px) translateX(-6px) rotate(-4deg) scale(0.98);
+  }
+}
+
+@keyframes floatParticleFast {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-24px) translateX(10px) rotate(8deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatParticleSlow 7s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: floatParticleFast 4.5s ease-in-out infinite;
+}
+
+/* Gaming & Video Editor Splash Screen Animations */
+@keyframes spinReel {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spinReelReverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes lensFlareSweep {
+  0% {
+    transform: translateX(-150%) scaleX(0.5);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+    transform: translateX(0%) scaleX(1.4);
+  }
+  70% {
+    opacity: 0.9;
+    transform: translateX(50%) scaleX(1.2);
+  }
+  100% {
+    transform: translateX(180%) scaleX(0.6);
+    opacity: 0;
+  }
+}
+
+@keyframes scanlineSweep {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+@keyframes glitchFlicker {
+  0%, 100% { opacity: 1; transform: translate(0, 0); }
+  92% { opacity: 1; transform: translate(0, 0); }
+  93% { opacity: 0.8; transform: translate(-2px, 1px); }
+  94% { opacity: 1; transform: translate(2px, -1px); }
+  95% { opacity: 0.9; transform: translate(0, 0); }
+}
+
+@keyframes soundWaveBar {
+  0%, 100% { height: 6px; }
+  50% { height: 28px; }
+}
+
+@keyframes radarSweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-reel {
+  animation: spinReel 4s linear infinite;
+}
+
+.animate-spin-reel-fast {
+  animation: spinReel 1.8s linear infinite;
+}
+
+.animate-spin-reel-reverse {
+  animation: spinReelReverse 3.5s linear infinite;
+}
+
+.animate-flare-sweep {
+  animation: lensFlareSweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-scanline {
+  animation: scanlineSweep 4s linear infinite;
+}
+
+.animate-glitch {
+  animation: glitchFlicker 4s ease-in-out infinite;
+}
+
+.animate-radar {
+  animation: radarSweep 6s linear infinite;
+}
+

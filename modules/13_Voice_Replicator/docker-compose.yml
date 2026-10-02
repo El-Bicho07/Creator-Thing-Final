@@ -1,0 +1,16 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: instagram_voice_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: instagram_voice
+      POSTGRES_USER: instagram_user
+      POSTGRES_PASSWORD: instagram_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

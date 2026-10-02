@@ -1,0 +1,2 @@
+-- Initial Supabase Migration for Trend-to-Content Engine
+-- See supabase/schema.sql for the complete SQL schema.

@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #f8faf8;
+    --foreground: #152218;
+    --card: #ffffff;
+    --card-foreground: #152218;
+    --card-border: #e3ece5;
+    --primary: #3b8253;
+    --primary-hover: #2e6a43;
+    --primary-foreground: #ffffff;
+    --accent: #52b773;
+    --pista-50: #f4faf5;
+    --pista-100: #eaf6ee;
+    --pista-200: #d2ecda;
+    --pista-300: #aee0bc;
+    --pista-400: #7ccb91;
+    --pista-500: #4fad68;
+    --pista-600: #3b8253;
+    --pista-700: #2f6a44;
+    --pista-800: #285437;
+    --pista-900: #193422;
+    --muted: #f0f6f2;
+    --muted-foreground: #5c6f62;
+    --border: #e2ede5;
+  }
+
+  .dark {
+    --background: #0d1510;
+    --foreground: #f3f8f4;
+    --card: #141e17;
+    --card-foreground: #f3f8f4;
+    --card-border: rgba(255, 255, 255, 0.08);
+    --primary: #4fad68;
+    --primary-hover: #3b8253;
+    --primary-foreground: #ffffff;
+    --accent: #6ec886;
+    --pista-50: #141e17;
+    --pista-100: #19271e;
+    --pista-200: #22372a;
+    --pista-300: #2d4c39;
+    --pista-400: #3b684c;
+    --pista-500: #4fad68;
+    --pista-600: #6ec886;
+    --pista-700: #93dba6;
+    --pista-800: #bbf0cb;
+    --pista-900: #e2fae9;
+    --muted: #18241c;
+    --muted-foreground: #8fa596;
+    --border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Clean Pista & White panels */
+.pista-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(33, 66, 44, 0.04);
+}
+
+.pista-card-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pista-card-hover:hover {
+  border-color: #7ccb91;
+  box-shadow: 0 8px 24px -4px rgba(47, 106, 68, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Subtle Pista gradient pill */
+.pista-pill {
+  background-color: var(--pista-100);
+  color: var(--pista-700);
+  border: 1px solid var(--pista-200);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 173, 104, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 173, 104, 0.45);
+}

@@ -1,0 +1,23 @@
+{
+  "name": "content-recycler-platform",
+  "version": "1.0.0",
+  "description": "AI-Powered Instagram Content Intelligence and Recycling Platform - Smart India Hackathon",
+  "private": true,
+  "scripts": {
+    "start:backend": "cd backend && node server.js",
+    "dev:backend": "cd backend && node server.js",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": [
+    "smart-india-hackathon",
+    "content-recycling",
+    "instagram-analytics",
+    "recommendation-engine",
+    "tf-idf",
+    "nlp"
+  ],
+  "author": "Smart India Hackathon Team",
+  "license": "MIT"
+}

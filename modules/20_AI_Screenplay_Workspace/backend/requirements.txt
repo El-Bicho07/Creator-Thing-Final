@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+langchain
+langchain-google-genai
+langchain-community
+langchain-core
+langgraph
+chromadb
+python-dotenv
+motor  # Async MongoDB driver
+neo4j  # Neo4j python driver

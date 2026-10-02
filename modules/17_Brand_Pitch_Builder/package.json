@@ -1,0 +1,23 @@
+{
+  "name": "brand-pitch-builder",
+  "version": "1.0.0",
+  "description": "Personalized Brand Collaboration Proposal & Pitch Builder for Content Creators",
+  "private": true,
+  "scripts": {
+    "server": "node server/src/index.js",
+    "client": "npm --prefix client run dev",
+    "dev": "node -e \"const { spawn } = require('child_process'); const isWin = process.platform === 'win32'; const npm = isWin ? 'npm.cmd' : 'npm'; spawn(npm, ['--prefix', 'server', 'run', 'dev'], { stdio: 'inherit' }); spawn(npm, ['--prefix', 'client', 'run', 'dev'], { stdio: 'inherit' });\"",
+    "test": "node --test server/tests/proposalLogic.test.js",
+    "install:all": "node -e \"const { execSync } = require('child_process'); const isWin = process.platform === 'win32'; const npm = isWin ? 'npm.cmd' : 'npm'; console.log('Installing server dependencies...'); execSync(`${npm} --prefix server install`, { stdio: 'inherit' }); console.log('Installing client dependencies...'); execSync(`${npm} --prefix client install`, { stdio: 'inherit' });\""
+  },
+  "keywords": [
+    "creator-economy",
+    "brand-pitch",
+    "ai-proposal-builder",
+    "influencer-marketing",
+    "react",
+    "express"
+  ],
+  "author": "Brand Pitch Builder Team",
+  "license": "MIT"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@contentyou/ai",
+  "version": "0.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@contentyou/schemas": "workspace:*",
+    "@google/genai": "^2.24.0",
+    "duck-duck-scrape": "^2.2.7",
+    "openai": "^7.23.0",
+    "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "eslint": "9.20.1",
+    "typescript": "5.7.3",
+    "vitest": "3.0.5"
+  },
+  "dependencyNotes": {
+    "typescript": "Toolchain for typechecking",
+    "eslint": "Toolchain for linting",
+    "vitest": "Toolchain for testing"
+  }
+}

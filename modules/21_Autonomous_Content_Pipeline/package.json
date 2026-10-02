@@ -1,0 +1,24 @@
+{
+  "name": "contentyou",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "checkpoints": "node scripts/checkpoints.mjs",
+    "test:integration": "vitest run tests/integration",
+    "test:chaos": "vitest run tests/chaos",
+    "eval": "node evals/index.ts"
+  },
+  "devDependencies": {
+    "turbo": "2.4.2",
+    "typescript": "5.7.3",
+    "vitest": "3.0.5",
+    "eslint": "9.20.1",
+    "prettier": "3.5.0"
+  },
+  "packageManager": "pnpm@10.4.0"
+}

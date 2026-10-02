@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0E2327;
+  --color-surface: #153037;
+  --color-line: #2A4C54;
+  --color-text: #E9EFEA;
+  --color-muted: #8FA8A6;
+  --color-voice: #F0B429;
+  --color-onvoice: #1A1405;
+  --color-pass: #6FD3A8;
+  --color-warn: #FF6B57;
+}
+
+:root {
+  --bg: #0E2327;
+  --surface: #153037;
+  --line: #2A4C54;
+  --text: #E9EFEA;
+  --text-muted: #8FA8A6;
+  --voice: #F0B429;
+  --on-voice: #1A1405;
+  --pass: #6FD3A8;
+  --warn: #FF6B57;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Editorial card panel - flat deep teal surface with line border */
+.card-panel {
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+}
+
+/* Editorial copy editor highlighter effect */
+.highlighter {
+  background-color: var(--voice);
+  color: var(--on-voice);
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.15rem;
+  font-weight: 600;
+  display: inline;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

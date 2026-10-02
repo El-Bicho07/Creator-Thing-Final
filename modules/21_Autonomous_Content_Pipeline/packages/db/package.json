@@ -1,0 +1,29 @@
+{
+  "name": "@contentyou/db",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@contentyou/schemas": "workspace:*",
+    "mongodb": "^7.6.0",
+    "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "eslint": "9.20.1",
+    "mongodb-memory-server": "^11.3.0",
+    "typescript": "5.7.3",
+    "vitest": "3.0.5"
+  },
+  "dependencyNotes": {
+    "typescript": "Toolchain for typechecking",
+    "eslint": "Toolchain for linting",
+    "vitest": "Toolchain for testing"
+  }
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comment Analyzer — by C:S</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0a0a0a;
+      --bg-2:    #111111;
+      --bg-3:    #1a1a1a;
+      --border:  rgba(202,202,202,0.08);
+      --bone:    #cacaca;
+      --iron:    #727272;
+      --white:   #ffffff;
+      --coral:   #ff7777;
+      --blue:    #70b5ff;
+      --green:   #5cd698;
+      --font:    'Inter', ui-sans-serif, system-ui, sans-serif;
+    }
+
+    html, body { height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--bone);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── Top nav ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .nav-logo { font-size: 17px; color: var(--white); letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 13px; color: var(--iron); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--bone); }
+    .nav-cta {
+      background: var(--bone); color: #000;
+      font-family: var(--font); font-size: 13px; font-weight: 600;
+      padding: 9px 20px; border: none; cursor: pointer; transition: background 0.15s;
+      text-decoration: none; display: inline-block;
+    }
+    .nav-cta:hover { background: var(--white); }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 80px 80px;
+      position: relative;
+    }
+
+    /* Subtle grid backdrop */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      color: var(--iron);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px; height: 1px;
+      background: var(--coral);
+    }
+
+    .hero-title {
+      font-size: clamp(52px, 8vw, 96px);
+      font-weight: 300;
+      letter-spacing: -3px;
+      line-height: 0.95;
+      color: var(--white);
+      max-width: 900px;
+      margin-bottom: 32px;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--coral);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--iron);
+      max-width: 520px;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+
+    .hero-actions { display: flex; gap: 16px; align-items: center; }
+    .btn-primary {
+      background: var(--white); color: #000;
+      font-family: var(--font); font-size: 14px; font-weight: 600;
+      padding: 14px 32px; border: none; cursor: pointer;
+      transition: background 0.15s, transform 0.15s;
+      text-decoration: none; display: inline-block;
+    }
+    .btn-primary:hover { background: #e0e0e0; transform: translateY(-1px); }
+    .btn-ghost {
+      font-size: 14px; color: var(--bone);
+      background: none; border: 1px solid var(--border);
+      padding: 13px 28px; cursor: pointer; transition: border-color 0.15s;
+      text-decoration: none; display: inline-block; font-family: var(--font);
+    }
+    .btn-ghost:hover { border-color: var(--bone); }
+
+    /* ── Features ── */
+    .features {
+      padding: 120px 80px;
+      border-top: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 11px; letter-spacing: 1px; color: var(--iron);
+      margin-bottom: 56px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-label::before {
+      content: ''; display: inline-block;
+      width: 24px; height: 1px; background: var(--bone);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+    .feature-card {
+      background: var(--bg);
+      padding: 36px 28px;
+      transition: background 0.2s;
+    }
+    .feature-card:hover { background: var(--bg-2); }
+
+    .feature-badge {
+      display: inline-block;
+      font-size: 10px; letter-spacing: 0.6px; font-weight: 500;
+      padding: 3px 10px; margin-bottom: 20px;
+    }
+    .fb-theme      { color: var(--bone);  border: 1px solid rgba(202,202,202,0.25); }
+    .fb-question   { color: var(--blue);  background: rgba(112,181,255,0.1); }
+    .fb-complaint  { color: var(--coral); background: rgba(255,119,119,0.1); }
+    .fb-opportunity{ color: var(--green); background: rgba(92,214,152,0.1); }
+
+    .feature-title { font-size: 18px; font-weight: 400; color: var(--white); margin-bottom: 10px; letter-spacing: -0.3px; }
+    .feature-desc  { font-size: 13px; color: var(--iron); line-height: 1.65; }
+
+    /* ── How it works ── */
+    .how {
+      padding: 120px 80px;
+      border-top: 1px solid var(--border);
+    }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      margin-top: 56px;
+    }
+    .step-number {
+      font-size: 48px; font-weight: 300; color: var(--bg-3);
+      letter-spacing: -2px; margin-bottom: 16px;
+    }
+    .step-title { font-size: 16px; color: var(--white); margin-bottom: 8px; }
+    .step-desc  { font-size: 13px; color: var(--iron); line-height: 1.65; }
+
+    /* ── Metrics preview ── */
+    .preview {
+      padding: 80px;
+      border-top: 1px solid var(--border);
+      background: var(--bg-2);
+    }
+    .preview-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .preview-title {
+      font-size: 36px; font-weight: 300; letter-spacing: -1.5px; color: var(--white);
+      margin-bottom: 40px;
+    }
+    .preview-metrics {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 40px;
+    }
+    .pm-card {
+      border: 1px solid var(--border); padding: 20px;
+    }
+    .pm-label { font-size: 10px; letter-spacing: 0.8px; color: var(--iron); margin-bottom: 10px; }
+    .pm-value { font-size: 36px; font-weight: 300; letter-spacing: -2px; color: var(--white); }
+    .pm-coral { color: var(--coral); }
+    .pm-green { color: var(--green); }
+
+    /* ── CTA section ── */
+    .cta-section {
+      padding: 120px 80px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .cta-title {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 300; letter-spacing: -2.5px; color: var(--white);
+      margin-bottom: 24px; line-height: 1;
+    }
+    .cta-sub {
+      font-size: 15px; color: var(--iron); margin-bottom: 40px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 80px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-logo { font-size: 14px; color: var(--iron); }
+    .footer-note { font-size: 12px; color: var(--bg-3); }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-logo">C:S</div>
+    <ul class="nav-links">
+      <li><a href="#">Features</a></li>
+      <li><a href="#">How it Works</a></li>
+      <li><a href="/dashboard.html">Dashboard</a></li>
+    </ul>
+    <a href="/dashboard.html" class="nav-cta">Open Dashboard →</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-eyebrow">INSTAGRAM COMMENT ANALYZER</p>
+    <h1 class="hero-title">Turn comments<br/>into <em>content strategy.</em></h1>
+    <p class="hero-sub">Analyze every comment and reply on posts managed by your connected Instagram professional account. Paginated fetching and batched AI classification turn the full thread into useful categories.</p>
+    <div class="hero-actions">
+      <a href="/dashboard.html" class="btn-primary">Start Analyzing →</a>
+      <a href="#how" class="btn-ghost">See How It Works</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <p class="section-label">PILLAR CATEGORIES</p>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <span class="feature-badge fb-theme">THEME</span>
+        <h3 class="feature-title">Sentiment & Hype</h3>
+        <p class="feature-desc">General praise, opinions, and community sentiment that define your brand perception.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-badge fb-question">QUESTION</span>
+        <h3 class="feature-title">Audience Questions</h3>
+        <p class="feature-desc">How-tos, pricing queries, tool requests — high-value prompts that drive engagement content.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-badge fb-complaint">COMPLAINT</span>
+        <h3 class="feature-title">Priority Complaints</h3>
+        <p class="feature-desc">Bug reports, frustration signals, and dissatisfaction flagged for immediate triage.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-badge fb-opportunity">OPPORTUNITY</span>
+        <h3 class="feature-title">Content Leads</h3>
+        <p class="feature-desc">Brand collab requests, partnership signals, and high-intent leads — don't let them slip by.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how" id="how">
+    <p class="section-label">HOW IT WORKS</p>
+    <div class="how-grid">
+      <div>
+        <div class="step-number">01</div>
+        <h3 class="step-title">Paste a Link</h3>
+        <p class="step-desc">Paste a permalink from the connected professional account. The analyzer finds the post and follows every available comments page.</p>
+      </div>
+      <div>
+        <div class="step-number">02</div>
+        <h3 class="step-title">Hustle Bot Filters</h3>
+        <p class="step-desc">Spam, bot activity, and promotional noise are automatically removed. Emojis are translated for accurate NLP analysis.</p>
+      </div>
+      <div>
+        <div class="step-number">03</div>
+        <h3 class="step-title">Gemini Classifies</h3>
+        <p class="step-desc">Google Gemini 2.5 Flash classifies comments in batches of 25, including replies, into four actionable categories.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Preview -->
+  <section class="preview">
+    <div class="preview-inner">
+      <h2 class="preview-title">The whole conversation, not a sample.</h2>
+      <div class="preview-metrics">
+        <div class="pm-card">
+          <div class="pm-label">COMMENT PAGES</div>
+          <div class="pm-value">All</div>
+        </div>
+        <div class="pm-card">
+          <div class="pm-label">REPLIES</div>
+          <div class="pm-value">Included</div>
+        </div>
+        <div class="pm-card">
+          <div class="pm-label">AI BATCH SIZE</div>
+          <div class="pm-value pm-coral">25</div>
+        </div>
+        <div class="pm-card">
+          <div class="pm-label">CATEGORIES</div>
+          <div class="pm-value pm-green">4</div>
+        </div>
+      </div>
+      <a href="/dashboard.html" class="btn-primary">Open Live Dashboard →</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 class="cta-title">Ready to decode<br/>your audience?</h2>
+    <p class="cta-sub">Requires Meta and Gemini credentials. Posts must belong to your connected account.</p>
+    <a href="/dashboard.html" class="btn-primary">Go to Dashboard →</a>
+  </section>
+
+  <footer>
+    <span class="footer-logo">C:S / Comment Analyzer</span>
+    <span class="footer-note">Powered by Gemini 2.5 Flash</span>
+  </footer>
+
+</body>
+</html>
