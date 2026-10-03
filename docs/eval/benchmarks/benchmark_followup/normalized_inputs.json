@@ -1,0 +1,4341 @@
+{
+ "normalization_tool": "indic-transliteration",
+ "tool_version": "2.3.75",
+ "schemes": {
+  "ta": "optitrans_dravidian",
+  "hi": "iast"
+ },
+ "stats": {
+  "A": {
+   "transliterated": 78,
+   "unchanged": 147,
+   "skipped": 0,
+   "error": 0
+  },
+  "B_doc": {
+   "romanised": 34,
+   "unchanged": 79,
+   "error": 0
+  },
+  "B_q": {
+   "romanised": 84,
+   "unchanged": 141,
+   "error": 0
+  }
+ },
+ "script_disagreements": [],
+ "documents": {
+  "d_en_hook_001": {
+   "doc_id": "d_en_hook_001",
+   "raw": "Most creators burn out because they optimise for output instead of recovery. Here is the fix that actually worked for me.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Most creators burn out because they optimise for output instead of recovery. Here is the fix that actually worked for me.",
+   "B_status": "unchanged"
+  },
+  "d_en_hook_002": {
+   "doc_id": "d_en_hook_002",
+   "raw": "Your first ten videos will flop. That is not a bug in your content, it is the platform price of admission.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Your first ten videos will flop. That is not a bug in your content, it is the platform price of admission.",
+   "B_status": "unchanged"
+  },
+  "d_en_hook_003": {
+   "doc_id": "d_en_hook_003",
+   "raw": "I analysed eleven years of my own posting data and found the single metric that predicted growth better than views.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "I analysed eleven years of my own posting data and found the single metric that predicted growth better than views.",
+   "B_status": "unchanged"
+  },
+  "d_en_hook_004": {
+   "doc_id": "d_en_hook_004",
+   "raw": "Nobody talks about the editing decision that quietly doubled my retention: cutting every single pause.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Nobody talks about the editing decision that quietly doubled my retention: cutting every single pause.",
+   "B_status": "unchanged"
+  },
+  "d_en_hook_005": {
+   "doc_id": "d_en_hook_005",
+   "raw": "Stop opening with a greeting. The average viewer decides in under two seconds whether your video deserves their time.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Stop opening with a greeting. The average viewer decides in under two seconds whether your video deserves their time.",
+   "B_status": "unchanged"
+  },
+  "d_en_cap_001": {
+   "doc_id": "d_en_cap_001",
+   "raw": "Batching week is the closest thing a solo creator has to a secret weapon. Twelve pieces out of one Sunday, zero weekday burnout.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Batching week is the closest thing a solo creator has to a secret weapon. Twelve pieces out of one Sunday, zero weekday burnout.",
+   "B_status": "unchanged"
+  },
+  "d_en_cap_002": {
+   "doc_id": "d_en_cap_002",
+   "raw": "Reminder that your content does not need to be perfect, it needs to exist. Draft in public and let the algorithm find your angle.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Reminder that your content does not need to be perfect, it needs to exist. Draft in public and let the algorithm find your angle.",
+   "B_status": "unchanged"
+  },
+  "d_en_cap_003": {
+   "doc_id": "d_en_cap_003",
+   "raw": "Six months ago I could not afford a microphone. Today the same microphone paid for itself twice over. Gear is a loan, not a lifestyle.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Six months ago I could not afford a microphone. Today the same microphone paid for itself twice over. Gear is a loan, not a lifestyle.",
+   "B_status": "unchanged"
+  },
+  "d_en_cap_004": {
+   "doc_id": "d_en_cap_004",
+   "raw": "The comment section taught me more than any course ever did. My three best video ideas came directly from audience replies.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "The comment section taught me more than any course ever did. My three best video ideas came directly from audience replies.",
+   "B_status": "unchanged"
+  },
+  "d_en_cap_005": {
+   "doc_id": "d_en_cap_005",
+   "raw": "Posting daily felt productive until I checked retention. Weekly output with real editing beat daily output with none every single time.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Posting daily felt productive until I checked retention. Weekly output with real editing beat daily output with none every single time.",
+   "B_status": "unchanged"
+  },
+  "d_en_cap_006": {
+   "doc_id": "d_en_cap_006",
+   "raw": "If your niche feels saturated, you are competing at the wrong layer. Own the specific question nobody else answers properly.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "If your niche feels saturated, you are competing at the wrong layer. Own the specific question nobody else answers properly.",
+   "B_status": "unchanged"
+  },
+  "d_en_scr_001": {
+   "doc_id": "d_en_scr_001",
+   "raw": "Scene one: state the mistake. Scene two: show the cost of that mistake with a real number. Scene three: the fix in under fifteen seconds. Scene four: invite the save.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Scene one: state the mistake. Scene two: show the cost of that mistake with a real number. Scene three: the fix in under fifteen seconds. Scene four: invite the save.",
+   "B_status": "unchanged"
+  },
+  "d_en_scr_002": {
+   "doc_id": "d_en_scr_002",
+   "raw": "Open on a whiteboard mid-sentence with no introduction. Say the surprising claim, pause, then justify it with evidence before anyone can swipe.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Open on a whiteboard mid-sentence with no introduction. Say the surprising claim, pause, then justify it with evidence before anyone can swipe.",
+   "B_status": "unchanged"
+  },
+  "d_en_scr_003": {
+   "doc_id": "d_en_scr_003",
+   "raw": "Structure for a forty second tutorial: problem in four seconds, demonstration in twenty, one-line recap, then a single call to action for comments.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Structure for a forty second tutorial: problem in four seconds, demonstration in twenty, one-line recap, then a single call to action for comments.",
+   "B_status": "unchanged"
+  },
+  "d_en_scr_004": {
+   "doc_id": "d_en_scr_004",
+   "raw": "Use a before and after split screen. Show the raw footage on the left and the graded result on the right, then explain only the two changes that mattered.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Use a before and after split screen. Show the raw footage on the left and the graded result on the right, then explain only the two changes that mattered.",
+   "B_status": "unchanged"
+  },
+  "d_en_idea_001": {
+   "doc_id": "d_en_idea_001",
+   "raw": "Series idea: a weekly teardown where I take one creator's worst performing post and rewrite the hook live on camera.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Series idea: a weekly teardown where I take one creator's worst performing post and rewrite the hook live on camera.",
+   "B_status": "unchanged"
+  },
+  "d_en_idea_002": {
+   "doc_id": "d_en_idea_002",
+   "raw": "Comparison video contrasting three budgets for the same home studio setup, ending with a tier most beginners should actually pick.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Comparison video contrasting three budgets for the same home studio setup, ending with a tier most beginners should actually pick.",
+   "B_status": "unchanged"
+  },
+  "d_en_idea_003": {
+   "doc_id": "d_en_idea_003",
+   "raw": "Documentary style short following one freelancer for a month, filming the moment a client ghosts them and how they recover.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Documentary style short following one freelancer for a month, filming the moment a client ghosts them and how they recover.",
+   "B_status": "unchanged"
+  },
+  "d_en_idea_004": {
+   "doc_id": "d_en_idea_004",
+   "raw": "Experiment idea: publish the same script in two different languages for two weeks and compare completion rates directly.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Experiment idea: publish the same script in two different languages for two weeks and compare completion rates directly.",
+   "B_status": "unchanged"
+  },
+  "d_en_com_001": {
+   "doc_id": "d_en_com_001",
+   "raw": "This is the first explanation that actually matched what I see in my dashboard. Every other tutorial skipped the setup part entirely.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "This is the first explanation that actually matched what I see in my dashboard. Every other tutorial skipped the setup part entirely.",
+   "B_status": "unchanged"
+  },
+  "d_en_com_002": {
+   "doc_id": "d_en_com_002",
+   "raw": "Would you ever consider doing a version of this for people who are completely camera shy? The written format might suit me better.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Would you ever consider doing a version of this for people who are completely camera shy? The written format might suit me better.",
+   "B_status": "unchanged"
+  },
+  "d_en_com_003": {
+   "doc_id": "d_en_com_003",
+   "raw": "I have been doing this for two years and never connected retention to topic selection. That reframes how I plan a month of uploads.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "I have been doing this for two years and never connected retention to topic selection. That reframes how I plan a month of uploads.",
+   "B_status": "unchanged"
+  },
+  "d_en_com_004": {
+   "doc_id": "d_en_com_004",
+   "raw": "Small correction: the trick only works for short form. Long form viewers tolerate a slower opening because they already chose you.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Small correction: the trick only works for short form. Long form viewers tolerate a slower opening because they already chose you.",
+   "B_status": "unchanged"
+  },
+  "d_en_voice_001": {
+   "doc_id": "d_en_voice_001",
+   "raw": "I write the way I talk. Short sentences. No thesaurus. If a paragraph needs simplifying twice, it gets deleted, not polished.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "I write the way I talk. Short sentences. No thesaurus. If a paragraph needs simplifying twice, it gets deleted, not polished.",
+   "B_status": "unchanged"
+  },
+  "d_en_voice_002": {
+   "doc_id": "d_en_voice_002",
+   "raw": "My tone is blunt and a bit dry. I open with the problem instead of a warm up, and I almost never use exclamation marks.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "My tone is blunt and a bit dry. I open with the problem instead of a warm up, and I almost never use exclamation marks.",
+   "B_status": "unchanged"
+  },
+  "d_en_voice_003": {
+   "doc_id": "d_en_voice_003",
+   "raw": "House style rule: one idea per paragraph, and every piece ends with a concrete next step rather than a vague encouragement.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "House style rule: one idea per paragraph, and every piece ends with a concrete next step rather than a vague encouragement.",
+   "B_status": "unchanged"
+  },
+  "d_en_strat_001": {
+   "doc_id": "d_en_strat_001",
+   "raw": "Three pillars for the quarter: evergreen search content for compounding reach, short commentary for community, and monthly long form as the anchor.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Three pillars for the quarter: evergreen search content for compounding reach, short commentary for community, and monthly long form as the anchor.",
+   "B_status": "unchanged"
+  },
+  "d_en_strat_002": {
+   "doc_id": "d_en_strat_002",
+   "raw": "Cadence decision: two deep uploads a week plus daily low effort replies. Depth builds authority, replies build a return audience.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Cadence decision: two deep uploads a week plus daily low effort replies. Depth builds authority, replies build a return audience.",
+   "B_status": "unchanged"
+  },
+  "d_en_strat_003": {
+   "doc_id": "d_en_strat_003",
+   "raw": "Repurposing ladder: one long interview becomes four shorts, one carousel, one newsletter section and five quote posts. Never publish the cut-downs first.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Repurposing ladder: one long interview becomes four shorts, one carousel, one newsletter section and five quote posts. Never publish the cut-downs first.",
+   "B_status": "unchanged"
+  },
+  "d_en_strat_004": {
+   "doc_id": "d_en_strat_004",
+   "raw": "Stop treating every platform the same. The same script becomes a fast cut with captions for short form and a slower narrative edit for long form.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Stop treating every platform the same. The same script becomes a fast cut with captions for short form and a slower narrative edit for long form.",
+   "B_status": "unchanged"
+  },
+  "d_en_less_001": {
+   "doc_id": "d_en_less_001",
+   "raw": "Lesson: publishing during a launch week halved my average retention because the audience was splitting between two topics. Never launch and teach in the same week.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Lesson: publishing during a launch week halved my average retention because the audience was splitting between two topics. Never launch and teach in the same week.",
+   "B_status": "unchanged"
+  },
+  "d_en_less_002": {
+   "doc_id": "d_en_less_002",
+   "raw": "Lesson: chasing the newest platform cost me eight months of compounding. Switch platforms with evidence, never with hype.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Lesson: chasing the newest platform cost me eight months of compounding. Switch platforms with evidence, never with hype.",
+   "B_status": "unchanged"
+  },
+  "d_en_less_003": {
+   "doc_id": "d_en_less_003",
+   "raw": "Lesson: buying an expensive camera before learning to light made my videos worse. Fix the cheap variable first.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Lesson: buying an expensive camera before learning to light made my videos worse. Fix the cheap variable first.",
+   "B_status": "unchanged"
+  },
+  "d_en_less_004": {
+   "doc_id": "d_en_less_004",
+   "raw": "Lesson: replying to every comment for the first hour after posting measurably improved distribution on two of three platforms I tested.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Lesson: replying to every comment for the first hour after posting measurably improved distribution on two of three platforms I tested.",
+   "B_status": "unchanged"
+  },
+  "d_en_perf_001": {
+   "doc_id": "d_en_perf_001",
+   "raw": "Retention curve analysis: videos under twenty seconds held eighty percent of viewers past the halfway mark, while sixty second videos dropped to thirty percent.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Retention curve analysis: videos under twenty seconds held eighty percent of viewers past the halfway mark, while sixty second videos dropped to thirty percent.",
+   "B_status": "unchanged"
+  },
+  "d_en_perf_002": {
+   "doc_id": "d_en_perf_002",
+   "raw": "Save rate outperformed view count as a leading indicator. Posts with a save rate above three percent kept growing for weeks after publication.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Save rate outperformed view count as a leading indicator. Posts with a save rate above three percent kept growing for weeks after publication.",
+   "B_status": "unchanged"
+  },
+  "d_en_perf_003": {
+   "doc_id": "d_en_perf_003",
+   "raw": "Impressions grew fastest on posts published between seven and nine in the morning local time, though click through stayed flat, meaning distribution shifted but interest did not.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Impressions grew fastest on posts published between seven and nine in the morning local time, though click through stayed flat, meaning distribution shifted but interest did not.",
+   "B_status": "unchanged"
+  },
+  "d_en_perf_004": {
+   "doc_id": "d_en_perf_004",
+   "raw": "Average watch time correlated more strongly with comment volume than with likes. Conversation is the real engagement currency.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Average watch time correlated more strongly with comment volume than with likes. Conversation is the real engagement currency.",
+   "B_status": "unchanged"
+  },
+  "d_en_snip_001": {
+   "doc_id": "d_en_snip_001",
+   "raw": "Reusable hook template: everyone gets the first part wrong, here is the second part that finally made it work for my channel.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Reusable hook template: everyone gets the first part wrong, here is the second part that finally made it work for my channel.",
+   "B_status": "unchanged"
+  },
+  "d_en_snip_002": {
+   "doc_id": "d_en_snip_002",
+   "raw": "Reusable closing line: if this saved you an hour, the next one takes two minutes to watch, so stay close.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Reusable closing line: if this saved you an hour, the next one takes two minutes to watch, so stay close.",
+   "B_status": "unchanged"
+  },
+  "d_en_snip_003": {
+   "doc_id": "d_en_snip_003",
+   "raw": "Reusable title formula: the number plus the audience plus the outcome, for example five settings that doubled my posting speed.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Reusable title formula: the number plus the audience plus the outcome, for example five settings that doubled my posting speed.",
+   "B_status": "unchanged"
+  },
+  "d_en_mem_001": {
+   "doc_id": "d_en_mem_001",
+   "raw": "The creator described their workflow as Sunday planning, weekday filming, and Wednesday editing, with all publishing happening on Friday afternoon.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "The creator described their workflow as Sunday planning, weekday filming, and Wednesday editing, with all publishing happening on Friday afternoon.",
+   "B_status": "unchanged"
+  },
+  "d_en_mem_002": {
+   "doc_id": "d_en_mem_002",
+   "raw": "Earlier in the conversation the creator mentioned that their audience skews toward working professionals aged twenty five to forty, mostly on mobile.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Earlier in the conversation the creator mentioned that their audience skews toward working professionals aged twenty five to forty, mostly on mobile.",
+   "B_status": "unchanged"
+  },
+  "d_en_mem_003": {
+   "doc_id": "d_en_mem_003",
+   "raw": "A past decision worth remembering: the creator rejected a high paying brand deal because it conflicted with the educational positioning of the channel.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "A past decision worth remembering: the creator rejected a high paying brand deal because it conflicted with the educational positioning of the channel.",
+   "B_status": "unchanged"
+  },
+  "d_en_mem_004": {
+   "doc_id": "d_en_mem_004",
+   "raw": "Note recorded after the analytics review: the top five percent of videos by views all shared the same opening visual, which was a plain whiteboard.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Note recorded after the analytics review: the top five percent of videos by views all shared the same opening visual, which was a plain whiteboard.",
+   "B_status": "unchanged"
+  },
+  "d_ta_hook_001": {
+   "doc_id": "d_ta_hook_001",
+   "raw": "எந்த உருவாக்குனரும் முதலில் சரியான கேள்வியைத் தேர்ந்தெடுக்க வேண்டும். வீடியோ எவ்வளவு சிறப்பானதை விட, எதைப் பற்றி சொல்கிறோம் என்பதே முக்கியம்.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "endha uruvAghghun2aruM mudhalil jhariyAn2a ghELviyaidh dhErndheDhughgha vENDhuM. vIDhiyO evvaLavu jhi.RhabhbhAn2adhai viDha, edhaibh bha.Rh.Rhi jholghi.RhOM en2bhadhE mughghiyaM.",
+   "B_status": "ok"
+  },
+  "d_ta_hook_002": {
+   "doc_id": "d_ta_hook_002",
+   "raw": "நீங்கள் ஒவ்வொரு நாளும் உருவாக்குவதால், உங்கள் பார்வையாளர் கண்களை மூடிவிடுகிறார். ஆண்டுக்கு நான்கு மட்டுமே தயாரித்தால் போதும்.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "nInghaL ovvoru nALuM uruvAghghuvadhAl, unghaL bhArvaiyALar ghaNghaLai mUDhiviDhughi.RhAr. ANDhughghu nAn2ghu maDhDhumE dhayAridhdhAl bhOdhuM.",
+   "B_status": "ok"
+  },
+  "d_ta_hook_003": {
+   "doc_id": "d_ta_hook_003",
+   "raw": "என் முதல் ஐந்து வீடியோகளில் எதுவும் புரியவில்லை. அதற்குக் காரணம் என்ன என்று பல மாதங்கள் ஆராய்ந்த பின்னர் தெரிந்தது.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "en2 mudhal aindhu vIDhiyOghaLil edhuvuM bhuriyavillai. adha.Rhghugh ghAraNaM en2n2a en2.Rhu bhala mAdhanghaL ArAyndha bhin2n2ar dherindhadhu.",
+   "B_status": "ok"
+  },
+  "d_ta_cap_001": {
+   "doc_id": "d_ta_cap_001",
+   "raw": "இந்த வாரம் பதினைந்து உள்ளடக்கங்களை ஒரே நாளில் உருவாக்கிவிட்டேன். திங்கள் வரும் நாளில் முழுவதும் கைப்பந்த தயாரிப்பு.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "indha vAraM bhadhin2aindhu uLLaDhaghghanghaLai orE nALil uruvAghghiviDhDhEn2. dhinghaL varuM nALil mu.LuvadhuM ghaibhbhandha dhayAribhbhu.",
+   "B_status": "ok"
+  },
+  "d_ta_cap_002": {
+   "doc_id": "d_ta_cap_002",
+   "raw": "தமிழில் குறைந்த உள்ளடக்கம் இருப்பதால், மின்னும் நன்கு உள்ள ஆரம்பத்தை நானே முன்னெடுத்து முன்னோக்கி செல்ல வேண்டியிருக்கிறது.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "dhami.Lil ghu.Rhaindha uLLaDhaghghaM irubhbhadhAl, min2n2uM nan2ghu uLLa AraMbhadhdhai nAn2E mun2n2eDhudhdhu mun2n2Oghghi jhella vENDhiyirughghi.Rhadhu.",
+   "B_status": "ok"
+  },
+  "d_ta_cap_003": {
+   "doc_id": "d_ta_cap_003",
+   "raw": "உங்கள் கேள்விகளுக்கு பதிலளிப்பதே என் வளர்ச்சியின் முக்கிய காரணம். கேள்வி கேட்டால் ஒரு வீடியோ, இரண்டாவது, மூன்றாவது தயாராகும்.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "unghaL ghELvighaLughghu bhadhilaLibhbhadhE en2 vaLarjhjhiyin2 mughghiya ghAraNaM. ghELvi ghEDhDhAl oru vIDhiyO, iraNDhAvadhu, mUn2.RhAvadhu dhayArAghuM.",
+   "B_status": "ok"
+  },
+  "d_ta_scr_001": {
+   "doc_id": "d_ta_scr_001",
+   "raw": "தொடக்கத்தில் கேள்வியை வாசிப்பதில்லை. முதல் விநாடியில் பிரச்சினையை நேரடியாக கூறி, பின்னர் தீர்வை விளக்குதல்.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "dhoDhaghghadhdhil ghELviyai vAjhibhbhadhillai. mudhal vinADhiyil bhirajhjhin2aiyai nEraDhiyAgha ghU.Rhi, bhin2n2ar dhIrvai viLaghghudhal.",
+   "B_status": "ok"
+  },
+  "d_ta_scr_002": {
+   "doc_id": "d_ta_scr_002",
+   "raw": "நான்கு பகுதிகள்: கேள்வி, பார்வையாளர் அனுபவம், தெளிவான தீர்வு, சுருக்கமான முடிவுரை. ஒவ்வொரு பகுதியும் முப்பது விநாடிகளுக்கு மிகாதம்.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "nAn2ghu bhaghudhighaL: ghELvi, bhArvaiyALar an2ubhavaM, dheLivAn2a dhIrvu, jhurughghamAn2a muDhivurai. ovvoru bhaghudhiyuM mubhbhadhu vinADhighaLughghu mighAdhaM.",
+   "B_status": "ok"
+  },
+  "d_ta_idea_001": {
+   "doc_id": "d_ta_idea_001",
+   "raw": "தமிழில் குறைந்த தொழில்நுட்ப உள்ளடக்கத்தை ஒரு தொடராக உருவாக்க வேண்டும். ஒவ்வொரு வீடியோவிலும் ஒரே கருப்பொருள் மட்டுமே இருக்க வேண்டும்.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "dhami.Lil ghu.Rhaindha dho.LilnuDhbha uLLaDhaghghadhdhai oru dhoDharAgha uruvAghgha vENDhuM. ovvoru vIDhiyOviluM orE gharubhbhoruL maDhDhumE irughgha vENDhuM.",
+   "B_status": "ok"
+  },
+  "d_ta_idea_002": {
+   "doc_id": "d_ta_idea_002",
+   "raw": "தமிழ் பயனாளிகள் பொதுவாக எது குறைப்படுகிறது என்று பதிவேடு செய்து, அதை நிரப்பும் உள்ளடக்கங்களைத் தயாரிக்கலாம்.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "dhami.L bhayan2ALighaL bhodhuvAgha edhu ghu.RhaibhbhaDhughi.Rhadhu en2.Rhu bhadhivEDhu jheydhu, adhai nirabhbhuM uLLaDhaghghanghaLaidh dhayArighghalAM.",
+   "B_status": "ok"
+  },
+  "d_ta_com_001": {
+   "doc_id": "d_ta_com_001",
+   "raw": "இது தமிழில் இதுவரை பார்த்ததற்குள் மிகவும் தெளிவான விளக்கம். நீங்கள் தயாரிப்பு பகுதியையும் சேர்த்து விளக்கியிருப்பது மிகவும் பயனுள்ளது.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "idhu dhami.Lil idhuvarai bhArdhdhadha.RhghuL mighavuM dheLivAn2a viLaghghaM. nInghaL dhayAribhbhu bhaghudhiyaiyuM jhErdhdhu viLaghghiyirubhbhadhu mighavuM bhayan2uLLadhu.",
+   "B_status": "ok"
+  },
+  "d_ta_com_002": {
+   "doc_id": "d_ta_com_002",
+   "raw": "என் மகன் தமிழில் பார்க்க முயற்சிக்கிறான், ஆனால் உள்ளடக்கம் இன்னும் வேகமாகச் செல்லவில்லை. காரணம் என்ன என்று தெரியவில்லை.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "en2 maghan2 dhami.Lil bhArghgha muya.Rhjhighghi.RhAn2, An2Al uLLaDhaghghaM in2n2uM vEghamAghajh jhellavillai. ghAraNaM en2n2a en2.Rhu dheriyavillai.",
+   "B_status": "ok"
+  },
+  "d_ta_voice_001": {
+   "doc_id": "d_ta_voice_001",
+   "raw": "நான் எழுதுவது பேசுவது போலவே. சுருக்கமான வாக்கியங்கள், மிக நேரடியான மொழி, மிகக் குறைந்த சொற்கள்.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "nAn2 e.Ludhuvadhu bhEjhuvadhu bhOlavE. jhurughghamAn2a vAghghiyanghaL, migha nEraDhiyAn2a mo.Li, mighagh ghu.Rhaindha jho.RhghaL.",
+   "B_status": "ok"
+  },
+  "d_ta_voice_002": {
+   "doc_id": "d_ta_voice_002",
+   "raw": "தமிழ் உரையில் எழுத்துரு சிதைவை தவிர்க்கிறேன். வாசிப்பதற்கு இலகுவான சொற்களை மட்டுமே பயன்படுத்துகிறேன்.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "dhami.L uraiyil e.Ludhdhuru jhidhaivai dhavirghghi.RhEn2. vAjhibhbhadha.Rhghu ilaghuvAn2a jho.RhghaLai maDhDhumE bhayan2bhaDhudhdhughi.RhEn2.",
+   "B_status": "ok"
+  },
+  "d_ta_strat_001": {
+   "doc_id": "d_ta_strat_001",
+   "raw": "தமிழ் உள்ளடக்கத்தை முதலில் தேடும் பார்வையாளர்களுக்காக எழுதுகிறேன். பின்னர் அதே உள்ளடக்கத்தை இரண்டாவது மொழிக்கு மாற்றுகிறேன்.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "dhami.L uLLaDhaghghadhdhai mudhalil dhEDhuM bhArvaiyALarghaLughghAgha e.Ludhughi.RhEn2. bhin2n2ar adhE uLLaDhaghghadhdhai iraNDhAvadhu mo.Lighghu mA.Rh.Rhughi.RhEn2.",
+   "B_status": "ok"
+  },
+  "d_ta_less_001": {
+   "doc_id": "d_ta_less_001",
+   "raw": "கற்றுக்கொண்ட படி: அதிக பார்வையாளர் இருந்தாலும் குறைந்த நேரம் மட்டுமே இருந்தால், வீடியோ வெட்டுதலை மட்டும் குறைத்தால் வருமானம் அதிகரிக்கிறது.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "gha.Rh.RhughghoNDha bhaDhi: adhigha bhArvaiyALar irundhAluM ghu.Rhaindha nEraM maDhDhumE irundhAl, vIDhiyO veDhDhudhalai maDhDhuM ghu.RhaidhdhAl varumAn2aM adhigharighghi.Rhadhu.",
+   "B_status": "ok"
+  },
+  "d_ta_perf_001": {
+   "doc_id": "d_ta_perf_001",
+   "raw": "செயல்திறன் அறிக்கையின்படி, முதல் மூன்று விநாடிகளில் பார்வையாளர் தொடர்பை விட்டுச் செல்லும் வீதம் தமிழ் உள்ளடக்கத்தில் அதிகமாக இருந்தது.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "jheyaldhi.Rhan2 a.Rhighghaiyin2bhaDhi, mudhal mUn2.Rhu vinADhighaLil bhArvaiyALar dhoDharbhai viDhDhujh jhelluM vIdhaM dhami.L uLLaDhaghghadhdhil adhighamAgha irundhadhu.",
+   "B_status": "ok"
+  },
+  "d_ta_mem_001": {
+   "doc_id": "d_ta_mem_001",
+   "raw": "உருவாக்குனர் முன்பு குறிப்பிட்டது: இளம் தொழில்நுட்ப ஆர்வகர்கள் தமிழ் மற்றும் ஆங்கிலம் இரண்டையும் பயன்படுத்துகின்றனர், ஆனால் தமிழ் மட்டும் பதிவுகளை விருப்பமாகத் தேர்வு செய்கின்றனர்.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "uruvAghghun2ar mun2bhu ghu.RhibhbhiDhDhadhu: iLaM dho.LilnuDhbha ArvagharghaL dhami.L ma.Rh.RhuM AnghilaM iraNDhaiyuM bhayan2bhaDhudhdhughin2.Rhan2ar, An2Al dhami.L maDhDhuM bhadhivughaLai virubhbhamAghadh dhErvu jheyghin2.Rhan2ar.",
+   "B_status": "ok"
+  },
+  "d_ta_mem_002": {
+   "doc_id": "d_ta_mem_002",
+   "raw": "குறிப்பு: உருவாக்குனர் தனது முதல் தமிழ் வீடியோவின் குறைவான பார்வையைக் கண்டு மிகவும் வருத்தப்பட்டார், ஆனால் பின்னர் தலைப்பை மாற்றியதால் மீண்டும் வெற்றி கிடைத்தார்.",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "to_latin": "ghu.Rhibhbhu: uruvAghghun2ar dhan2adhu mudhal dhami.L vIDhiyOvin2 ghu.RhaivAn2a bhArvaiyaigh ghaNDhu mighavuM varudhdhabhbhaDhDhAr, An2Al bhin2n2ar dhalaibhbhai mA.Rh.RhiyadhAl mINDhuM ve.Rh.Rhi ghiDhaidhdhAr.",
+   "B_status": "ok"
+  },
+  "d_hi_hook_001": {
+   "doc_id": "d_hi_hook_001",
+   "raw": "ज्यादातर क्रिएटर्स वीडियो के बीच में पूरा परिचय देते हैं, जबकि दर्शक तीसरे सेकंड में फैसला कर लेता है।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "jyādātara krieṭarsa vīḍiyo ke bīca meṃ pūrā paricaya dete haiṃ, jabaki darśaka tīsare sekaṃḍa meṃ phaisalā kara letā hai|",
+   "B_status": "ok"
+  },
+  "d_hi_hook_002": {
+   "doc_id": "d_hi_hook_002",
+   "raw": "मैंने एक साल में अपने सबसे कम देखे जाने वाले वीडियो की वजह खोजी और वह गलती आज भी दोहरा रहा हूँ।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "maiṃne eka sāla meṃ apane sabase kama dekhe jāne vāle vīḍiyo kī vajaha khojī aura vaha galatī āja bhī doharā rahā hū~|",
+   "B_status": "ok"
+  },
+  "d_hi_hook_003": {
+   "doc_id": "d_hi_hook_003",
+   "raw": "हर दिन पोस्ट करने से घबराहट नहीं होती, बल्कि दर्शक थक जाते हैं। साप्ताह में तीन टुकड़े ही काफी हैं।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "hara dina posṭa karane se ghabarāhaṭa nahīṃ hotī, balki darśaka thaka jāte haiṃ| sāptāha meṃ tīna ṭukar̤e hī kāphī haiṃ|",
+   "B_status": "ok"
+  },
+  "d_hi_cap_001": {
+   "doc_id": "d_hi_cap_001",
+   "raw": "इस हफ्ते एक ही दिन में दस वीडियो बनाए और रविवार को बस एक चाय के साथ सब एडिट कर दिए।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "isa haphte eka hī dina meṃ dasa vīḍiyo banāe aura ravivāra ko basa eka cāya ke sātha saba eḍiṭa kara die|",
+   "B_status": "ok"
+  },
+  "d_hi_cap_002": {
+   "doc_id": "d_hi_cap_002",
+   "raw": "हिंदी में अच्छा टेक्निकल कंटेंट बहुत कम है, इसलिए जो बनाता है उसकी मांग हमेशा बनी रहती है।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "hiṃdī meṃ acchā ṭeknikala kaṃṭeṃṭa bahuta kama hai, isalie jo banātā hai usakī māṃga hameśā banī rahatī hai|",
+   "B_status": "ok"
+  },
+  "d_hi_cap_003": {
+   "doc_id": "d_hi_cap_003",
+   "raw": "कैमरा खरीदने से पहले लाइटिंग सीखना चाहिए। रोशनी सस्ती है और फ़र्क सबसे ज़्यादा बनाती है।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "kaimarā kharīdane se pahale lāiṭiṃga sīkhanā cāhie| rośanī sastī hai aura farka sabase zyādā banātī hai|",
+   "B_status": "ok"
+  },
+  "d_hi_scr_001": {
+   "doc_id": "d_hi_scr_001",
+   "raw": "पहले तीन सेकंड में समस्या बताइए, फिर उसका असली नुकसान दिखाइए, और उसके बाद ही हल दीजिए। पहले हल बताना काम नहीं करता।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "pahale tīna sekaṃḍa meṃ samasyā batāie, phira usakā asalī nukasāna dikhāie, aura usake bāda hī hala dījie| pahale hala batānā kāma nahīṃ karatā|",
+   "B_status": "ok"
+  },
+  "d_hi_idea_001": {
+   "doc_id": "d_hi_idea_001",
+   "raw": "हर हफ्ते किसी एक क्रिएटर का सबसे कमजोर वीडियो चुनकर उसका हुक सुधारने का सीरीज़ शुरू करने का विचार है।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "hara haphte kisī eka krieṭara kā sabase kamajora vīḍiyo cunakara usakā huka sudhārane kā sīrīza śurū karane kā vicāra hai|",
+   "B_status": "ok"
+  },
+  "d_hi_com_001": {
+   "doc_id": "d_hi_com_001",
+   "raw": "आपकी वीडियो में सबसे अच्छी बात यह है कि आपने वो चीज़ दिखाई जो मेरी अपनी एनालिटिक्स में गलत निकली थी।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "āpakī vīḍiyo meṃ sabase acchī bāta yaha hai ki āpane vo cīza dikhāī jo merī apanī enāliṭiksa meṃ galata nikalī thī|",
+   "B_status": "ok"
+  },
+  "d_hi_voice_001": {
+   "doc_id": "d_hi_voice_001",
+   "raw": "मेरी लेखन शैली सीधी है। लंबे वाक्य नहीं, फ़ालतू शब्द नहीं, और हर पोस्ट एक स्पष्ट कदम के साथ ख़त्म होती है।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "merī lekhana śailī sīdhī hai| laṃbe vākya nahīṃ, fālatū śabda nahīṃ, aura hara posṭa eka spaṣṭa kadama ke sātha k͟hatma hotī hai|",
+   "B_status": "ok"
+  },
+  "d_hi_strat_001": {
+   "doc_id": "d_hi_strat_001",
+   "raw": "मेरी रणनीति तीन खंभों पर टिकी है: सीखने योग्य लंबे वीडियो, हर दिन के छोटे टुकड़े, और सीधे सवालों के जवाब देने वाले पोस्ट।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "merī raṇanīti tīna khaṃbhoṃ para ṭikī hai: sīkhane yogya laṃbe vīḍiyo, hara dina ke choṭe ṭukar̤e, aura sīdhe savāloṃ ke javāba dene vāle posṭa|",
+   "B_status": "ok"
+  },
+  "d_hi_less_001": {
+   "doc_id": "d_hi_less_001",
+   "raw": "सीख: एक ही हफ्ते में नया प्रोडक्ट लॉन्च करने और नया ट्यूटोरियल देने से दर्शक दोनों में बँट गए और दोनों कमजोर हुए।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "sīkha: eka hī haphte meṃ nayā proḍakṭa laॉnca karane aura nayā ṭyūṭoriyala dene se darśaka donoṃ meṃ ba~ṭa gae aura donoṃ kamajora hue|",
+   "B_status": "ok"
+  },
+  "d_hi_perf_001": {
+   "doc_id": "d_hi_perf_001",
+   "raw": "विश्लेषण से पता चला कि सेव वाले पोस्ट दर्शकों को दोबारा देखने के लिए सबसे ज़्यादा प्रभावी थे, हालांकि व्यू गिनती कम रही।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "viśleṣaṇa se patā calā ki seva vāle posṭa darśakoṃ ko dobārā dekhane ke lie sabase zyādā prabhāvī the, hālāṃki vyū ginatī kama rahī|",
+   "B_status": "ok"
+  },
+  "d_hi_mem_001": {
+   "doc_id": "d_hi_mem_001",
+   "raw": "क्रिएटर ने बताया कि उनके दर्शक मुख्यतः शहरों में रहने वाले पेशेवर हैं और वे ज़्यादातर मोबाइल पर देखते हैं।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "krieṭara ne batāyā ki unake darśaka mukhyataḥ śaharoṃ meṃ rahane vāle peśevara haiṃ aura ve zyādātara mobāila para dekhate haiṃ|",
+   "B_status": "ok"
+  },
+  "d_hi_mem_002": {
+   "doc_id": "d_hi_mem_002",
+   "raw": "पुराना निर्णय: क्रिएटर ने एक बड़ा ब्रांड ऑफ़र ठुकरा दिया था क्योंकि वह चैनल की शैक्षिक दिशा से मेल खाता नहीं था।",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "to_latin": "purānā nirṇaya: krieṭara ne eka bar̤ā brāṃḍa ऑfara ṭhukarā diyā thā kyoṃki vaha cainala kī śaikṣika diśā se mela khātā nahīṃ thā|",
+   "B_status": "ok"
+  },
+  "d_tan_hook_001": {
+   "doc_id": "d_tan_hook_001",
+   "raw": "Nee rendu perum padurom, rendu keer padakkum illa. Ketbare tha solradhu konjam slow-a irundhu.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Nee rendu perum padurom, rendu keer padakkum illa. Ketbare tha solradhu konjam slow-a irundhu.",
+   "B_status": "unchanged"
+  },
+  "d_tan_hook_002": {
+   "doc_id": "d_tan_hook_002",
+   "raw": "Enna docu pola tha nambungal, athu sonnaal ponnadhu tha nambakoodhu illa. Illiya sollathu tha trust aakudhu.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Enna docu pola tha nambungal, athu sonnaal ponnadhu tha nambakoodhu illa. Illiya sollathu tha trust aakudhu.",
+   "B_status": "unchanged"
+  },
+  "d_tan_cap_001": {
+   "doc_id": "d_tan_cap_001",
+   "raw": "Idhukku weekend la rendu padungala epdi create pannungal, apparam ettu padungal epdi kuraindha paksei prep pannidhu.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Idhukku weekend la rendu padungala epdi create pannungal, apparam ettu padungal epdi kuraindha paksei prep pannidhu.",
+   "B_status": "unchanged"
+  },
+  "d_tan_cap_002": {
+   "doc_id": "d_tan_cap_002",
+   "raw": "Tamil la aval uthaippu vida padakkum illa. English la irukkura content ku epdi varaikum naan mathukkiren.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Tamil la aval uthaippu vida padakkum illa. English la irukkura content ku epdi varaikum naan mathukkiren.",
+   "B_status": "unchanged"
+  },
+  "d_tan_scr_001": {
+   "doc_id": "d_tan_scr_001",
+   "raw": "Opening la oru greeting venam. First sentence la problem-a solli, rendu second la answer-a start pannu.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Opening la oru greeting venam. First sentence la problem-a solli, rendu second la answer-a start pannu.",
+   "B_status": "unchanged"
+  },
+  "d_tan_idea_001": {
+   "doc_id": "d_tan_idea_001",
+   "raw": "Tamil tech audience-ku oru free course epdi start pannalan nu idea. Beginner-l ku针对性的 content vendum.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Tamil tech audience-ku oru free course epdi start pannalan nu idea. Beginner-l ku针对性的 content vendum.",
+   "B_status": "unchanged"
+  },
+  "d_tan_com_001": {
+   "doc_id": "d_tan_com_001",
+   "raw": "Idha first time la oru Tamil tech video paathen. But English la full detailed a explanation irundhu, indha epdi sollanum theriyadhu.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Idha first time la oru Tamil tech video paathen. But English la full detailed a explanation irundhu, indha epdi sollanum theriyadhu.",
+   "B_status": "unchanged"
+  },
+  "d_tan_voice_001": {
+   "doc_id": "d_tan_voice_001",
+   "raw": "Enna padurom, appadi than solren. Full sentences la oru sol-a maathu pudurom, purdha rendu sol pannanum.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Enna padurom, appadi than solren. Full sentences la oru sol-a maathu pudurom, purdha rendu sol pannanum.",
+   "B_status": "unchanged"
+  },
+  "d_tan_strat_001": {
+   "doc_id": "d_tan_strat_001",
+   "raw": "Naan English audience-ku content vendu vendu solren, but Tamil audience ku same video da oru Tamil subtitle a add pannren.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Naan English audience-ku content vendu vendu solren, but Tamil audience ku same video da oru Tamil subtitle a add pannren.",
+   "B_status": "unchanged"
+  },
+  "d_tan_less_001": {
+   "doc_id": "d_tan_less_001",
+   "raw": "Lesson: oru Tamil video ku English title vechirathu watch time konjam diminish aayidhu. Match the language of the title to the script.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Lesson: oru Tamil video ku English title vechirathu watch time konjam diminish aayidhu. Match the language of the title to the script.",
+   "B_status": "unchanged"
+  },
+  "d_tan_perf_001": {
+   "doc_id": "d_tan_perf_001",
+   "raw": "Analytics la paathathu Tamil content ku engagement indri kattra varaikkum mela maatru Vaa pathi.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Analytics la paathathu Tamil content ku engagement indri kattra varaikkum mela maatru Vaa pathi.",
+   "B_status": "unchanged"
+  },
+  "d_tan_mem_001": {
+   "doc_id": "d_tan_mem_001",
+   "raw": "Creator solraan: audience la 60 percent Tamil, 30 percent English, 10 percent Hindi vera level la pesraargal.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Creator solraan: audience la 60 percent Tamil, 30 percent English, 10 percent Hindi vera level la pesraargal.",
+   "B_status": "unchanged"
+  },
+  "d_hin_hook_001": {
+   "doc_id": "d_hin_hook_001",
+   "raw": "Log daily post karte hain lekin retention gir jaati hai. Reason simple hai: har post me energy invest nahi hoti.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Log daily post karte hain lekin retention gir jaati hai. Reason simple hai: har post me energy invest nahi hoti.",
+   "B_status": "unchanged"
+  },
+  "d_hin_hook_002": {
+   "doc_id": "d_hin_hook_002",
+   "raw": "Maine 6 mahine me ek cheez change ki aur meri watch time double ho gayi, aur wo camera ya editing nahi thi.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Maine 6 mahine me ek cheez change ki aur meri watch time double ho gayi, aur wo camera ya editing nahi thi.",
+   "B_status": "unchanged"
+  },
+  "d_hin_cap_001": {
+   "doc_id": "d_hin_cap_001",
+   "raw": "Is mahine ka target tha 15 reels, aur honestly mile 9. But 9 dhang ke reels 15 weak se zyada kaam karti hain.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Is mahine ka target tha 15 reels, aur honestly mile 9. But 9 dhang ke reels 15 weak se zyada kaam karti hain.",
+   "B_status": "unchanged"
+  },
+  "d_hin_cap_002": {
+   "doc_id": "d_hin_cap_002",
+   "raw": "Hindi me tech content kam hai isliye jo bana rahe hain unka waitlist banta hai. Demand hai, supply nahi.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Hindi me tech content kam hai isliye jo bana rahe hain unka waitlist banta hai. Demand hai, supply nahi.",
+   "B_status": "unchanged"
+  },
+  "d_hin_scr_001": {
+   "doc_id": "d_hin_scr_001",
+   "raw": "Pehle problem batao, phir cost dikhao, phir solution. Solution pehle batana kaam nahi karta, pehle problem feel honi chahiye.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Pehle problem batao, phir cost dikhao, phir solution. Solution pehle batana kaam nahi karta, pehle problem feel honi chahiye.",
+   "B_status": "unchanged"
+  },
+  "d_hin_idea_001": {
+   "doc_id": "d_hin_idea_001",
+   "raw": "Ek series idea: har week kisi creator ka sabse weak video leke uska hook rewrite karunga on camera.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Ek series idea: har week kisi creator ka sabse weak video leke uska hook rewrite karunga on camera.",
+   "B_status": "unchanged"
+  },
+  "d_hin_com_001": {
+   "doc_id": "d_hin_com_001",
+   "raw": "Bhai ye sabse helpful video hai, especially wo part jo aapne lighting ke baare me bataya. Maine isse try kiya, difference hai.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Bhai ye sabse helpful video hai, especially wo part jo aapne lighting ke baare me bataya. Maine isse try kiya, difference hai.",
+   "B_status": "unchanged"
+  },
+  "d_hin_voice_001": {
+   "doc_id": "d_hin_voice_001",
+   "raw": "Meri writing style chhoti sentences aur simple words hai. Main English bohot kam use karta hun, sentence ke end me ek clear step deta hun.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Meri writing style chhoti sentences aur simple words hai. Main English bohot kam use karta hun, sentence ke end me ek clear step deta hun.",
+   "B_status": "unchanged"
+  },
+  "d_hin_strat_001": {
+   "doc_id": "d_hin_strat_001",
+   "raw": "Strategy simple hai: 2 long educational videos, 5 short clips, aur daily comments reply. Consistency ka matlab quality ko sustain karna hai.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Strategy simple hai: 2 long educational videos, 5 short clips, aur daily comments reply. Consistency ka matlab quality ko sustain karna hai.",
+   "B_status": "unchanged"
+  },
+  "d_hin_less_001": {
+   "doc_id": "d_hin_less_001",
+   "raw": "Seekha: thumbnail ko perfect banane me time laga, lekin pehle 3 second ka hook fix karna zyada faayda deta tha.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Seekha: thumbnail ko perfect banane me time laga, lekin pehle 3 second ka hook fix karna zyada faayda deta tha.",
+   "B_status": "unchanged"
+  },
+  "d_hin_perf_001": {
+   "doc_id": "d_hin_perf_001",
+   "raw": "Analytics me dekha ki Hindi audience comment zyada karti hai, save bhi karti hai, but like kam karti hai compared to English.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Analytics me dekha ki Hindi audience comment zyada karti hai, save bhi karti hai, but like kam karti hai compared to English.",
+   "B_status": "unchanged"
+  },
+  "d_hin_mem_001": {
+   "doc_id": "d_hin_mem_001",
+   "raw": "Creator ne bataya ki unka target audience working professionals hai, 25 se 40 age group, aur wo mostly mobile pe dekhte hain.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Creator ne bataya ki unka target audience working professionals hai, 25 se 40 age group, aur wo mostly mobile pe dekhte hain.",
+   "B_status": "unchanged"
+  },
+  "d_mix_ta_001": {
+   "doc_id": "d_mix_ta_001",
+   "raw": "Tamil audience ku English maathiri tech explain panninja la theriyadhu. So mixed language la solran, transliteration use pannama illa.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Tamil audience ku English maathiri tech explain panninja la theriyadhu. So mixed language la solran, transliteration use pannama illa.",
+   "B_status": "unchanged"
+  },
+  "d_mix_ta_002": {
+   "doc_id": "d_mix_ta_002",
+   "raw": "Seven day productivity system follow karala? Tamil la explain panninjaal output illa, sappadu illa solradhu.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Seven day productivity system follow karala? Tamil la explain panninjaal output illa, sappadu illa solradhu.",
+   "B_status": "unchanged"
+  },
+  "d_mix_ta_003": {
+   "doc_id": "d_mix_ta_003",
+   "raw": "Creator plan: Monday-la shoot, Wednesday-la edit, Friday-la publish. Weekend-la next three episodes plan pannradhu.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Creator plan: Monday-la shoot, Wednesday-la edit, Friday-la publish. Weekend-la next three episodes plan pannradhu.",
+   "B_status": "unchanged"
+  },
+  "d_mix_ta_004": {
+   "doc_id": "d_mix_ta_004",
+   "raw": "Important lesson: Tamil fonts render pannatha viddaiyum proba vayirundhulladhuku, thaar vazhiya clean-a irundhu nakai.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Important lesson: Tamil fonts render pannatha viddaiyum proba vayirundhulladhuku, thaar vazhiya clean-a irundhu nakai.",
+   "B_status": "unchanged"
+  },
+  "d_mix_hi_001": {
+   "doc_id": "d_mix_hi_001",
+   "raw": "Hindi medium ke saath English tools use karta hun, lekin audience connect Hindi mein hoti hai, isliye script Hindi mein rakhta hun.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Hindi medium ke saath English tools use karta hun, lekin audience connect Hindi mein hoti hai, isliye script Hindi mein rakhta hun.",
+   "B_status": "unchanged"
+  },
+  "d_mix_hi_002": {
+   "doc_id": "d_mix_hi_002",
+   "raw": "Free laptop mila tha keila, lekin free software tools se professional content banna mumkin tha—sirf patience chahiye.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Free laptop mila tha keila, lekin free software tools se professional content banna mumkin tha—sirf patience chahiye.",
+   "B_status": "unchanged"
+  },
+  "d_mix_hi_003": {
+   "doc_id": "d_mix_hi_003",
+   "raw": "Creator ka setup: budget camera, ring light, aur ek laptop—sab affordable. Subscriptions pehle saal zero tha.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Creator ka setup: budget camera, ring light, aur ek laptop—sab affordable. Subscriptions pehle saal zero tha.",
+   "B_status": "unchanged"
+  },
+  "d_mix_hi_004": {
+   "doc_id": "d_mix_hi_004",
+   "raw": "Niche decide karne ke liye maine 30 din data dekha: mere top 3 videos sab education aur tool reviews ke the, lifestyle nahi.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Niche decide karne ke liye maine 30 din data dekha: mere top 3 videos sab education aur tool reviews ke the, lifestyle nahi.",
+   "B_status": "unchanged"
+  },
+  "d_mix_en_001": {
+   "doc_id": "d_mix_en_001",
+   "raw": "Between Hindi and Tamil content, English subtitles gave the best reach, but pure vernacular builds the stronger community.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Between Hindi and Tamil content, English subtitles gave the best reach, but pure vernacular builds the stronger community.",
+   "B_status": "unchanged"
+  },
+  "d_mix_en_002": {
+   "doc_id": "d_mix_en_002",
+   "raw": "Recording in two languages doubled my setup time; the smarter path was one script, two voiceovers recorded in a single session.",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "to_latin": "Recording in two languages doubled my setup time; the smarter path was one script, two voiceovers recorded in a single session.",
+   "B_status": "unchanged"
+  }
+ },
+ "queries": {
+  "q_en_001": {
+   "query_id": "q_en_001",
+   "raw": "why opening with a greeting hurts retention",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_hook_005",
+    "d_en_hook_002"
+   ],
+   "A_to_script": "why opening with a greeting hurts retention",
+   "A_status": "unchanged",
+   "B_to_latin": "why opening with a greeting hurts retention",
+   "B_status": "unchanged"
+  },
+  "q_en_002": {
+   "query_id": "q_en_002",
+   "raw": "how many videos should a solo creator publish per week",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_hook_001",
+    "d_en_cap_005"
+   ],
+   "A_to_script": "how many videos should a solo creator publish per week",
+   "A_status": "unchanged",
+   "B_to_latin": "how many videos should a solo creator publish per week",
+   "B_status": "unchanged"
+  },
+  "q_en_003": {
+   "query_id": "q_en_003",
+   "raw": "batching multiple videos in one day workflow",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_cap_001",
+    "d_en_mem_001"
+   ],
+   "A_to_script": "batching multiple videos in one day workflow",
+   "A_status": "unchanged",
+   "B_to_latin": "batching multiple videos in one day workflow",
+   "B_status": "unchanged"
+  },
+  "q_en_004": {
+   "query_id": "q_en_004",
+   "raw": "editing change that improved my audience retention",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_hook_004"
+   ],
+   "A_to_script": "editing change that improved my audience retention",
+   "A_status": "unchanged",
+   "B_to_latin": "editing change that improved my audience retention",
+   "B_status": "unchanged"
+  },
+  "q_en_005": {
+   "query_id": "q_en_005",
+   "raw": "finding good video topics from audience replies",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_cap_004"
+   ],
+   "A_to_script": "finding good video topics from audience replies",
+   "A_status": "unchanged",
+   "B_to_latin": "finding good video topics from audience replies",
+   "B_status": "unchanged"
+  },
+  "q_en_006": {
+   "query_id": "q_en_006",
+   "raw": "short form video structure for tutorials",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_scr_003",
+    "d_en_scr_001"
+   ],
+   "A_to_script": "short form video structure for tutorials",
+   "A_status": "unchanged",
+   "B_to_latin": "short form video structure for tutorials",
+   "B_status": "unchanged"
+  },
+  "q_en_007": {
+   "query_id": "q_en_007",
+   "raw": "which metric predicts growth better than views",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_hook_003"
+   ],
+   "A_to_script": "which metric predicts growth better than views",
+   "A_status": "unchanged",
+   "B_to_latin": "which metric predicts growth better than views",
+   "B_status": "unchanged"
+  },
+  "q_en_008": {
+   "query_id": "q_en_008",
+   "raw": "content pillar strategy for a quarterly plan",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_strat_001"
+   ],
+   "A_to_script": "content pillar strategy for a quarterly plan",
+   "A_status": "unchanged",
+   "B_to_latin": "content pillar strategy for a quarterly plan",
+   "B_status": "unchanged"
+  },
+  "q_en_009": {
+   "query_id": "q_en_009",
+   "raw": "repurposing long content into many formats",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_strat_003"
+   ],
+   "A_to_script": "repurposing long content into many formats",
+   "A_status": "unchanged",
+   "B_to_latin": "repurposing long content into many formats",
+   "B_status": "unchanged"
+  },
+  "q_en_010": {
+   "query_id": "q_en_010",
+   "raw": "save rate as a leading engagement indicator",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_perf_002"
+   ],
+   "A_to_script": "save rate as a leading engagement indicator",
+   "A_status": "unchanged",
+   "B_to_latin": "save rate as a leading engagement indicator",
+   "B_status": "unchanged"
+  },
+  "q_en_011": {
+   "query_id": "q_en_011",
+   "raw": "mistake of buying a camera before learning lighting",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_less_003",
+    "d_hi_cap_003"
+   ],
+   "A_to_script": "mistake of buying a camera before learning lighting",
+   "A_status": "unchanged",
+   "B_to_latin": "mistake of buying a camera before learning lighting",
+   "B_status": "unchanged"
+  },
+  "q_en_012": {
+   "query_id": "q_en_012",
+   "raw": "lesson about launching and teaching in the same week",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_less_001",
+    "d_hi_less_001"
+   ],
+   "A_to_script": "lesson about launching and teaching in the same week",
+   "A_status": "unchanged",
+   "B_to_latin": "lesson about launching and teaching in the same week",
+   "B_status": "unchanged"
+  },
+  "q_en_013": {
+   "query_id": "q_en_013",
+   "raw": "reusable hook template with a number",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_snip_001"
+   ],
+   "A_to_script": "reusable hook template with a number",
+   "A_status": "unchanged",
+   "B_to_latin": "reusable hook template with a number",
+   "B_status": "unchanged"
+  },
+  "q_en_014": {
+   "query_id": "q_en_014",
+   "raw": "closing line that invites viewers to stay",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_snip_002"
+   ],
+   "A_to_script": "closing line that invites viewers to stay",
+   "A_status": "unchanged",
+   "B_to_latin": "closing line that invites viewers to stay",
+   "B_status": "unchanged"
+  },
+  "q_en_015": {
+   "query_id": "q_en_015",
+   "raw": "how my writing style is different from formal writing",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_voice_001",
+    "d_en_voice_003"
+   ],
+   "A_to_script": "how my writing style is different from formal writing",
+   "A_status": "unchanged",
+   "B_to_latin": "how my writing style is different from formal writing",
+   "B_status": "unchanged"
+  },
+  "q_en_016": {
+   "query_id": "q_en_016",
+   "raw": "comment replies within the first hour effect",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_less_004"
+   ],
+   "A_to_script": "comment replies within the first hour effect",
+   "A_status": "unchanged",
+   "B_to_latin": "comment replies within the first hour effect",
+   "B_status": "unchanged"
+  },
+  "q_en_017": {
+   "query_id": "q_en_017",
+   "raw": "audience demographics age and viewing device",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_mem_002",
+    "d_hin_mem_001"
+   ],
+   "A_to_script": "audience demographics age and viewing device",
+   "A_status": "unchanged",
+   "B_to_latin": "audience demographics age and viewing device",
+   "B_status": "unchanged"
+  },
+  "q_en_018": {
+   "query_id": "q_en_018",
+   "raw": "brand deal rejected because of channel positioning",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_mem_003",
+    "d_hi_mem_002"
+   ],
+   "A_to_script": "brand deal rejected because of channel positioning",
+   "A_status": "unchanged",
+   "B_to_latin": "brand deal rejected because of channel positioning",
+   "B_status": "unchanged"
+  },
+  "q_en_019": {
+   "query_id": "q_en_019",
+   "raw": "what my top performing videos had in common visually",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_mem_004"
+   ],
+   "A_to_script": "what my top performing videos had in common visually",
+   "A_status": "unchanged",
+   "B_to_latin": "what my top performing videos had in common visually",
+   "B_status": "unchanged"
+  },
+  "q_en_020": {
+   "query_id": "q_en_020",
+   "raw": "reply to a comment asking for camera shy formats",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_com_002"
+   ],
+   "A_to_script": "reply to a comment asking for camera shy formats",
+   "A_status": "unchanged",
+   "B_to_latin": "reply to a comment asking for camera shy formats",
+   "B_status": "unchanged"
+  },
+  "q_en_021": {
+   "query_id": "q_en_021",
+   "raw": "correction about long form tolerating slow openings",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_com_004"
+   ],
+   "A_to_script": "correction about long form tolerating slow openings",
+   "A_status": "unchanged",
+   "B_to_latin": "correction about long form tolerating slow openings",
+   "B_status": "unchanged"
+  },
+  "q_en_022": {
+   "query_id": "q_en_022",
+   "raw": "best posting time based on impressions",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_perf_003"
+   ],
+   "A_to_script": "best posting time based on impressions",
+   "A_status": "unchanged",
+   "B_to_latin": "best posting time based on impressions",
+   "B_status": "unchanged"
+  },
+  "q_en_023": {
+   "query_id": "q_en_023",
+   "raw": "comment volume compared to likes",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_perf_004"
+   ],
+   "A_to_script": "comment volume compared to likes",
+   "A_status": "unchanged",
+   "B_to_latin": "comment volume compared to likes",
+   "B_status": "unchanged"
+  },
+  "q_en_024": {
+   "query_id": "q_en_024",
+   "raw": "choosing a niche that feels saturated",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_cap_006"
+   ],
+   "A_to_script": "choosing a niche that feels saturated",
+   "A_status": "unchanged",
+   "B_to_latin": "choosing a niche that feels saturated",
+   "B_status": "unchanged"
+  },
+  "q_en_025": {
+   "query_id": "q_en_025",
+   "raw": "weekly series format taking a creator apart",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_idea_001",
+    "d_hin_idea_001"
+   ],
+   "A_to_script": "weekly series format taking a creator apart",
+   "A_status": "unchanged",
+   "B_to_latin": "weekly series format taking a creator apart",
+   "B_status": "unchanged"
+  },
+  "q_en_026": {
+   "query_id": "q_en_026",
+   "raw": "switching platforms with evidence rather than hype",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_less_002"
+   ],
+   "A_to_script": "switching platforms with evidence rather than hype",
+   "A_status": "unchanged",
+   "B_to_latin": "switching platforms with evidence rather than hype",
+   "B_status": "unchanged"
+  },
+  "q_en_027": {
+   "query_id": "q_en_027",
+   "raw": "before and after editing comparison video",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_scr_004"
+   ],
+   "A_to_script": "before and after editing comparison video",
+   "A_status": "unchanged",
+   "B_to_latin": "before and after editing comparison video",
+   "B_status": "unchanged"
+  },
+  "q_en_028": {
+   "query_id": "q_en_028",
+   "raw": "vlogging a freelancer who got ghosted by a client",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_idea_003"
+   ],
+   "A_to_script": "vlogging a freelancer who got ghosted by a client",
+   "A_status": "unchanged",
+   "B_to_latin": "vlogging a freelancer who got ghosted by a client",
+   "B_status": "unchanged"
+  },
+  "q_en_029": {
+   "query_id": "q_en_029",
+   "raw": "experiment comparing the same script in two languages",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_idea_004"
+   ],
+   "A_to_script": "experiment comparing the same script in two languages",
+   "A_status": "unchanged",
+   "B_to_latin": "experiment comparing the same script in two languages",
+   "B_status": "unchanged"
+  },
+  "q_en_030": {
+   "query_id": "q_en_030",
+   "raw": "how a comment helped me fix a retention problem",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_en_com_003"
+   ],
+   "A_to_script": "how a comment helped me fix a retention problem",
+   "A_status": "unchanged",
+   "B_to_latin": "how a comment helped me fix a retention problem",
+   "B_status": "unchanged"
+  },
+  "q_ta_001": {
+   "query_id": "q_ta_001",
+   "raw": "தமிழில் தொழில்நுட்ப உள்ளடக்கம் குறைவாக இருப்பதற்கான காரணம்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_cap_002"
+   ],
+   "A_to_script": "தமிழில் தொழில்நுட்ப உள்ளடக்கம் குறைவாக இருப்பதற்கான காரணம்",
+   "A_status": "unchanged",
+   "B_to_latin": "dhami.Lil dho.LilnuDhbha uLLaDhaghghaM ghu.RhaivAgha irubhbhadha.RhghAn2a ghAraNaM",
+   "B_status": "ok"
+  },
+  "q_ta_002": {
+   "query_id": "q_ta_002",
+   "raw": "தொடக்கத்தில் வணக்கம் சொல்வதால் ஏன் பார்வையாளர் விட்டுச் செல்கிறார்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_scr_001",
+    "d_ta_hook_003"
+   ],
+   "A_to_script": "தொடக்கத்தில் வணக்கம் சொல்வதால் ஏன் பார்வையாளர் விட்டுச் செல்கிறார்",
+   "A_status": "unchanged",
+   "B_to_latin": "dhoDhaghghadhdhil vaNaghghaM jholvadhAl En2 bhArvaiyALar viDhDhujh jhelghi.RhAr",
+   "B_status": "ok"
+  },
+  "q_ta_003": {
+   "query_id": "q_ta_003",
+   "raw": "எழுத்துரு சிதைவைத் தவிர்க்கும் வழி",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_voice_002"
+   ],
+   "A_to_script": "எழுத்துரு சிதைவைத் தவிர்க்கும் வழி",
+   "A_status": "unchanged",
+   "B_to_latin": "e.Ludhdhuru jhidhaivaidh dhavirghghuM va.Li",
+   "B_status": "ok"
+  },
+  "q_ta_004": {
+   "query_id": "q_ta_004",
+   "raw": "நான்கு பகுதியாக வெட்டும் முறை",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_scr_002"
+   ],
+   "A_to_script": "நான்கு பகுதியாக வெட்டும் முறை",
+   "A_status": "unchanged",
+   "B_to_latin": "nAn2ghu bhaghudhiyAgha veDhDhuM mu.Rhai",
+   "B_status": "ok"
+  },
+  "q_ta_005": {
+   "query_id": "q_ta_005",
+   "raw": "பார்வையாளர் கேள்விகளிலிருந்து வீடியோ தலைப்புகள் உருவாக்குதல்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_cap_003",
+    "d_ta_idea_002"
+   ],
+   "A_to_script": "பார்வையாளர் கேள்விகளிலிருந்து வீடியோ தலைப்புகள் உருவாக்குதல்",
+   "A_status": "unchanged",
+   "B_to_latin": "bhArvaiyALar ghELvighaLilirundhu vIDhiyO dhalaibhbhughaL uruvAghghudhal",
+   "B_status": "ok"
+  },
+  "q_ta_006": {
+   "query_id": "q_ta_006",
+   "raw": "வீடியோ வெட்டும் நேரத்தைக் குறைத்தால் வருமானம் அதிகரிப்பதற்கான காரணம்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_less_001"
+   ],
+   "A_to_script": "வீடியோ வெட்டும் நேரத்தைக் குறைத்தால் வருமானம் அதிகரிப்பதற்கான காரணம்",
+   "A_status": "unchanged",
+   "B_to_latin": "vIDhiyO veDhDhuM nEradhdhaigh ghu.RhaidhdhAl varumAn2aM adhigharibhbhadha.RhghAn2a ghAraNaM",
+   "B_status": "ok"
+  },
+  "q_ta_007": {
+   "query_id": "q_ta_007",
+   "raw": "முதல் மூன்று விநாடிகளில் பார்வையாளர் விடுச்செல்லும் வீதம்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_perf_001"
+   ],
+   "A_to_script": "முதல் மூன்று விநாடிகளில் பார்வையாளர் விடுச்செல்லும் வீதம்",
+   "A_status": "unchanged",
+   "B_to_latin": "mudhal mUn2.Rhu vinADhighaLil bhArvaiyALar viDhujhjhelluM vIdhaM",
+   "B_status": "ok"
+  },
+  "q_ta_008": {
+   "query_id": "q_ta_008",
+   "raw": "தமிழ் பயனாளிகள் ஏன் பதிவுகளை விரும்புகின்றனர்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_mem_001",
+    "d_ta_cap_002"
+   ],
+   "A_to_script": "தமிழ் பயனாளிகள் ஏன் பதிவுகளை விரும்புகின்றனர்",
+   "A_status": "unchanged",
+   "B_to_latin": "dhami.L bhayan2ALighaL En2 bhadhivughaLai viruMbhughin2.Rhan2ar",
+   "B_status": "ok"
+  },
+  "q_ta_009": {
+   "query_id": "q_ta_009",
+   "raw": "தமிழில் நான் உரை எழுதும் பாணி",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_voice_001"
+   ],
+   "A_to_script": "தமிழில் நான் உரை எழுதும் பாணி",
+   "A_status": "unchanged",
+   "B_to_latin": "dhami.Lil nAn2 urai e.LudhuM bhANi",
+   "B_status": "ok"
+  },
+  "q_ta_010": {
+   "query_id": "q_ta_010",
+   "raw": "முதல் தமிழ் வீடியோ குறைவான பார்வையைக் கண்டு எதிர்பார்த்தது",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_mem_002"
+   ],
+   "A_to_script": "முதல் தமிழ் வீடியோ குறைவான பார்வையைக் கண்டு எதிர்பார்த்தது",
+   "A_status": "unchanged",
+   "B_to_latin": "mudhal dhami.L vIDhiyO ghu.RhaivAn2a bhArvaiyaigh ghaNDhu edhirbhArdhdhadhu",
+   "B_status": "ok"
+  },
+  "q_ta_011": {
+   "query_id": "q_ta_011",
+   "raw": "ஒரே நாளில் பதினைந்து உள்ளடக்கங்கள் உருவாக்கிய அனுபவம்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_cap_001"
+   ],
+   "A_to_script": "ஒரே நாளில் பதினைந்து உள்ளடக்கங்கள் உருவாக்கிய அனுபவம்",
+   "A_status": "unchanged",
+   "B_to_latin": "orE nALil bhadhin2aindhu uLLaDhaghghanghaL uruvAghghiya an2ubhavaM",
+   "B_status": "ok"
+  },
+  "q_ta_012": {
+   "query_id": "q_ta_012",
+   "raw": "ஒரே கருப்பொருளை மட்டும் கொண்ட தொடர் உருவாக்கும் திட்டம்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_idea_001"
+   ],
+   "A_to_script": "ஒரே கருப்பொருளை மட்டும் கொண்ட தொடர் உருவாக்கும் திட்டம்",
+   "A_status": "unchanged",
+   "B_to_latin": "orE gharubhbhoruLai maDhDhuM ghoNDha dhoDhar uruvAghghuM dhiDhDhaM",
+   "B_status": "ok"
+  },
+  "q_ta_013": {
+   "query_id": "q_ta_013",
+   "raw": "தெளிவான விளக்கம் என்று கூறிய பார்வையாளர் கருத்து",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_com_001"
+   ],
+   "A_to_script": "தெளிவான விளக்கம் என்று கூறிய பார்வையாளர் கருத்து",
+   "A_status": "unchanged",
+   "B_to_latin": "dheLivAn2a viLaghghaM en2.Rhu ghU.Rhiya bhArvaiyALar gharudhdhu",
+   "B_status": "ok"
+  },
+  "q_ta_014": {
+   "query_id": "q_ta_014",
+   "raw": "என் முதல் வீடியோக்கள் எதனால் பலரும் பார்க்கவில்லை",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_hook_003",
+    "d_ta_mem_002"
+   ],
+   "A_to_script": "என் முதல் வீடியோக்கள் எதனால் பலரும் பார்க்கவில்லை",
+   "A_status": "unchanged",
+   "B_to_latin": "en2 mudhal vIDhiyOghghaL edhan2Al bhalaruM bhArghghavillai",
+   "B_status": "ok"
+  },
+  "q_ta_015": {
+   "query_id": "q_ta_015",
+   "raw": "தமிழில் பதிவு வீதம் அதிகமாக உள்ளதற்கான பொறுப்பு",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_cap_002",
+    "d_ta_cap_003"
+   ],
+   "A_to_script": "தமிழில் பதிவு வீதம் அதிகமாக உள்ளதற்கான பொறுப்பு",
+   "A_status": "unchanged",
+   "B_to_latin": "dhami.Lil bhadhivu vIdhaM adhighamAgha uLLadha.RhghAn2a bho.Rhubhbhu",
+   "B_status": "ok"
+  },
+  "q_ta_016": {
+   "query_id": "q_ta_016",
+   "raw": "எழுந்து முன்னோக்கி செல்லும் உதவிக் கை",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_cap_002"
+   ],
+   "A_to_script": "எழுந்து முன்னோக்கி செல்லும் உதவிக் கை",
+   "A_status": "unchanged",
+   "B_to_latin": "e.Lundhu mun2n2Oghghi jhelluM udhavigh ghai",
+   "B_status": "ok"
+  },
+  "q_ta_017": {
+   "query_id": "q_ta_017",
+   "raw": "மொழி சார்ந்த உள்ளடக்கத்தை மற்றொரு மொழிக்கு மாற்றும் திட்டம்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_strat_001"
+   ],
+   "A_to_script": "மொழி சார்ந்த உள்ளடக்கத்தை மற்றொரு மொழிக்கு மாற்றும் திட்டம்",
+   "A_status": "unchanged",
+   "B_to_latin": "mo.Li jhArndha uLLaDhaghghadhdhai ma.Rh.Rhoru mo.Lighghu mA.Rh.RhuM dhiDhDhaM",
+   "B_status": "ok"
+  },
+  "q_ta_018": {
+   "query_id": "q_ta_018",
+   "raw": "மகன் தமிழில் பார்க்க முயற்சிக்கிறான் ஆனால் வேகம் இல்லை",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_com_002"
+   ],
+   "A_to_script": "மகன் தமிழில் பார்க்க முயற்சிக்கிறான் ஆனால் வேகம் இல்லை",
+   "A_status": "unchanged",
+   "B_to_latin": "maghan2 dhami.Lil bhArghgha muya.Rhjhighghi.RhAn2 An2Al vEghaM illai",
+   "B_status": "ok"
+  },
+  "q_ta_019": {
+   "query_id": "q_ta_019",
+   "raw": "பொதுவான ஆரம்பமாக பயனாளிகளை விடுவிடுவது",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_hook_001"
+   ],
+   "A_to_script": "பொதுவான ஆரம்பமாக பயனாளிகளை விடுவிடுவது",
+   "A_status": "unchanged",
+   "B_to_latin": "bhodhuvAn2a AraMbhamAgha bhayan2ALighaLai viDhuviDhuvadhu",
+   "B_status": "ok"
+  },
+  "q_ta_020": {
+   "query_id": "q_ta_020",
+   "raw": "தமிழில் தொழில்நுட்ப கற்பித்தல் பற்றிய நினைவு",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_mem_001"
+   ],
+   "A_to_script": "தமிழில் தொழில்நுட்ப கற்பித்தல் பற்றிய நினைவு",
+   "A_status": "unchanged",
+   "B_to_latin": "dhami.Lil dho.LilnuDhbha gha.Rhbhidhdhal bha.Rh.Rhiya nin2aivu",
+   "B_status": "ok"
+  },
+  "q_ta_021": {
+   "query_id": "q_ta_021",
+   "raw": "தமிழில் உரையின் வீச்சை அதிகரிப்பதற்கான படி",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_strat_001",
+    "d_ta_cap_003"
+   ],
+   "A_to_script": "தமிழில் உரையின் வீச்சை அதிகரிப்பதற்கான படி",
+   "A_status": "unchanged",
+   "B_to_latin": "dhami.Lil uraiyin2 vIjhjhai adhigharibhbhadha.RhghAn2a bhaDhi",
+   "B_status": "ok"
+  },
+  "q_ta_022": {
+   "query_id": "q_ta_022",
+   "raw": "நேரடியான மொழி பயன்படுத்தும் பழக்கம்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_voice_001"
+   ],
+   "A_to_script": "நேரடியான மொழி பயன்படுத்தும் பழக்கம்",
+   "A_status": "unchanged",
+   "B_to_latin": "nEraDhiyAn2a mo.Li bhayan2bhaDhudhdhuM bha.LaghghaM",
+   "B_status": "ok"
+  },
+  "q_ta_023": {
+   "query_id": "q_ta_023",
+   "raw": "பெரும்பாலும் பணப்பாட்டு நபர்கள் யார் என்ற தகவல்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_mem_001"
+   ],
+   "A_to_script": "பெரும்பாலும் பணப்பாட்டு நபர்கள் யார் என்ற தகவல்",
+   "A_status": "unchanged",
+   "B_to_latin": "bheruMbhAluM bhaNabhbhADhDhu nabharghaL yAr en2.Rha dhaghaval",
+   "B_status": "ok"
+  },
+  "q_ta_024": {
+   "query_id": "q_ta_024",
+   "raw": "தலைப்பை மாற்றியபோது மீண்டும் பெற்ற வெற்றி",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_mem_002"
+   ],
+   "A_to_script": "தலைப்பை மாற்றியபோது மீண்டும் பெற்ற வெற்றி",
+   "A_status": "unchanged",
+   "B_to_latin": "dhalaibhbhai mA.Rh.RhiyabhOdhu mINDhuM bhe.Rh.Rha ve.Rh.Rhi",
+   "B_status": "ok"
+  },
+  "q_ta_025": {
+   "query_id": "q_ta_025",
+   "raw": "வீடியோ வெட்டும் நேரம் குறைப்பதன் நன்மை",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_less_001"
+   ],
+   "A_to_script": "வீடியோ வெட்டும் நேரம் குறைப்பதன் நன்மை",
+   "A_status": "unchanged",
+   "B_to_latin": "vIDhiyO veDhDhuM nEraM ghu.Rhaibhbhadhan2 nan2mai",
+   "B_status": "ok"
+  },
+  "q_hi_001": {
+   "query_id": "q_hi_001",
+   "raw": "रोज़ पोस्ट करने से दर्शक थक क्यों जाते हैं",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_hook_003"
+   ],
+   "A_to_script": "रोज़ पोस्ट करने से दर्शक थक क्यों जाते हैं",
+   "A_status": "unchanged",
+   "B_to_latin": "roza posṭa karane se darśaka thaka kyoṃ jāte haiṃ",
+   "B_status": "ok"
+  },
+  "q_hi_002": {
+   "query_id": "q_hi_002",
+   "raw": "पहले तीन सेकंड में समस्या बताना क्यों ज़रूरी है",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_scr_001",
+    "d_hi_hook_001"
+   ],
+   "A_to_script": "पहले तीन सेकंड में समस्या बताना क्यों ज़रूरी है",
+   "A_status": "unchanged",
+   "B_to_latin": "pahale tīna sekaṃḍa meṃ samasyā batānā kyoṃ zarūrī hai",
+   "B_status": "ok"
+  },
+  "q_hi_003": {
+   "query_id": "q_hi_003",
+   "raw": "हिंदी में तकनीकी विषय कम होने का कारण",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_cap_002"
+   ],
+   "A_to_script": "हिंदी में तकनीकी विषय कम होने का कारण",
+   "A_status": "unchanged",
+   "B_to_latin": "hiṃdī meṃ takanīkī viṣaya kama hone kā kāraṇa",
+   "B_status": "ok"
+  },
+  "q_hi_004": {
+   "query_id": "q_hi_004",
+   "raw": "कैमरा खरीदने से पहले रोशनी सीखना",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_cap_003",
+    "d_en_less_003"
+   ],
+   "A_to_script": "कैमरा खरीदने से पहले रोशनी सीखना",
+   "A_status": "unchanged",
+   "B_to_latin": "kaimarā kharīdane se pahale rośanī sīkhanā",
+   "B_status": "ok"
+  },
+  "q_hi_005": {
+   "query_id": "q_hi_005",
+   "raw": "हफ्ते में नी रील्स का लक्ष्य और वास्तविक संख्या",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_cap_001"
+   ],
+   "A_to_script": "हफ्ते में नी रील्स का लक्ष्य और वास्तविक संख्या",
+   "A_status": "unchanged",
+   "B_to_latin": "haphte meṃ nī rīlsa kā lakṣya aura vāstavika saṃkhyā",
+   "B_status": "ok"
+  },
+  "q_hi_006": {
+   "query_id": "q_hi_006",
+   "raw": "साप्ताह में कितने टुकड़े काफी हैं",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_hook_003",
+    "d_en_hook_001"
+   ],
+   "A_to_script": "साप्ताह में कितने टुकड़े काफी हैं",
+   "A_status": "unchanged",
+   "B_to_latin": "sāptāha meṃ kitane ṭukar̤e kāphī haiṃ",
+   "B_status": "ok"
+  },
+  "q_hi_007": {
+   "query_id": "q_hi_007",
+   "raw": "दर्शकों की उम्र और जनसंख्या संबंधी जानकारी",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_mem_001"
+   ],
+   "A_to_script": "दर्शकों की उम्र और जनसंख्या संबंधी जानकारी",
+   "A_status": "unchanged",
+   "B_to_latin": "darśakoṃ kī umra aura janasaṃkhyā saṃbaṃdhī jānakārī",
+   "B_status": "ok"
+  },
+  "q_hi_008": {
+   "query_id": "q_hi_008",
+   "raw": "ब्रांड ऑफ़र ठुकराने का कारण",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_mem_002"
+   ],
+   "A_to_script": "ब्रांड ऑफ़र ठुकराने का कारण",
+   "A_status": "unchanged",
+   "B_to_latin": "brāṃḍa ऑfara ṭhukarāne kā kāraṇa",
+   "B_status": "ok"
+  },
+  "q_hi_009": {
+   "query_id": "q_hi_009",
+   "raw": "सेव करने वाले पोस्ट अधिक प्रभावी क्यों थे",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_perf_001"
+   ],
+   "A_to_script": "सेव करने वाले पोस्ट अधिक प्रभावी क्यों थे",
+   "A_status": "unchanged",
+   "B_to_latin": "seva karane vāle posṭa adhika prabhāvī kyoṃ the",
+   "B_status": "ok"
+  },
+  "q_hi_010": {
+   "query_id": "q_hi_010",
+   "raw": "हिंदी दर्शक टिप्पणी करते हैं पर लाइक कम करते हैं",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_perf_001"
+   ],
+   "A_to_script": "हिंदी दर्शक टिप्पणी करते हैं पर लाइक कम करते हैं",
+   "A_status": "unchanged",
+   "B_to_latin": "hiṃdī darśaka ṭippaṇī karate haiṃ para lāika kama karate haiṃ",
+   "B_status": "ok"
+  },
+  "q_hi_011": {
+   "query_id": "q_hi_011",
+   "raw": "छोटी वाक्य और सरल शब्दों की लेखन शैली",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_voice_001",
+    "d_hin_voice_001"
+   ],
+   "A_to_script": "छोटी वाक्य और सरल शब्दों की लेखन शैली",
+   "A_status": "unchanged",
+   "B_to_latin": "choṭī vākya aura sarala śabdoṃ kī lekhana śailī",
+   "B_status": "ok"
+  },
+  "q_hi_012": {
+   "query_id": "q_hi_012",
+   "raw": "हर सप्ताह किसी का कमज़ोर वीडियो सुधारने की श्रृंखला",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_idea_001",
+    "d_en_idea_001"
+   ],
+   "A_to_script": "हर सप्ताह किसी का कमज़ोर वीडियो सुधारने की श्रृंखला",
+   "A_status": "unchanged",
+   "B_to_latin": "hara saptāha kisī kā kamazora vīḍiyo sudhārane kī śrṛṃkhalā",
+   "B_status": "ok"
+  },
+  "q_hi_013": {
+   "query_id": "q_hi_013",
+   "raw": "एक ही हफ्ते में लॉन्च और ट्यूटोरियल देना गलती था",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_less_001"
+   ],
+   "A_to_script": "एक ही हफ्ते में लॉन्च और ट्यूटोरियल देना गलती था",
+   "A_status": "unchanged",
+   "B_to_latin": "eka hī haphte meṃ laॉnca aura ṭyūṭoriyala denā galatī thā",
+   "B_status": "ok"
+  },
+  "q_hi_014": {
+   "query_id": "q_hi_014",
+   "raw": "थंबनेल सुधारने से पहले पहले तीन सेकंड का हुक ठीक करना",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hin_less_001"
+   ],
+   "A_to_script": "थंबनेल सुधारने से पहले पहले तीन सेकंड का हुक ठीक करना",
+   "A_status": "unchanged",
+   "B_to_latin": "thaṃbanela sudhārane se pahale pahale tīna sekaṃḍa kā huka ṭhīka karanā",
+   "B_status": "ok"
+  },
+  "q_hi_015": {
+   "query_id": "q_hi_015",
+   "raw": "दर्शक सबसे ज़्यादा किस पोस्ट की प्रशंसा करते हैं",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_com_001"
+   ],
+   "A_to_script": "दर्शक सबसे ज़्यादा किस पोस्ट की प्रशंसा करते हैं",
+   "A_status": "unchanged",
+   "B_to_latin": "darśaka sabase zyādā kisa posṭa kī praśaṃsā karate haiṃ",
+   "B_status": "ok"
+  },
+  "q_hi_016": {
+   "query_id": "q_hi_016",
+   "raw": "रोशनी के बारे में बताया गया भाग सबसे उपयोगी था",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hin_com_001",
+    "d_hi_com_001"
+   ],
+   "A_to_script": "रोशनी के बारे में बताया गया भाग सबसे उपयोगी था",
+   "A_status": "unchanged",
+   "B_to_latin": "rośanī ke bāre meṃ batāyā gayā bhāga sabase upayogī thā",
+   "B_status": "ok"
+  },
+  "q_hi_017": {
+   "query_id": "q_hi_017",
+   "raw": "तीन खंभों वाली रणनीति का विवरण",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_strat_001",
+    "d_hin_strat_001"
+   ],
+   "A_to_script": "तीन खंभों वाली रणनीति का विवरण",
+   "A_status": "unchanged",
+   "B_to_latin": "tīna khaṃbhoṃ vālī raṇanīti kā vivaraṇa",
+   "B_status": "ok"
+  },
+  "q_hi_018": {
+   "query_id": "q_hi_018",
+   "raw": "छह महीने में कौन सी बदलाव नज़र डालने वाली निकली",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_hook_002"
+   ],
+   "A_to_script": "छह महीने में कौन सी बदलाव नज़र डालने वाली निकली",
+   "A_status": "unchanged",
+   "B_to_latin": "chaha mahīne meṃ kauna sī badalāva nazara ḍālane vālī nikalī",
+   "B_status": "ok"
+  },
+  "q_hi_019": {
+   "query_id": "q_hi_019",
+   "raw": "गलती किस हफ्ते होते वीडियो का विश्लेषण करना",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_hook_002"
+   ],
+   "A_to_script": "गलती किस हफ्ते होते वीडियो का विश्लेषण करना",
+   "A_status": "unchanged",
+   "B_to_latin": "galatī kisa haphte hote vīḍiyo kā viśleṣaṇa karanā",
+   "B_status": "ok"
+  },
+  "q_hi_020": {
+   "query_id": "q_hi_020",
+   "raw": "मोबाइल पर देखने वाले दर्शकों की उपस्थिति",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_mem_001"
+   ],
+   "A_to_script": "मोबाइल पर देखने वाले दर्शकों की उपस्थिति",
+   "A_status": "unchanged",
+   "B_to_latin": "mobāila para dekhane vāle darśakoṃ kī upasthiti",
+   "B_status": "ok"
+  },
+  "q_hi_021": {
+   "query_id": "q_hi_021",
+   "raw": "गहराई से समझाने वाले लंबे वीडियो और रोज़ छोटे टुकड़े",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_strat_001"
+   ],
+   "A_to_script": "गहराई से समझाने वाले लंबे वीडियो और रोज़ छोटे टुकड़े",
+   "A_status": "unchanged",
+   "B_to_latin": "gaharāī se samajhāne vāle laṃbe vīḍiyo aura roza choṭe ṭukar̤e",
+   "B_status": "ok"
+  },
+  "q_hi_022": {
+   "query_id": "q_hi_022",
+   "raw": "हिंदी और अंग्रेज़ी दर्शकों में अंतर",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_hin_perf_001"
+   ],
+   "A_to_script": "हिंदी और अंग्रेज़ी दर्शकों में अंतर",
+   "A_status": "unchanged",
+   "B_to_latin": "hiṃdī aura aṃgrezī darśakoṃ meṃ aṃtara",
+   "B_status": "ok"
+  },
+  "q_tan_001": {
+   "query_id": "q_tan_001",
+   "raw": "kee rendu viral aagudhu ya illa",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_hook_001",
+    "d_tan_hook_002"
+   ],
+   "A_to_script": "கீ ரெந்து விரல் ஆகுது ய இல்ல",
+   "A_status": "ok",
+   "B_to_latin": "kee rendu viral aagudhu ya illa",
+   "B_status": "unchanged"
+  },
+  "q_tan_002": {
+   "query_id": "q_tan_002",
+   "raw": "enna padurom apadi than solren",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_voice_001"
+   ],
+   "A_to_script": "எந்ந பதுரொம் அபதி தந் ஸொல்ரெந்",
+   "A_status": "ok",
+   "B_to_latin": "enna padurom apadi than solren",
+   "B_status": "unchanged"
+  },
+  "q_tan_003": {
+   "query_id": "q_tan_003",
+   "raw": "sunday batch recording ke liye weekly workflow kya tha",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_cap_001"
+   ],
+   "A_to_script": "ஸுந்தய் பத்ச் ரெசொர்திங்க் கெ லியெ வீக்ல்ய் வொர்க்ஃப்லொவ் க்ய த",
+   "A_status": "ok",
+   "B_to_latin": "sunday batch recording ke liye weekly workflow kya tha",
+   "B_status": "unchanged"
+  },
+  "q_tan_004": {
+   "query_id": "q_tan_004",
+   "raw": "opening la greeting venuma illa",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_scr_001"
+   ],
+   "A_to_script": "ஒபெநிங்க் ல க்ரீதிங்க் வெநும இல்ல",
+   "A_status": "ok",
+   "B_to_latin": "opening la greeting venuma illa",
+   "B_status": "unchanged"
+  },
+  "q_tan_005": {
+   "query_id": "q_tan_005",
+   "raw": "english title vechirathu watch time diminish aayidhu",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_less_001"
+   ],
+   "A_to_script": "எங்க்லிஶ் தித்லெ வெசிரது வத்ச் திமெ திமிநிஶ் ஆயிது",
+   "A_status": "ok",
+   "B_to_latin": "english title vechirathu watch time diminish aayidhu",
+   "B_status": "unchanged"
+  },
+  "q_tan_006": {
+   "query_id": "q_tan_006",
+   "raw": "tamil audience-ku tech content kevvu theriyadhu nu kelappa padakkum illa",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_cap_002"
+   ],
+   "A_to_script": "தமில் ஔதிஎஞ்செ-கு தெச் சொந்தெந்த் கெவ்வு தெரியது நு கெலப்ப பதக்கும் இல்ல",
+   "A_status": "ok",
+   "B_to_latin": "tamil audience-ku tech content kevvu theriyadhu nu kelappa padakkum illa",
+   "B_status": "unchanged"
+  },
+  "q_tan_007": {
+   "query_id": "q_tan_007",
+   "raw": "audience la enna percentage enna pesraargal",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_mem_001"
+   ],
+   "A_to_script": "ஔதிஎஞ்செ ல எந்ந பெர்செந்தகெ எந்ந பெஸ்ரார்கல்",
+   "A_status": "ok",
+   "B_to_latin": "audience la enna percentage enna pesraargal",
+   "B_status": "unchanged"
+  },
+  "q_tan_008": {
+   "query_id": "q_tan_008",
+   "raw": "tamil tech audience ku free course epdi start pannalan",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_idea_001"
+   ],
+   "A_to_script": "தமில் தெச் ஔதிஎஞ்செ கு ஃப்ரீ சொஉர்ஸெ எப்தி ஸ்தர்த் பந்நலந்",
+   "A_status": "ok",
+   "B_to_latin": "tamil tech audience ku free course epdi start pannalan",
+   "B_status": "unchanged"
+  },
+  "q_tan_009": {
+   "query_id": "q_tan_009",
+   "raw": "tamil engagement indri kattra varaikkum mela",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_perf_001"
+   ],
+   "A_to_script": "தமில் எங்ககெமெந்த் இந்த்ரி கத்த்ர வரைக்கும் மெல",
+   "A_status": "ok",
+   "B_to_latin": "tamil engagement indri kattra varaikkum mela",
+   "B_status": "unchanged"
+  },
+  "q_tan_010": {
+   "query_id": "q_tan_010",
+   "raw": "english audience ku same video subtitle a add pannren",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_strat_001"
+   ],
+   "A_to_script": "எங்க்லிஶ் ஔதிஎஞ்செ கு ஸமெ விதெஒ ஸுப்தித்லெ அ அத்த் பந்ந்ரெந்",
+   "A_status": "ok",
+   "B_to_latin": "english audience ku same video subtitle a add pannren",
+   "B_status": "unchanged"
+  },
+  "q_tan_011": {
+   "query_id": "q_tan_011",
+   "raw": "first time la oru tamil tech video paathen but full detailed a neerillai",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_com_001"
+   ],
+   "A_to_script": "ஃபிர்ஸ்த் திமெ ல ஒரு தமில் தெச் விதெஒ பாதெந் புத் ஃபுல்ல் தெதைலெத் அ நீரில்லை",
+   "A_status": "ok",
+   "B_to_latin": "first time la oru tamil tech video paathen but full detailed a neerillai",
+   "B_status": "unchanged"
+  },
+  "q_tan_012": {
+   "query_id": "q_tan_012",
+   "raw": "both languages la solran",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_mix_ta_001"
+   ],
+   "A_to_script": "பொத் லங்குஅகெஸ் ல ஸொல்ரந்",
+   "A_status": "ok",
+   "B_to_latin": "both languages la solran",
+   "B_status": "unchanged"
+  },
+  "q_tan_013": {
+   "query_id": "q_tan_013",
+   "raw": "sappadu illa solradhu",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_hook_002"
+   ],
+   "A_to_script": "ஸப்பது இல்ல ஸொல்ரது",
+   "A_status": "ok",
+   "B_to_latin": "sappadu illa solradhu",
+   "B_status": "unchanged"
+  },
+  "q_tan_014": {
+   "query_id": "q_tan_014",
+   "raw": "ketbare tha solradhu slow a irundhu",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_hook_001"
+   ],
+   "A_to_script": "கெத்பரெ த ஸொல்ரது ஸ்லொவ் அ இருந்து",
+   "A_status": "ok",
+   "B_to_latin": "ketbare tha solradhu slow a irundhu",
+   "B_status": "unchanged"
+  },
+  "q_tan_015": {
+   "query_id": "q_tan_015",
+   "raw": "english-mixture title vechirathu duration konjam kuraikum irukkirathu",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_less_001"
+   ],
+   "A_to_script": "எங்க்லிஶ்-மிக்ஷ்துரெ தித்லெ வெசிரது துரதிஒந் கொஞ்ஜம் குரைகும் இருக்கிரது",
+   "A_status": "ok",
+   "B_to_latin": "english-mixture title vechirathu duration konjam kuraikum irukkirathu",
+   "B_status": "unchanged"
+  },
+  "q_tan_016": {
+   "query_id": "q_tan_016",
+   "raw": "etru padungal epdi kuraindha paksei prep pannidhu",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_cap_001"
+   ],
+   "A_to_script": "எத்ரு பதுங்கல் எப்தி குரைந்த பக்ஸெஇ ப்ரெப் பந்நிது",
+   "A_status": "ok",
+   "B_to_latin": "etru padungal epdi kuraindha paksei prep pannidhu",
+   "B_status": "unchanged"
+  },
+  "q_tan_017": {
+   "query_id": "q_tan_017",
+   "raw": "niche decide pannan mele 30 din data paathu",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_mix_hi_004"
+   ],
+   "A_to_script": "நிசெ தெசிதெ பந்நந் மெலெ ௩௦ திந் தத பாது",
+   "A_status": "ok",
+   "B_to_latin": "niche decide pannan mele 30 din data paathu",
+   "B_status": "unchanged"
+  },
+  "q_tan_018": {
+   "query_id": "q_tan_018",
+   "raw": "rich english content nu epdi varaikum mathukkiren",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_cap_002"
+   ],
+   "A_to_script": "ரிச் எங்க்லிஶ் சொந்தெந்த் நு எப்தி வரைகும் மதுக்கிரெந்",
+   "A_status": "ok",
+   "B_to_latin": "rich english content nu epdi varaikum mathukkiren",
+   "B_status": "unchanged"
+  },
+  "q_tan_019": {
+   "query_id": "q_tan_019",
+   "raw": "weekend la shoot cheppu plan pannradhu",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_mix_ta_003"
+   ],
+   "A_to_script": "வீகெந்த் ல ஶொஒத் செப்பு ப்லந் பந்ந்ரது",
+   "A_status": "ok",
+   "B_to_latin": "weekend la shoot cheppu plan pannradhu",
+   "B_status": "unchanged"
+  },
+  "q_tan_020": {
+   "query_id": "q_tan_020",
+   "raw": "short sentences use pannren nu solpadam",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_tan_voice_001"
+   ],
+   "A_to_script": "ஶொர்த் ஸெந்தெஞ்செஸ் உஸெ பந்ந்ரெந் நு ஸொல்பதம்",
+   "A_status": "ok",
+   "B_to_latin": "short sentences use pannren nu solpadam",
+   "B_status": "unchanged"
+  },
+  "q_hin_001": {
+   "query_id": "q_hin_001",
+   "raw": "daily post karne se retention kyun girti hai",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_hook_001"
+   ],
+   "A_to_script": "दैल्य् पोस्त् कर्ने से रेतेन्तिओन् क्युन् गिर्ति है",
+   "A_status": "ok",
+   "B_to_latin": "daily post karne se retention kyun girti hai",
+   "B_status": "unchanged"
+  },
+  "q_hin_002": {
+   "query_id": "q_hin_002",
+   "raw": "chhoti sentences aur simple words writing style",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_voice_001"
+   ],
+   "A_to_script": "छ्होति सेन्तेन्चेस् और् सिम्प्ले wओर्द्स् wरितिन्ग् स्त्य्ले",
+   "A_status": "ok",
+   "B_to_latin": "chhoti sentences aur simple words writing style",
+   "B_status": "unchanged"
+  },
+  "q_hin_003": {
+   "query_id": "q_hin_003",
+   "raw": "15 reels ka target tha 9 mile",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_cap_001"
+   ],
+   "A_to_script": "१५ रेएल्स् क तर्गेत् थ ९ मिले",
+   "A_status": "ok",
+   "B_to_latin": "15 reels ka target tha 9 mile",
+   "B_status": "unchanged"
+  },
+  "q_hin_004": {
+   "query_id": "q_hin_004",
+   "raw": "problem batao phir cost dikhao phir solution",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_scr_001",
+    "d_hi_scr_001"
+   ],
+   "A_to_script": "प्रोब्लेम् बतओ फिर् चोस्त् दिखओ फिर् सोलुतिओन्",
+   "A_status": "ok",
+   "B_to_latin": "problem batao phir cost dikhao phir solution",
+   "B_status": "unchanged"
+  },
+  "q_hin_005": {
+   "query_id": "q_hin_005",
+   "raw": "lighting wala part sabse helpful tha",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_com_001"
+   ],
+   "A_to_script": "लिघ्तिन्ग् wअल पर्त् सब्से हेल्प्फ़ुल् थ",
+   "A_status": "ok",
+   "B_to_latin": "lighting wala part sabse helpful tha",
+   "B_status": "unchanged"
+  },
+  "q_hin_006": {
+   "query_id": "q_hin_006",
+   "raw": "sabse kam 3 second ka hook fix karna",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_less_001"
+   ],
+   "A_to_script": "सब्से कम् ३ सेचोन्द् क होओक् फ़िx कर्न",
+   "A_status": "ok",
+   "B_to_latin": "sabse kam 3 second ka hook fix karna",
+   "B_status": "unchanged"
+  },
+  "q_hin_007": {
+   "query_id": "q_hin_007",
+   "raw": "har week kisi ka sabse weak video rewrite karunga",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_idea_001"
+   ],
+   "A_to_script": "हर् wएएक् किसि क सब्से wएअक् विदेओ रेwरिते करुन्ग",
+   "A_status": "ok",
+   "B_to_latin": "har week kisi ka sabse weak video rewrite karunga",
+   "B_status": "unchanged"
+  },
+  "q_hin_008": {
+   "query_id": "q_hin_008",
+   "raw": "2 long videos 5 short clips daily comments reply",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_strat_001"
+   ],
+   "A_to_script": "२ लोन्ग् विदेओस् ५ स्होर्त् च्लिप्स् दैल्य् चोम्मेन्त्स् रेप्ल्य्",
+   "A_status": "ok",
+   "B_to_latin": "2 long videos 5 short clips daily comments reply",
+   "B_status": "unchanged"
+  },
+  "q_hin_009": {
+   "query_id": "q_hin_009",
+   "raw": "watch time double ho gayi 6 mahine me",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_hook_002"
+   ],
+   "A_to_script": "wअत्छ् तिमे दोउब्ले हो गयि ६ महिने मे",
+   "A_status": "ok",
+   "B_to_latin": "watch time double ho gayi 6 mahine me",
+   "B_status": "unchanged"
+  },
+  "q_hin_010": {
+   "query_id": "q_hin_010",
+   "raw": "hindi me tech content kam hai demand hai",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_cap_002"
+   ],
+   "A_to_script": "हिन्दि मे तेछ् चोन्तेन्त् कम् है देमन्द् है",
+   "A_status": "ok",
+   "B_to_latin": "hindi me tech content kam hai demand hai",
+   "B_status": "unchanged"
+  },
+  "q_hin_011": {
+   "query_id": "q_hin_011",
+   "raw": "Hindi audience comment zyada karti hai lekin like kam karti hai",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_perf_001"
+   ],
+   "A_to_script": "हिन्दि औदिएन्चे चोम्मेन्त् ज़्यद कर्ति है लेकिन् लिके कम् कर्ति है",
+   "A_status": "ok",
+   "B_to_latin": "Hindi audience comment zyada karti hai lekin like kam karti hai",
+   "B_status": "unchanged"
+  },
+  "q_hin_012": {
+   "query_id": "q_hin_012",
+   "raw": "target audience 25 se 40 working professionals",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_mem_001"
+   ],
+   "A_to_script": "तर्गेत् औदिएन्चे २५ से ४० wओर्किन्ग् प्रोफ़ेस्सिओनल्स्",
+   "A_status": "ok",
+   "B_to_latin": "target audience 25 se 40 working professionals",
+   "B_status": "unchanged"
+  },
+  "q_hin_013": {
+   "query_id": "q_hin_013",
+   "raw": "daily posting se energy drain nahi hona chahiye",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_hook_001"
+   ],
+   "A_to_script": "दैल्य् पोस्तिन्ग् से एनेर्ग्य् द्रैन् नहि होन छहिये",
+   "A_status": "ok",
+   "B_to_latin": "daily posting se energy drain nahi hona chahiye",
+   "B_status": "unchanged"
+  },
+  "q_hin_014": {
+   "query_id": "q_hin_014",
+   "raw": "camera ya editing nahi thi wo change",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_hook_002"
+   ],
+   "A_to_script": "चमेर य एदितिन्ग् नहि थि wओ छन्गे",
+   "A_status": "ok",
+   "B_to_latin": "camera ya editing nahi thi wo change",
+   "B_status": "unchanged"
+  },
+  "q_hin_015": {
+   "query_id": "q_hin_015",
+   "raw": "quality ko consistent rakhna hi consistency ka asal matlab hai",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_strat_001"
+   ],
+   "A_to_script": "क़ुअलित्य् को चोन्सिस्तेन्त् रख्न हि चोन्सिस्तेन्च्य् क असल् मत्लब् है",
+   "A_status": "ok",
+   "B_to_latin": "quality ko consistent rakhna hi consistency ka asal matlab hai",
+   "B_status": "unchanged"
+  },
+  "q_hin_016": {
+   "query_id": "q_hin_016",
+   "raw": "kam pieces lekin zyada effective",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_cap_001"
+   ],
+   "A_to_script": "कम् पिएचेस् लेकिन् ज़्यद एफ़्फ़ेच्तिवे",
+   "A_status": "ok",
+   "B_to_latin": "kam pieces lekin zyada effective",
+   "B_status": "unchanged"
+  },
+  "q_hin_017": {
+   "query_id": "q_hin_017",
+   "raw": "pehle problem feel honi chahiye solution pehle nahi",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_scr_001"
+   ],
+   "A_to_script": "पेह्ले प्रोब्लेम् फ़ेएल् होनि छहिये सोलुतिओन् पेह्ले नहि",
+   "A_status": "ok",
+   "B_to_latin": "pehle problem feel honi chahiye solution pehle nahi",
+   "B_status": "unchanged"
+  },
+  "q_hin_018": {
+   "query_id": "q_hin_018",
+   "raw": "audience connect ke liye language choice",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_mix_hi_001"
+   ],
+   "A_to_script": "औदिएन्चे चोन्नेच्त् के लिये लन्गुअगे छोइचे",
+   "A_status": "ok",
+   "B_to_latin": "audience connect ke liye language choice",
+   "B_status": "unchanged"
+  },
+  "q_hin_019": {
+   "query_id": "q_hin_019",
+   "raw": "niche decide karne ke liye 30 din data dekha",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_mix_hi_004"
+   ],
+   "A_to_script": "निछे देचिदे कर्ने के लिये ३० दिन् दत देख",
+   "A_status": "ok",
+   "B_to_latin": "niche decide karne ke liye 30 din data dekha",
+   "B_status": "unchanged"
+  },
+  "q_hin_020": {
+   "query_id": "q_hin_020",
+   "raw": "budget camera ring light laptop setup",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_mix_hi_003"
+   ],
+   "A_to_script": "बुद्गेत् चमेर रिन्ग् लिघ्त् लप्तोप् सेतुप्",
+   "A_status": "ok",
+   "B_to_latin": "budget camera ring light laptop setup",
+   "B_status": "unchanged"
+  },
+  "q_x_ta_en_001": {
+   "query_id": "q_x_ta_en_001",
+   "raw": "எந்த வீடியோவின் தொடக்கமே முக்கியம் என்பதை ஏன் கூறுகிறீர்கள்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_en_hook_005"
+   ],
+   "A_to_script": "எந்த வீடியோவின் தொடக்கமே முக்கியம் என்பதை ஏன் கூறுகிறீர்கள்",
+   "A_status": "unchanged",
+   "B_to_latin": "endha vIDhiyOvin2 dhoDhaghghamE mughghiyaM en2bhadhai En2 ghU.Rhughi.RhIrghaL",
+   "B_status": "ok"
+  },
+  "q_x_ta_en_002": {
+   "query_id": "q_x_ta_en_002",
+   "raw": "ஆரம்பத்தில் வணக்கம் சொல்லுவது ஏன் தீங்கு செய்கிறது",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_en_hook_005",
+    "d_en_hook_002"
+   ],
+   "A_to_script": "ஆரம்பத்தில் வணக்கம் சொல்லுவது ஏன் தீங்கு செய்கிறது",
+   "A_status": "unchanged",
+   "B_to_latin": "AraMbhadhdhil vaNaghghaM jholluvadhu En2 dhInghu jheyghi.Rhadhu",
+   "B_status": "ok"
+  },
+  "q_x_ta_en_003": {
+   "query_id": "q_x_ta_en_003",
+   "raw": "ஒரே நாளில் பல உள்ளடக்கங்களை உருவாக்கும் முறை",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_en_cap_001"
+   ],
+   "A_to_script": "ஒரே நாளில் பல உள்ளடக்கங்களை உருவாக்கும் முறை",
+   "A_status": "unchanged",
+   "B_to_latin": "orE nALil bhala uLLaDhaghghanghaLai uruvAghghuM mu.Rhai",
+   "B_status": "ok"
+  },
+  "q_x_ta_en_004": {
+   "query_id": "q_x_ta_en_004",
+   "raw": "பார்வையாளர் கேள்விகளிலிருந்து தலைப்புகள் எப்படி கிடைக்கும்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_en_cap_004"
+   ],
+   "A_to_script": "பார்வையாளர் கேள்விகளிலிருந்து தலைப்புகள் எப்படி கிடைக்கும்",
+   "A_status": "unchanged",
+   "B_to_latin": "bhArvaiyALar ghELvighaLilirundhu dhalaibhbhughaL ebhbhaDhi ghiDhaighghuM",
+   "B_status": "ok"
+  },
+  "q_x_ta_en_005": {
+   "query_id": "q_x_ta_en_005",
+   "raw": "சேமிப்பு விகிதம் ஏன் முக்கிய அளவுகோலாக உள்ளது",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_en_perf_002"
+   ],
+   "A_to_script": "சேமிப்பு விகிதம் ஏன் முக்கிய அளவுகோலாக உள்ளது",
+   "A_status": "unchanged",
+   "B_to_latin": "jhEmibhbhu vighidhaM En2 mughghiya aLavughOlAgha uLLadhu",
+   "B_status": "ok"
+  },
+  "q_x_ta_en_006": {
+   "query_id": "q_x_ta_en_006",
+   "raw": "நான்கு பகுதிகள் கொண்ட வீடியோ அமைப்பு",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_en_scr_001",
+    "d_en_scr_003"
+   ],
+   "A_to_script": "நான்கு பகுதிகள் கொண்ட வீடியோ அமைப்பு",
+   "A_status": "unchanged",
+   "B_to_latin": "nAn2ghu bhaghudhighaL ghoNDha vIDhiyO amaibhbhu",
+   "B_status": "ok"
+  },
+  "q_x_ta_en_007": {
+   "query_id": "q_x_ta_en_007",
+   "raw": "நீங்கள் பயன்படுத்தும் எழுத்துரு பாணி",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_en_voice_002"
+   ],
+   "A_to_script": "நீங்கள் பயன்படுத்தும் எழுத்துரு பாணி",
+   "A_status": "unchanged",
+   "B_to_latin": "nInghaL bhayan2bhaDhudhdhuM e.Ludhdhuru bhANi",
+   "B_status": "ok"
+  },
+  "q_x_ta_en_008": {
+   "query_id": "q_x_ta_en_008",
+   "raw": "நீங்கள் ஏன் பழைய பதிவை மீண்டும் பயன்படுத்துகிறீர்கள்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_en_strat_003"
+   ],
+   "A_to_script": "நீங்கள் ஏன் பழைய பதிவை மீண்டும் பயன்படுத்துகிறீர்கள்",
+   "A_status": "unchanged",
+   "B_to_latin": "nInghaL En2 bha.Laiya bhadhivai mINDhuM bhayan2bhaDhudhdhughi.RhIrghaL",
+   "B_status": "ok"
+  },
+  "q_x_ta_en_009": {
+   "query_id": "q_x_ta_en_009",
+   "raw": "பார்வையாளர் அமைப்பு பற்றிய தகவல்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_en_mem_002"
+   ],
+   "A_to_script": "பார்வையாளர் அமைப்பு பற்றிய தகவல்",
+   "A_status": "unchanged",
+   "B_to_latin": "bhArvaiyALar amaibhbhu bha.Rh.Rhiya dhaghaval",
+   "B_status": "ok"
+  },
+  "q_x_ta_en_010": {
+   "query_id": "q_x_ta_en_010",
+   "raw": "கேமரா வாங்குவதற்கு முன் ஒளி குறிப்பிட வேண்டும்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_en_less_003"
+   ],
+   "A_to_script": "கேமரா வாங்குவதற்கு முன் ஒளி குறிப்பிட வேண்டும்",
+   "A_status": "unchanged",
+   "B_to_latin": "ghEmarA vAnghuvadha.Rhghu mun2 oLi ghu.RhibhbhiDha vENDhuM",
+   "B_status": "ok"
+  },
+  "q_x_ta_en_011": {
+   "query_id": "q_x_ta_en_011",
+   "raw": "தினமும் பதிவு இடுவதால் ஏற்படும் தேய்வு",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_en_cap_005",
+    "d_en_hook_001"
+   ],
+   "A_to_script": "தினமும் பதிவு இடுவதால் ஏற்படும் தேய்வு",
+   "A_status": "unchanged",
+   "B_to_latin": "dhin2amuM bhadhivu iDhuvadhAl E.RhbhaDhuM dhEyvu",
+   "B_status": "ok"
+  },
+  "q_x_ta_en_012": {
+   "query_id": "q_x_ta_en_012",
+   "raw": "நீங்கள் மூன்று அமைப்புக் கொள்கை பயன்படுத்துகிறீர்கள்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_en_strat_001"
+   ],
+   "A_to_script": "நீங்கள் மூன்று அமைப்புக் கொள்கை பயன்படுத்துகிறீர்கள்",
+   "A_status": "unchanged",
+   "B_to_latin": "nInghaL mUn2.Rhu amaibhbhugh ghoLghai bhayan2bhaDhudhdhughi.RhIrghaL",
+   "B_status": "ok"
+  },
+  "q_x_en_ta_001": {
+   "query_id": "q_x_en_ta_001",
+   "raw": "why technical content is scarce in Tamil",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_cap_002"
+   ],
+   "A_to_script": "why technical content is scarce in Tamil",
+   "A_status": "unchanged",
+   "B_to_latin": "why technical content is scarce in Tamil",
+   "B_status": "unchanged"
+  },
+  "q_x_en_ta_002": {
+   "query_id": "q_x_en_ta_002",
+   "raw": "how to avoid broken font rendering",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_voice_002"
+   ],
+   "A_to_script": "how to avoid broken font rendering",
+   "A_status": "unchanged",
+   "B_to_latin": "how to avoid broken font rendering",
+   "B_status": "unchanged"
+  },
+  "q_x_en_ta_003": {
+   "query_id": "q_x_en_ta_003",
+   "raw": "four part video structure explanation",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_scr_002"
+   ],
+   "A_to_script": "four part video structure explanation",
+   "A_status": "unchanged",
+   "B_to_latin": "four part video structure explanation",
+   "B_status": "unchanged"
+  },
+  "q_x_en_ta_004": {
+   "query_id": "q_x_en_ta_004",
+   "raw": "first three seconds drop off rate in Tamil content",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_perf_001"
+   ],
+   "A_to_script": "first three seconds drop off rate in Tamil content",
+   "A_status": "unchanged",
+   "B_to_latin": "first three seconds drop off rate in Tamil content",
+   "B_status": "unchanged"
+  },
+  "q_x_en_ta_005": {
+   "query_id": "q_x_en_ta_005",
+   "raw": "audience language preferences Tamil versus English",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_mem_001",
+    "d_tan_mem_001"
+   ],
+   "A_to_script": "audience language preferences Tamil versus English",
+   "A_status": "unchanged",
+   "B_to_latin": "audience language preferences Tamil versus English",
+   "B_status": "unchanged"
+  },
+  "q_x_en_ta_006": {
+   "query_id": "q_x_en_ta_006",
+   "raw": "series with a single topic per episode",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_idea_001"
+   ],
+   "A_to_script": "series with a single topic per episode",
+   "A_status": "unchanged",
+   "B_to_latin": "series with a single topic per episode",
+   "B_status": "unchanged"
+  },
+  "q_x_en_ta_007": {
+   "query_id": "q_x_en_ta_007",
+   "raw": "editing faster improved revenue",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_less_001"
+   ],
+   "A_to_script": "editing faster improved revenue",
+   "A_status": "unchanged",
+   "B_to_latin": "editing faster improved revenue",
+   "B_status": "unchanged"
+  },
+  "q_x_en_ta_008": {
+   "query_id": "q_x_en_ta_008",
+   "raw": "writing style with short sentences in Tamil",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_voice_001"
+   ],
+   "A_to_script": "writing style with short sentences in Tamil",
+   "A_status": "unchanged",
+   "B_to_latin": "writing style with short sentences in Tamil",
+   "B_status": "unchanged"
+  },
+  "q_x_en_ta_009": {
+   "query_id": "q_x_en_ta_009",
+   "raw": "comment about the clearest explanation",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_com_001"
+   ],
+   "A_to_script": "comment about the clearest explanation",
+   "A_status": "unchanged",
+   "B_to_latin": "comment about the clearest explanation",
+   "B_status": "unchanged"
+  },
+  "q_x_en_ta_010": {
+   "query_id": "q_x_en_ta_010",
+   "raw": "first Tamil video performed poorly then title change fixed it",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_mem_002"
+   ],
+   "A_to_script": "first Tamil video performed poorly then title change fixed it",
+   "A_status": "unchanged",
+   "B_to_latin": "first Tamil video performed poorly then title change fixed it",
+   "B_status": "unchanged"
+  },
+  "q_x_en_ta_011": {
+   "query_id": "q_x_en_ta_011",
+   "raw": "content repurposing strategy for regional languages",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_strat_001"
+   ],
+   "A_to_script": "content repurposing strategy for regional languages",
+   "A_status": "unchanged",
+   "B_to_latin": "content repurposing strategy for regional languages",
+   "B_status": "unchanged"
+  },
+  "q_x_en_ta_012": {
+   "query_id": "q_x_en_ta_012",
+   "raw": "wide reach versus deep community in vernacular",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_ta_strat_001"
+   ],
+   "A_to_script": "wide reach versus deep community in vernacular",
+   "A_status": "unchanged",
+   "B_to_latin": "wide reach versus deep community in vernacular",
+   "B_status": "unchanged"
+  },
+  "q_x_hi_en_001": {
+   "query_id": "q_x_hi_en_001",
+   "raw": "कमरा और रोशनी का क्या असर है",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_en_less_003",
+    "d_hi_cap_003"
+   ],
+   "A_to_script": "कमरा और रोशनी का क्या असर है",
+   "A_status": "unchanged",
+   "B_to_latin": "kamarā aura rośanī kā kyā asara hai",
+   "B_status": "ok"
+  },
+  "q_x_hi_en_002": {
+   "query_id": "q_x_hi_en_002",
+   "raw": "दर्शकों की उम्र और कौन सा उपकरण उपयोग करते हैं",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_en_mem_002"
+   ],
+   "A_to_script": "दर्शकों की उम्र और कौन सा उपकरण उपयोग करते हैं",
+   "A_status": "unchanged",
+   "B_to_latin": "darśakoṃ kī umra aura kauna sā upakaraṇa upayoga karate haiṃ",
+   "B_status": "ok"
+  },
+  "q_x_hi_en_003": {
+   "query_id": "q_x_hi_en_003",
+   "raw": "ब्रांड साझेदारी क्यों नहीं लेना चाहिए",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_en_mem_003"
+   ],
+   "A_to_script": "ब्रांड साझेदारी क्यों नहीं लेना चाहिए",
+   "A_status": "unchanged",
+   "B_to_latin": "brāṃḍa sājhedārī kyoṃ nahīṃ lenā cāhie",
+   "B_status": "ok"
+  },
+  "q_x_hi_en_004": {
+   "query_id": "q_x_hi_en_004",
+   "raw": "हर सप्ताह कितना सामग्री बनानी चाहिए",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_en_hook_001"
+   ],
+   "A_to_script": "हर सप्ताह कितना सामग्री बनानी चाहिए",
+   "A_status": "unchanged",
+   "B_to_latin": "hara saptāha kitanā sāmagrī banānī cāhie",
+   "B_status": "ok"
+  },
+  "q_x_hi_en_005": {
+   "query_id": "q_x_hi_en_005",
+   "raw": "शीर्षक में संख्या और दर्शक और परिणाम",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_en_snip_003"
+   ],
+   "A_to_script": "शीर्षक में संख्या और दर्शक और परिणाम",
+   "A_status": "unchanged",
+   "B_to_latin": "śīrṣaka meṃ saṃkhyā aura darśaka aura pariṇāma",
+   "B_status": "ok"
+  },
+  "q_x_hi_en_006": {
+   "query_id": "q_x_hi_en_006",
+   "raw": "पहले मिनट में सिंडर टाइम का प्रभाव",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_en_perf_003"
+   ],
+   "A_to_script": "पहले मिनट में सिंडर टाइम का प्रभाव",
+   "A_status": "unchanged",
+   "B_to_latin": "pahale minaṭa meṃ siṃḍara ṭāima kā prabhāva",
+   "B_status": "ok"
+  },
+  "q_x_hi_en_007": {
+   "query_id": "q_x_hi_en_007",
+   "raw": "लंबी सामग्री का कई रूपों में पुनः उपयोग",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_en_strat_003"
+   ],
+   "A_to_script": "लंबी सामग्री का कई रूपों में पुनः उपयोग",
+   "A_status": "unchanged",
+   "B_to_latin": "laṃbī sāmagrī kā kaī rūpoṃ meṃ punaḥ upayoga",
+   "B_status": "ok"
+  },
+  "q_x_hi_en_008": {
+   "query_id": "q_x_hi_en_008",
+   "raw": "आरोप लगाने के बजाय प्रमाण से प्लेटफ़ॉर्म बदलना",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_en_less_002"
+   ],
+   "A_to_script": "आरोप लगाने के बजाय प्रमाण से प्लेटफ़ॉर्म बदलना",
+   "A_status": "unchanged",
+   "B_to_latin": "āropa lagāne ke bajāya pramāṇa se pleṭafaॉrma badalanā",
+   "B_status": "ok"
+  },
+  "q_x_hi_en_009": {
+   "query_id": "q_x_hi_en_009",
+   "raw": "टिप्पणी का संख्या पसंदीदा से अधिक महत्वपूर्ण है",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_en_perf_004"
+   ],
+   "A_to_script": "टिप्पणी का संख्या पसंदीदा से अधिक महत्वपूर्ण है",
+   "A_status": "unchanged",
+   "B_to_latin": "ṭippaṇī kā saṃkhyā pasaṃdīdā se adhika mahatvapūrṇa hai",
+   "B_status": "ok"
+  },
+  "q_x_hi_en_010": {
+   "query_id": "q_x_hi_en_010",
+   "raw": "कहानी से शुरुआत करने वाला हुक",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_en_hook_002"
+   ],
+   "A_to_script": "कहानी से शुरुआत करने वाला हुक",
+   "A_status": "unchanged",
+   "B_to_latin": "kahānī se śuruāta karane vālā huka",
+   "B_status": "ok"
+  },
+  "q_x_en_hi_001": {
+   "query_id": "q_x_en_hi_001",
+   "raw": "why technical videos are rare in Hindi",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_cap_002"
+   ],
+   "A_to_script": "why technical videos are rare in Hindi",
+   "A_status": "unchanged",
+   "B_to_latin": "why technical videos are rare in Hindi",
+   "B_status": "unchanged"
+  },
+  "q_x_en_hi_002": {
+   "query_id": "q_x_en_hi_002",
+   "raw": "lighting before buying an expensive camera",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_cap_003"
+   ],
+   "A_to_script": "lighting before buying an expensive camera",
+   "A_status": "unchanged",
+   "B_to_latin": "lighting before buying an expensive camera",
+   "B_status": "unchanged"
+  },
+  "q_x_en_hi_003": {
+   "query_id": "q_x_en_hi_003",
+   "raw": "audience is working professionals using mobile",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_mem_001"
+   ],
+   "A_to_script": "audience is working professionals using mobile",
+   "A_status": "unchanged",
+   "B_to_latin": "audience is working professionals using mobile",
+   "B_status": "unchanged"
+  },
+  "q_x_en_hi_004": {
+   "query_id": "q_x_en_hi_004",
+   "raw": "declined a sponsorship to protect channel identity",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_mem_002"
+   ],
+   "A_to_script": "declined a sponsorship to protect channel identity",
+   "A_status": "unchanged",
+   "B_to_latin": "declined a sponsorship to protect channel identity",
+   "B_status": "unchanged"
+  },
+  "q_x_en_hi_005": {
+   "query_id": "q_x_en_hi_005",
+   "raw": "three pillar content strategy breakdown",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_strat_001"
+   ],
+   "A_to_script": "three pillar content strategy breakdown",
+   "A_status": "unchanged",
+   "B_to_latin": "three pillar content strategy breakdown",
+   "B_status": "unchanged"
+  },
+  "q_x_en_hi_006": {
+   "query_id": "q_x_en_hi_006",
+   "raw": "posts people saved performed best",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_perf_001"
+   ],
+   "A_to_script": "posts people saved performed best",
+   "A_status": "unchanged",
+   "B_to_latin": "posts people saved performed best",
+   "B_status": "unchanged"
+  },
+  "q_x_en_hi_007": {
+   "query_id": "q_x_en_hi_007",
+   "raw": "writing plainly without fancy vocabulary",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_voice_001"
+   ],
+   "A_to_script": "writing plainly without fancy vocabulary",
+   "A_status": "unchanged",
+   "B_to_latin": "writing plainly without fancy vocabulary",
+   "B_status": "unchanged"
+  },
+  "q_x_en_hi_008": {
+   "query_id": "q_x_en_hi_008",
+   "raw": "state the problem then the cost then the fix",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_scr_001"
+   ],
+   "A_to_script": "state the problem then the cost then the fix",
+   "A_status": "unchanged",
+   "B_to_latin": "state the problem then the cost then the fix",
+   "B_status": "unchanged"
+  },
+  "q_x_en_hi_009": {
+   "query_id": "q_x_en_hi_009",
+   "raw": "weekly rewrite series of weak videos",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_idea_001"
+   ],
+   "A_to_script": "weekly rewrite series of weak videos",
+   "A_status": "unchanged",
+   "B_to_latin": "weekly rewrite series of weak videos",
+   "B_status": "unchanged"
+  },
+  "q_x_en_hi_010": {
+   "query_id": "q_x_en_hi_010",
+   "raw": "reels target versus actual number produced",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "en",
+   "query_type": "native",
+   "relevant": [
+    "d_hi_cap_001"
+   ],
+   "A_to_script": "reels target versus actual number produced",
+   "A_status": "unchanged",
+   "B_to_latin": "reels target versus actual number produced",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_ta_001": {
+   "query_id": "q_x_tan_ta_001",
+   "raw": "tamil la aval uthaippu vida kuraiya padakkum illa",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_ta_cap_002"
+   ],
+   "A_to_script": "தமில் ல அவல் உதைப்பு வித குரைய பதக்கும் இல்ல",
+   "A_status": "ok",
+   "B_to_latin": "tamil la aval uthaippu vida kuraiya padakkum illa",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_ta_002": {
+   "query_id": "q_x_tan_ta_002",
+   "raw": "edikkum neram konjam kuraindha revenue perusu aayidhu",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_ta_less_001"
+   ],
+   "A_to_script": "எதிக்கும் நெரம் கொஞ்ஜம் குரைந்த ரெவெநுஎ பெருஸு ஆயிது",
+   "A_status": "ok",
+   "B_to_latin": "edikkum neram konjam kuraindha revenue perusu aayidhu",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_ta_003": {
+   "query_id": "q_x_tan_ta_003",
+   "raw": "mutru vandhu mela vilaiya vasai pogakoodu pothu",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_ta_perf_001"
+   ],
+   "A_to_script": "முத்ரு வந்து மெல விலைய வஸை பொககொஒது பொது",
+   "A_status": "ok",
+   "B_to_latin": "mutru vandhu mela vilaiya vasai pogakoodu pothu",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_ta_004": {
+   "query_id": "q_x_tan_ta_004",
+   "raw": "naalu pakutiya vida vaivechchalai",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_ta_scr_002"
+   ],
+   "A_to_script": "நாலு பகுதிய வித வைவெச்சலை",
+   "A_status": "ok",
+   "B_to_latin": "naalu pakutiya vida vaivechchalai",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_ta_005": {
+   "query_id": "q_x_tan_ta_005",
+   "raw": "eluthuru sivaive kuraiya vaasalama epdi venkumnu solradhu",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_ta_voice_002"
+   ],
+   "A_to_script": "எலுதுரு ஸிவைவெ குரைய வாஸலம எப்தி வெங்கும்நு ஸொல்ரது",
+   "A_status": "ok",
+   "B_to_latin": "eluthuru sivaive kuraiya vaasalama epdi venkumnu solradhu",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_ta_006": {
+   "query_id": "q_x_tan_ta_006",
+   "raw": "paruvaiga|k keeleerukkum illa endha keluppadi theriyum",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_ta_com_002"
+   ],
+   "A_to_script": "பருவைக।க் கீலீருக்கும் இல்ல எந்த கெலுப்பதி தெரியும்",
+   "A_status": "ok",
+   "B_to_latin": "paruvaiga|k keeleerukkum illa endha keluppadi theriyum",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_ta_007": {
+   "query_id": "q_x_tan_ta_007",
+   "raw": "natpeuru oru kurapporeyla irukkura thodar",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_ta_idea_001"
+   ],
+   "A_to_script": "நத்பெஉரு ஒரு குரப்பொரெய்ல இருக்குர தொதர்",
+   "A_status": "ok",
+   "B_to_latin": "natpeuru oru kurapporeyla irukkura thodar",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_ta_008": {
+   "query_id": "q_x_tan_ta_008",
+   "raw": "epdhiya vizhiyaal padalatchi kelkkirukkalaam",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_ta_mem_001"
+   ],
+   "A_to_script": "எப்திய விஃஜ்ஹியால் பதலத்சி கெல்க்கிருக்கலாம்",
+   "A_status": "ok",
+   "B_to_latin": "epdhiya vizhiyaal padalatchi kelkkirukkalaam",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_ta_009": {
+   "query_id": "q_x_tan_ta_009",
+   "raw": "matittaalaik konjam kondu nattitta nu konjam vannaar",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_ta_mem_002"
+   ],
+   "A_to_script": "மதித்தாலைக் கொஞ்ஜம் கொந்து நத்தித்த நு கொஞ்ஜம் வந்நார்",
+   "A_status": "ok",
+   "B_to_latin": "matittaalaik konjam kondu nattitta nu konjam vannaar",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_ta_010": {
+   "query_id": "q_x_tan_ta_010",
+   "raw": "paattu kalanum mikaiya illa solradhu appadi",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_ta_voice_001"
+   ],
+   "A_to_script": "பாத்து கலநும் மிகைய இல்ல ஸொல்ரது அப்பதி",
+   "A_status": "ok",
+   "B_to_latin": "paattu kalanum mikaiya illa solradhu appadi",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_ta_011": {
+   "query_id": "q_x_tan_ta_011",
+   "raw": "English audience ku rendum kuraiya adutha padungal",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_ta_strat_001"
+   ],
+   "A_to_script": "ஏங்க்லிஶ் ஔதிஎஞ்செ கு ரெந்தும் குரைய அதுத பதுங்கல்",
+   "A_status": "ok",
+   "B_to_latin": "English audience ku rendum kuraiya adutha padungal",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_ta_012": {
+   "query_id": "q_x_tan_ta_012",
+   "raw": "pul keeleerkalukku keezhaiya theriyavanum illa",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_ta_com_001"
+   ],
+   "A_to_script": "புல் கீலீர்கலுக்கு கீஃஜ்ஹைய தெரியவநும் இல்ல",
+   "A_status": "ok",
+   "B_to_latin": "pul keeleerkalukku keezhaiya theriyavanum illa",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_en_001": {
+   "query_id": "q_x_tan_en_001",
+   "raw": "weekend la ethu video create pannunga nu plan",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_en_mem_001"
+   ],
+   "A_to_script": "வீகெந்த் ல எது விதெஒ ச்ரெஅதெ பந்நுங்க நு ப்லந்",
+   "A_status": "ok",
+   "B_to_latin": "weekend la ethu video create pannunga nu plan",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_en_002": {
+   "query_id": "q_x_tan_en_002",
+   "raw": "yoga schedule epdi vechirathu epdi decide pannunga",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_en_strat_002"
+   ],
+   "A_to_script": "யொக ஸ்செதுலெ எப்தி வெசிரது எப்தி தெசிதெ பந்நுங்க",
+   "A_status": "ok",
+   "B_to_latin": "yoga schedule epdi vechirathu epdi decide pannunga",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_en_003": {
+   "query_id": "q_x_tan_en_003",
+   "raw": "engum ponnungalum illa first three seconds la leave pannuvaru",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_en_hook_005"
+   ],
+   "A_to_script": "எங்கும் பொந்நுங்கலும் இல்ல ஃபிர்ஸ்த் த்ரீ ஸெசொந்த்ஸ் ல லெஅவெ பந்நுவரு",
+   "A_status": "ok",
+   "B_to_latin": "engum ponnungalum illa first three seconds la leave pannuvaru",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_en_004": {
+   "query_id": "q_x_tan_en_004",
+   "raw": "audience la settle pannava pothu save pannuva",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_en_perf_002"
+   ],
+   "A_to_script": "ஔதிஎஞ்செ ல ஸெத்த்லெ பந்நவ பொது ஸவெ பந்நுவ",
+   "A_status": "ok",
+   "B_to_latin": "audience la settle pannava pothu save pannuva",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_en_005": {
+   "query_id": "q_x_tan_en_005",
+   "raw": "epdi solra vendum nu oru sample idea venum",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_en_snip_001"
+   ],
+   "A_to_script": "எப்தி ஸொல்ர வெந்தும் நு ஒரு ஸம்ப்லெ இதெஅ வெநும்",
+   "A_status": "ok",
+   "B_to_latin": "epdi solra vendum nu oru sample idea venum",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_en_006": {
+   "query_id": "q_x_tan_en_006",
+   "raw": "vandiya brand deal enna kaaranal virandhippo",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_en_mem_003"
+   ],
+   "A_to_script": "வந்திய ப்ரந்த் தெஅல் எந்ந காரநல் விரந்திப்பொ",
+   "A_status": "ok",
+   "B_to_latin": "vandiya brand deal enna kaaranal virandhippo",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_en_007": {
+   "query_id": "q_x_tan_en_007",
+   "raw": "deep work nu best enga pannanum",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_en_mem_004"
+   ],
+   "A_to_script": "தீப் வொர்க் நு பெஸ்த் எங்க பந்நநும்",
+   "A_status": "ok",
+   "B_to_latin": "deep work nu best enga pannanum",
+   "B_status": "unchanged"
+  },
+  "q_x_tan_en_008": {
+   "query_id": "q_x_tan_en_008",
+   "raw": "long form epdi enjoy vendu seiyal不及 short form la epdi use cheyy",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "ta",
+   "query_type": "Tanglish",
+   "relevant": [
+    "d_en_strat_003"
+   ],
+   "A_to_script": "லொங்க் ஃபொர்ம் எப்தி எஞ்ஜொய் வெந்து ஸெஇயல்不及 ஶொர்த் ஃபொர்ம் ல எப்தி உஸெ செய்ய்",
+   "A_status": "ok",
+   "B_to_latin": "long form epdi enjoy vendu seiyal不及 short form la epdi use cheyy",
+   "B_status": "unchanged"
+  },
+  "q_x_ta_tan_001": {
+   "query_id": "q_x_ta_tan_001",
+   "raw": "எழுத்துரு சிதைவைத் தவிர்ப்பதற்கான வழி",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_mix_ta_004"
+   ],
+   "A_to_script": "எழுத்துரு சிதைவைத் தவிர்ப்பதற்கான வழி",
+   "A_status": "unchanged",
+   "B_to_latin": "e.Ludhdhuru jhidhaivaidh dhavirbhbhadha.RhghAn2a va.Li",
+   "B_status": "ok"
+  },
+  "q_x_ta_tan_002": {
+   "query_id": "q_x_ta_tan_002",
+   "raw": "ஒரே பதிவை இரண்டு மொழிகளில் தயாரிப்பதற்கான வழி",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_mix_en_002"
+   ],
+   "A_to_script": "ஒரே பதிவை இரண்டு மொழிகளில் தயாரிப்பதற்கான வழி",
+   "A_status": "unchanged",
+   "B_to_latin": "orE bhadhivai iraNDhu mo.LighaLil dhayAribhbhadha.RhghAn2a va.Li",
+   "B_status": "ok"
+  },
+  "q_x_ta_tan_003": {
+   "query_id": "q_x_ta_tan_003",
+   "raw": "வருடம் மூன்று திட்டமிட்டால் பதிவுகள் பலமாக இல்லை",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_mix_hi_004"
+   ],
+   "A_to_script": "வருடம் மூன்று திட்டமிட்டால் பதிவுகள் பலமாக இல்லை",
+   "A_status": "unchanged",
+   "B_to_latin": "varuDhaM mUn2.Rhu dhiDhDhamiDhDhAl bhadhivughaL bhalamAgha illai",
+   "B_status": "ok"
+  },
+  "q_x_ta_tan_004": {
+   "query_id": "q_x_ta_tan_004",
+   "raw": "திங்கள் வரும் நாளில் கைப்பந்த தயாரிப்பு",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_mix_ta_003"
+   ],
+   "A_to_script": "திங்கள் வரும் நாளில் கைப்பந்த தயாரிப்பு",
+   "A_status": "unchanged",
+   "B_to_latin": "dhinghaL varuM nALil ghaibhbhandha dhayAribhbhu",
+   "B_status": "ok"
+  },
+  "q_x_ta_tan_005": {
+   "query_id": "q_x_ta_tan_005",
+   "raw": "தமிழும் ஆங்கிலும் இணைந்து விளக்குதல்",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_mix_ta_001"
+   ],
+   "A_to_script": "தமிழும் ஆங்கிலும் இணைந்து விளக்குதல்",
+   "A_status": "unchanged",
+   "B_to_latin": "dhami.LuM AnghiluM iNaindhu viLaghghudhal",
+   "B_status": "ok"
+  },
+  "q_x_ta_tan_006": {
+   "query_id": "q_x_ta_tan_006",
+   "raw": "ஏழு நாள் உற்பத்தி முறையைப் பின்பற்றிய பின் விளைவு",
+   "script_declared": "Tamil",
+   "script_detected": "Tamil",
+   "lang": "ta",
+   "query_type": "native",
+   "relevant": [
+    "d_mix_ta_002"
+   ],
+   "A_to_script": "ஏழு நாள் உற்பத்தி முறையைப் பின்பற்றிய பின் விளைவு",
+   "A_status": "unchanged",
+   "B_to_latin": "E.Lu nAL u.Rhbhadhdhi mu.Rhaiyaibh bhin2bha.Rh.Rhiya bhin2 viLaivu",
+   "B_status": "ok"
+  },
+  "q_x_hin_hi_001": {
+   "query_id": "q_x_hin_hi_001",
+   "raw": "daily post karne se retention gir jaati hai kyun",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hi_hook_003"
+   ],
+   "A_to_script": "दैल्य् पोस्त् कर्ने से रेतेन्तिओन् गिर् जअति है क्युन्",
+   "A_status": "ok",
+   "B_to_latin": "daily post karne se retention gir jaati hai kyun",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_hi_002": {
+   "query_id": "q_x_hin_hi_002",
+   "raw": "camera se pehle lighting seekho",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hi_cap_003"
+   ],
+   "A_to_script": "चमेर से पेह्ले लिघ्तिन्ग् सेएखो",
+   "A_status": "ok",
+   "B_to_latin": "camera se pehle lighting seekho",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_hi_003": {
+   "query_id": "q_x_hin_hi_003",
+   "raw": "teen khambo wali strategy",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hi_strat_001"
+   ],
+   "A_to_script": "तेएन् खम्बो wअलि स्त्रतेग्य्",
+   "A_status": "ok",
+   "B_to_latin": "teen khambo wali strategy",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_hi_004": {
+   "query_id": "q_x_hin_hi_004",
+   "raw": "save karne wale post kitne prabhavshali the",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hi_perf_001"
+   ],
+   "A_to_script": "सवे कर्ने wअले पोस्त् कित्ने प्रभव्स्हलि थे",
+   "A_status": "ok",
+   "B_to_latin": "save karne wale post kitne prabhavshali the",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_hi_005": {
+   "query_id": "q_x_hin_hi_005",
+   "raw": "comment zyada karte hai like kam",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hi_perf_001"
+   ],
+   "A_to_script": "चोम्मेन्त् ज़्यद कर्ते है लिके कम्",
+   "A_status": "ok",
+   "B_to_latin": "comment zyada karte hai like kam",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_hi_006": {
+   "query_id": "q_x_hin_hi_006",
+   "raw": "chhoti vaakya simple shabd",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hi_voice_001"
+   ],
+   "A_to_script": "छ्होति वअक्य सिम्प्ले स्हब्द्",
+   "A_status": "ok",
+   "B_to_latin": "chhoti vaakya simple shabd",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_hi_007": {
+   "query_id": "q_x_hin_hi_007",
+   "raw": "ek hi hafte me launch aur tutorial dena galat tha",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hi_less_001"
+   ],
+   "A_to_script": "एक् हि हफ़्ते मे लौन्छ् और् तुतोरिअल् देन गलत् थ",
+   "A_status": "ok",
+   "B_to_latin": "ek hi hafte me launch aur tutorial dena galat tha",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_hi_008": {
+   "query_id": "q_x_hin_hi_008",
+   "raw": "sabse kam dekhe jane wale video ki wajah",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hi_hook_002"
+   ],
+   "A_to_script": "सब्से कम् देखे जने wअले विदेओ कि wअजह्",
+   "A_status": "ok",
+   "B_to_latin": "sabse kam dekhe jane wale video ki wajah",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_hi_009": {
+   "query_id": "q_x_hin_hi_009",
+   "raw": "shahar me rehne wale professional hain",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hi_mem_001"
+   ],
+   "A_to_script": "स्हहर् मे रेह्ने wअले प्रोफ़ेस्सिओनल् हैन्",
+   "A_status": "ok",
+   "B_to_latin": "shahar me rehne wale professional hain",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_hi_010": {
+   "query_id": "q_x_hin_hi_010",
+   "raw": "15 ka target 9 hi bane",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hi_cap_001"
+   ],
+   "A_to_script": "१५ क तर्गेत् ९ हि बने",
+   "A_status": "ok",
+   "B_to_latin": "15 ka target 9 hi bane",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_en_001": {
+   "query_id": "q_x_hin_en_001",
+   "raw": "content pillar strategy kya hoti hai",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_en_strat_001"
+   ],
+   "A_to_script": "चोन्तेन्त् पिल्लर् स्त्रतेग्य् क्य होति है",
+   "A_status": "ok",
+   "B_to_latin": "content pillar strategy kya hoti hai",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_en_002": {
+   "query_id": "q_x_hin_en_002",
+   "raw": "long interview ko chhote clips me kaise badlein",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_en_strat_003"
+   ],
+   "A_to_script": "लोन्ग् इन्तेर्विएw को छ्होते च्लिप्स् मे कैसे बद्लेइन्",
+   "A_status": "ok",
+   "B_to_latin": "long interview ko chhote clips me kaise badlein",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_en_003": {
+   "query_id": "q_x_hin_en_003",
+   "raw": "save rate se views se zyada accha signal hai",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_en_perf_002"
+   ],
+   "A_to_script": "सवे रते से विएwस् से ज़्यद अच्छ सिग्नल् है",
+   "A_status": "ok",
+   "B_to_latin": "save rate se views se zyada accha signal hai",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_en_004": {
+   "query_id": "q_x_hin_en_004",
+   "raw": "thumbnail banane me time laga hook fix karna zyada faayda diya",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_hin_less_001",
+    "d_en_hook_005"
+   ],
+   "A_to_script": "थुम्ब्नैल् बनने मे तिमे लग होओक् फ़िx कर्न ज़्यद फ़अय्द दिय",
+   "A_status": "ok",
+   "B_to_latin": "thumbnail banane me time laga hook fix karna zyada faayda diya",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_en_005": {
+   "query_id": "q_x_hin_en_005",
+   "raw": "pehle teen second me problem batao",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_en_scr_001"
+   ],
+   "A_to_script": "पेह्ले तेएन् सेचोन्द् मे प्रोब्लेम् बतओ",
+   "A_status": "ok",
+   "B_to_latin": "pehle teen second me problem batao",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_en_006": {
+   "query_id": "q_x_hin_en_006",
+   "raw": "sabse zyada save hone wale video kaun se the",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_en_perf_002"
+   ],
+   "A_to_script": "सब्से ज़्यद सवे होने wअले विदेओ कौन् से थे",
+   "A_status": "ok",
+   "B_to_latin": "sabse zyada save hone wale video kaun se the",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_en_007": {
+   "query_id": "q_x_hin_en_007",
+   "raw": "brand offer kyun reject kiya",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_en_mem_003"
+   ],
+   "A_to_script": "ब्रन्द् ओफ़्फ़ेर् क्युन् रेजेच्त् किय",
+   "A_status": "ok",
+   "B_to_latin": "brand offer kyun reject kiya",
+   "B_status": "unchanged"
+  },
+  "q_x_hin_en_008": {
+   "query_id": "q_x_hin_en_008",
+   "raw": "sunday planning weekday filming wednesday editing",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "hi",
+   "query_type": "Hinglish",
+   "relevant": [
+    "d_en_mem_001"
+   ],
+   "A_to_script": "सुन्दय् प्लन्निन्ग् wएएक्दय् फ़िल्मिन्ग् wएद्नेस्दय् एदितिन्ग्",
+   "A_status": "ok",
+   "B_to_latin": "sunday planning weekday filming wednesday editing",
+   "B_status": "unchanged"
+  },
+  "q_x_hi_hin_001": {
+   "query_id": "q_x_hi_hin_001",
+   "raw": "निश्चित मीडियम के साथ अंग्रेज़ी उपकरणों का उपयोग",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_mix_hi_001"
+   ],
+   "A_to_script": "निश्चित मीडियम के साथ अंग्रेज़ी उपकरणों का उपयोग",
+   "A_status": "unchanged",
+   "B_to_latin": "niścita mīḍiyama ke sātha aṃgrezī upakaraṇoṃ kā upayoga",
+   "B_status": "ok"
+  },
+  "q_x_hi_hin_002": {
+   "query_id": "q_x_hi_hin_002",
+   "raw": "मुफ्त सॉफ़्टवेयर से पेशेवर सामग्री बनाना",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_mix_hi_002"
+   ],
+   "A_to_script": "मुफ्त सॉफ़्टवेयर से पेशेवर सामग्री बनाना",
+   "A_status": "unchanged",
+   "B_to_latin": "muphta saॉfṭaveyara se peśevara sāmagrī banānā",
+   "B_status": "ok"
+  },
+  "q_x_hi_hin_003": {
+   "query_id": "q_x_hi_hin_003",
+   "raw": "कम बजट का सेटअप कैसा है",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_mix_hi_003"
+   ],
+   "A_to_script": "कम बजट का सेटअप कैसा है",
+   "A_status": "unchanged",
+   "B_to_latin": "kama bajaṭa kā seṭaapa kaisā hai",
+   "B_status": "ok"
+  },
+  "q_x_hi_hin_004": {
+   "query_id": "q_x_hi_hin_004",
+   "raw": "निश का फ़ैसला कैसे लिया जाता है",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_mix_hi_004"
+   ],
+   "A_to_script": "निश का फ़ैसला कैसे लिया जाता है",
+   "A_status": "unchanged",
+   "B_to_latin": "niśa kā faisalā kaise liyā jātā hai",
+   "B_status": "ok"
+  },
+  "q_x_hi_hin_005": {
+   "query_id": "q_x_hi_hin_005",
+   "raw": "एक ही दो भाषाओं में आवाज़ दर्ज करना",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_mix_en_002"
+   ],
+   "A_to_script": "एक ही दो भाषाओं में आवाज़ दर्ज करना",
+   "A_status": "unchanged",
+   "B_to_latin": "eka hī do bhāṣāoṃ meṃ āvāza darja karanā",
+   "B_status": "ok"
+  },
+  "q_x_hi_hin_006": {
+   "query_id": "q_x_hi_hin_006",
+   "raw": "अंग्रेज़ी उपशीर्षकों से सबसे अच्छी पहुँच",
+   "script_declared": "Devanagari",
+   "script_detected": "Devanagari",
+   "lang": "hi",
+   "query_type": "native",
+   "relevant": [
+    "d_mix_en_001"
+   ],
+   "A_to_script": "अंग्रेज़ी उपशीर्षकों से सबसे अच्छी पहुँच",
+   "A_status": "unchanged",
+   "B_to_latin": "aṃgrezī upaśīrṣakoṃ se sabase acchī pahu~ca",
+   "B_status": "ok"
+  },
+  "q_x_mix_001": {
+   "query_id": "q_x_mix_001",
+   "raw": "Tamil audience ku English mathiri tech explain panninja theriyadhu",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_mix_ta_001"
+   ],
+   "A_to_script": "Tamil audience ku English mathiri tech explain panninja theriyadhu",
+   "A_status": "unchanged",
+   "B_to_latin": "Tamil audience ku English mathiri tech explain panninja theriyadhu",
+   "B_status": "unchanged"
+  },
+  "q_x_mix_002": {
+   "query_id": "q_x_mix_002",
+   "raw": "seven day productivity system follow panninja output illa",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_mix_ta_002"
+   ],
+   "A_to_script": "seven day productivity system follow panninja output illa",
+   "A_status": "unchanged",
+   "B_to_latin": "seven day productivity system follow panninja output illa",
+   "B_status": "unchanged"
+  },
+  "q_x_mix_003": {
+   "query_id": "q_x_mix_003",
+   "raw": "Monday shoot Wednesday edit Friday publish plan",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_mix_ta_003"
+   ],
+   "A_to_script": "Monday shoot Wednesday edit Friday publish plan",
+   "A_status": "unchanged",
+   "B_to_latin": "Monday shoot Wednesday edit Friday publish plan",
+   "B_status": "unchanged"
+  },
+  "q_x_mix_004": {
+   "query_id": "q_x_mix_004",
+   "raw": "Tamil fonts render pannatha problem vayirundhu",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_mix_ta_004"
+   ],
+   "A_to_script": "Tamil fonts render pannatha problem vayirundhu",
+   "A_status": "unchanged",
+   "B_to_latin": "Tamil fonts render pannatha problem vayirundhu",
+   "B_status": "unchanged"
+  },
+  "q_x_mix_005": {
+   "query_id": "q_x_mix_005",
+   "raw": "Hindi medium aur English tools saath use karta hun",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_mix_hi_001"
+   ],
+   "A_to_script": "Hindi medium aur English tools saath use karta hun",
+   "A_status": "unchanged",
+   "B_to_latin": "Hindi medium aur English tools saath use karta hun",
+   "B_status": "unchanged"
+  },
+  "q_x_mix_006": {
+   "query_id": "q_x_mix_006",
+   "raw": "free laptop mila tha free software se professional content bana",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_mix_hi_002"
+   ],
+   "A_to_script": "free laptop mila tha free software se professional content bana",
+   "A_status": "unchanged",
+   "B_to_latin": "free laptop mila tha free software se professional content bana",
+   "B_status": "unchanged"
+  },
+  "q_x_mix_007": {
+   "query_id": "q_x_mix_007",
+   "raw": "budget camera ring light laptop setup affordable",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_mix_hi_003"
+   ],
+   "A_to_script": "budget camera ring light laptop setup affordable",
+   "A_status": "unchanged",
+   "B_to_latin": "budget camera ring light laptop setup affordable",
+   "B_status": "unchanged"
+  },
+  "q_x_mix_008": {
+   "query_id": "q_x_mix_008",
+   "raw": "niche decide karne ke liye 30 din ka data dekha",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_mix_hi_004"
+   ],
+   "A_to_script": "niche decide karne ke liye 30 din ka data dekha",
+   "A_status": "unchanged",
+   "B_to_latin": "niche decide karne ke liye 30 din ka data dekha",
+   "B_status": "unchanged"
+  },
+  "q_x_mix_009": {
+   "query_id": "q_x_mix_009",
+   "raw": "English subtitles se best reach but vernacular se strong community",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_mix_en_001"
+   ],
+   "A_to_script": "English subtitles se best reach but vernacular se strong community",
+   "A_status": "unchanged",
+   "B_to_latin": "English subtitles se best reach but vernacular se strong community",
+   "B_status": "unchanged"
+  },
+  "q_x_mix_010": {
+   "query_id": "q_x_mix_010",
+   "raw": "one script two voiceovers single session",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_mix_en_002"
+   ],
+   "A_to_script": "one script two voiceovers single session",
+   "A_status": "unchanged",
+   "B_to_latin": "one script two voiceovers single session",
+   "B_status": "unchanged"
+  },
+  "q_x_mix_011": {
+   "query_id": "q_x_mix_011",
+   "raw": "Tamil la audience பார்வையாளர் கேள்விகளிலிருந்து video ideas",
+   "script_declared": "mixed",
+   "script_detected": "Tamil",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_ta_cap_003"
+   ],
+   "A_to_script": "Tamil la audience பார்வையாளர் கேள்விகளிலிருந்து video ideas",
+   "A_status": "unchanged",
+   "B_to_latin": "Tamil la audience bhArvaiyALar ghELvighaLilirundhu video ideas",
+   "B_status": "ok"
+  },
+  "q_x_mix_012": {
+   "query_id": "q_x_mix_012",
+   "raw": "Hindi audience engagement आँकड़े comments ज़्यादा",
+   "script_declared": "mixed",
+   "script_detected": "Devanagari",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_hin_perf_001"
+   ],
+   "A_to_script": "Hindi audience engagement आँकड़े comments ज़्यादा",
+   "A_status": "unchanged",
+   "B_to_latin": "Hindi audience engagement ā~kar̤e comments zyādā",
+   "B_status": "ok"
+  },
+  "q_x_mix_013": {
+   "query_id": "q_x_mix_013",
+   "raw": "தமிழ் transcription எழுத்துரு problem",
+   "script_declared": "mixed",
+   "script_detected": "Tamil",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_ta_voice_002"
+   ],
+   "A_to_script": "தமிழ் transcription எழுத்துரு problem",
+   "A_status": "unchanged",
+   "B_to_latin": "dhami.L transcription e.Ludhdhuru problem",
+   "B_status": "ok"
+  },
+  "q_x_mix_014": {
+   "query_id": "q_x_mix_014",
+   "raw": "budget setup for Indian creators starting out",
+   "script_declared": "Latin",
+   "script_detected": "Latin",
+   "lang": "mixed",
+   "query_type": "code-mixed",
+   "relevant": [
+    "d_mix_hi_003"
+   ],
+   "A_to_script": "budget setup for Indian creators starting out",
+   "A_status": "unchanged",
+   "B_to_latin": "budget setup for Indian creators starting out",
+   "B_status": "unchanged"
+  }
+ }
+}

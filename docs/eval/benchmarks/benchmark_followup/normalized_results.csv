@@ -1,0 +1,10 @@
+condition,model,grain,n_pairs,R@1,R@3,R@5,MRR@5,n_queries,R@1_perquery,R@3_perquery,R@5_perquery,MRR@5_perquery
+raw,bge_m3,query_to_gold_pair,256,0.5078,0.6680,0.7383,0.5938,225,0.5778,0.7111,0.7733,0.6513
+raw,tamil_embed,query_to_gold_pair,256,0.4258,0.6367,0.7031,0.5340,225,0.4844,0.6889,0.7511,0.5881
+raw,e5_base,query_to_gold_pair,256,0.4727,0.6328,0.6875,0.5542,225,0.5378,0.6711,0.7289,0.6072
+norm_q_to_script,bge_m3,query_to_gold_pair,256,0.4336,0.6094,0.6758,0.5268,225,0.4933,0.6489,0.7067,0.5766
+norm_q_to_script,tamil_embed,query_to_gold_pair,256,0.3203,0.5273,0.5859,0.4243,225,0.3644,0.5644,0.6222,0.4645
+norm_q_to_script,e5_base,query_to_gold_pair,256,0.3594,0.5273,0.5898,0.4461,225,0.4089,0.5556,0.6222,0.4864
+norm_all_to_latin,bge_m3,query_to_gold_pair,256,0.3945,0.4883,0.5352,0.4445,225,0.4489,0.5422,0.5867,0.4971
+norm_all_to_latin,tamil_embed,query_to_gold_pair,256,0.3086,0.3945,0.4414,0.3579,225,0.3511,0.4356,0.4800,0.3985
+norm_all_to_latin,e5_base,query_to_gold_pair,256,0.3516,0.4023,0.4297,0.3811,225,0.4000,0.4400,0.4711,0.4254

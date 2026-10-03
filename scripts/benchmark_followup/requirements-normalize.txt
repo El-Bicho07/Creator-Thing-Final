@@ -1,0 +1,13 @@
+# NORMALIZATION TOOL only -- not embedding models.
+# Isolate; never install into the creator-api container or production image.
+#
+#   python3 -m venv /tmp/followup_norm_venv
+#   /tmp/followup_norm_venv/bin/pip install -r scripts/benchmark_followup/requirements-normalize.txt
+#
+# Full transitive closure as resolved on 2026-10-03 (Python 3.10.12, linux x86_64).
+indic-transliteration==2.3.75
+backports.functools-lru-cache==2.0.0
+regex==2026.9.29
+roman==5.2
+toml==0.10.2
+typer==0.27.2

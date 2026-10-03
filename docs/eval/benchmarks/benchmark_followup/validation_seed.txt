@@ -1,0 +1,7 @@
+seed=20261003
+python=3.10.12
+rng=random.Random(seed).sample(sorted_pool, 15)
+pool_tamil_native=43
+pool_tanglish=40
+gold_choice=lowest_relevant_doc_id
+pii_scan_hits={}
