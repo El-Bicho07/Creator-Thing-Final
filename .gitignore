@@ -8,3 +8,10 @@ venv/
 .env
 .env.local
 *.log
+
+# Raw benchmark staging areas: may contain un-sanitised corpus text before review.
+# Only reviewed, anonymised exports under docs/eval/benchmarks/*/ may be committed.
+/tmp/
+export_stage/
+**/_raw_partial.json
+**/_stage/

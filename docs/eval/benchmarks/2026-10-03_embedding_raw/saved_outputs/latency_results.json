@@ -1,0 +1,177 @@
+{
+  "tamil_embed": {
+    "label": "Tamil-ai/tamil-embed-base",
+    "device": "cpu",
+    "model_load_seconds": 6.42,
+    "cold_first_batch_ms": 550.768,
+    "cold_samples_ms": [
+      550.768,
+      516.174,
+      509.895
+    ],
+    "single_query": {
+      "mean_ms": 33.621,
+      "p50_ms": 33.481,
+      "p95_ms": 33.914,
+      "p99_ms": 40.026,
+      "min_ms": 32.054,
+      "max_ms": 43.828,
+      "n": 40
+    },
+    "batch_documents_113": {
+      "mean_ms": 3248.692,
+      "p50_ms": 3230.714,
+      "p95_ms": 3391.871,
+      "p99_ms": 3463.451,
+      "min_ms": 3179.167,
+      "max_ms": 3481.346,
+      "n": 10
+    },
+    "throughput": {
+      "documents_per_second": 34.8,
+      "queries_per_second": 58.38,
+      "n_documents": 113,
+      "n_queries": 225
+    }
+  },
+  "e5_base": {
+    "label": "intfloat/multilingual-e5-base",
+    "device": "cpu",
+    "model_load_seconds": 7.29,
+    "cold_first_batch_ms": 542.431,
+    "cold_samples_ms": [
+      542.431,
+      508.537,
+      509.308
+    ],
+    "single_query": {
+      "mean_ms": 33.65,
+      "p50_ms": 33.317,
+      "p95_ms": 34.488,
+      "p99_ms": 40.46,
+      "min_ms": 32.007,
+      "max_ms": 44.226,
+      "n": 40
+    },
+    "batch_documents_113": {
+      "mean_ms": 3264.446,
+      "p50_ms": 3251.02,
+      "p95_ms": 3372.887,
+      "p99_ms": 3402.384,
+      "min_ms": 3188.245,
+      "max_ms": 3409.759,
+      "n": 10
+    },
+    "throughput": {
+      "documents_per_second": 34.69,
+      "queries_per_second": 58.79,
+      "n_documents": 113,
+      "n_queries": 225
+    }
+  },
+  "bge_m3": {
+    "label": "BAAI/bge-m3",
+    "device": "cpu",
+    "model_load_seconds": 7.28,
+    "cold_first_batch_ms": 1833.733,
+    "cold_samples_ms": [
+      1833.733,
+      1787.893,
+      1796.106
+    ],
+    "single_query": {
+      "mean_ms": 84.044,
+      "p50_ms": 83.821,
+      "p95_ms": 88.247,
+      "p99_ms": 90.596,
+      "min_ms": 79.301,
+      "max_ms": 91.857,
+      "n": 40
+    },
+    "batch_documents_113": {
+      "mean_ms": 11212.44,
+      "p50_ms": 11202.975,
+      "p95_ms": 11326.084,
+      "p99_ms": 11358.758,
+      "min_ms": 11097.839,
+      "max_ms": 11366.926,
+      "n": 10
+    },
+    "throughput": {
+      "documents_per_second": 9.96,
+      "queries_per_second": 19.96,
+      "n_documents": 113,
+      "n_queries": 225
+    }
+  },
+  "e5_base_nopfx_ABLATION": {
+    "label": "intfloat/multilingual-e5-base (ABLATION: no prefixes)",
+    "device": "cpu",
+    "model_load_seconds": 6.07,
+    "cold_first_batch_ms": 519.737,
+    "cold_samples_ms": [
+      519.737,
+      510.487,
+      512.252
+    ],
+    "single_query": {
+      "mean_ms": 26.349,
+      "p50_ms": 26.282,
+      "p95_ms": 28.121,
+      "p99_ms": 29.372,
+      "min_ms": 24.437,
+      "max_ms": 29.531,
+      "n": 40
+    },
+    "batch_documents_113": {
+      "mean_ms": 3244.16,
+      "p50_ms": 3252.68,
+      "p95_ms": 3265.162,
+      "p99_ms": 3269.311,
+      "min_ms": 3205.831,
+      "max_ms": 3270.348,
+      "n": 10
+    },
+    "throughput": {
+      "documents_per_second": 34.61,
+      "queries_per_second": 69.44,
+      "n_documents": 113,
+      "n_queries": 225
+    }
+  },
+  "tamil_embed_nopfx_ABLATION": {
+    "label": "Tamil-ai/tamil-embed-base (ABLATION: no prefixes)",
+    "device": "cpu",
+    "model_load_seconds": 6.69,
+    "cold_first_batch_ms": 528.907,
+    "cold_samples_ms": [
+      528.907,
+      513.875,
+      515.522
+    ],
+    "single_query": {
+      "mean_ms": 31.967,
+      "p50_ms": 32.072,
+      "p95_ms": 32.869,
+      "p99_ms": 34.602,
+      "min_ms": 30.642,
+      "max_ms": 34.725,
+      "n": 40
+    },
+    "batch_documents_113": {
+      "mean_ms": 3234.843,
+      "p50_ms": 3236.421,
+      "p95_ms": 3263.016,
+      "p99_ms": 3264.792,
+      "min_ms": 3192.143,
+      "max_ms": 3265.236,
+      "n": 10
+    },
+    "throughput": {
+      "documents_per_second": 34.43,
+      "queries_per_second": 69.02,
+      "n_documents": 113,
+      "n_queries": 225
+    }
+  }
+}

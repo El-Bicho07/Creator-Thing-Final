@@ -1,0 +1,53 @@
+{
+  "tamil_embed": {
+    "latin": {
+      "n": 153,
+      "recall@3": 0.8039,
+      "mrr": 0.6778
+    },
+    "devanagari": {
+      "n": 46,
+      "recall@3": 0.6522,
+      "mrr": 0.5612
+    },
+    "tamil": {
+      "n": 57,
+      "recall@3": 0.4737,
+      "mrr": 0.4009
+    }
+  },
+  "e5_base": {
+    "latin": {
+      "n": 153,
+      "recall@3": 0.7778,
+      "mrr": 0.7322
+    },
+    "devanagari": {
+      "n": 46,
+      "recall@3": 0.587,
+      "mrr": 0.5123
+    },
+    "tamil": {
+      "n": 57,
+      "recall@3": 0.5088,
+      "mrr": 0.4289
+    }
+  },
+  "bge_m3": {
+    "latin": {
+      "n": 153,
+      "recall@3": 0.7974,
+      "mrr": 0.7357
+    },
+    "devanagari": {
+      "n": 46,
+      "recall@3": 0.7174,
+      "mrr": 0.6217
+    },
+    "tamil": {
+      "n": 57,
+      "recall@3": 0.5789,
+      "mrr": 0.5102
+    }
+  }
+}

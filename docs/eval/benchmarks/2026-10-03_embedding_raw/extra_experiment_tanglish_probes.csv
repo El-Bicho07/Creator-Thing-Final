@@ -1,0 +1,31 @@
+probe_query_id,model,source_doc_id,source_doc_script,tanglish_query,retrieved_in_top5,source_doc_rank,top5_ids,top5_scores
+probe_01,bge_m3,d_ta_hook_001,Tamil,nir ezhuchiyaaga matradhu nambeengungal illa,0,,d_tan_hook_002|d_tan_cap_001|d_mix_ta_002|d_tan_cap_002|d_tan_hook_001,0.544734|0.5045|0.473391|0.470517|0.462196
+probe_02,bge_m3,d_ta_hook_002,Tamil,naan rendu vediyaagum purdiyaagum theriyavaiyillai,0,,d_mix_ta_004|d_tan_hook_001|d_tan_voice_001|d_tan_com_001|d_tan_cap_001,0.6072|0.526367|0.516712|0.505645|0.504676
+probe_03,bge_m3,d_ta_hook_003,Tamil,vanakkum vidhiyaagum theriyavaiyillai,0,,d_mix_ta_004|d_tan_cap_002|d_tan_less_001|d_tan_perf_001|d_tan_idea_001,0.546351|0.471145|0.46188|0.443447|0.441568
+probe_04,bge_m3,d_ta_cap_001,Tamil,idhu vanam patinaidu payana indru mela ezhuthukkavum vendum,0,,d_mix_ta_004|d_tan_cap_001|d_tan_hook_001|d_tan_hook_002|d_tan_idea_001,0.545016|0.528016|0.527618|0.50591|0.501767
+probe_05,bge_m3,d_ta_cap_002,Tamil,aval uthaippu vida padakkum illa,0,,d_tan_cap_002|d_tan_hook_001|d_tan_hook_002|d_mix_ta_004|d_tan_voice_001,0.648417|0.545723|0.486403|0.47437|0.453342
+probe_06,bge_m3,d_ta_cap_003,Tamil,keezhliyaal keezhliyaal payana indru ezhuthukka vasanam,0,,d_tan_cap_001|d_mix_ta_004|d_tan_hook_001|d_tan_com_001|d_tan_cap_002,0.513757|0.5104|0.479201|0.468475|0.467757
+probe_07,bge_m3,d_ta_scr_001,Tamil,moodhu-kattu keezhviyil keezhvaadhu epdi sollanum,0,,d_tan_hook_001|d_tan_hook_002|d_tan_voice_001|d_tan_com_001|d_tan_cap_001,0.505148|0.49136|0.480863|0.479322|0.459543
+probe_08,bge_m3,d_ta_scr_002,Tamil,naalu pakutiya vida vaivechchalai,0,,d_mix_ta_004|d_tan_cap_002|d_hin_scr_001|d_tan_cap_001|d_mix_hi_004,0.465825|0.462566|0.449401|0.436986|0.436375
+probe_09,bge_m3,d_ta_voice_001,Tamil,naan eppadi paaduren nu eppadi than solren,0,,d_tan_voice_001|d_tan_hook_001|d_tan_hook_002|d_tan_strat_001|d_tan_scr_001,0.654511|0.526171|0.525165|0.503809|0.496618
+probe_10,bge_m3,d_ta_perf_001,Tamil,mutru vandhu mela vilaiya vasai pogakoodu pothu,0,,d_tan_hook_002|d_mix_ta_004|d_tan_scr_001|d_tan_hook_001|d_tan_perf_001,0.4808|0.451629|0.443277|0.439337|0.437673
+probe_01,tamil_embed,d_ta_hook_001,Tamil,nir ezhuchiyaaga matradhu nambeengungal illa,0,,d_hin_com_001|d_en_cap_006|d_en_com_004|d_en_cap_002|d_hin_strat_001,0.419157|0.416099|0.411042|0.396364|0.394175
+probe_02,tamil_embed,d_ta_hook_002,Tamil,naan rendu vediyaagum purdiyaagum theriyavaiyillai,0,,d_hin_com_001|d_en_voice_001|d_hin_cap_002|d_en_com_002|d_tan_hook_001,0.450581|0.436128|0.433641|0.42554|0.424435
+probe_03,tamil_embed,d_ta_hook_003,Tamil,vanakkum vidhiyaagum theriyavaiyillai,0,,d_hin_cap_002|d_hin_com_001|d_hin_strat_001|d_en_com_002|d_tan_less_001,0.438847|0.423908|0.391985|0.378174|0.374015
+probe_04,tamil_embed,d_ta_cap_001,Tamil,idhu vanam patinaidu payana indru mela ezhuthukkavum vendum,0,,d_hin_com_001|d_hin_cap_002|d_en_com_002|d_en_less_003|d_en_com_004,0.402498|0.394412|0.389605|0.371275|0.370966
+probe_05,tamil_embed,d_ta_cap_002,Tamil,aval uthaippu vida padakkum illa,0,,d_hin_com_001|d_hin_cap_002|d_hin_strat_001|d_tan_cap_002|d_en_com_004,0.386482|0.368432|0.349945|0.342948|0.339306
+probe_06,tamil_embed,d_ta_cap_003,Tamil,keezhliyaal keezhliyaal payana indru ezhuthukka vasanam,0,,d_hin_com_001|d_hin_cap_002|d_en_voice_001|d_en_com_004|d_tan_voice_001,0.40053|0.392624|0.367666|0.362311|0.361986
+probe_07,tamil_embed,d_ta_scr_001,Tamil,moodhu-kattu keezhviyil keezhvaadhu epdi sollanum,0,,d_hin_com_001|d_en_com_002|d_tan_voice_001|d_en_com_004|d_hin_cap_002,0.411352|0.392622|0.387146|0.381273|0.379353
+probe_08,tamil_embed,d_ta_scr_002,Tamil,naalu pakutiya vida vaivechchalai,0,,d_hin_com_001|d_hin_cap_002|d_en_cap_006|d_en_com_002|d_hin_strat_001,0.356641|0.346878|0.32579|0.318604|0.318194
+probe_09,tamil_embed,d_ta_voice_001,Tamil,naan eppadi paaduren nu eppadi than solren,0,,d_tan_voice_001|d_hin_com_001|d_en_cap_006|d_en_com_002|d_en_voice_001,0.497889|0.439574|0.412702|0.403399|0.402864
+probe_10,tamil_embed,d_ta_perf_001,Tamil,mutru vandhu mela vilaiya vasai pogakoodu pothu,0,,d_hin_com_001|d_hin_cap_002|d_tan_hook_002|d_tan_voice_001|d_en_com_002,0.378549|0.364368|0.343363|0.342838|0.339663
+probe_01,e5_base,d_ta_hook_001,Tamil,nir ezhuchiyaaga matradhu nambeengungal illa,0,,d_mix_ta_003|d_mix_ta_002|d_mix_ta_004|d_hin_idea_001|d_hin_hook_002,0.813027|0.812936|0.810984|0.805241|0.80523
+probe_02,e5_base,d_ta_hook_002,Tamil,naan rendu vediyaagum purdiyaagum theriyavaiyillai,0,,d_tan_hook_001|d_mix_ta_004|d_mix_ta_001|d_tan_perf_001|d_tan_voice_001,0.817596|0.812357|0.806251|0.802904|0.800209
+probe_03,e5_base,d_ta_hook_003,Tamil,vanakkum vidhiyaagum theriyavaiyillai,0,,d_mix_ta_004|d_tan_less_001|d_tan_perf_001|d_tan_strat_001|d_hin_less_001,0.823566|0.810028|0.809487|0.805953|0.800339
+probe_04,e5_base,d_ta_cap_001,Tamil,idhu vanam patinaidu payana indru mela ezhuthukkavum vendum,0,,d_tan_voice_001|d_mix_ta_004|d_tan_hook_001|d_tan_hook_002|d_mix_ta_001,0.825032|0.82372|0.821416|0.817161|0.814475
+probe_05,e5_base,d_ta_cap_002,Tamil,aval uthaippu vida padakkum illa,0,,d_tan_cap_002|d_tan_hook_001|d_mix_ta_004|d_tan_voice_001|d_tan_hook_002,0.829262|0.818787|0.80779|0.80498|0.801811
+probe_06,e5_base,d_ta_cap_003,Tamil,keezhliyaal keezhliyaal payana indru ezhuthukka vasanam,0,,d_mix_ta_004|d_tan_perf_001|d_mix_ta_001|d_mix_ta_002|d_tan_strat_001,0.817309|0.814672|0.813656|0.809008|0.807846
+probe_07,e5_base,d_ta_scr_001,Tamil,moodhu-kattu keezhviyil keezhvaadhu epdi sollanum,0,,d_tan_hook_001|d_tan_voice_001|d_mix_ta_002|d_tan_com_001|d_tan_scr_001,0.827058|0.825012|0.823596|0.81997|0.818469
+probe_08,e5_base,d_ta_scr_002,Tamil,naalu pakutiya vida vaivechchalai,0,,d_mix_ta_004|d_tan_cap_002|d_mix_hi_004|d_tan_hook_002|d_tan_hook_001,0.804908|0.799508|0.795453|0.794886|0.794511
+probe_09,e5_base,d_ta_voice_001,Tamil,naan eppadi paaduren nu eppadi than solren,0,,d_tan_voice_001|d_tan_strat_001|d_mix_ta_002|d_mix_ta_001|d_tan_hook_002,0.861687|0.824847|0.822004|0.820317|0.817699
+probe_10,e5_base,d_ta_perf_001,Tamil,mutru vandhu mela vilaiya vasai pogakoodu pothu,0,,d_mix_ta_004|d_tan_voice_001|d_tan_hook_002|d_tan_hook_001|d_tan_less_001,0.812996|0.810719|0.80914|0.80801|0.804511

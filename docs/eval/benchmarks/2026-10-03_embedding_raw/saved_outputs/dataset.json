@@ -1,0 +1,3191 @@
+{
+  "metadata": {
+    "seed": 20260303,
+    "dataset_sha256_16": "e24337b5380674b0",
+    "note": "Fixed dataset shared by all three candidate models."
+  },
+  "documents": [
+    {
+      "id": "d_en_hook_001",
+      "lang": "en",
+      "category": "hook",
+      "text": "Most creators burn out because they optimise for output instead of recovery. Here is the fix that actually worked for me."
+    },
+    {
+      "id": "d_en_hook_002",
+      "lang": "en",
+      "category": "hook",
+      "text": "Your first ten videos will flop. That is not a bug in your content, it is the platform price of admission."
+    },
+    {
+      "id": "d_en_hook_003",
+      "lang": "en",
+      "category": "hook",
+      "text": "I analysed eleven years of my own posting data and found the single metric that predicted growth better than views."
+    },
+    {
+      "id": "d_en_hook_004",
+      "lang": "en",
+      "category": "hook",
+      "text": "Nobody talks about the editing decision that quietly doubled my retention: cutting every single pause."
+    },
+    {
+      "id": "d_en_hook_005",
+      "lang": "en",
+      "category": "hook",
+      "text": "Stop opening with a greeting. The average viewer decides in under two seconds whether your video deserves their time."
+    },
+    {
+      "id": "d_en_cap_001",
+      "lang": "en",
+      "category": "caption",
+      "text": "Batching week is the closest thing a solo creator has to a secret weapon. Twelve pieces out of one Sunday, zero weekday burnout."
+    },
+    {
+      "id": "d_en_cap_002",
+      "lang": "en",
+      "category": "caption",
+      "text": "Reminder that your content does not need to be perfect, it needs to exist. Draft in public and let the algorithm find your angle."
+    },
+    {
+      "id": "d_en_cap_003",
+      "lang": "en",
+      "category": "caption",
+      "text": "Six months ago I could not afford a microphone. Today the same microphone paid for itself twice over. Gear is a loan, not a lifestyle."
+    },
+    {
+      "id": "d_en_cap_004",
+      "lang": "en",
+      "category": "caption",
+      "text": "The comment section taught me more than any course ever did. My three best video ideas came directly from audience replies."
+    },
+    {
+      "id": "d_en_cap_005",
+      "lang": "en",
+      "category": "caption",
+      "text": "Posting daily felt productive until I checked retention. Weekly output with real editing beat daily output with none every single time."
+    },
+    {
+      "id": "d_en_cap_006",
+      "lang": "en",
+      "category": "caption",
+      "text": "If your niche feels saturated, you are competing at the wrong layer. Own the specific question nobody else answers properly."
+    },
+    {
+      "id": "d_en_scr_001",
+      "lang": "en",
+      "category": "script",
+      "text": "Scene one: state the mistake. Scene two: show the cost of that mistake with a real number. Scene three: the fix in under fifteen seconds. Scene four: invite the save."
+    },
+    {
+      "id": "d_en_scr_002",
+      "lang": "en",
+      "category": "script",
+      "text": "Open on a whiteboard mid-sentence with no introduction. Say the surprising claim, pause, then justify it with evidence before anyone can swipe."
+    },
+    {
+      "id": "d_en_scr_003",
+      "lang": "en",
+      "category": "script",
+      "text": "Structure for a forty second tutorial: problem in four seconds, demonstration in twenty, one-line recap, then a single call to action for comments."
+    },
+    {
+      "id": "d_en_scr_004",
+      "lang": "en",
+      "category": "script",
+      "text": "Use a before and after split screen. Show the raw footage on the left and the graded result on the right, then explain only the two changes that mattered."
+    },
+    {
+      "id": "d_en_idea_001",
+      "lang": "en",
+      "category": "idea",
+      "text": "Series idea: a weekly teardown where I take one creator's worst performing post and rewrite the hook live on camera."
+    },
+    {
+      "id": "d_en_idea_002",
+      "lang": "en",
+      "category": "idea",
+      "text": "Comparison video contrasting three budgets for the same home studio setup, ending with a tier most beginners should actually pick."
+    },
+    {
+      "id": "d_en_idea_003",
+      "lang": "en",
+      "category": "idea",
+      "text": "Documentary style short following one freelancer for a month, filming the moment a client ghosts them and how they recover."
+    },
+    {
+      "id": "d_en_idea_004",
+      "lang": "en",
+      "category": "idea",
+      "text": "Experiment idea: publish the same script in two different languages for two weeks and compare completion rates directly."
+    },
+    {
+      "id": "d_en_com_001",
+      "lang": "en",
+      "category": "comment",
+      "text": "This is the first explanation that actually matched what I see in my dashboard. Every other tutorial skipped the setup part entirely."
+    },
+    {
+      "id": "d_en_com_002",
+      "lang": "en",
+      "category": "comment",
+      "text": "Would you ever consider doing a version of this for people who are completely camera shy? The written format might suit me better."
+    },
+    {
+      "id": "d_en_com_003",
+      "lang": "en",
+      "category": "comment",
+      "text": "I have been doing this for two years and never connected retention to topic selection. That reframes how I plan a month of uploads."
+    },
+    {
+      "id": "d_en_com_004",
+      "lang": "en",
+      "category": "comment",
+      "text": "Small correction: the trick only works for short form. Long form viewers tolerate a slower opening because they already chose you."
+    },
+    {
+      "id": "d_en_voice_001",
+      "lang": "en",
+      "category": "voice",
+      "text": "I write the way I talk. Short sentences. No thesaurus. If a paragraph needs simplifying twice, it gets deleted, not polished."
+    },
+    {
+      "id": "d_en_voice_002",
+      "lang": "en",
+      "category": "voice",
+      "text": "My tone is blunt and a bit dry. I open with the problem instead of a warm up, and I almost never use exclamation marks."
+    },
+    {
+      "id": "d_en_voice_003",
+      "lang": "en",
+      "category": "voice",
+      "text": "House style rule: one idea per paragraph, and every piece ends with a concrete next step rather than a vague encouragement."
+    },
+    {
+      "id": "d_en_strat_001",
+      "lang": "en",
+      "category": "strategy",
+      "text": "Three pillars for the quarter: evergreen search content for compounding reach, short commentary for community, and monthly long form as the anchor."
+    },
+    {
+      "id": "d_en_strat_002",
+      "lang": "en",
+      "category": "strategy",
+      "text": "Cadence decision: two deep uploads a week plus daily low effort replies. Depth builds authority, replies build a return audience."
+    },
+    {
+      "id": "d_en_strat_003",
+      "lang": "en",
+      "category": "strategy",
+      "text": "Repurposing ladder: one long interview becomes four shorts, one carousel, one newsletter section and five quote posts. Never publish the cut-downs first."
+    },
+    {
+      "id": "d_en_strat_004",
+      "lang": "en",
+      "category": "strategy",
+      "text": "Stop treating every platform the same. The same script becomes a fast cut with captions for short form and a slower narrative edit for long form."
+    },
+    {
+      "id": "d_en_less_001",
+      "lang": "en",
+      "category": "lesson",
+      "text": "Lesson: publishing during a launch week halved my average retention because the audience was splitting between two topics. Never launch and teach in the same week."
+    },
+    {
+      "id": "d_en_less_002",
+      "lang": "en",
+      "category": "lesson",
+      "text": "Lesson: chasing the newest platform cost me eight months of compounding. Switch platforms with evidence, never with hype."
+    },
+    {
+      "id": "d_en_less_003",
+      "lang": "en",
+      "category": "lesson",
+      "text": "Lesson: buying an expensive camera before learning to light made my videos worse. Fix the cheap variable first."
+    },
+    {
+      "id": "d_en_less_004",
+      "lang": "en",
+      "category": "lesson",
+      "text": "Lesson: replying to every comment for the first hour after posting measurably improved distribution on two of three platforms I tested."
+    },
+    {
+      "id": "d_en_perf_001",
+      "lang": "en",
+      "category": "performance",
+      "text": "Retention curve analysis: videos under twenty seconds held eighty percent of viewers past the halfway mark, while sixty second videos dropped to thirty percent."
+    },
+    {
+      "id": "d_en_perf_002",
+      "lang": "en",
+      "category": "performance",
+      "text": "Save rate outperformed view count as a leading indicator. Posts with a save rate above three percent kept growing for weeks after publication."
+    },
+    {
+      "id": "d_en_perf_003",
+      "lang": "en",
+      "category": "performance",
+      "text": "Impressions grew fastest on posts published between seven and nine in the morning local time, though click through stayed flat, meaning distribution shifted but interest did not."
+    },
+    {
+      "id": "d_en_perf_004",
+      "lang": "en",
+      "category": "performance",
+      "text": "Average watch time correlated more strongly with comment volume than with likes. Conversation is the real engagement currency."
+    },
+    {
+      "id": "d_en_snip_001",
+      "lang": "en",
+      "category": "snippet",
+      "text": "Reusable hook template: everyone gets the first part wrong, here is the second part that finally made it work for my channel."
+    },
+    {
+      "id": "d_en_snip_002",
+      "lang": "en",
+      "category": "snippet",
+      "text": "Reusable closing line: if this saved you an hour, the next one takes two minutes to watch, so stay close."
+    },
+    {
+      "id": "d_en_snip_003",
+      "lang": "en",
+      "category": "snippet",
+      "text": "Reusable title formula: the number plus the audience plus the outcome, for example five settings that doubled my posting speed."
+    },
+    {
+      "id": "d_en_mem_001",
+      "lang": "en",
+      "category": "memory",
+      "text": "The creator described their workflow as Sunday planning, weekday filming, and Wednesday editing, with all publishing happening on Friday afternoon."
+    },
+    {
+      "id": "d_en_mem_002",
+      "lang": "en",
+      "category": "memory",
+      "text": "Earlier in the conversation the creator mentioned that their audience skews toward working professionals aged twenty five to forty, mostly on mobile."
+    },
+    {
+      "id": "d_en_mem_003",
+      "lang": "en",
+      "category": "memory",
+      "text": "A past decision worth remembering: the creator rejected a high paying brand deal because it conflicted with the educational positioning of the channel."
+    },
+    {
+      "id": "d_en_mem_004",
+      "lang": "en",
+      "category": "memory",
+      "text": "Note recorded after the analytics review: the top five percent of videos by views all shared the same opening visual, which was a plain whiteboard."
+    },
+    {
+      "id": "d_ta_hook_001",
+      "lang": "ta",
+      "category": "hook",
+      "text": "எந்த உருவாக்குனரும் முதலில் சரியான கேள்வியைத் தேர்ந்தெடுக்க வேண்டும். வீடியோ எவ்வளவு சிறப்பானதை விட, எதைப் பற்றி சொல்கிறோம் என்பதே முக்கியம்."
+    },
+    {
+      "id": "d_ta_hook_002",
+      "lang": "ta",
+      "category": "hook",
+      "text": "நீங்கள் ஒவ்வொரு நாளும் உருவாக்குவதால், உங்கள் பார்வையாளர் கண்களை மூடிவிடுகிறார். ஆண்டுக்கு நான்கு மட்டுமே தயாரித்தால் போதும்."
+    },
+    {
+      "id": "d_ta_hook_003",
+      "lang": "ta",
+      "category": "hook",
+      "text": "என் முதல் ஐந்து வீடியோகளில் எதுவும் புரியவில்லை. அதற்குக் காரணம் என்ன என்று பல மாதங்கள் ஆராய்ந்த பின்னர் தெரிந்தது."
+    },
+    {
+      "id": "d_ta_cap_001",
+      "lang": "ta",
+      "category": "caption",
+      "text": "இந்த வாரம் பதினைந்து உள்ளடக்கங்களை ஒரே நாளில் உருவாக்கிவிட்டேன். திங்கள் வரும் நாளில் முழுவதும் கைப்பந்த தயாரிப்பு."
+    },
+    {
+      "id": "d_ta_cap_002",
+      "lang": "ta",
+      "category": "caption",
+      "text": "தமிழில் குறைந்த உள்ளடக்கம் இருப்பதால், மின்னும் நன்கு உள்ள ஆரம்பத்தை நானே முன்னெடுத்து முன்னோக்கி செல்ல வேண்டியிருக்கிறது."
+    },
+    {
+      "id": "d_ta_cap_003",
+      "lang": "ta",
+      "category": "caption",
+      "text": "உங்கள் கேள்விகளுக்கு பதிலளிப்பதே என் வளர்ச்சியின் முக்கிய காரணம். கேள்வி கேட்டால் ஒரு வீடியோ, இரண்டாவது, மூன்றாவது தயாராகும்."
+    },
+    {
+      "id": "d_ta_scr_001",
+      "lang": "ta",
+      "category": "script",
+      "text": "தொடக்கத்தில் கேள்வியை வாசிப்பதில்லை. முதல் விநாடியில் பிரச்சினையை நேரடியாக கூறி, பின்னர் தீர்வை விளக்குதல்."
+    },
+    {
+      "id": "d_ta_scr_002",
+      "lang": "ta",
+      "category": "script",
+      "text": "நான்கு பகுதிகள்: கேள்வி, பார்வையாளர் அனுபவம், தெளிவான தீர்வு, சுருக்கமான முடிவுரை. ஒவ்வொரு பகுதியும் முப்பது விநாடிகளுக்கு மிகாதம்."
+    },
+    {
+      "id": "d_ta_idea_001",
+      "lang": "ta",
+      "category": "idea",
+      "text": "தமிழில் குறைந்த தொழில்நுட்ப உள்ளடக்கத்தை ஒரு தொடராக உருவாக்க வேண்டும். ஒவ்வொரு வீடியோவிலும் ஒரே கருப்பொருள் மட்டுமே இருக்க வேண்டும்."
+    },
+    {
+      "id": "d_ta_idea_002",
+      "lang": "ta",
+      "category": "idea",
+      "text": "தமிழ் பயனாளிகள் பொதுவாக எது குறைப்படுகிறது என்று பதிவேடு செய்து, அதை நிரப்பும் உள்ளடக்கங்களைத் தயாரிக்கலாம்."
+    },
+    {
+      "id": "d_ta_com_001",
+      "lang": "ta",
+      "category": "comment",
+      "text": "இது தமிழில் இதுவரை பார்த்ததற்குள் மிகவும் தெளிவான விளக்கம். நீங்கள் தயாரிப்பு பகுதியையும் சேர்த்து விளக்கியிருப்பது மிகவும் பயனுள்ளது."
+    },
+    {
+      "id": "d_ta_com_002",
+      "lang": "ta",
+      "category": "comment",
+      "text": "என் மகன் தமிழில் பார்க்க முயற்சிக்கிறான், ஆனால் உள்ளடக்கம் இன்னும் வேகமாகச் செல்லவில்லை. காரணம் என்ன என்று தெரியவில்லை."
+    },
+    {
+      "id": "d_ta_voice_001",
+      "lang": "ta",
+      "category": "voice",
+      "text": "நான் எழுதுவது பேசுவது போலவே. சுருக்கமான வாக்கியங்கள், மிக நேரடியான மொழி, மிகக் குறைந்த சொற்கள்."
+    },
+    {
+      "id": "d_ta_voice_002",
+      "lang": "ta",
+      "category": "voice",
+      "text": "தமிழ் உரையில் எழுத்துரு சிதைவை தவிர்க்கிறேன். வாசிப்பதற்கு இலகுவான சொற்களை மட்டுமே பயன்படுத்துகிறேன்."
+    },
+    {
+      "id": "d_ta_strat_001",
+      "lang": "ta",
+      "category": "strategy",
+      "text": "தமிழ் உள்ளடக்கத்தை முதலில் தேடும் பார்வையாளர்களுக்காக எழுதுகிறேன். பின்னர் அதே உள்ளடக்கத்தை இரண்டாவது மொழிக்கு மாற்றுகிறேன்."
+    },
+    {
+      "id": "d_ta_less_001",
+      "lang": "ta",
+      "category": "lesson",
+      "text": "கற்றுக்கொண்ட படி: அதிக பார்வையாளர் இருந்தாலும் குறைந்த நேரம் மட்டுமே இருந்தால், வீடியோ வெட்டுதலை மட்டும் குறைத்தால் வருமானம் அதிகரிக்கிறது."
+    },
+    {
+      "id": "d_ta_perf_001",
+      "lang": "ta",
+      "category": "performance",
+      "text": "செயல்திறன் அறிக்கையின்படி, முதல் மூன்று விநாடிகளில் பார்வையாளர் தொடர்பை விட்டுச் செல்லும் வீதம் தமிழ் உள்ளடக்கத்தில் அதிகமாக இருந்தது."
+    },
+    {
+      "id": "d_ta_mem_001",
+      "lang": "ta",
+      "category": "memory",
+      "text": "உருவாக்குனர் முன்பு குறிப்பிட்டது: இளம் தொழில்நுட்ப ஆர்வகர்கள் தமிழ் மற்றும் ஆங்கிலம் இரண்டையும் பயன்படுத்துகின்றனர், ஆனால் தமிழ் மட்டும் பதிவுகளை விருப்பமாகத் தேர்வு செய்கின்றனர்."
+    },
+    {
+      "id": "d_ta_mem_002",
+      "lang": "ta",
+      "category": "memory",
+      "text": "குறிப்பு: உருவாக்குனர் தனது முதல் தமிழ் வீடியோவின் குறைவான பார்வையைக் கண்டு மிகவும் வருத்தப்பட்டார், ஆனால் பின்னர் தலைப்பை மாற்றியதால் மீண்டும் வெற்றி கிடைத்தார்."
+    },
+    {
+      "id": "d_hi_hook_001",
+      "lang": "hi",
+      "category": "hook",
+      "text": "ज्यादातर क्रिएटर्स वीडियो के बीच में पूरा परिचय देते हैं, जबकि दर्शक तीसरे सेकंड में फैसला कर लेता है।"
+    },
+    {
+      "id": "d_hi_hook_002",
+      "lang": "hi",
+      "category": "hook",
+      "text": "मैंने एक साल में अपने सबसे कम देखे जाने वाले वीडियो की वजह खोजी और वह गलती आज भी दोहरा रहा हूँ।"
+    },
+    {
+      "id": "d_hi_hook_003",
+      "lang": "hi",
+      "category": "hook",
+      "text": "हर दिन पोस्ट करने से घबराहट नहीं होती, बल्कि दर्शक थक जाते हैं। साप्ताह में तीन टुकड़े ही काफी हैं।"
+    },
+    {
+      "id": "d_hi_cap_001",
+      "lang": "hi",
+      "category": "caption",
+      "text": "इस हफ्ते एक ही दिन में दस वीडियो बनाए और रविवार को बस एक चाय के साथ सब एडिट कर दिए।"
+    },
+    {
+      "id": "d_hi_cap_002",
+      "lang": "hi",
+      "category": "caption",
+      "text": "हिंदी में अच्छा टेक्निकल कंटेंट बहुत कम है, इसलिए जो बनाता है उसकी मांग हमेशा बनी रहती है।"
+    },
+    {
+      "id": "d_hi_cap_003",
+      "lang": "hi",
+      "category": "caption",
+      "text": "कैमरा खरीदने से पहले लाइटिंग सीखना चाहिए। रोशनी सस्ती है और फ़र्क सबसे ज़्यादा बनाती है।"
+    },
+    {
+      "id": "d_hi_scr_001",
+      "lang": "hi",
+      "category": "script",
+      "text": "पहले तीन सेकंड में समस्या बताइए, फिर उसका असली नुकसान दिखाइए, और उसके बाद ही हल दीजिए। पहले हल बताना काम नहीं करता।"
+    },
+    {
+      "id": "d_hi_idea_001",
+      "lang": "hi",
+      "category": "idea",
+      "text": "हर हफ्ते किसी एक क्रिएटर का सबसे कमजोर वीडियो चुनकर उसका हुक सुधारने का सीरीज़ शुरू करने का विचार है।"
+    },
+    {
+      "id": "d_hi_com_001",
+      "lang": "hi",
+      "category": "comment",
+      "text": "आपकी वीडियो में सबसे अच्छी बात यह है कि आपने वो चीज़ दिखाई जो मेरी अपनी एनालिटिक्स में गलत निकली थी।"
+    },
+    {
+      "id": "d_hi_voice_001",
+      "lang": "hi",
+      "category": "voice",
+      "text": "मेरी लेखन शैली सीधी है। लंबे वाक्य नहीं, फ़ालतू शब्द नहीं, और हर पोस्ट एक स्पष्ट कदम के साथ ख़त्म होती है।"
+    },
+    {
+      "id": "d_hi_strat_001",
+      "lang": "hi",
+      "category": "strategy",
+      "text": "मेरी रणनीति तीन खंभों पर टिकी है: सीखने योग्य लंबे वीडियो, हर दिन के छोटे टुकड़े, और सीधे सवालों के जवाब देने वाले पोस्ट।"
+    },
+    {
+      "id": "d_hi_less_001",
+      "lang": "hi",
+      "category": "lesson",
+      "text": "सीख: एक ही हफ्ते में नया प्रोडक्ट लॉन्च करने और नया ट्यूटोरियल देने से दर्शक दोनों में बँट गए और दोनों कमजोर हुए।"
+    },
+    {
+      "id": "d_hi_perf_001",
+      "lang": "hi",
+      "category": "performance",
+      "text": "विश्लेषण से पता चला कि सेव वाले पोस्ट दर्शकों को दोबारा देखने के लिए सबसे ज़्यादा प्रभावी थे, हालांकि व्यू गिनती कम रही।"
+    },
+    {
+      "id": "d_hi_mem_001",
+      "lang": "hi",
+      "category": "memory",
+      "text": "क्रिएटर ने बताया कि उनके दर्शक मुख्यतः शहरों में रहने वाले पेशेवर हैं और वे ज़्यादातर मोबाइल पर देखते हैं।"
+    },
+    {
+      "id": "d_hi_mem_002",
+      "lang": "hi",
+      "category": "memory",
+      "text": "पुराना निर्णय: क्रिएटर ने एक बड़ा ब्रांड ऑफ़र ठुकरा दिया था क्योंकि वह चैनल की शैक्षिक दिशा से मेल खाता नहीं था।"
+    },
+    {
+      "id": "d_tan_hook_001",
+      "lang": "tanglish",
+      "category": "hook",
+      "text": "Nee rendu perum padurom, rendu keer padakkum illa. Ketbare tha solradhu konjam slow-a irundhu."
+    },
+    {
+      "id": "d_tan_hook_002",
+      "lang": "tanglish",
+      "category": "hook",
+      "text": "Enna docu pola tha nambungal, athu sonnaal ponnadhu tha nambakoodhu illa. Illiya sollathu tha trust aakudhu."
+    },
+    {
+      "id": "d_tan_cap_001",
+      "lang": "tanglish",
+      "category": "caption",
+      "text": "Idhukku weekend la rendu padungala epdi create pannungal, apparam ettu padungal epdi kuraindha paksei prep pannidhu."
+    },
+    {
+      "id": "d_tan_cap_002",
+      "lang": "tanglish",
+      "category": "caption",
+      "text": "Tamil la aval uthaippu vida padakkum illa. English la irukkura content ku epdi varaikum naan mathukkiren."
+    },
+    {
+      "id": "d_tan_scr_001",
+      "lang": "tanglish",
+      "category": "script",
+      "text": "Opening la oru greeting venam. First sentence la problem-a solli, rendu second la answer-a start pannu."
+    },
+    {
+      "id": "d_tan_idea_001",
+      "lang": "tanglish",
+      "category": "idea",
+      "text": "Tamil tech audience-ku oru free course epdi start pannalan nu idea. Beginner-l ku针对性的 content vendum."
+    },
+    {
+      "id": "d_tan_com_001",
+      "lang": "tanglish",
+      "category": "comment",
+      "text": "Idha first time la oru Tamil tech video paathen. But English la full detailed a explanation irundhu, indha epdi sollanum theriyadhu."
+    },
+    {
+      "id": "d_tan_voice_001",
+      "lang": "tanglish",
+      "category": "voice",
+      "text": "Enna padurom, appadi than solren. Full sentences la oru sol-a maathu pudurom, purdha rendu sol pannanum."
+    },
+    {
+      "id": "d_tan_strat_001",
+      "lang": "tanglish",
+      "category": "strategy",
+      "text": "Naan English audience-ku content vendu vendu solren, but Tamil audience ku same video da oru Tamil subtitle a add pannren."
+    },
+    {
+      "id": "d_tan_less_001",
+      "lang": "tanglish",
+      "category": "lesson",
+      "text": "Lesson: oru Tamil video ku English title vechirathu watch time konjam diminish aayidhu. Match the language of the title to the script."
+    },
+    {
+      "id": "d_tan_perf_001",
+      "lang": "tanglish",
+      "category": "performance",
+      "text": "Analytics la paathathu Tamil content ku engagement indri kattra varaikkum mela maatru Vaa pathi."
+    },
+    {
+      "id": "d_tan_mem_001",
+      "lang": "tanglish",
+      "category": "memory",
+      "text": "Creator solraan: audience la 60 percent Tamil, 30 percent English, 10 percent Hindi vera level la pesraargal."
+    },
+    {
+      "id": "d_hin_hook_001",
+      "lang": "hinglish",
+      "category": "hook",
+      "text": "Log daily post karte hain lekin retention gir jaati hai. Reason simple hai: har post me energy invest nahi hoti."
+    },
+    {
+      "id": "d_hin_hook_002",
+      "lang": "hinglish",
+      "category": "hook",
+      "text": "Maine 6 mahine me ek cheez change ki aur meri watch time double ho gayi, aur wo camera ya editing nahi thi."
+    },
+    {
+      "id": "d_hin_cap_001",
+      "lang": "hinglish",
+      "category": "caption",
+      "text": "Is mahine ka target tha 15 reels, aur honestly mile 9. But 9 dhang ke reels 15 weak se zyada kaam karti hain."
+    },
+    {
+      "id": "d_hin_cap_002",
+      "lang": "hinglish",
+      "category": "caption",
+      "text": "Hindi me tech content kam hai isliye jo bana rahe hain unka waitlist banta hai. Demand hai, supply nahi."
+    },
+    {
+      "id": "d_hin_scr_001",
+      "lang": "hinglish",
+      "category": "script",
+      "text": "Pehle problem batao, phir cost dikhao, phir solution. Solution pehle batana kaam nahi karta, pehle problem feel honi chahiye."
+    },
+    {
+      "id": "d_hin_idea_001",
+      "lang": "hinglish",
+      "category": "idea",
+      "text": "Ek series idea: har week kisi creator ka sabse weak video leke uska hook rewrite karunga on camera."
+    },
+    {
+      "id": "d_hin_com_001",
+      "lang": "hinglish",
+      "category": "comment",
+      "text": "Bhai ye sabse helpful video hai, especially wo part jo aapne lighting ke baare me bataya. Maine isse try kiya, difference hai."
+    },
+    {
+      "id": "d_hin_voice_001",
+      "lang": "hinglish",
+      "category": "voice",
+      "text": "Meri writing style chhoti sentences aur simple words hai. Main English bohot kam use karta hun, sentence ke end me ek clear step deta hun."
+    },
+    {
+      "id": "d_hin_strat_001",
+      "lang": "hinglish",
+      "category": "strategy",
+      "text": "Strategy simple hai: 2 long educational videos, 5 short clips, aur daily comments reply. Consistency ka matlab quality ko sustain karna hai."
+    },
+    {
+      "id": "d_hin_less_001",
+      "lang": "hinglish",
+      "category": "lesson",
+      "text": "Seekha: thumbnail ko perfect banane me time laga, lekin pehle 3 second ka hook fix karna zyada faayda deta tha."
+    },
+    {
+      "id": "d_hin_perf_001",
+      "lang": "hinglish",
+      "category": "performance",
+      "text": "Analytics me dekha ki Hindi audience comment zyada karti hai, save bhi karti hai, but like kam karti hai compared to English."
+    },
+    {
+      "id": "d_hin_mem_001",
+      "lang": "hinglish",
+      "category": "memory",
+      "text": "Creator ne bataya ki unka target audience working professionals hai, 25 se 40 age group, aur wo mostly mobile pe dekhte hain."
+    },
+    {
+      "id": "d_mix_ta_001",
+      "lang": "code_mixed_ta",
+      "category": "caption",
+      "text": "Tamil audience ku English maathiri tech explain panninja la theriyadhu. So mixed language la solran, transliteration use pannama illa."
+    },
+    {
+      "id": "d_mix_ta_002",
+      "lang": "code_mixed_ta",
+      "category": "hook",
+      "text": "Seven day productivity system follow karala? Tamil la explain panninjaal output illa, sappadu illa solradhu."
+    },
+    {
+      "id": "d_mix_ta_003",
+      "lang": "code_mixed_ta",
+      "category": "memory",
+      "text": "Creator plan: Monday-la shoot, Wednesday-la edit, Friday-la publish. Weekend-la next three episodes plan pannradhu."
+    },
+    {
+      "id": "d_mix_ta_004",
+      "lang": "code_mixed_ta",
+      "category": "lesson",
+      "text": "Important lesson: Tamil fonts render pannatha viddaiyum proba vayirundhulladhuku, thaar vazhiya clean-a irundhu nakai."
+    },
+    {
+      "id": "d_mix_hi_001",
+      "lang": "code_mixed_hi",
+      "category": "caption",
+      "text": "Hindi medium ke saath English tools use karta hun, lekin audience connect Hindi mein hoti hai, isliye script Hindi mein rakhta hun."
+    },
+    {
+      "id": "d_mix_hi_002",
+      "lang": "code_mixed_hi",
+      "category": "hook",
+      "text": "Free laptop mila tha keila, lekin free software tools se professional content banna mumkin tha—sirf patience chahiye."
+    },
+    {
+      "id": "d_mix_hi_003",
+      "lang": "code_mixed_hi",
+      "category": "memory",
+      "text": "Creator ka setup: budget camera, ring light, aur ek laptop—sab affordable. Subscriptions pehle saal zero tha."
+    },
+    {
+      "id": "d_mix_hi_004",
+      "lang": "code_mixed_hi",
+      "category": "strategy",
+      "text": "Niche decide karne ke liye maine 30 din data dekha: mere top 3 videos sab education aur tool reviews ke the, lifestyle nahi."
+    },
+    {
+      "id": "d_mix_en_001",
+      "lang": "code_mixed_en",
+      "category": "memory",
+      "text": "Between Hindi and Tamil content, English subtitles gave the best reach, but pure vernacular builds the stronger community."
+    },
+    {
+      "id": "d_mix_en_002",
+      "lang": "code_mixed_en",
+      "category": "lesson",
+      "text": "Recording in two languages doubled my setup time; the smarter path was one script, two voiceovers recorded in a single session."
+    }
+  ],
+  "queries": [
+    {
+      "id": "q_en_001",
+      "text": "why opening with a greeting hurts retention",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_hook_005",
+        "d_en_hook_002"
+      ],
+      "related": [
+        "d_en_perf_001"
+      ]
+    },
+    {
+      "id": "q_en_002",
+      "text": "how many videos should a solo creator publish per week",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_hook_001",
+        "d_en_cap_005"
+      ],
+      "related": [
+        "d_en_strat_002"
+      ]
+    },
+    {
+      "id": "q_en_003",
+      "text": "batching multiple videos in one day workflow",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_cap_001",
+        "d_en_mem_001"
+      ],
+      "related": [
+        "d_en_strat_002"
+      ]
+    },
+    {
+      "id": "q_en_004",
+      "text": "editing change that improved my audience retention",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_hook_004"
+      ],
+      "related": [
+        "d_en_perf_001"
+      ]
+    },
+    {
+      "id": "q_en_005",
+      "text": "finding good video topics from audience replies",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_cap_004"
+      ],
+      "related": [
+        "d_en_com_003",
+        "d_en_idea_001"
+      ]
+    },
+    {
+      "id": "q_en_006",
+      "text": "short form video structure for tutorials",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_scr_003",
+        "d_en_scr_001"
+      ],
+      "related": [
+        "d_en_scr_002"
+      ]
+    },
+    {
+      "id": "q_en_007",
+      "text": "which metric predicts growth better than views",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_hook_003"
+      ],
+      "related": [
+        "d_en_perf_002"
+      ]
+    },
+    {
+      "id": "q_en_008",
+      "text": "content pillar strategy for a quarterly plan",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_strat_001"
+      ],
+      "related": [
+        "d_en_strat_002"
+      ]
+    },
+    {
+      "id": "q_en_009",
+      "text": "repurposing long content into many formats",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_strat_003"
+      ],
+      "related": [
+        "d_en_strat_004"
+      ]
+    },
+    {
+      "id": "q_en_010",
+      "text": "save rate as a leading engagement indicator",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_perf_002"
+      ],
+      "related": [
+        "d_en_perf_004"
+      ]
+    },
+    {
+      "id": "q_en_011",
+      "text": "mistake of buying a camera before learning lighting",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_less_003",
+        "d_hi_cap_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_en_012",
+      "text": "lesson about launching and teaching in the same week",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_less_001",
+        "d_hi_less_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_en_013",
+      "text": "reusable hook template with a number",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_snip_001"
+      ],
+      "related": [
+        "d_en_snip_003"
+      ]
+    },
+    {
+      "id": "q_en_014",
+      "text": "closing line that invites viewers to stay",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_snip_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_en_015",
+      "text": "how my writing style is different from formal writing",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_voice_001",
+        "d_en_voice_003"
+      ],
+      "related": [
+        "d_en_voice_002"
+      ]
+    },
+    {
+      "id": "q_en_016",
+      "text": "comment replies within the first hour effect",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_less_004"
+      ],
+      "related": [
+        "d_en_perf_004"
+      ]
+    },
+    {
+      "id": "q_en_017",
+      "text": "audience demographics age and viewing device",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_mem_002",
+        "d_hin_mem_001"
+      ],
+      "related": [
+        "d_tan_mem_001"
+      ]
+    },
+    {
+      "id": "q_en_018",
+      "text": "brand deal rejected because of channel positioning",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_mem_003",
+        "d_hi_mem_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_en_019",
+      "text": "what my top performing videos had in common visually",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_mem_004"
+      ],
+      "related": [
+        "d_en_perf_003"
+      ]
+    },
+    {
+      "id": "q_en_020",
+      "text": "reply to a comment asking for camera shy formats",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_com_002"
+      ],
+      "related": [
+        "d_en_com_001"
+      ]
+    },
+    {
+      "id": "q_en_021",
+      "text": "correction about long form tolerating slow openings",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_com_004"
+      ],
+      "related": [
+        "d_en_hook_005"
+      ]
+    },
+    {
+      "id": "q_en_022",
+      "text": "best posting time based on impressions",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_perf_003"
+      ],
+      "related": [
+        "d_en_perf_001"
+      ]
+    },
+    {
+      "id": "q_en_023",
+      "text": "comment volume compared to likes",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_perf_004"
+      ],
+      "related": [
+        "d_en_perf_002"
+      ]
+    },
+    {
+      "id": "q_en_024",
+      "text": "choosing a niche that feels saturated",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_cap_006"
+      ],
+      "related": [
+        "d_en_idea_001"
+      ]
+    },
+    {
+      "id": "q_en_025",
+      "text": "weekly series format taking a creator apart",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_idea_001",
+        "d_hin_idea_001"
+      ],
+      "related": [
+        "d_hin_hook_002"
+      ]
+    },
+    {
+      "id": "q_en_026",
+      "text": "switching platforms with evidence rather than hype",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_less_002"
+      ],
+      "related": [
+        "d_en_strat_004"
+      ]
+    },
+    {
+      "id": "q_en_027",
+      "text": "before and after editing comparison video",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_scr_004"
+      ],
+      "related": [
+        "d_en_idea_002"
+      ]
+    },
+    {
+      "id": "q_en_028",
+      "text": "vlogging a freelancer who got ghosted by a client",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_idea_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_en_029",
+      "text": "experiment comparing the same script in two languages",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_idea_004"
+      ],
+      "related": [
+        "d_ta_strat_001"
+      ]
+    },
+    {
+      "id": "q_en_030",
+      "text": "how a comment helped me fix a retention problem",
+      "lang": "en",
+      "phenomenon": "en_mono",
+      "relevant": [
+        "d_en_com_003"
+      ],
+      "related": [
+        "d_en_com_001"
+      ]
+    },
+    {
+      "id": "q_ta_001",
+      "text": "தமிழில் தொழில்நுட்ப உள்ளடக்கம் குறைவாக இருப்பதற்கான காரணம்",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_cap_002"
+      ],
+      "related": [
+        "d_ta_idea_001"
+      ]
+    },
+    {
+      "id": "q_ta_002",
+      "text": "தொடக்கத்தில் வணக்கம் சொல்வதால் ஏன் பார்வையாளர் விட்டுச் செல்கிறார்",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_scr_001",
+        "d_ta_hook_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_003",
+      "text": "எழுத்துரு சிதைவைத் தவிர்க்கும் வழி",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_voice_002"
+      ],
+      "related": [
+        "d_mix_ta_004"
+      ]
+    },
+    {
+      "id": "q_ta_004",
+      "text": "நான்கு பகுதியாக வெட்டும் முறை",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_scr_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_005",
+      "text": "பார்வையாளர் கேள்விகளிலிருந்து வீடியோ தலைப்புகள் உருவாக்குதல்",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_cap_003",
+        "d_ta_idea_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_006",
+      "text": "வீடியோ வெட்டும் நேரத்தைக் குறைத்தால் வருமானம் அதிகரிப்பதற்கான காரணம்",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_less_001"
+      ],
+      "related": [
+        "d_ta_perf_001"
+      ]
+    },
+    {
+      "id": "q_ta_007",
+      "text": "முதல் மூன்று விநாடிகளில் பார்வையாளர் விடுச்செல்லும் வீதம்",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_perf_001"
+      ],
+      "related": [
+        "d_en_perf_001"
+      ]
+    },
+    {
+      "id": "q_ta_008",
+      "text": "தமிழ் பயனாளிகள் ஏன் பதிவுகளை விரும்புகின்றனர்",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_mem_001",
+        "d_ta_cap_002"
+      ],
+      "related": [
+        "d_ta_perf_001"
+      ]
+    },
+    {
+      "id": "q_ta_009",
+      "text": "தமிழில் நான் உரை எழுதும் பாணி",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_voice_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_010",
+      "text": "முதல் தமிழ் வீடியோ குறைவான பார்வையைக் கண்டு எதிர்பார்த்தது",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_mem_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_011",
+      "text": "ஒரே நாளில் பதினைந்து உள்ளடக்கங்கள் உருவாக்கிய அனுபவம்",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_cap_001"
+      ],
+      "related": [
+        "d_tan_cap_001"
+      ]
+    },
+    {
+      "id": "q_ta_012",
+      "text": "ஒரே கருப்பொருளை மட்டும் கொண்ட தொடர் உருவாக்கும் திட்டம்",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_idea_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_013",
+      "text": "தெளிவான விளக்கம் என்று கூறிய பார்வையாளர் கருத்து",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_com_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_014",
+      "text": "என் முதல் வீடியோக்கள் எதனால் பலரும் பார்க்கவில்லை",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_hook_003",
+        "d_ta_mem_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_015",
+      "text": "தமிழில் பதிவு வீதம் அதிகமாக உள்ளதற்கான பொறுப்பு",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_cap_002",
+        "d_ta_cap_003"
+      ],
+      "related": [
+        "d_ta_strat_001"
+      ]
+    },
+    {
+      "id": "q_ta_016",
+      "text": "எழுந்து முன்னோக்கி செல்லும் உதவிக் கை",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_cap_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_017",
+      "text": "மொழி சார்ந்த உள்ளடக்கத்தை மற்றொரு மொழிக்கு மாற்றும் திட்டம்",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_strat_001"
+      ],
+      "related": [
+        "d_en_idea_004"
+      ]
+    },
+    {
+      "id": "q_ta_018",
+      "text": "மகன் தமிழில் பார்க்க முயற்சிக்கிறான் ஆனால் வேகம் இல்லை",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_com_002"
+      ],
+      "related": [
+        "d_tan_cap_002"
+      ]
+    },
+    {
+      "id": "q_ta_019",
+      "text": "பொதுவான ஆரம்பமாக பயனாளிகளை விடுவிடுவது",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_hook_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_020",
+      "text": "தமிழில் தொழில்நுட்ப கற்பித்தல் பற்றிய நினைவு",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_mem_001"
+      ],
+      "related": [
+        "d_ta_idea_001"
+      ]
+    },
+    {
+      "id": "q_ta_021",
+      "text": "தமிழில் உரையின் வீச்சை அதிகரிப்பதற்கான படி",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_strat_001",
+        "d_ta_cap_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_022",
+      "text": "நேரடியான மொழி பயன்படுத்தும் பழக்கம்",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_voice_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_023",
+      "text": "பெரும்பாலும் பணப்பாட்டு நபர்கள் யார் என்ற தகவல்",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_mem_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_024",
+      "text": "தலைப்பை மாற்றியபோது மீண்டும் பெற்ற வெற்றி",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_mem_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_ta_025",
+      "text": "வீடியோ வெட்டும் நேரம் குறைப்பதன் நன்மை",
+      "lang": "ta",
+      "phenomenon": "ta_mono",
+      "relevant": [
+        "d_ta_less_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hi_001",
+      "text": "रोज़ पोस्ट करने से दर्शक थक क्यों जाते हैं",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_hook_003"
+      ],
+      "related": [
+        "d_hi_hook_001"
+      ]
+    },
+    {
+      "id": "q_hi_002",
+      "text": "पहले तीन सेकंड में समस्या बताना क्यों ज़रूरी है",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_scr_001",
+        "d_hi_hook_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hi_003",
+      "text": "हिंदी में तकनीकी विषय कम होने का कारण",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_cap_002"
+      ],
+      "related": [
+        "d_hin_cap_002"
+      ]
+    },
+    {
+      "id": "q_hi_004",
+      "text": "कैमरा खरीदने से पहले रोशनी सीखना",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_cap_003",
+        "d_en_less_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hi_005",
+      "text": "हफ्ते में नी रील्स का लक्ष्य और वास्तविक संख्या",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_cap_001"
+      ],
+      "related": [
+        "d_hin_cap_001"
+      ]
+    },
+    {
+      "id": "q_hi_006",
+      "text": "साप्ताह में कितने टुकड़े काफी हैं",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_hook_003",
+        "d_en_hook_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hi_007",
+      "text": "दर्शकों की उम्र और जनसंख्या संबंधी जानकारी",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_mem_001"
+      ],
+      "related": [
+        "d_en_mem_002"
+      ]
+    },
+    {
+      "id": "q_hi_008",
+      "text": "ब्रांड ऑफ़र ठुकराने का कारण",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_mem_002"
+      ],
+      "related": [
+        "d_en_mem_003"
+      ]
+    },
+    {
+      "id": "q_hi_009",
+      "text": "सेव करने वाले पोस्ट अधिक प्रभावी क्यों थे",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_perf_001"
+      ],
+      "related": [
+        "d_en_perf_002"
+      ]
+    },
+    {
+      "id": "q_hi_010",
+      "text": "हिंदी दर्शक टिप्पणी करते हैं पर लाइक कम करते हैं",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_perf_001"
+      ],
+      "related": [
+        "d_en_perf_004"
+      ]
+    },
+    {
+      "id": "q_hi_011",
+      "text": "छोटी वाक्य और सरल शब्दों की लेखन शैली",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_voice_001",
+        "d_hin_voice_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hi_012",
+      "text": "हर सप्ताह किसी का कमज़ोर वीडियो सुधारने की श्रृंखला",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_idea_001",
+        "d_en_idea_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hi_013",
+      "text": "एक ही हफ्ते में लॉन्च और ट्यूटोरियल देना गलती था",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_less_001"
+      ],
+      "related": [
+        "d_en_less_001"
+      ]
+    },
+    {
+      "id": "q_hi_014",
+      "text": "थंबनेल सुधारने से पहले पहले तीन सेकंड का हुक ठीक करना",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hin_less_001"
+      ],
+      "related": [
+        "d_en_hook_005"
+      ]
+    },
+    {
+      "id": "q_hi_015",
+      "text": "दर्शक सबसे ज़्यादा किस पोस्ट की प्रशंसा करते हैं",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_com_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hi_016",
+      "text": "रोशनी के बारे में बताया गया भाग सबसे उपयोगी था",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hin_com_001",
+        "d_hi_com_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hi_017",
+      "text": "तीन खंभों वाली रणनीति का विवरण",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_strat_001",
+        "d_hin_strat_001"
+      ],
+      "related": [
+        "d_en_strat_001"
+      ]
+    },
+    {
+      "id": "q_hi_018",
+      "text": "छह महीने में कौन सी बदलाव नज़र डालने वाली निकली",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_hook_002"
+      ],
+      "related": [
+        "d_hin_hook_002"
+      ]
+    },
+    {
+      "id": "q_hi_019",
+      "text": "गलती किस हफ्ते होते वीडियो का विश्लेषण करना",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_hook_002"
+      ],
+      "related": [
+        "d_en_hook_003"
+      ]
+    },
+    {
+      "id": "q_hi_020",
+      "text": "मोबाइल पर देखने वाले दर्शकों की उपस्थिति",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_mem_001"
+      ],
+      "related": [
+        "d_en_mem_002"
+      ]
+    },
+    {
+      "id": "q_hi_021",
+      "text": "गहराई से समझाने वाले लंबे वीडियो और रोज़ छोटे टुकड़े",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hi_strat_001"
+      ],
+      "related": [
+        "d_en_strat_002"
+      ]
+    },
+    {
+      "id": "q_hi_022",
+      "text": "हिंदी और अंग्रेज़ी दर्शकों में अंतर",
+      "lang": "hi",
+      "phenomenon": "hi_mono",
+      "relevant": [
+        "d_hin_perf_001"
+      ],
+      "related": [
+        "d_mix_en_001"
+      ]
+    },
+    {
+      "id": "q_tan_001",
+      "text": "kee rendu viral aagudhu ya illa",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_hook_001",
+        "d_tan_hook_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_tan_002",
+      "text": "enna padurom apadi than solren",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_voice_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_tan_003",
+      "text": "sunday batch recording ke liye weekly workflow kya tha",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_cap_001"
+      ],
+      "related": [
+        "d_ta_cap_001"
+      ]
+    },
+    {
+      "id": "q_tan_004",
+      "text": "opening la greeting venuma illa",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_scr_001"
+      ],
+      "related": [
+        "d_ta_scr_001"
+      ]
+    },
+    {
+      "id": "q_tan_005",
+      "text": "english title vechirathu watch time diminish aayidhu",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_less_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_tan_006",
+      "text": "tamil audience-ku tech content kevvu theriyadhu nu kelappa padakkum illa",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_cap_002"
+      ],
+      "related": [
+        "d_ta_cap_002"
+      ]
+    },
+    {
+      "id": "q_tan_007",
+      "text": "audience la enna percentage enna pesraargal",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_mem_001"
+      ],
+      "related": [
+        "d_ta_mem_001"
+      ]
+    },
+    {
+      "id": "q_tan_008",
+      "text": "tamil tech audience ku free course epdi start pannalan",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_idea_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_tan_009",
+      "text": "tamil engagement indri kattra varaikkum mela",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_perf_001"
+      ],
+      "related": [
+        "d_ta_perf_001"
+      ]
+    },
+    {
+      "id": "q_tan_010",
+      "text": "english audience ku same video subtitle a add pannren",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_strat_001"
+      ],
+      "related": [
+        "d_ta_strat_001"
+      ]
+    },
+    {
+      "id": "q_tan_011",
+      "text": "first time la oru tamil tech video paathen but full detailed a neerillai",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_com_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_tan_012",
+      "text": "both languages la solran",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_mix_ta_001"
+      ],
+      "related": [
+        "d_tan_strat_001"
+      ]
+    },
+    {
+      "id": "q_tan_013",
+      "text": "sappadu illa solradhu",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_hook_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_tan_014",
+      "text": "ketbare tha solradhu slow a irundhu",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_hook_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_tan_015",
+      "text": "english-mixture title vechirathu duration konjam kuraikum irukkirathu",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_less_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_tan_016",
+      "text": "etru padungal epdi kuraindha paksei prep pannidhu",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_cap_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_tan_017",
+      "text": "niche decide pannan mele 30 din data paathu",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_mix_hi_004"
+      ],
+      "related": [
+        "d_tan_idea_001"
+      ]
+    },
+    {
+      "id": "q_tan_018",
+      "text": "rich english content nu epdi varaikum mathukkiren",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_cap_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_tan_019",
+      "text": "weekend la shoot cheppu plan pannradhu",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_mix_ta_003"
+      ],
+      "related": [
+        "d_tan_cap_001"
+      ]
+    },
+    {
+      "id": "q_tan_020",
+      "text": "short sentences use pannren nu solpadam",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_mono",
+      "relevant": [
+        "d_tan_voice_001"
+      ],
+      "related": [
+        "d_en_voice_001"
+      ]
+    },
+    {
+      "id": "q_hin_001",
+      "text": "daily post karne se retention kyun girti hai",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_hook_001"
+      ],
+      "related": [
+        "d_hi_hook_003"
+      ]
+    },
+    {
+      "id": "q_hin_002",
+      "text": "chhoti sentences aur simple words writing style",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_voice_001"
+      ],
+      "related": [
+        "d_hi_voice_001"
+      ]
+    },
+    {
+      "id": "q_hin_003",
+      "text": "15 reels ka target tha 9 mile",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_cap_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hin_004",
+      "text": "problem batao phir cost dikhao phir solution",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_scr_001",
+        "d_hi_scr_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hin_005",
+      "text": "lighting wala part sabse helpful tha",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_com_001"
+      ],
+      "related": [
+        "d_hi_com_001"
+      ]
+    },
+    {
+      "id": "q_hin_006",
+      "text": "sabse kam 3 second ka hook fix karna",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_less_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hin_007",
+      "text": "har week kisi ka sabse weak video rewrite karunga",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_idea_001"
+      ],
+      "related": [
+        "d_hi_idea_001"
+      ]
+    },
+    {
+      "id": "q_hin_008",
+      "text": "2 long videos 5 short clips daily comments reply",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_strat_001"
+      ],
+      "related": [
+        "d_hi_strat_001"
+      ]
+    },
+    {
+      "id": "q_hin_009",
+      "text": "watch time double ho gayi 6 mahine me",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_hook_002"
+      ],
+      "related": [
+        "d_hi_hook_002"
+      ]
+    },
+    {
+      "id": "q_hin_010",
+      "text": "hindi me tech content kam hai demand hai",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_cap_002"
+      ],
+      "related": [
+        "d_hi_cap_002"
+      ]
+    },
+    {
+      "id": "q_hin_011",
+      "text": "Hindi audience comment zyada karti hai lekin like kam karti hai",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_perf_001"
+      ],
+      "related": [
+        "d_hi_perf_001"
+      ]
+    },
+    {
+      "id": "q_hin_012",
+      "text": "target audience 25 se 40 working professionals",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_mem_001"
+      ],
+      "related": [
+        "d_hi_mem_001"
+      ]
+    },
+    {
+      "id": "q_hin_013",
+      "text": "daily posting se energy drain nahi hona chahiye",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_hook_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hin_014",
+      "text": "camera ya editing nahi thi wo change",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_hook_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hin_015",
+      "text": "quality ko consistent rakhna hi consistency ka asal matlab hai",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_strat_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hin_016",
+      "text": "kam pieces lekin zyada effective",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_cap_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hin_017",
+      "text": "pehle problem feel honi chahiye solution pehle nahi",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_hin_scr_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hin_018",
+      "text": "audience connect ke liye language choice",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_mix_hi_001"
+      ],
+      "related": [
+        "d_hin_voice_001"
+      ]
+    },
+    {
+      "id": "q_hin_019",
+      "text": "niche decide karne ke liye 30 din data dekha",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_mix_hi_004"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_hin_020",
+      "text": "budget camera ring light laptop setup",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_mono",
+      "relevant": [
+        "d_mix_hi_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_ta_en_001",
+      "text": "எந்த வீடியோவின் தொடக்கமே முக்கியம் என்பதை ஏன் கூறுகிறீர்கள்",
+      "lang": "ta",
+      "phenomenon": "ta_en",
+      "relevant": [
+        "d_en_hook_005"
+      ],
+      "related": [
+        "d_en_scr_002"
+      ]
+    },
+    {
+      "id": "q_x_ta_en_002",
+      "text": "ஆரம்பத்தில் வணக்கம் சொல்லுவது ஏன் தீங்கு செய்கிறது",
+      "lang": "ta",
+      "phenomenon": "ta_en",
+      "relevant": [
+        "d_en_hook_005",
+        "d_en_hook_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_ta_en_003",
+      "text": "ஒரே நாளில் பல உள்ளடக்கங்களை உருவாக்கும் முறை",
+      "lang": "ta",
+      "phenomenon": "ta_en",
+      "relevant": [
+        "d_en_cap_001"
+      ],
+      "related": [
+        "d_en_mem_001"
+      ]
+    },
+    {
+      "id": "q_x_ta_en_004",
+      "text": "பார்வையாளர் கேள்விகளிலிருந்து தலைப்புகள் எப்படி கிடைக்கும்",
+      "lang": "ta",
+      "phenomenon": "ta_en",
+      "relevant": [
+        "d_en_cap_004"
+      ],
+      "related": [
+        "d_en_idea_001"
+      ]
+    },
+    {
+      "id": "q_x_ta_en_005",
+      "text": "சேமிப்பு விகிதம் ஏன் முக்கிய அளவுகோலாக உள்ளது",
+      "lang": "ta",
+      "phenomenon": "ta_en",
+      "relevant": [
+        "d_en_perf_002"
+      ],
+      "related": [
+        "d_en_perf_004"
+      ]
+    },
+    {
+      "id": "q_x_ta_en_006",
+      "text": "நான்கு பகுதிகள் கொண்ட வீடியோ அமைப்பு",
+      "lang": "ta",
+      "phenomenon": "ta_en",
+      "relevant": [
+        "d_en_scr_001",
+        "d_en_scr_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_ta_en_007",
+      "text": "நீங்கள் பயன்படுத்தும் எழுத்துரு பாணி",
+      "lang": "ta",
+      "phenomenon": "ta_en",
+      "relevant": [
+        "d_en_voice_002"
+      ],
+      "related": [
+        "d_en_voice_001"
+      ]
+    },
+    {
+      "id": "q_x_ta_en_008",
+      "text": "நீங்கள் ஏன் பழைய பதிவை மீண்டும் பயன்படுத்துகிறீர்கள்",
+      "lang": "ta",
+      "phenomenon": "ta_en",
+      "relevant": [
+        "d_en_strat_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_ta_en_009",
+      "text": "பார்வையாளர் அமைப்பு பற்றிய தகவல்",
+      "lang": "ta",
+      "phenomenon": "ta_en",
+      "relevant": [
+        "d_en_mem_002"
+      ],
+      "related": [
+        "d_hin_mem_001"
+      ]
+    },
+    {
+      "id": "q_x_ta_en_010",
+      "text": "கேமரா வாங்குவதற்கு முன் ஒளி குறிப்பிட வேண்டும்",
+      "lang": "ta",
+      "phenomenon": "ta_en",
+      "relevant": [
+        "d_en_less_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_ta_en_011",
+      "text": "தினமும் பதிவு இடுவதால் ஏற்படும் தேய்வு",
+      "lang": "ta",
+      "phenomenon": "ta_en",
+      "relevant": [
+        "d_en_cap_005",
+        "d_en_hook_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_ta_en_012",
+      "text": "நீங்கள் மூன்று அமைப்புக் கொள்கை பயன்படுத்துகிறீர்கள்",
+      "lang": "ta",
+      "phenomenon": "ta_en",
+      "relevant": [
+        "d_en_strat_001"
+      ],
+      "related": [
+        "d_en_strat_002"
+      ]
+    },
+    {
+      "id": "q_x_en_ta_001",
+      "text": "why technical content is scarce in Tamil",
+      "lang": "en",
+      "phenomenon": "en_ta",
+      "relevant": [
+        "d_ta_cap_002"
+      ],
+      "related": [
+        "d_ta_idea_001"
+      ]
+    },
+    {
+      "id": "q_x_en_ta_002",
+      "text": "how to avoid broken font rendering",
+      "lang": "en",
+      "phenomenon": "en_ta",
+      "relevant": [
+        "d_ta_voice_002"
+      ],
+      "related": [
+        "d_mix_ta_004"
+      ]
+    },
+    {
+      "id": "q_x_en_ta_003",
+      "text": "four part video structure explanation",
+      "lang": "en",
+      "phenomenon": "en_ta",
+      "relevant": [
+        "d_ta_scr_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_ta_004",
+      "text": "first three seconds drop off rate in Tamil content",
+      "lang": "en",
+      "phenomenon": "en_ta",
+      "relevant": [
+        "d_ta_perf_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_ta_005",
+      "text": "audience language preferences Tamil versus English",
+      "lang": "en",
+      "phenomenon": "en_ta",
+      "relevant": [
+        "d_ta_mem_001",
+        "d_tan_mem_001"
+      ],
+      "related": [
+        "d_ta_cap_002"
+      ]
+    },
+    {
+      "id": "q_x_en_ta_006",
+      "text": "series with a single topic per episode",
+      "lang": "en",
+      "phenomenon": "en_ta",
+      "relevant": [
+        "d_ta_idea_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_ta_007",
+      "text": "editing faster improved revenue",
+      "lang": "en",
+      "phenomenon": "en_ta",
+      "relevant": [
+        "d_ta_less_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_ta_008",
+      "text": "writing style with short sentences in Tamil",
+      "lang": "en",
+      "phenomenon": "en_ta",
+      "relevant": [
+        "d_ta_voice_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_ta_009",
+      "text": "comment about the clearest explanation",
+      "lang": "en",
+      "phenomenon": "en_ta",
+      "relevant": [
+        "d_ta_com_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_ta_010",
+      "text": "first Tamil video performed poorly then title change fixed it",
+      "lang": "en",
+      "phenomenon": "en_ta",
+      "relevant": [
+        "d_ta_mem_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_ta_011",
+      "text": "content repurposing strategy for regional languages",
+      "lang": "en",
+      "phenomenon": "en_ta",
+      "relevant": [
+        "d_ta_strat_001"
+      ],
+      "related": [
+        "d_ta_cap_003"
+      ]
+    },
+    {
+      "id": "q_x_en_ta_012",
+      "text": "wide reach versus deep community in vernacular",
+      "lang": "en",
+      "phenomenon": "en_ta",
+      "relevant": [
+        "d_ta_strat_001"
+      ],
+      "related": [
+        "d_mix_en_001"
+      ]
+    },
+    {
+      "id": "q_x_hi_en_001",
+      "text": "कमरा और रोशनी का क्या असर है",
+      "lang": "hi",
+      "phenomenon": "hi_en",
+      "relevant": [
+        "d_en_less_003",
+        "d_hi_cap_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_en_002",
+      "text": "दर्शकों की उम्र और कौन सा उपकरण उपयोग करते हैं",
+      "lang": "hi",
+      "phenomenon": "hi_en",
+      "relevant": [
+        "d_en_mem_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_en_003",
+      "text": "ब्रांड साझेदारी क्यों नहीं लेना चाहिए",
+      "lang": "hi",
+      "phenomenon": "hi_en",
+      "relevant": [
+        "d_en_mem_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_en_004",
+      "text": "हर सप्ताह कितना सामग्री बनानी चाहिए",
+      "lang": "hi",
+      "phenomenon": "hi_en",
+      "relevant": [
+        "d_en_hook_001"
+      ],
+      "related": [
+        "d_en_strat_002"
+      ]
+    },
+    {
+      "id": "q_x_hi_en_005",
+      "text": "शीर्षक में संख्या और दर्शक और परिणाम",
+      "lang": "hi",
+      "phenomenon": "hi_en",
+      "relevant": [
+        "d_en_snip_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_en_006",
+      "text": "पहले मिनट में सिंडर टाइम का प्रभाव",
+      "lang": "hi",
+      "phenomenon": "hi_en",
+      "relevant": [
+        "d_en_perf_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_en_007",
+      "text": "लंबी सामग्री का कई रूपों में पुनः उपयोग",
+      "lang": "hi",
+      "phenomenon": "hi_en",
+      "relevant": [
+        "d_en_strat_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_en_008",
+      "text": "आरोप लगाने के बजाय प्रमाण से प्लेटफ़ॉर्म बदलना",
+      "lang": "hi",
+      "phenomenon": "hi_en",
+      "relevant": [
+        "d_en_less_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_en_009",
+      "text": "टिप्पणी का संख्या पसंदीदा से अधिक महत्वपूर्ण है",
+      "lang": "hi",
+      "phenomenon": "hi_en",
+      "relevant": [
+        "d_en_perf_004"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_en_010",
+      "text": "कहानी से शुरुआत करने वाला हुक",
+      "lang": "hi",
+      "phenomenon": "hi_en",
+      "relevant": [
+        "d_en_hook_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_hi_001",
+      "text": "why technical videos are rare in Hindi",
+      "lang": "en",
+      "phenomenon": "en_hi",
+      "relevant": [
+        "d_hi_cap_002"
+      ],
+      "related": [
+        "d_hin_cap_002"
+      ]
+    },
+    {
+      "id": "q_x_en_hi_002",
+      "text": "lighting before buying an expensive camera",
+      "lang": "en",
+      "phenomenon": "en_hi",
+      "relevant": [
+        "d_hi_cap_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_hi_003",
+      "text": "audience is working professionals using mobile",
+      "lang": "en",
+      "phenomenon": "en_hi",
+      "relevant": [
+        "d_hi_mem_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_hi_004",
+      "text": "declined a sponsorship to protect channel identity",
+      "lang": "en",
+      "phenomenon": "en_hi",
+      "relevant": [
+        "d_hi_mem_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_hi_005",
+      "text": "three pillar content strategy breakdown",
+      "lang": "en",
+      "phenomenon": "en_hi",
+      "relevant": [
+        "d_hi_strat_001"
+      ],
+      "related": [
+        "d_hin_strat_001"
+      ]
+    },
+    {
+      "id": "q_x_en_hi_006",
+      "text": "posts people saved performed best",
+      "lang": "en",
+      "phenomenon": "en_hi",
+      "relevant": [
+        "d_hi_perf_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_hi_007",
+      "text": "writing plainly without fancy vocabulary",
+      "lang": "en",
+      "phenomenon": "en_hi",
+      "relevant": [
+        "d_hi_voice_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_hi_008",
+      "text": "state the problem then the cost then the fix",
+      "lang": "en",
+      "phenomenon": "en_hi",
+      "relevant": [
+        "d_hi_scr_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_hi_009",
+      "text": "weekly rewrite series of weak videos",
+      "lang": "en",
+      "phenomenon": "en_hi",
+      "relevant": [
+        "d_hi_idea_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_en_hi_010",
+      "text": "reels target versus actual number produced",
+      "lang": "en",
+      "phenomenon": "en_hi",
+      "relevant": [
+        "d_hi_cap_001"
+      ],
+      "related": [
+        "d_hin_cap_001"
+      ]
+    },
+    {
+      "id": "q_x_tan_ta_001",
+      "text": "tamil la aval uthaippu vida kuraiya padakkum illa",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_ta",
+      "relevant": [
+        "d_ta_cap_002"
+      ],
+      "related": [
+        "d_ta_idea_001"
+      ]
+    },
+    {
+      "id": "q_x_tan_ta_002",
+      "text": "edikkum neram konjam kuraindha revenue perusu aayidhu",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_ta",
+      "relevant": [
+        "d_ta_less_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_tan_ta_003",
+      "text": "mutru vandhu mela vilaiya vasai pogakoodu pothu",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_ta",
+      "relevant": [
+        "d_ta_perf_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_tan_ta_004",
+      "text": "naalu pakutiya vida vaivechchalai",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_ta",
+      "relevant": [
+        "d_ta_scr_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_tan_ta_005",
+      "text": "eluthuru sivaive kuraiya vaasalama epdi venkumnu solradhu",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_ta",
+      "relevant": [
+        "d_ta_voice_002"
+      ],
+      "related": [
+        "d_mix_ta_004"
+      ]
+    },
+    {
+      "id": "q_x_tan_ta_006",
+      "text": "paruvaiga|k keeleerukkum illa endha keluppadi theriyum",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_ta",
+      "relevant": [
+        "d_ta_com_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_tan_ta_007",
+      "text": "natpeuru oru kurapporeyla irukkura thodar",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_ta",
+      "relevant": [
+        "d_ta_idea_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_tan_ta_008",
+      "text": "epdhiya vizhiyaal padalatchi kelkkirukkalaam",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_ta",
+      "relevant": [
+        "d_ta_mem_001"
+      ],
+      "related": [
+        "d_tan_mem_001"
+      ]
+    },
+    {
+      "id": "q_x_tan_ta_009",
+      "text": "matittaalaik konjam kondu nattitta nu konjam vannaar",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_ta",
+      "relevant": [
+        "d_ta_mem_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_tan_ta_010",
+      "text": "paattu kalanum mikaiya illa solradhu appadi",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_ta",
+      "relevant": [
+        "d_ta_voice_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_tan_ta_011",
+      "text": "English audience ku rendum kuraiya adutha padungal",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_ta",
+      "relevant": [
+        "d_ta_strat_001"
+      ],
+      "related": [
+        "d_ta_cap_003"
+      ]
+    },
+    {
+      "id": "q_x_tan_ta_012",
+      "text": "pul keeleerkalukku keezhaiya theriyavanum illa",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_ta",
+      "relevant": [
+        "d_ta_com_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_tan_en_001",
+      "text": "weekend la ethu video create pannunga nu plan",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_en",
+      "relevant": [
+        "d_en_mem_001"
+      ],
+      "related": [
+        "d_en_cap_001"
+      ]
+    },
+    {
+      "id": "q_x_tan_en_002",
+      "text": "yoga schedule epdi vechirathu epdi decide pannunga",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_en",
+      "relevant": [
+        "d_en_strat_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_tan_en_003",
+      "text": "engum ponnungalum illa first three seconds la leave pannuvaru",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_en",
+      "relevant": [
+        "d_en_hook_005"
+      ],
+      "related": [
+        "d_en_perf_001"
+      ]
+    },
+    {
+      "id": "q_x_tan_en_004",
+      "text": "audience la settle pannava pothu save pannuva",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_en",
+      "relevant": [
+        "d_en_perf_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_tan_en_005",
+      "text": "epdi solra vendum nu oru sample idea venum",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_en",
+      "relevant": [
+        "d_en_snip_001"
+      ],
+      "related": [
+        "d_en_snip_003"
+      ]
+    },
+    {
+      "id": "q_x_tan_en_006",
+      "text": "vandiya brand deal enna kaaranal virandhippo",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_en",
+      "relevant": [
+        "d_en_mem_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_tan_en_007",
+      "text": "deep work nu best enga pannanum",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_en",
+      "relevant": [
+        "d_en_mem_004"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_tan_en_008",
+      "text": "long form epdi enjoy vendu seiyal不及 short form la epdi use cheyy",
+      "lang": "tanglish",
+      "phenomenon": "tanglish_en",
+      "relevant": [
+        "d_en_strat_003"
+      ],
+      "related": [
+        "d_en_strat_004"
+      ]
+    },
+    {
+      "id": "q_x_ta_tan_001",
+      "text": "எழுத்துரு சிதைவைத் தவிர்ப்பதற்கான வழி",
+      "lang": "ta",
+      "phenomenon": "ta_tanglish",
+      "relevant": [
+        "d_mix_ta_004"
+      ],
+      "related": [
+        "d_ta_voice_002"
+      ]
+    },
+    {
+      "id": "q_x_ta_tan_002",
+      "text": "ஒரே பதிவை இரண்டு மொழிகளில் தயாரிப்பதற்கான வழி",
+      "lang": "ta",
+      "phenomenon": "ta_tanglish",
+      "relevant": [
+        "d_mix_en_002"
+      ],
+      "related": [
+        "d_ta_strat_001"
+      ]
+    },
+    {
+      "id": "q_x_ta_tan_003",
+      "text": "வருடம் மூன்று திட்டமிட்டால் பதிவுகள் பலமாக இல்லை",
+      "lang": "ta",
+      "phenomenon": "ta_tanglish",
+      "relevant": [
+        "d_mix_hi_004"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_ta_tan_004",
+      "text": "திங்கள் வரும் நாளில் கைப்பந்த தயாரிப்பு",
+      "lang": "ta",
+      "phenomenon": "ta_tanglish",
+      "relevant": [
+        "d_mix_ta_003"
+      ],
+      "related": [
+        "d_ta_cap_001"
+      ]
+    },
+    {
+      "id": "q_x_ta_tan_005",
+      "text": "தமிழும் ஆங்கிலும் இணைந்து விளக்குதல்",
+      "lang": "ta",
+      "phenomenon": "ta_tanglish",
+      "relevant": [
+        "d_mix_ta_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_ta_tan_006",
+      "text": "ஏழு நாள் உற்பத்தி முறையைப் பின்பற்றிய பின் விளைவு",
+      "lang": "ta",
+      "phenomenon": "ta_tanglish",
+      "relevant": [
+        "d_mix_ta_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hin_hi_001",
+      "text": "daily post karne se retention gir jaati hai kyun",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_hi",
+      "relevant": [
+        "d_hi_hook_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hin_hi_002",
+      "text": "camera se pehle lighting seekho",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_hi",
+      "relevant": [
+        "d_hi_cap_003"
+      ],
+      "related": [
+        "d_en_less_003"
+      ]
+    },
+    {
+      "id": "q_x_hin_hi_003",
+      "text": "teen khambo wali strategy",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_hi",
+      "relevant": [
+        "d_hi_strat_001"
+      ],
+      "related": [
+        "d_hin_strat_001"
+      ]
+    },
+    {
+      "id": "q_x_hin_hi_004",
+      "text": "save karne wale post kitne prabhavshali the",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_hi",
+      "relevant": [
+        "d_hi_perf_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hin_hi_005",
+      "text": "comment zyada karte hai like kam",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_hi",
+      "relevant": [
+        "d_hi_perf_001"
+      ],
+      "related": [
+        "d_hin_perf_001"
+      ]
+    },
+    {
+      "id": "q_x_hin_hi_006",
+      "text": "chhoti vaakya simple shabd",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_hi",
+      "relevant": [
+        "d_hi_voice_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hin_hi_007",
+      "text": "ek hi hafte me launch aur tutorial dena galat tha",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_hi",
+      "relevant": [
+        "d_hi_less_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hin_hi_008",
+      "text": "sabse kam dekhe jane wale video ki wajah",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_hi",
+      "relevant": [
+        "d_hi_hook_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hin_hi_009",
+      "text": "shahar me rehne wale professional hain",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_hi",
+      "relevant": [
+        "d_hi_mem_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hin_hi_010",
+      "text": "15 ka target 9 hi bane",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_hi",
+      "relevant": [
+        "d_hi_cap_001"
+      ],
+      "related": [
+        "d_hin_cap_001"
+      ]
+    },
+    {
+      "id": "q_x_hin_en_001",
+      "text": "content pillar strategy kya hoti hai",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_en",
+      "relevant": [
+        "d_en_strat_001"
+      ],
+      "related": [
+        "d_en_strat_002"
+      ]
+    },
+    {
+      "id": "q_x_hin_en_002",
+      "text": "long interview ko chhote clips me kaise badlein",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_en",
+      "relevant": [
+        "d_en_strat_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hin_en_003",
+      "text": "save rate se views se zyada accha signal hai",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_en",
+      "relevant": [
+        "d_en_perf_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hin_en_004",
+      "text": "thumbnail banane me time laga hook fix karna zyada faayda diya",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_en",
+      "relevant": [
+        "d_hin_less_001",
+        "d_en_hook_005"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hin_en_005",
+      "text": "pehle teen second me problem batao",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_en",
+      "relevant": [
+        "d_en_scr_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hin_en_006",
+      "text": "sabse zyada save hone wale video kaun se the",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_en",
+      "relevant": [
+        "d_en_perf_002"
+      ],
+      "related": [
+        "d_en_hook_003"
+      ]
+    },
+    {
+      "id": "q_x_hin_en_007",
+      "text": "brand offer kyun reject kiya",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_en",
+      "relevant": [
+        "d_en_mem_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hin_en_008",
+      "text": "sunday planning weekday filming wednesday editing",
+      "lang": "hinglish",
+      "phenomenon": "hinglish_en",
+      "relevant": [
+        "d_en_mem_001"
+      ],
+      "related": [
+        "d_en_strat_002"
+      ]
+    },
+    {
+      "id": "q_x_hi_hin_001",
+      "text": "निश्चित मीडियम के साथ अंग्रेज़ी उपकरणों का उपयोग",
+      "lang": "hi",
+      "phenomenon": "hi_hinglish",
+      "relevant": [
+        "d_mix_hi_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_hin_002",
+      "text": "मुफ्त सॉफ़्टवेयर से पेशेवर सामग्री बनाना",
+      "lang": "hi",
+      "phenomenon": "hi_hinglish",
+      "relevant": [
+        "d_mix_hi_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_hin_003",
+      "text": "कम बजट का सेटअप कैसा है",
+      "lang": "hi",
+      "phenomenon": "hi_hinglish",
+      "relevant": [
+        "d_mix_hi_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_hin_004",
+      "text": "निश का फ़ैसला कैसे लिया जाता है",
+      "lang": "hi",
+      "phenomenon": "hi_hinglish",
+      "relevant": [
+        "d_mix_hi_004"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_hin_005",
+      "text": "एक ही दो भाषाओं में आवाज़ दर्ज करना",
+      "lang": "hi",
+      "phenomenon": "hi_hinglish",
+      "relevant": [
+        "d_mix_en_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_hi_hin_006",
+      "text": "अंग्रेज़ी उपशीर्षकों से सबसे अच्छी पहुँच",
+      "lang": "hi",
+      "phenomenon": "hi_hinglish",
+      "relevant": [
+        "d_mix_en_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_mix_001",
+      "text": "Tamil audience ku English mathiri tech explain panninja theriyadhu",
+      "lang": "code_mixed_ta",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_mix_ta_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_mix_002",
+      "text": "seven day productivity system follow panninja output illa",
+      "lang": "code_mixed_ta",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_mix_ta_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_mix_003",
+      "text": "Monday shoot Wednesday edit Friday publish plan",
+      "lang": "code_mixed_ta",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_mix_ta_003"
+      ],
+      "related": [
+        "d_en_mem_001"
+      ]
+    },
+    {
+      "id": "q_x_mix_004",
+      "text": "Tamil fonts render pannatha problem vayirundhu",
+      "lang": "code_mixed_ta",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_mix_ta_004"
+      ],
+      "related": [
+        "d_ta_voice_002"
+      ]
+    },
+    {
+      "id": "q_x_mix_005",
+      "text": "Hindi medium aur English tools saath use karta hun",
+      "lang": "code_mixed_hi",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_mix_hi_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_mix_006",
+      "text": "free laptop mila tha free software se professional content bana",
+      "lang": "code_mixed_hi",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_mix_hi_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_mix_007",
+      "text": "budget camera ring light laptop setup affordable",
+      "lang": "code_mixed_hi",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_mix_hi_003"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_mix_008",
+      "text": "niche decide karne ke liye 30 din ka data dekha",
+      "lang": "code_mixed_hi",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_mix_hi_004"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_mix_009",
+      "text": "English subtitles se best reach but vernacular se strong community",
+      "lang": "code_mixed_en",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_mix_en_001"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_mix_010",
+      "text": "one script two voiceovers single session",
+      "lang": "code_mixed_en",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_mix_en_002"
+      ],
+      "related": []
+    },
+    {
+      "id": "q_x_mix_011",
+      "text": "Tamil la audience பார்வையாளர் கேள்விகளிலிருந்து video ideas",
+      "lang": "code_mixed_ta",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_ta_cap_003"
+      ],
+      "related": [
+        "d_tan_cap_001"
+      ]
+    },
+    {
+      "id": "q_x_mix_012",
+      "text": "Hindi audience engagement आँकड़े comments ज़्यादा",
+      "lang": "code_mixed_hi",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_hin_perf_001"
+      ],
+      "related": [
+        "d_hi_perf_001"
+      ]
+    },
+    {
+      "id": "q_x_mix_013",
+      "text": "தமிழ் transcription எழுத்துரு problem",
+      "lang": "code_mixed_ta",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_ta_voice_002"
+      ],
+      "related": [
+        "d_mix_ta_004"
+      ]
+    },
+    {
+      "id": "q_x_mix_014",
+      "text": "budget setup for Indian creators starting out",
+      "lang": "code_mixed_en",
+      "phenomenon": "code_mixed",
+      "relevant": [
+        "d_mix_hi_003"
+      ],
+      "related": [
+        "d_hi_cap_003"
+      ]
+    }
+  ]
+}

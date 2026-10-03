@@ -1,0 +1,66 @@
+{
+  "assumption": "1,000,000 vectors, float32, raw vector bytes only (excludes pgvector HNSW/IVFFlat graph overhead)",
+  "note": "Measured dimensionality; no PostgreSQL/pgvector object was created.",
+  "entries": [
+    {
+      "config": "tamil_embed@768",
+      "label": "Tamil-ai/tamil-embed-base",
+      "dim": 768,
+      "bytes_per_vector": 3072,
+      "kb_per_vector": 3.0,
+      "mb_per_1m": 2929.7,
+      "gb_per_1m": 2.861,
+      "relative_to_768": 1.0,
+      "matches_current_production_vector_384": false,
+      "relative_storage_vs_768": 1.0
+    },
+    {
+      "config": "tamil_embed@512",
+      "label": "Tamil-ai/tamil-embed-base",
+      "dim": 512,
+      "bytes_per_vector": 2048,
+      "kb_per_vector": 2.0,
+      "mb_per_1m": 1953.1,
+      "gb_per_1m": 1.907,
+      "relative_to_768": 0.667,
+      "matches_current_production_vector_384": false,
+      "relative_storage_vs_768": 0.667
+    },
+    {
+      "config": "tamil_embed@256",
+      "label": "Tamil-ai/tamil-embed-base",
+      "dim": 256,
+      "bytes_per_vector": 1024,
+      "kb_per_vector": 1.0,
+      "mb_per_1m": 976.6,
+      "gb_per_1m": 0.954,
+      "relative_to_768": 0.333,
+      "matches_current_production_vector_384": false,
+      "relative_storage_vs_768": 0.333
+    },
+    {
+      "config": "e5_base@768",
+      "label": "intfloat/multilingual-e5-base",
+      "dim": 768,
+      "bytes_per_vector": 3072,
+      "kb_per_vector": 3.0,
+      "mb_per_1m": 2929.7,
+      "gb_per_1m": 2.861,
+      "relative_to_768": 1.0,
+      "matches_current_production_vector_384": false,
+      "relative_storage_vs_768": 1.0
+    },
+    {
+      "config": "bge_m3@1024",
+      "label": "BAAI/bge-m3",
+      "dim": 1024,
+      "bytes_per_vector": 4096,
+      "kb_per_vector": 4.0,
+      "mb_per_1m": 3906.2,
+      "gb_per_1m": 3.815,
+      "relative_to_768": 1.333,
+      "matches_current_production_vector_384": false,
+      "relative_storage_vs_768": 1.333
+    }
+  ]
+}
