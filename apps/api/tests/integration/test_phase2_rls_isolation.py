@@ -128,19 +128,39 @@ async def test_user_b_cannot_update_user_a_chunk(session_a, session_b, user_a_id
 async def test_user_b_cannot_insert_chunk_owned_by_user_a(session_b, user_a_id, user_b_id):
     """WITH CHECK must reject a forged user_id, not just hide the row."""
     async with session_b as db_b:
-        asset = (await db_b.execute(
-            text("SELECT id FROM content_assets LIMIT 1"))).scalar()
-        if asset is None:
-            pytest.skip("no asset visible to user B")
-        with pytest.raises(Exception):
+        # Seed an asset owned by B, so the ONLY thing wrong with the insert
+        # below is the forged user_id. Previously this test skipped itself
+        # whenever B had no visible asset, which silently disabled the
+        # WITH CHECK assertion entirely.
+        asset_id = uuid.uuid4()
+        await db_b.execute(
+            text(
+                "INSERT INTO content_assets "
+                "(id, user_id, title, source_type, raw_text) "
+                "VALUES (:i, :u, 'B-owned asset for forgery probe', 'note', "
+                "'probe')"
+            ),
+            {"i": str(asset_id), "u": str(user_b_id)},
+        )
+        await db_b.commit()
+
+        # `chunks.embedding` is vector(768). A short literal such as '[0.0]'
+        # would fail with "expected 768 dimensions" and satisfy a bare
+        # pytest.raises for the WRONG reason, never reaching the RLS check.
+        zero_768 = "[" + ",".join(["0.0"] * 768) + "]"
+        with pytest.raises(Exception) as exc:
             await db_b.execute(
                 text(
                     "INSERT INTO chunks (user_id, asset_id, chunk_index, "
                     "chunk_text, embedding) VALUES (:u, :a, 0, 'forged', "
                     "CAST(:e AS vector))"
                 ),
-                {"u": str(user_a_id), "a": str(asset), "e": "[0.0]"},
+                {"u": str(user_a_id), "a": str(asset_id), "e": zero_768},
             )
+        # Assert it was RLS that rejected the row, not a type/dimension error.
+        assert "row-level security" in str(exc.value).lower(), (
+            "insert failed for the wrong reason: " + str(exc.value)
+        )
 
 
 # --------------------------------------------------------------------------- #

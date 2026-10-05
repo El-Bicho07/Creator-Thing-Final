@@ -2,6 +2,13 @@
 
 *Final gate assessment after Phase 1 blocker resolution and technical evaluation*
 
+> **SUPERSEDED IN PART (reconciled 2026-10-05).** This is the Phase 2 *readiness*
+> assessment written before Phase 2 was implemented. References below to
+> `multilingual-e5-small` (384-d) and a `vector(384)` store describe the
+> **Phase 1** system and are historical. Current verified state:
+> `intfloat/multilingual-e5-base` (768-d), `chunks.embedding` is `vector(768)`,
+> Phase 2 complete. See `docs/PHASE_2_FINAL_VERIFICATION.md`.
+
 ## Executive Summary
 
 | Overall Status | Details |
@@ -212,7 +219,7 @@ FULL RE-EMBED
 
 Future content
         ↓
-intfloat/multilingual-e5-small (384 dimensions)
+intfloat/multilingual-e5-base (768 dimensions)  <!-- SUPERSEDED: was e5-small 384-d at Phase 1 -->
         ↓
 PostgreSQL + pgvector (unified vector store)
 ```

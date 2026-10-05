@@ -15,3 +15,6 @@ venv/
 export_stage/
 **/_raw_partial.json
 **/_stage/
+
+# TypeScript incremental build artifact
+*.tsbuildinfo

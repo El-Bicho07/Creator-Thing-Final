@@ -1,6 +1,14 @@
 # Integration Status — Creator Platform SaaS (Solo Creator OS)
 
 *Last Updated: Phase 1 Foundation - Complete / Verified*
+*Reconciled 2026-10-05 against Phase 2 — see `docs/PHASE_2_FINAL_VERIFICATION.md`.*
+
+> **READ FIRST — this file is a Phase 1 snapshot.** Sections below describing the
+> embedding model, `vector(384)` storage, and "awaiting user approval" are the
+> *Phase 1* position and are now **SUPERSEDED**. The current verified state is:
+> `intfloat/multilingual-e5-base` (768-d) is selected, deployed, and migrated
+> (`chunks.embedding` is `vector(768)`); Phase 2 is complete. Statements in this
+> file are retained as history and must not be read as current state.
 
 ---
 
@@ -35,14 +43,14 @@
 
 ### Key Decisions Documented
 - ✅ Tech Stack: Next.js 15 + FastAPI + PostgreSQL/pgvector + Supabase Auth
-- 🔄 Embedding Model: **RE-EVALUATED 2026-10-03** — top-3 benchmark complete (113 docs / 225 queries, leakage-checked). Leading candidate `BAAI/bge-m3` (1024d); strongest alternative `Tamil-ai/tamil-embed-base` @512d. **No production model changed**; `chunks.embedding` remains `vector(384)`. See ADR-002 §12 and `docs/eval/embedding_top3_benchmark/benchmark_report.md`.
+- ✅ Embedding Model: **SUPERSEDED — RESOLVED 2026-10-05.** ~~Re-evaluated 2026-10-03; leading candidate `BAAI/bge-m3` (1024d)~~. Selection made: **`intfloat/multilingual-e5-base` (768-d)**, migrated and verified (`chunks.embedding` is `vector(768)`, all 42 stored vectors genuine E5). See `docs/PHASE_2_FINAL_VERIFICATION.md` §9 and ADR-002 §12.
 - ✅ LLM Gateway: Gemini 2.5 Flash primary, Anthropic/Groq fallback
 - ✅ Multi-tenancy: Supabase JWT + PostgreSQL RLS (never trust client user_id)
 - ✅ Module Classification: 6 CORE, 13 PORT, 3 PARK, 2 REBUILD
 
 ### Blocking Decisions Requiring Human Approval
-1. **Embedding Model Final Selection** — re-evaluated 2026-10-03 against `tamil-embed-base`, `multilingual-e5-base`, `bge-m3`. Leading candidate `BAAI/bge-m3` (1024d). **PENDING — AWAITING EXPLICIT USER APPROVAL.** Note: no candidate fits the current `vector(384)` schema; selection requires a pgvector migration + full re-embedding of Module 13 and Module 19 data.
-2. **Production LLM API Keys** — Need Gemini API Key, Anthropic API Key, Groq API Key for backend `.env` — **BLOCKED FOR LIVE TESTING** (mock gateway available for Phase 2 development)
+1. ~~**Embedding Model Final Selection**~~ — **RESOLVED 2026-10-05.** `intfloat/multilingual-e5-base` (768-d) selected, schema migrated to `vector(768)`, all stored vectors re-embedded and provenance-verified. No longer awaiting approval.
+2. **Production LLM API Keys** — **STILL BLOCKED FOR LIVE TESTING (2026-10-05).** `GEMINI_API_KEY`, `ANTHROPIC_API_KEY`, `GROQ_API_KEY` are present in `.env` but hold **placeholder values** (22–27 chars), not real credentials. Provider adapters and the Gateway contract are verified against a deterministic mock; live-provider verification remains unavailable. Values were never printed.
 3. **Deployment Platform Target** — Confirm production hosting (Docker/Supabase/Vercel/Render) — **NOT A PHASE 2 BLOCKER** (local dev works regardless)
 
 ---
@@ -240,10 +248,10 @@ pytest tests/security/ -v
 
 ## Next Actions
 
-1. **Decision:** Approve embedding model — leading candidate `BAAI/bge-m3` (1024d) from the 2026-10-03 top-3 benchmark; strongest alternative `Tamil-ai/tamil-embed-base` @512d. Approval implies a `vector(384) → 1024` (or 512) migration plus full donor re-embedding.
+1. ~~**Decision:** Approve embedding model~~ — **DONE 2026-10-05.** Selected `intfloat/multilingual-e5-base` (768-d); migration `vector(384) → vector(768)` applied via expand/contract (003/004); all stored vectors re-embedded and verified.
 2. **Decision:** Production LLM API keys — **BLOCKED FOR LIVE TESTING** (mock gateway available for Phase 2 development)
 3. **Decision:** Confirm production hosting environment (Docker/Supabase/Vercel/Render) — **NOT A PHASE 2 BLOCKER**
-4. **Explicit Approval Required:** Phase 2 implementation can begin after embedding model approval
+4. ~~**Explicit Approval Required**~~ — **DONE.** Phase 2 implementation is complete and independently verified (`docs/PHASE_2_FINAL_VERIFICATION.md`).
 
 > **Phase 2 may START after explicit user authorization.**
 >

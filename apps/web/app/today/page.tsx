@@ -1,5 +1,6 @@
 import { Calendar, Clock, Flame, RotateCcw, Plus, Play } from "lucide-react";
 import { format, addDays } from "date-fns";
+import Link from "next/link";
 
 export default function TodayPage() {
   const today = new Date();

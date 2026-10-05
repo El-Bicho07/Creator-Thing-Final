@@ -56,6 +56,16 @@ _core_db.async_session_maker = _test_maker
 # `usage.py` captured the original factory at import time.
 _usage_mod.async_session_maker = _test_maker
 
+# The admin (RLS-bypassing) engine is pooled too, so it has the same
+# cross-loop hazard. Replace its session factory as well; several verification
+# tests read production vector state through it.
+if settings.admin_database_url:
+    _test_admin_engine = create_async_engine(
+        settings.admin_database_url, echo=False, poolclass=NullPool)
+    _core_db.admin_engine = _test_admin_engine
+    _core_db.admin_session_maker = async_sessionmaker(
+        _test_admin_engine, class_=AsyncSession, expire_on_commit=False)
+
 # Tests get a private engine per session. Pooling is actively harmful here:
 # asyncpg connections are bound to the event loop that opened them, so a pooled
 # connection reused under a different loop fails with "got Future attached to a

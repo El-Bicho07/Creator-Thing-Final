@@ -1,5 +1,11 @@
 # Final Gate Reconciliation Report
 
+> **SUPERSEDED IN PART (reconciled 2026-10-05).** This report closes out
+> **Phase 1**. Its `multilingual-e5-small` / `vector(384)` references describe
+> the Phase 1 system and are historical. Current verified state:
+> `intfloat/multilingual-e5-base` (768-d), `chunks.embedding` is `vector(768)`.
+> See `docs/PHASE_2_FINAL_VERIFICATION.md`.
+
 ## Phase 1: COMPLETE / VERIFIED
 
 All Phase 1 gates passed and verified:
@@ -78,7 +84,7 @@ FULL RE-EMBED
 
 Future content
         ↓
-intfloat/multilingual-e5-small (384 dimensions)
+intfloat/multilingual-e5-base (768 dimensions)  <!-- SUPERSEDED: was e5-small 384-d at Phase 1 -->
         ↓
 PostgreSQL + pgvector (unified vector store)
 ```
@@ -91,7 +97,7 @@ Long-Term Memory Engine
         ↓
 Unified Creator Intelligence
         ↓
-PostgreSQL + pgvector (384 dimensions)
+PostgreSQL + pgvector (768 dimensions)  <!-- SUPERSEDED: was 384-d at Phase 1 -->
 ```
 
 ---
