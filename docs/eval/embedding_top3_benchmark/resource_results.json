@@ -1,0 +1,42 @@
+{
+  "tamil_embed": {
+    "label": "Tamil-ai/tamil-embed-base",
+    "device": "cpu",
+    "rss_mb_steady_after_encode": 1535.1,
+    "peak_rss_mb": 1533.6,
+    "disk_download_mb": 1077.0,
+    "params": "278M"
+  },
+  "e5_base": {
+    "label": "intfloat/multilingual-e5-base",
+    "device": "cpu",
+    "rss_mb_steady_after_encode": 1542.0,
+    "peak_rss_mb": 1540.4,
+    "disk_download_mb": 1103.1,
+    "params": "278M"
+  },
+  "bge_m3": {
+    "label": "BAAI/bge-m3",
+    "device": "cpu",
+    "rss_mb_steady_after_encode": 2375.0,
+    "peak_rss_mb": 2373.5,
+    "disk_download_mb": 2208.2,
+    "params": "568M"
+  },
+  "e5_base_nopfx_ABLATION": {
+    "label": "intfloat/multilingual-e5-base (ABLATION: no prefixes)",
+    "device": "cpu",
+    "rss_mb_steady_after_encode": 1530.6,
+    "peak_rss_mb": 1529.4,
+    "disk_download_mb": 1103.1,
+    "params": "278M"
+  },
+  "tamil_embed_nopfx_ABLATION": {
+    "label": "Tamil-ai/tamil-embed-base (ABLATION: no prefixes)",
+    "device": "cpu",
+    "rss_mb_steady_after_encode": 1533.8,
+    "peak_rss_mb": 1532.9,
+    "disk_download_mb": 1077.0,
+    "params": "278M"
+  }
+}

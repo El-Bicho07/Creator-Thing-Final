@@ -1,0 +1,143 @@
+{
+  "benchmark": "top3_embedding_benchmark",
+  "dataset_sha256_16": "e24337b5380674b0",
+  "n_documents": 113,
+  "n_queries": 225,
+  "primary_configs": [
+    "tamil_embed@768",
+    "e5_base@768",
+    "bge_m3@1024"
+  ],
+  "matryoshka": [
+    {
+      "config": "tamil_embed@768",
+      "dim": 768,
+      "recall@3": 0.6889,
+      "mrr": 0.5881,
+      "mb_per_1m_vectors": 2929.7,
+      "role": "MATRYOSHKA_VARIANT"
+    },
+    {
+      "config": "tamil_embed@512",
+      "dim": 512,
+      "recall@3": 0.68,
+      "mrr": 0.5719,
+      "mb_per_1m_vectors": 1953.1,
+      "role": "MATRYOSHKA_VARIANT"
+    },
+    {
+      "config": "tamil_embed@256",
+      "dim": 256,
+      "recall@3": 0.6267,
+      "mrr": 0.5353,
+      "mb_per_1m_vectors": 976.6,
+      "role": "MATRYOSHKA_VARIANT"
+    }
+  ],
+  "ablations": [
+    {
+      "config": "tamil_embed_nopfx_ABLATION@768",
+      "label": "Tamil-ai/tamil-embed-base (ABLATION: no prefixes)",
+      "recall@3": 0.7067,
+      "mrr": 0.6084,
+      "role": "ABLATION_NOT_PRODUCTION"
+    },
+    {
+      "config": "e5_base_nopfx_ABLATION@768",
+      "label": "intfloat/multilingual-e5-base (ABLATION: no prefixes)",
+      "recall@3": 0.6978,
+      "mrr": 0.6133,
+      "role": "ABLATION_NOT_PRODUCTION"
+    }
+  ],
+  "production_schema_untouched": "chunks.embedding remains vector(384)",
+  "records": [
+    {
+      "config": "tamil_embed@768",
+      "label": "Tamil-ai/tamil-embed-base",
+      "repo": "Tamil-ai/tamil-embed-base",
+      "dim": 768,
+      "query_prefix": "query: ",
+      "passage_prefix": "passage: ",
+      "max_seq_length": 512,
+      "recall@1": 0.4844,
+      "recall@3": 0.6889,
+      "recall@5": 0.7511,
+      "mrr": 0.5881,
+      "ndcg@5": 0.6635,
+      "single_query_p95_ms": 33.914,
+      "batch_p95_ms": 3391.871,
+      "documents_per_second": 34.8,
+      "peak_rss_mb": 1533.6,
+      "disk_mb": 1077.0,
+      "mb_per_1m_vectors": 2929.7,
+      "role": "PRIMARY"
+    },
+    {
+      "config": "e5_base@768",
+      "label": "intfloat/multilingual-e5-base",
+      "repo": "intfloat/multilingual-e5-base",
+      "dim": 768,
+      "query_prefix": "query: ",
+      "passage_prefix": "passage: ",
+      "max_seq_length": 512,
+      "recall@1": 0.5378,
+      "recall@3": 0.6711,
+      "recall@5": 0.7289,
+      "mrr": 0.6072,
+      "ndcg@5": 0.6795,
+      "single_query_p95_ms": 34.488,
+      "batch_p95_ms": 3372.887,
+      "documents_per_second": 34.69,
+      "peak_rss_mb": 1540.4,
+      "disk_mb": 1103.1,
+      "mb_per_1m_vectors": 2929.7,
+      "role": "PRIMARY"
+    },
+    {
+      "config": "bge_m3@1024",
+      "label": "BAAI/bge-m3",
+      "repo": "BAAI/bge-m3",
+      "dim": 1024,
+      "query_prefix": "",
+      "passage_prefix": "",
+      "max_seq_length": 512,
+      "recall@1": 0.5778,
+      "recall@3": 0.7111,
+      "recall@5": 0.7733,
+      "mrr": 0.6513,
+      "ndcg@5": 0.7231,
+      "single_query_p95_ms": 88.247,
+      "batch_p95_ms": 11326.084,
+      "documents_per_second": 9.96,
+      "peak_rss_mb": 2373.5,
+      "disk_mb": 2208.2,
+      "mb_per_1m_vectors": 3906.2,
+      "role": "PRIMARY"
+    }
+  ],
+  "environment": {
+    "os": "Linux-6.8.0-138-generic-x86_64-with-glibc2.41",
+    "kernel": "6.8.0-138-generic",
+    "python": "3.12.15",
+    "cpu_model": "12th Gen Intel(R) Core(TM) i5-12450H",
+    "cpu_cores_physical": 8,
+    "cpu_threads": 12,
+    "ram_total_gb": 15,
+    "gpu": "NVIDIA GeForce RTX 2050 4096MiB PRESENT BUT NOT USED (CPU-first policy)",
+    "torch": "2.14.1+cu130",
+    "transformers": "4.57.6",
+    "sentence_transformers": "3.4.0",
+    "numpy": "1.26.4",
+    "huggingface_hub": "0.36.2",
+    "device_used": "cpu",
+    "dtype": "float32",
+    "normalization": "L2 (sentence-transformers Normalize module)",
+    "similarity": "cosine = dot product of L2-normalised vectors",
+    "model_revisions": {
+      "Tamil-ai/tamil-embed-base": "a5b5aa23a0a7eee1e7eccee53c5835c6e68b06ce",
+      "intfloat/multilingual-e5-base": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "BAAI/bge-m3": "5617a9f61b028005a4858fdac845db406aefb181"
+    }
+  }
+}

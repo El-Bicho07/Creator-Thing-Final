@@ -1,0 +1,125 @@
+{
+  "intfloat/multilingual-e5-small": {
+    "batch_latency": {
+      "cold_latency_ms": 99.89,
+      "warm_mean_ms": 79.17,
+      "warm_stdev_ms": 0,
+      "warm_p50_ms": 78.68,
+      "warm_p95_ms": 93.07,
+      "warm_p99_ms": 93.07,
+      "warm_min_ms": 78.68,
+      "warm_max_ms": 93.07,
+      "batch_size": 15,
+      "runs": 20
+    },
+    "single_latency": {
+      "mean_ms": 11.4,
+      "stdev_ms": 0,
+      "p50_ms": 11.4,
+      "p95_ms": 14.69,
+      "p99_ms": 14.69,
+      "min_ms": 11.4,
+      "max_ms": 14.69
+    },
+    "throughput": {
+      "texts_per_second": 171.0,
+      "batches_per_second": 11.4,
+      "total_texts": 1710,
+      "duration_seconds": 10
+    },
+    "cpu_memory": {
+      "cpu_percent_mean": 779.7,
+      "cpu_percent_max": 779.7,
+      "memory_mb_mean": 1203.4,
+      "memory_mb_max": 1203.4,
+      "samples": 10
+    },
+    "e5_convention": {
+      "similarity_no_prefix": 0.8984742760658264,
+      "similarity_with_e5_prefix": 0.8538624048233032,
+      "prefix_improves": false,
+      "note": "E5 models typically expect 'query: ' and 'passage: ' prefixes for asymmetric retrieval"
+    },
+    "param_count": "33.4M"
+  },
+  "all-MiniLM-L6-v2": {
+    "batch_latency": {
+      "cold_latency_ms": 62.54,
+      "warm_mean_ms": 57.32,
+      "warm_stdev_ms": 0,
+      "warm_p50_ms": 57.09,
+      "warm_p95_ms": 60.88,
+      "warm_p99_ms": 60.88,
+      "warm_min_ms": 57.09,
+      "warm_max_ms": 60.88,
+      "batch_size": 15,
+      "runs": 20
+    },
+    "single_latency": {
+      "mean_ms": 6.91,
+      "stdev_ms": 0,
+      "p50_ms": 6.91,
+      "p95_ms": 8.54,
+      "p99_ms": 8.54,
+      "min_ms": 6.91,
+      "max_ms": 8.54
+    },
+    "throughput": {
+      "texts_per_second": 224.0,
+      "batches_per_second": 14.9,
+      "total_texts": 2240,
+      "duration_seconds": 10
+    },
+    "cpu_memory": {
+      "cpu_percent_mean": 783.1,
+      "cpu_percent_max": 783.1,
+      "memory_mb_mean": 1144.7,
+      "memory_mb_max": 1144.7,
+      "samples": 10
+    },
+    "e5_convention": {
+      "note": "Not an E5 model"
+    },
+    "param_count": "22.7M"
+  },
+  "BAAI/bge-small-en-v1.5": {
+    "batch_latency": {
+      "cold_latency_ms": 76.49,
+      "warm_mean_ms": 75.98,
+      "warm_stdev_ms": 0,
+      "warm_p50_ms": 73.85,
+      "warm_p95_ms": 84.78,
+      "warm_p99_ms": 84.78,
+      "warm_min_ms": 73.85,
+      "warm_max_ms": 84.78,
+      "batch_size": 15,
+      "runs": 20
+    },
+    "single_latency": {
+      "mean_ms": 5.93,
+      "stdev_ms": 0,
+      "p50_ms": 5.93,
+      "p95_ms": 6.59,
+      "p99_ms": 6.59,
+      "min_ms": 5.93,
+      "max_ms": 6.59
+    },
+    "throughput": {
+      "texts_per_second": 173.8,
+      "batches_per_second": 11.6,
+      "total_texts": 1738,
+      "duration_seconds": 10
+    },
+    "cpu_memory": {
+      "cpu_percent_mean": 785.4,
+      "cpu_percent_max": 785.4,
+      "memory_mb_mean": 1129.6,
+      "memory_mb_max": 1129.6,
+      "samples": 10
+    },
+    "e5_convention": {
+      "note": "Not an E5 model"
+    },
+    "param_count": "N/A (fastembed)"
+  }
+}

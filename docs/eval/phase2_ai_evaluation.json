@@ -1,0 +1,571 @@
+{
+  "total": 25,
+  "passed": 24,
+  "failed": 1,
+  "pass_rate": 0.96,
+  "category_means": {
+    "creator_context_preservation": 0.6546,
+    "faithfulness": 0.6895,
+    "memory_retrieval": 0.5647,
+    "relevance": 0.5662,
+    "usefulness": 0.5994,
+    "voice_matching": 0.8573
+  },
+  "results": [
+    {
+      "scenario_id": "mem_001_launch_numbers",
+      "category": "memory_retrieval",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.16676735290900258,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.625,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_002_prelaunch_lesson",
+      "category": "memory_retrieval",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.15927867435380738,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.6232,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_003_pricing_decision",
+      "category": "memory_retrieval",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.11076325093083039,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.611,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_004_preference_working_hours",
+      "category": "memory_retrieval",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.09472721921210903,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.607,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_005_audience_composition",
+      "category": "memory_retrieval",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.07291015722984706,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.6016,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_006_single_document",
+      "category": "relevance",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.20050767907208467,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.6335,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_007_distractor_discrimination",
+      "category": "relevance",
+      "passed": false,
+      "scores": {
+        "top_hit_accuracy": 0.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.15391110774476124,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.3718,
+        "gating_scores": {
+          "top_hit_accuracy": 0.0,
+          "expected_asset_retrieved": 1.0
+        },
+        "expectation_note": "Known ambiguity: two near-identical documents state opposite conclusions. E5 embedding similarity cannot reliably separate them; semantic entailment is out of scope for Phase 2."
+      }
+    },
+    {
+      "scenario_id": "mem_008_related_concept",
+      "category": "relevance",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.10453883651545659,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.6095,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_009_tamil_native",
+      "category": "memory_retrieval",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.1291695709619507,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.6156,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_010_tamil_retrieval",
+      "category": "memory_retrieval",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 0.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.1443528996391681,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.3694,
+        "gating_scores": {
+          "top_hit_accuracy": 0.0,
+          "expected_asset_retrieved": 1.0
+        },
+        "expectation_note": "Cross-language retrieval. Recorded as an observation, not a target."
+      }
+    },
+    {
+      "scenario_id": "mem_011_hindi_native",
+      "category": "memory_retrieval",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.11469286523203892,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.612,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_012_hinglish_query",
+      "category": "memory_retrieval",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.054578832819861756,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.597,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        },
+        "expectation_note": "Cross-script (Latin query -> Devanagari document). The Phase 1 benchmark measured this as weak for every candidate model."
+      }
+    },
+    {
+      "scenario_id": "mem_013_tanglish_known_limitation",
+      "category": "memory_retrieval",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 0.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.09400140212918173,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.3568,
+        "gating_scores": {
+          "top_hit_accuracy": 0.0,
+          "expected_asset_retrieved": 1.0
+        },
+        "expectation_note": "KNOWN LIMITATION: Phase 1 measured Tanglish -> Tamil at 0/12 for every candidate model, and the follow-up showed normalisation makes it worse. This scenario exists to keep the limitation visible, not to assert a target."
+      }
+    },
+    {
+      "scenario_id": "mem_014_faithfulness_numbers",
+      "category": "faithfulness",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.11416864735390686,
+        "voice_match": null,
+        "required_facts_present": 1.0,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.6895,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0,
+          "required_facts_present": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_015_context_isolation",
+      "category": "creator_context_preservation",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.13988036334158072,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": 1.0
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.6946,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0,
+          "forbidden_facts_absent": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_016_no_cross_user_leak",
+      "category": "creator_context_preservation",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.12495583016460399,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.6146,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_017_usefulness_actionable",
+      "category": "usefulness",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.0642750591896355,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.5994,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_018_long_document_chunking",
+      "category": "memory_retrieval",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.03710766937062515,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.5926,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_019_near_duplicate",
+      "category": "relevance",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.10705795935716633,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.6101,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "mem_020_question_form",
+      "category": "relevance",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": 1.0,
+        "expected_asset_retrieved": 1.0,
+        "precision_at_k": 0.3333333333333333,
+        "retrieval_margin": 0.0908825710314386,
+        "voice_match": null,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.6061,
+        "gating_scores": {
+          "top_hit_accuracy": 1.0,
+          "expected_asset_retrieved": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "voice_001_on_style_match",
+      "category": "voice_matching",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": null,
+        "expected_asset_retrieved": null,
+        "precision_at_k": null,
+        "retrieval_margin": null,
+        "voice_match": 0.8256,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.8256,
+        "gating_scores": {
+          "voice_match": 0.8256
+        }
+      }
+    },
+    {
+      "scenario_id": "voice_002_off_style_rejected",
+      "category": "voice_matching",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": null,
+        "expected_asset_retrieved": null,
+        "precision_at_k": null,
+        "retrieval_margin": null,
+        "voice_match": 0.5826,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.5826,
+        "gating_scores": {
+          "voice_match": 0.5826
+        }
+      }
+    },
+    {
+      "scenario_id": "voice_003_forbidden_word",
+      "category": "voice_matching",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": null,
+        "expected_asset_retrieved": null,
+        "precision_at_k": null,
+        "retrieval_margin": null,
+        "voice_match": 0.9274,
+        "required_facts_present": null,
+        "forbidden_facts_absent": 1.0
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.9637,
+        "gating_scores": {
+          "voice_match": 0.9274,
+          "forbidden_facts_absent": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "voice_004_tamil_register",
+      "category": "voice_matching",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": null,
+        "expected_asset_retrieved": null,
+        "precision_at_k": null,
+        "retrieval_margin": null,
+        "voice_match": 0.9597,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.9597,
+        "gating_scores": {
+          "voice_match": 0.9597
+        }
+      }
+    },
+    {
+      "scenario_id": "voice_005_confidence_scales",
+      "category": "voice_matching",
+      "passed": true,
+      "scores": {
+        "top_hit_accuracy": null,
+        "expected_asset_retrieved": null,
+        "precision_at_k": null,
+        "retrieval_margin": null,
+        "voice_match": 0.9547,
+        "required_facts_present": null,
+        "forbidden_facts_absent": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.9547,
+        "gating_scores": {
+          "voice_match": 0.9547
+        }
+      }
+    }
+  ],
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "embedding_dimension": 768,
+  "llm_provider": "mock"
+}

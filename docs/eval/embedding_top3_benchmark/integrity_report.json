@@ -1,0 +1,79 @@
+{
+  "coverage": {
+    "seed": 20260303,
+    "dataset_sha256_16": "e24337b5380674b0",
+    "counts": {
+      "documents": 113,
+      "queries": 225,
+      "relevant_pairs": 256,
+      "related_pairs": 111
+    },
+    "documents_by_language": {
+      "en": 45,
+      "ta": 19,
+      "hi": 15,
+      "tanglish": 12,
+      "hinglish": 12,
+      "code_mixed_ta": 4,
+      "code_mixed_hi": 4,
+      "code_mixed_en": 2
+    },
+    "documents_by_category": {
+      "hook": 17,
+      "caption": 18,
+      "script": 9,
+      "idea": 9,
+      "comment": 9,
+      "voice": 8,
+      "strategy": 9,
+      "lesson": 10,
+      "performance": 8,
+      "snippet": 3,
+      "memory": 13
+    },
+    "queries_by_language": {
+      "en": 52,
+      "ta": 43,
+      "hi": 38,
+      "tanglish": 40,
+      "hinglish": 38,
+      "code_mixed_ta": 6,
+      "code_mixed_hi": 5,
+      "code_mixed_en": 3
+    },
+    "queries_by_phenomenon": {
+      "en_mono": 30,
+      "ta_mono": 25,
+      "hi_mono": 22,
+      "tanglish_mono": 20,
+      "hinglish_mono": 20,
+      "ta_en": 12,
+      "en_ta": 12,
+      "hi_en": 10,
+      "en_hi": 10,
+      "tanglish_ta": 12,
+      "tanglish_en": 8,
+      "ta_tanglish": 6,
+      "hinglish_hi": 10,
+      "hinglish_en": 8,
+      "hi_hinglish": 6,
+      "code_mixed": 14
+    },
+    "queries_by_target_category": {
+      "hook": 32,
+      "caption": 40,
+      "memory": 39,
+      "script": 13,
+      "strategy": 26,
+      "performance": 21,
+      "lesson": 24,
+      "snippet": 4,
+      "voice": 16,
+      "comment": 12,
+      "idea": 11
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "near_duplicate_pairs": []
+}

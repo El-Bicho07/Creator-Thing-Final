@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: creator-postgres
+    environment:
+      POSTGRES_DB: creator_platform
+      POSTGRES_USER: creator
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/migrations:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U creator -d creator_platform"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ../apps/api
+      dockerfile: Dockerfile
+    container_name: creator-api
+    environment:
+      DATABASE_URL: postgresql+asyncpg://api_user:api_password@postgres:5432/creator_platform
+      # Operational tooling only (migrations / re-embedding). Bypasses RLS so a
+      # single pass can process every creator. The request-serving app connects
+      # as api_user above and never uses this.
+      ADMIN_DATABASE_URL: ${ADMIN_DATABASE_URL:-postgresql+asyncpg://creator:changeme@postgres:5432/creator_platform}
+      SUPABASE_URL: ${SUPABASE_URL}
+      SUPABASE_ANON_KEY: ${SUPABASE_ANON_KEY}
+      SUPABASE_JWT_SECRET: ${SUPABASE_JWT_SECRET}
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      GROQ_API_KEY: ${GROQ_API_KEY}
+      # Embedding Service (ADR-002). E5-base is 768-d; the prefixes are
+      # mandatory and are applied inside the EmbeddingService.
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-intfloat/multilingual-e5-base}
+      EMBEDDING_REVISION: ${EMBEDDING_REVISION:-d128750597153bb5987e10b1c3493a34e5a4502a}
+      EMBEDDING_DIMENSION: ${EMBEDDING_DIMENSION:-768}
+      EMBEDDING_DEVICE: ${EMBEDDING_DEVICE:-cpu}
+      EMBEDDING_BATCH_SIZE: ${EMBEDDING_BATCH_SIZE:-16}
+      EMBEDDING_MAX_SEQ_LENGTH: ${EMBEDDING_MAX_SEQ_LENGTH:-512}
+      EMBEDDING_NORMALIZE: ${EMBEDDING_NORMALIZE:-true}
+      EMBEDDING_QUERY_PREFIX: "${EMBEDDING_QUERY_PREFIX:-query: }"
+      EMBEDDING_DOCUMENT_PREFIX: "${EMBEDDING_DOCUMENT_PREFIX:-passage: }"
+      EMBEDDING_VERSION: ${EMBEDDING_VERSION:-e5-base-v1}
+      # LLM Gateway (ADR-003). No provider credential is configured yet
+      # (ADR-006), so the deterministic mock provider is the default.
+      LLM_PROVIDER: ${LLM_PROVIDER:-mock}
+      LLM_DEFAULT_PROVIDER: ${LLM_DEFAULT_PROVIDER:-mock}
+      LLM_DEFAULT_MODEL: ${LLM_DEFAULT_MODEL:-mock-deterministic}
+      APP_ENV: development
+      LOG_LEVEL: debug
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ../apps/api:/app
+      - ../packages:/packages
+
+  web:
+    build:
+      context: ../apps/web
+      dockerfile: Dockerfile
+    container_name: creator-web
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+      NEXT_PUBLIC_SUPABASE_URL: ${SUPABASE_URL}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${SUPABASE_ANON_KEY}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    volumes:
+      - ../apps/web:/app
+      - ../packages:/packages
+      - /app/node_modules
+      - /app/.next
+
+volumes:
+  postgres_data:

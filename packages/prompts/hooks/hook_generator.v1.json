@@ -1,0 +1,32 @@
+{
+  "name": "hook_generator",
+  "version": "v1",
+  "purpose": "Generate 10 hooks across 5 emotional styles",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "topic": {"type": "string"},
+      "niche": {"type": "string"},
+      "target_audience": {"type": "string"},
+      "voice_profile": {"type": "object"}
+    },
+    "required": ["topic", "niche"]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "hooks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "style": {"type": "string", "enum": ["curiosity", "negative", "story", "data_driven", "question"]},
+            "hook": {"type": "string"},
+            "why_it_works": {"type": "string"}
+          }
+        }
+      }
+    }
+  },
+  "prompt": "Generate 10 high-converting hooks (2 per style) for the given topic.\n\nTopic: {{topic}}\nNiche: {{niche}}\nTarget Audience: {{target_audience}}\n\nHook Styles:\n1. Curiosity Gap - Create an information gap\n2. Negative Hook - Lead with pain/fear/mistake\n3. Story Hook - Open with a mini narrative\n4. Data-Driven - Lead with surprising statistic\n5. Question Hook - Ask a compelling question\n\nVoice Profile: {{voice_profile}}\n\nReturn JSON with hooks array containing style, hook, and why_it_works. No generic openings like 'In today's video...'"
+}

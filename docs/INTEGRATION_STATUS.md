@@ -1,0 +1,349 @@
+# Integration Status — Creator Platform SaaS (Solo Creator OS)
+
+*Last Updated: Phase 1 Foundation - Complete / Verified*
+
+---
+
+## Overall Progress
+
+| Phase | Name | Status | Completion |
+|-------|------|--------|------------|
+| 0 | Audit, Verification & Architectural Decisions | ✅ Complete | 100% |
+| 1 | Foundation Architecture | ✅ Complete | 100% |
+| 2 | Voice + Memory Engines | ⏳ Pending | 0% |
+| 3 | Studio 7-Stage Pipeline | ⏳ Pending | 0% |
+| 4 | Today & Creative Producer | ⏳ Pending | 0% |
+| 5 | Growth & Analytics Copilot | ⏳ Pending | 0% |
+| 6 | Coach & Closed Learning Loop | ⏳ Pending | 0% |
+| 7 | SaaS Hardening & Verification | ⏳ Pending | 0% |
+
+---
+
+## Phase 0 — Audit (✅ Complete)
+
+### Deliverables Completed
+- ✅ `docs/module-integration-matrix.md` — 24-module inventory with dispositions
+- ✅ `docs/verification-log.md` — Smoke test results for all 24 modules
+- ✅ `docs/security-audit.md` — Secrets scan, multi-tenant risk analysis, action plan
+- ✅ `docs/permissions.md` — License audit for all 24 donor modules
+- ✅ `docs/architecture.md` — Target system architecture specification
+- ✅ `docs/eval/rubric.md` — 6-dimension AI evaluation rubric
+- ✅ `docs/eval/golden-scenarios.md` — 10 golden evaluation scenarios
+- ✅ `docs/porting-log.md` — Provenance tracking for all ported code
+- ✅ `IMPLEMENTATION_PLAN.md` — Master engineering execution specification
+- ✅ `MODULE_AUDIT.md` — Automated module analysis
+
+### Key Decisions Documented
+- ✅ Tech Stack: Next.js 15 + FastAPI + PostgreSQL/pgvector + Supabase Auth
+- 🔄 Embedding Model: **RE-EVALUATED 2026-10-03** — top-3 benchmark complete (113 docs / 225 queries, leakage-checked). Leading candidate `BAAI/bge-m3` (1024d); strongest alternative `Tamil-ai/tamil-embed-base` @512d. **No production model changed**; `chunks.embedding` remains `vector(384)`. See ADR-002 §12 and `docs/eval/embedding_top3_benchmark/benchmark_report.md`.
+- ✅ LLM Gateway: Gemini 2.5 Flash primary, Anthropic/Groq fallback
+- ✅ Multi-tenancy: Supabase JWT + PostgreSQL RLS (never trust client user_id)
+- ✅ Module Classification: 6 CORE, 13 PORT, 3 PARK, 2 REBUILD
+
+### Blocking Decisions Requiring Human Approval
+1. **Embedding Model Final Selection** — re-evaluated 2026-10-03 against `tamil-embed-base`, `multilingual-e5-base`, `bge-m3`. Leading candidate `BAAI/bge-m3` (1024d). **PENDING — AWAITING EXPLICIT USER APPROVAL.** Note: no candidate fits the current `vector(384)` schema; selection requires a pgvector migration + full re-embedding of Module 13 and Module 19 data.
+2. **Production LLM API Keys** — Need Gemini API Key, Anthropic API Key, Groq API Key for backend `.env` — **BLOCKED FOR LIVE TESTING** (mock gateway available for Phase 2 development)
+3. **Deployment Platform Target** — Confirm production hosting (Docker/Supabase/Vercel/Render) — **NOT A PHASE 2 BLOCKER** (local dev works regardless)
+
+---
+
+## Phase 1 — Foundation (✅ Complete / Verified)
+
+### Completed ✅
+- [x] Directory structure: `apps/web`, `apps/api`, `packages/prompts`, `packages/contracts`, `infra/db/migrations`
+- [x] `infra/docker-compose.yml` — Postgres+pgvector, FastAPI, Next.js
+- [x] `.env.example` — All environment variables documented
+- [x] FastAPI core: `config.py`, `db.py`, `auth.py`, `errors.py`, `logging.py`, `main.py`
+- [x] FastAPI requirements.txt + Dockerfile
+- [x] Next.js 15 shell: package.json, tsconfig, next.config, tailwind.config
+- [x] Navigation shell with 6 tabs (Start, Today, Studio, Coach, Growth, Library)
+- [x] Route pages: `/start`, `/today`, `/studio`, `/coach`, `/growth`, `/library`
+- [x] PostgreSQL migrations: `000_create_api_user.sql`, `001_enable_extensions.sql`, `002_core_schema.sql` (13 tables + RLS)
+- [x] `packages/prompts/` — Versioned prompt assets (onboarding, daily_plan, script, hooks)
+- [x] `packages/contracts/index.ts` — TypeScript interfaces for all tables + API types
+- [x] `docs/porting-log.md` — Provenance for Phase 1 work
+- [x] `docker-compose up` starts web, API, and DB with clean health checks
+- [x] Supabase Auth integration (JWT verification) working end-to-end
+- [x] Database migrations create all 13 tables with RLS policies
+- [x] Cross-tenant isolation verified: User A cannot read/update/delete User B's data, embeddings, jobs, or AI calls
+- [x] TypeScript contracts compile without errors
+- [x] Basic E2E: navigate all 6 tabs
+
+### In Progress 🟡
+- None
+
+### Remaining for Phase 1 Exit
+- All Phase 1 exit criteria satisfied
+
+---
+
+## Phase 2 — Voice + Memory Engines (⏳ Pending)
+
+### Required Work
+- [ ] `apps/api/app/voice/analyzer.py` — Content analysis (pacing, vocabulary, tone, syntax)
+- [ ] `apps/api/app/voice/profile.py` — Voice profile synthesis & updates
+- [ ] `apps/api/app/voice/validators.py` — Voice match scoring (0-100%), forbidden word filter
+- [ ] `apps/api/app/memory/assets.py` — Content asset CRUD + ingestion
+- [ ] `apps/api/app/memory/chunks.py` — Text chunking with overlap
+- [ ] `apps/api/app/memory/embeddings.py` — sentence-transformers embedding generation
+- [ ] `apps/api/app/memory/retrieval.py` — pgvector cosine similarity search (user-scoped)
+- [ ] `apps/api/app/llm/gateway.py` — Centralized LLM gateway with retry, cache, usage logging
+- [ ] Feature routers: `/api/voice/*`, `/api/memory/*`
+- [ ] Frontend: Voice profile editor (Library tab), Memory search UI
+
+### Exit Criteria
+- [ ] Voice profile extraction from sample posts works
+- [ ] Cross-tenant RAG search returns only user's chunks
+- [ ] Voice validator scores generated content ≥80% match
+- [ ] All AI calls route through gateway with usage logging
+
+---
+
+## Phase 3 — Studio 7-Stage Pipeline (⏳ Pending)
+
+### Required Work
+- [ ] 7-Stage orchestrator: Research → Angles → Narrative → Script → Visuals → Shot List → Copy
+- [ ] Stage-specific prompts in `packages/prompts/studio/`
+- [ ] Session persistence (save/resume studio sessions)
+- [ ] Voice-enforced generation at each stage
+- [ ] Memory retrieval integration (relevant examples per stage)
+- [ ] Frontend: `/studio/[id]` with stage navigation, progress, live preview
+
+### Exit Criteria
+- [ ] Sequential 7-stage pipeline generates publish-ready content
+- [ ] Voice validation runs at each generation step
+- [ ] Session state persists across page reloads
+
+---
+
+## Phase 4 — Today & Creative Producer (⏳ Pending)
+
+### Required Work
+- [ ] `apps/api/app/features/today/producer.py` — Creative Producer engine (NEW)
+- [ ] Inputs: creator profile, voice, memory, performance, lessons, time budget
+- [ ] Outputs: ranked daily plan, fallback ideas, rationale per item
+- [ ] `apps/api/app/features/today/planner.py` — Daily planning utilities
+- [ ] Frontend: `/today` dashboard with Producer recommendation, "Launch in Studio"
+
+### Exit Criteria
+- [ ] Producer generates personalized daily plan matching creator budget
+- [ ] Plan uses voice, memory, performance, and lessons
+
+---
+
+## Phase 5 — Growth & Analytics Copilot (⏳ Pending)
+
+### Required Work
+- [ ] `apps/api/app/features/growth/comment_analyzer.py` — Port from module 10
+- [ ] `apps/api/app/features/growth/comment_to_content.py` — Port from module 11
+- [ ] `apps/api/app/features/growth/copilot.py` — Analytics Copilot (NEW)
+- [ ] Performance record ingestion API
+- [ ] Frontend: `/growth` with metrics, comment themes, opportunities
+
+### Exit Criteria
+- [ ] Comment sentiment analyzed and converted into content ideas
+- [ ] Analytics Copilot produces actionable lessons from performance data
+
+---
+
+## Phase 6 — Coach & Closed Learning Loop (⏳ Pending)
+
+### Required Work
+- [ ] `apps/api/app/features/coach/scorecard.py` — 4-dimension review
+- [ ] `apps/api/app/features/coach/lesson_extractor.py` — Performance → Lesson
+- [ ] Lesson storage and retrieval
+- [ ] Producer integration: lessons affect future recommendations
+- [ ] Frontend: `/coach` with scorecard, lesson history
+
+### Exit Criteria (Critical Acceptance)
+- [ ] **End-to-end learning loop verified:** Performance data → Lesson → Updated Producer recommendation
+- [ ] Coach feedback improves voice match on subsequent generations
+
+---
+
+## Phase 7 — SaaS Hardening (⏳ Pending)
+
+### Required Work
+- [ ] Rate limiting (per-user, per-feature)
+- [ ] Daily token/cost caps enforcement
+- [ ] Full telemetry (ai_calls, jobs, errors)
+- [ ] Automated test suite: unit, integration, multi-tenant, E2E
+- [ ] Backup/restore procedures
+- [ ] Privacy: data export, account deletion
+- [ ] Production deployment pipeline
+
+### Exit Criteria
+- [ ] All integration tests pass
+- [ ] Zero secret leaks
+- [ ] Final E2E flow succeeds (signup → onboarding → voice → memory → studio → today → growth → coach → loop)
+
+---
+
+## Remaining Risks
+
+| Risk | Impact | Mitigation |
+|------|--------|------------|
+| Embedding model incompatibility | High | Benchmark completed; ADR-002 documents rationale |
+| Supabase Auth integration complexity | Medium | Use official `@supabase/ssr` + JWT verification pattern |
+| pgvector index performance at scale | Medium | Start with IVFFlat, monitor, upgrade to HNSW if needed |
+| LLM provider rate limits | Medium | Gateway caching, daily caps, fallback providers |
+| Voice match quality degradation | Medium | Automatic forbidden word filter, validator feedback loop |
+
+---
+
+## How to Run Locally
+
+```bash
+# 1. Clone and enter directory
+cd ~/Projects/Creator-Platform-SaaS
+
+# 2. Copy environment template
+cp .env.example .env
+# Edit .env with your values (at minimum: SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_JWT_SECRET)
+
+# 3. Start development stack
+docker compose -f infra/docker-compose.yml up
+
+# 4. Access services
+# Web: http://localhost:3000
+# API: http://localhost:8000
+# API Health: http://localhost:8000/health
+# API Docs: http://localhost:8000/docs
+
+# 5. Run tests (when available)
+# cd apps/api && pytest
+# cd apps/web && npm run test
+```
+
+---
+
+## How to Run Tests
+
+```bash
+# Backend tests
+cd apps/api
+pytest --cov=app --cov-report=term-missing
+
+# Frontend tests
+cd apps/web
+npm run test        # Vitest unit tests
+npm run test:e2e    # Playwright E2E tests
+npm run typecheck   # TypeScript compilation check
+npm run lint        # ESLint
+
+# Multi-tenant isolation tests (critical)
+cd apps/api
+pytest tests/security/ -v
+```
+
+---
+
+## Next Actions
+
+1. **Decision:** Approve embedding model — leading candidate `BAAI/bge-m3` (1024d) from the 2026-10-03 top-3 benchmark; strongest alternative `Tamil-ai/tamil-embed-base` @512d. Approval implies a `vector(384) → 1024` (or 512) migration plus full donor re-embedding.
+2. **Decision:** Production LLM API keys — **BLOCKED FOR LIVE TESTING** (mock gateway available for Phase 2 development)
+3. **Decision:** Confirm production hosting environment (Docker/Supabase/Vercel/Render) — **NOT A PHASE 2 BLOCKER**
+4. **Explicit Approval Required:** Phase 2 implementation can begin after embedding model approval
+
+> **Phase 2 may START after explicit user authorization.**
+>
+> The LLM Gateway is the first Phase 2 implementation task.
+>
+> Voice Engine and Memory Engine integration must NOT proceed until
+> the LLM Gateway implementation is complete and its tests pass.
+>
+> Lifecycle:
+> ```
+> USER APPROVAL
+>       ↓
+> PHASE 2 START
+>       ↓
+> LLM GATEWAY IMPLEMENTATION
+>       ↓
+> LLM GATEWAY TESTS
+>       ↓
+> EMBEDDING SERVICE
+>       ↓
+> VOICE ENGINE
+>       ↓
+> MEMORY ENGINE
+>       ↓
+> MODULE 13 PORT
+>       ↓
+> MODULE 19 PORT
+>       ↓
+> RE-EMBEDDING
+>       ↓
+> PHASE 2 ACCEPTANCE TESTS
+>       ↓
+> PHASE 2 COMPLETE
+> ```
+
+> **Phase 2 remains BLOCKED until explicit user authorization is given.**
+---
+
+# Phase 2 Integration Status — 2026-10-03
+
+## Capability matrix
+
+| Capability | Status | Path | Verified by |
+|---|---|---|---|
+| LLM Gateway | **IMPLEMENTED** | `app/llm/gateway.py` | 39 unit tests + e2e |
+| Provider abstraction | **IMPLEMENTED** | `app/llm/providers/` | adapter registry tests |
+| Mock provider | **IMPLEMENTED** | `app/llm/providers/mock.py` | deterministic tests |
+| Gemini / Anthropic / Groq adapters | **UNVERIFIED** (no credentials) | `app/llm/providers/live.py` | credential-gating only |
+| Prompt registry | **IMPLEMENTED** | `app/llm/prompts.py` | loader + rendering tests |
+| Usage / cost accounting | **IMPLEMENTED** | `app/llm/usage.py` | `ai_calls` rows verified |
+| EmbeddingService (E5-base 768) | **IMPLEMENTED** | `app/ai/embedding/` | 28 unit tests |
+| Vector migration 384 → 768 | **IMPLEMENTED** | migrations 003/004 + `app/memory/reembed.py` | anti-padding proof |
+| Long-Term Memory Engine | **IMPLEMENTED** | `app/memory/` | 27 unit + 13 RLS tests |
+| Creator Voice Engine | **IMPLEMENTED** | `app/voice/` | 26 unit + API tests |
+| Memory write policy | **IMPLEMENTED** | `app/memory/policy.py` | policy + redaction tests |
+| Job tracking | **IMPLEMENTED** (in-process) | `app/jobs/service.py` | lifecycle covered |
+| `/api/memory/*` | **IMPLEMENTED** | `app/features/memory/router.py` | 25 API contract tests |
+| `/api/voice/*` | **IMPLEMENTED** | `app/features/voice/router.py` | 25 API contract tests |
+| Frontend integration surface | **IMPLEMENTED** (minimal) | `apps/web/app/phase2/`, `apps/web/lib/api.ts` | not typechecked (deps absent) |
+| AI evaluation framework | **IMPLEMENTED** | `app/ai/evaluation/` | 13 tests + 25 scenarios |
+| Per-user token budget enforcement | **DEFERRED** | config ready | — |
+| Per-feature rate limiting | **DEFERRED** | config ready | — |
+| Distributed job worker | **DEFERRED** | claim/progress/complete ready | — |
+| Script-aware retrieval / expansion | **DEFERRED** | recommended direction | — |
+
+## Donor integration
+
+| Donor | Classification | Outcome |
+|---|---|---|
+| Module 13 `text_analyzer.py` | ADAPT | Deterministic features → `app/voice/engine.py` |
+| Module 13 `style_analyzer.py` | ADAPT | Profile aggregation → `app/voice/engine.py` |
+| Module 13 `validation_service.py` | ADAPT | Voice-match scoring → `app/voice/engine.py` |
+| Module 13 `embedding_service.py` | **REBUILD** | Was a hash vectorizer using per-process-salted `hash()`; replaced by E5-base |
+| Module 13 `llm_service.py` | **REBUILD** | Direct `google-genai` → `LLMGateway` |
+| Module 13 `image_analyzer.py` | PARK | Vision out of Phase 2 scope |
+| Module 13 models / alembic / routes / frontend | PARK | Platform `voice_profiles` supersedes |
+| Module 19 `ingest/pipeline.py` | ADAPT | Ingest→chunk→embed→store → `app/memory/retrieval.py` |
+| Module 19 `search/vector.py` | ADAPT | pgvector cosine; `channel_id` → RLS `user_id` |
+| Module 19 `search/embeddings.py` | **REBUILD** | fastembed BGE → E5-base (incompatible vector space) |
+| Module 19 `ingest/transcripts.py` | ADAPT | Chunking strategy → `app/memory/chunking.py` |
+| Module 19 `ai/llm.py`, `agents/llm.py` | **REBUILD** | Direct SDK calls → `LLMGateway` |
+| Module 19 `agents/`, `search/graph.py`, `ingest/youtube.py` | PARK | Phase 3 / Phase 5 |
+
+Full detail: `docs/porting-log.md` §Phase 2.
+
+## Test totals
+
+```text
+212 passed, 1 skipped, 0 failed
+```
+
+## Open items
+
+1. **No production LLM credential.** The platform runs on the deterministic mock
+   provider. All gateway paths are exercised, but no real model output has been
+   validated.
+2. **Frontend not typechecked.** `apps/web/node_modules` lacks the TypeScript
+   toolchain in this environment; `lib/api.ts` and `app/phase2/page.tsx` are
+   unverified by a compiler.
+3. **Job execution is in-process.** The lifecycle is real and RLS-scoped, but
+   there is no separate worker.
+4. **Voice matcher is calibrated on three synthetic samples**, not on real
+   creators. Register detection is heuristic.

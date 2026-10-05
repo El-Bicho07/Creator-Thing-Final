@@ -1,0 +1,412 @@
+{
+  "version": "1",
+  "description": "Phase 2 golden scenarios for the platform AI evaluation framework. These establish the evaluation foundation; they are not a language-optimisation exercise.",
+  "language_note": "Mixed English/Tamil/Hinglish queries are intentional: the platform targets multilingual creators. Several scenarios encode the known cross-script limitation of all three benchmarked models, so they assert CURRENT behaviour rather than an aspiration.",
+  "scenarios": [
+    {
+      "id": "mem_001_launch_numbers",
+      "category": "memory_retrieval",
+      "description": "Exact factual recall of a specific number.",
+      "corpus": [
+        "I launched my SaaS landing page on a Tuesday and got 400 signups in 48 hours.",
+        "My mistake was waiting three weeks to email my list before the launch.",
+        "The second launch converted 12 percent of visitors into trials."
+      ],
+      "query": "how many signups did the landing page get?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.25,
+      "tags": [
+        "facts",
+        "numbers"
+      ]
+    },
+    {
+      "id": "mem_002_prelaunch_lesson",
+      "category": "memory_retrieval",
+      "description": "Recall a lesson rather than a statistic.",
+      "corpus": [
+        "Batching a dozen pieces into Sunday removed my weekday burnout entirely.",
+        "Thumbnails mattered far more than scripting for click-through rate.",
+        "I answered comments within an hour and retention improved visibly."
+      ],
+      "query": "what did batching do for my burnout?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.25,
+      "tags": [
+        "lessons"
+      ]
+    },
+    {
+      "id": "mem_003_pricing_decision",
+      "category": "memory_retrieval",
+      "description": "Recall a past decision and its reasoning.",
+      "corpus": [
+        "I underpriced at nine dollars and lost money on every single unit.",
+        "Raising the price to nineteen dollars cut conversions but tripled revenue.",
+        "Support tickets dropped once the onboarding docs were rewritten."
+      ],
+      "query": "why did I raise my prices?",
+      "expected_top_asset": 1,
+      "min_expected_score": 0.25,
+      "tags": [
+        "decisions"
+      ]
+    },
+    {
+      "id": "mem_004_preference_working_hours",
+      "category": "memory_retrieval",
+      "description": "Recall a stated personal preference.",
+      "corpus": [
+        "I only ever film on Sunday evenings because weekdays are family time.",
+        "I refuse to publish anything I would be embarrassed to sign my name to.",
+        "My audience skews strongly toward working professionals in their thirties."
+      ],
+      "query": "when do I film?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.25,
+      "tags": [
+        "preferences"
+      ]
+    },
+    {
+      "id": "mem_005_audience_composition",
+      "category": "memory_retrieval",
+      "description": "Recall audience research.",
+      "corpus": [
+        "My audience skews strongly toward working professionals in their thirties.",
+        "Comments come in mostly from people building side projects after work.",
+        "Retention is highest on Sunday evening posts and lowest on Friday."
+      ],
+      "query": "who is my audience?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.25,
+      "tags": [
+        "audience"
+      ]
+    },
+    {
+      "id": "mem_006_single_document",
+      "category": "relevance",
+      "description": "Single-document corpus must resolve cleanly.",
+      "corpus": [
+        "Cross script retrieval is weak because the models match script before they match meaning."
+      ],
+      "query": "why is cross script retrieval weak?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.3,
+      "tags": [
+        "single"
+      ]
+    },
+    {
+      "id": "mem_007_distractor_discrimination",
+      "category": "relevance",
+      "description": "Highly similar distractors with a different conclusion.",
+      "corpus": [
+        "Batching on Sunday reduced my burnout significantly within one week.",
+        "Batching on Sunday actually made my burnout worse because of the deadline pressure."
+      ],
+      "query": "did batching help or hurt my burnout?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.2,
+      "tags": [
+        "distractors"
+      ],
+      "expectation_note": "Known ambiguity: two near-identical documents state opposite conclusions. E5 embedding similarity cannot reliably separate them; semantic entailment is out of scope for Phase 2."
+    },
+    {
+      "id": "mem_008_related_concept",
+      "category": "relevance",
+      "description": "Query uses different wording than the stored text.",
+      "corpus": [
+        "I cut the average video length from twelve minutes to four and watch time rose."
+      ],
+      "query": "shorter videos performed better",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.3,
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "id": "mem_009_tamil_native",
+      "category": "memory_retrieval",
+      "description": "Native-script Tamil query against a Tamil-script memory.",
+      "corpus": [
+        "தமிழில் தொழில்நுட்ப உள்ளடக்கம் குறைவாக இருப்பதால் பல படங்கள் பயன்படுத்தப்படவில்லை.",
+        "என் முதல் வீடியோக்களில் எதுவும் புரியவில்லை ஏனெனில் தலைப்பு தெளிவாக இல்லை."
+      ],
+      "query": "தமிழில் உள்ளடக்கம் குறைவாக உள்ளதால் என்ன செய்தேன்?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.2,
+      "tags": [
+        "tamil",
+        "native_script"
+      ]
+    },
+    {
+      "id": "mem_010_tamil_retrieval",
+      "category": "memory_retrieval",
+      "description": "English query against a Tamil-script memory (cross-language).",
+      "corpus": [
+        "தமிழில் தொழில்நுட்ப உள்ளடக்கம் குறைவாக இருப்பதால் பல படங்கள் பயன்படுத்தப்படவில்லை.",
+        "என் முதல் வீடியோக்களில் எதுவும் புரியவில்லை ஏனெனில் தலைப்பு தெளிவாக இல்லை."
+      ],
+      "query": "why is Tamil technical content underused?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.0,
+      "tags": [
+        "tamil",
+        "cross_language"
+      ],
+      "expectation_note": "Cross-language retrieval. Recorded as an observation, not a target."
+    },
+    {
+      "id": "mem_011_hindi_native",
+      "category": "memory_retrieval",
+      "description": "Native-script Hindi query against a Devanagari memory.",
+      "corpus": [
+        "मेरे दर्शक ज्यादातर रोज़ाना काम करने वाले लोग हैं इसलिए वीडियो छोटे रखना पड़ा।",
+        "हिंदी में तकनीकी सामग्री बहुत कम है इसलिए मैंने अंग्रेज़ी से शुरुआत की।"
+      ],
+      "query": "दर्शकों के लिए वीडियो छोटे क्यों रखे?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.2,
+      "tags": [
+        "hindi",
+        "native_script"
+      ]
+    },
+    {
+      "id": "mem_012_hinglish_query",
+      "category": "memory_retrieval",
+      "description": "Hinglish (Latin script) query against a Devanagari memory.",
+      "corpus": [
+        "मेरे दर्शक ज्यादातर रोज़ाना काम करने वाले लोग हैं इसलिए वीडियो छोटे रखना पड़ा।",
+        "हिंदी में तकनीकी सामग्री बहुत कम है इसलिए मैंने अंग्रेज़ी से शुरुआत की।"
+      ],
+      "query": "audience ke liye video chhote kyun rakhe?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.0,
+      "tags": [
+        "hinglish",
+        "cross_script"
+      ],
+      "expectation_note": "Cross-script (Latin query -> Devanagari document). The Phase 1 benchmark measured this as weak for every candidate model."
+    },
+    {
+      "id": "mem_013_tanglish_known_limitation",
+      "category": "memory_retrieval",
+      "description": "Tanglish query against a Tamil-script memory. The Phase 1 benchmark found this fails for every candidate model (0/12), so this scenario asserts the CURRENT, known-limited behaviour. If this ever passes materially, that is an improvement worth investigating, not a failure.",
+      "corpus": [
+        "தமிழில் தொழில்நுட்ப உள்ளடக்கம் குறைவாக இருப்பதால் பல படங்கள் பயன்படுத்தப்படவில்லை.",
+        "என் முதல் வீடியோக்களில் எதுவும் புரியவில்லை ஏனெனில் தலைப்பு தெளிவாக இல்லை."
+      ],
+      "query": "tamil la technical content kuraiya irukku enna karren",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.0,
+      "tags": [
+        "tanglish",
+        "cross_script",
+        "known_limitation"
+      ],
+      "expectation_note": "KNOWN LIMITATION: Phase 1 measured Tanglish -> Tamil at 0/12 for every candidate model, and the follow-up showed normalisation makes it worse. This scenario exists to keep the limitation visible, not to assert a target."
+    },
+    {
+      "id": "mem_014_faithfulness_numbers",
+      "category": "faithfulness",
+      "description": "Required facts must be present in the retrieved evidence.",
+      "corpus": [
+        "The second launch converted 12 percent of visitors into trials.",
+        "My average upload day is Sunday and I never publish on Friday."
+      ],
+      "query": "what conversion rate did the second launch get?",
+      "expected_top_asset": 0,
+      "required_facts": [
+        "12 percent"
+      ],
+      "min_expected_score": 0.2,
+      "tags": [
+        "faithfulness"
+      ]
+    },
+    {
+      "id": "mem_015_context_isolation",
+      "category": "creator_context_preservation",
+      "description": "A query about topic A must not surface topic B's private facts.",
+      "corpus": [
+        "My hourly rate for consulting work is two hundred euros per hour.",
+        "I published three blog posts about database indexing this quarter."
+      ],
+      "query": "what have I written about database indexing?",
+      "expected_top_asset": 1,
+      "forbidden_facts": [
+        "two hundred euros"
+      ],
+      "min_expected_score": 0.0,
+      "tags": [
+        "isolation",
+        "context"
+      ]
+    },
+    {
+      "id": "mem_016_no_cross_user_leak",
+      "category": "creator_context_preservation",
+      "description": "Another creator's facts must never appear in results.",
+      "corpus": [
+        "I keep my entire content calendar in one spreadsheet with no colour coding."
+      ],
+      "query": "how do you keep your calendar?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.2,
+      "tags": [
+        "isolation",
+        "multitenancy"
+      ]
+    },
+    {
+      "id": "mem_017_usefulness_actionable",
+      "category": "usefulness",
+      "description": "Retrieval should return guidance the creator can act on.",
+      "corpus": [
+        "Pre warm the email list 48 hours before every launch and open rates roughly double.",
+        "Pin the first comment with the link because the platform buries later replies."
+      ],
+      "query": "what should I do before a launch?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.2,
+      "tags": [
+        "usefulness"
+      ]
+    },
+    {
+      "id": "mem_018_long_document_chunking",
+      "category": "memory_retrieval",
+      "description": "A long document must be chunked and remain retrievable by a fact inside it.",
+      "corpus": [
+        "My production notes run long. First I batch on Sunday. Then I write hooks on Monday. Titles get tested on Tuesday. I publish on Wednesday. Comments get answered Thursday. Friday is deliberately empty. Saturday is for planning. The whole cycle repeats weekly and it is the single change that made output sustainable for me without burning out across a whole quarter of consistent publishing."
+      ],
+      "query": "which day is deliberately left empty?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.2,
+      "tags": [
+        "chunking",
+        "long_document"
+      ]
+    },
+    {
+      "id": "mem_019_near_duplicate",
+      "category": "relevance",
+      "description": "Two nearly identical documents with different details.",
+      "corpus": [
+        "My first video hit ten thousand views in a single day which felt miraculous.",
+        "My first video hit one thousand views in a single day which felt discouraging."
+      ],
+      "query": "how many views did my first video get?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.15,
+      "tags": [
+        "distractors",
+        "numbers"
+      ]
+    },
+    {
+      "id": "mem_020_question_form",
+      "category": "relevance",
+      "description": "Question phrasing vs declarative stored text.",
+      "corpus": [
+        "Shortening the intro from twelve seconds to two lifted completion by a third."
+      ],
+      "query": "what happened when I shortened the intro?",
+      "expected_top_asset": 0,
+      "min_expected_score": 0.3,
+      "tags": [
+        "questions"
+      ]
+    },
+    {
+      "id": "voice_001_on_style_match",
+      "category": "voice_matching",
+      "description": "A draft in the creator's own register should match strongly.",
+      "voice_samples": [
+        "Most creators burn out because they optimise for output instead of recovery. Here is the fix that actually worked for me. 🚀",
+        "I batch on Sundays. Twelve pieces, zero weekday burnout. What do you think?",
+        "You do not need more discipline. You need a system that survives a bad week."
+      ],
+      "draft": "I batch on Sundays. Twelve pieces, zero weekday burnout. Honestly it changed everything for me. 🚀",
+      "min_expected_score": 0.6,
+      "tags": [
+        "voice",
+        "match"
+      ]
+    },
+    {
+      "id": "voice_002_off_style_rejected",
+      "category": "voice_matching",
+      "description": "Formal legal register must score below the creator's own style.",
+      "voice_samples": [
+        "Most creators burn out because they optimise for output instead of recovery. Here is the fix that actually worked for me. 🚀",
+        "I batch on Sundays. Twelve pieces, zero weekday burnout. What do you think?",
+        "You do not need more discipline. You need a system that survives a bad week."
+      ],
+      "draft": "Pursuant to clause seven of the schedule, the aforementioned documentation shall be submitted without delay to the administrator.",
+      "max_expected_score": 0.7,
+      "min_expected_score": 0.0,
+      "tags": [
+        "voice",
+        "rejection"
+      ]
+    },
+    {
+      "id": "voice_003_forbidden_word",
+      "category": "voice_matching",
+      "description": "An explicitly forbidden word must be flagged.",
+      "voice_samples": [
+        "I write short and direct because long intros lose people immediately.",
+        "I never use hype words because the audience can smell them instantly."
+      ],
+      "draft": "This revolutionary game changing system is guaranteed to explode your audience forever.",
+      "forbidden_facts": [
+        "revolutionary"
+      ],
+      "min_expected_score": 0.0,
+      "tags": [
+        "voice",
+        "policy"
+      ]
+    },
+    {
+      "id": "voice_004_tamil_register",
+      "category": "voice_matching",
+      "description": "A Tamil-script voice profile should accept a Tamil-script draft.",
+      "voice_samples": [
+        "தமிழில் எழுதுபவர்கள் பொதுவாக நேரடியாக பேசுவார்கள், அதே சமயத்தில் நீண்ட அறிமுகங்கள் தேவையில்லை.",
+        "என் முதல் வீடியோ தோல்வியாக இருந்தது ஏனெனில் தலைப்பு தெளிவாக இல்லை."
+      ],
+      "draft": "என் முதல் வீடியோ தோல்வியாக இருந்தது ஏனெனில் தலைப்பு தெளிவாக இல்லை.",
+      "min_expected_score": 0.3,
+      "tags": [
+        "voice",
+        "tamil"
+      ]
+    },
+    {
+      "id": "voice_005_confidence_scales",
+      "category": "voice_matching",
+      "description": "More samples must produce a profile with higher confidence.",
+      "voice_samples": [
+        "I write short and direct because long intros lose people immediately.",
+        "I never use hype words because the audience can smell them instantly.",
+        "I answer every comment because silence reads as arrogance.",
+        "I keep the thumbnail simple because clutter costs clicks.",
+        "I never start with a greeting because it wastes the first three seconds."
+      ],
+      "draft": "I keep the thumbnail simple because clutter costs clicks.",
+      "min_expected_score": 0.4,
+      "tags": [
+        "voice",
+        "confidence"
+      ]
+    }
+  ]
+}

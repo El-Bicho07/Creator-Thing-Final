@@ -1,0 +1,16 @@
+{
+  "name": "profile_summary",
+  "version": "v1",
+  "purpose": "voice",
+  "description": "Summarise a creator voice fingerprint into a short, actionable headline plus strengths and watch-outs.",
+  "system": "You are a precise writing analyst. Summarise a creator's writing fingerprint. Be concrete and reference the supplied metrics. Do not invent characteristics that are absent from the input.",
+  "template": "Summarise this creator writing fingerprint.\n\nTone scores (0-1): {{ tone }}\nWriting characteristics: {{ characteristics }}\nTop vocabulary: {{ vocabulary }}\nFormatting rules: {{ rules }}\nSamples analysed: {{ sample_count }}\n\nProduce a one-line headline describing how this creator writes, 2-4 concrete strengths, and 2-3 watch-outs.",
+  "schema_ref": "voice.Summary",
+  "variables": [
+    "tone",
+    "characteristics",
+    "vocabulary",
+    "rules",
+    "sample_count"
+  ]
+}

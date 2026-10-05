@@ -1,0 +1,40 @@
+{
+  "name": "daily_plan",
+  "version": "v1",
+  "purpose": "Generate personalized daily content plan from creator context",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "creator_profile": {"type": "object"},
+      "voice_profile": {"type": "object"},
+      "recent_performance": {"type": "array", "items": {"type": "object"}},
+      "active_lessons": {"type": "array", "items": {"type": "object"}},
+      "content_memory": {"type": "array", "items": {"type": "object"}},
+      "time_budget_minutes": {"type": "integer"},
+      "current_date": {"type": "string"}
+    },
+    "required": ["creator_profile", "time_budget_minutes"]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "recommended_plan": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": {"type": "string"},
+            "platform": {"type": "string"},
+            "priority": {"type": "string", "enum": ["high", "medium", "low"]},
+            "estimated_minutes": {"type": "integer"},
+            "stages": {"type": "array", "items": {"type": "string"}},
+            "rationale": {"type": "string"}
+          }
+        }
+      },
+      "fallback_ideas": {"type": "array", "items": {"type": "string"}},
+      "total_estimated_minutes": {"type": "integer"}
+    }
+  },
+  "prompt": "You are the AI Creative Producer for a solo creator. Generate today's optimal content plan.\n\nCreator Profile: {{creator_profile}}\nVoice Profile: {{voice_profile}}\nRecent Performance: {{recent_performance}}\nActive Lessons: {{active_lessons}}\nRelevant Memory: {{content_memory}}\nTime Budget: {{time_budget_minutes}} minutes\nDate: {{current_date}}\n\nReturn a JSON with recommended_plan (3-5 items), fallback_ideas, and total_estimated_minutes. Each plan item needs title, platform, priority, estimated_minutes, stages, and rationale."
+}

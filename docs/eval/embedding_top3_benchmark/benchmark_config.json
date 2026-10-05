@@ -1,0 +1,11 @@
+{
+  "batch_size": 16,
+  "max_seq_length": 512,
+  "single_query_runs": 40,
+  "batch_runs": 10,
+  "device_preference": "cpu",
+  "rationale": "CPU-first: the target deployment must not depend on the 4GB RTX 2050.",
+  "similarity": "cosine (dot product of L2-normalised vectors)",
+  "retrieval": "numpy in-memory; argsort top-5; NO pgvector involved",
+  "matryoshka": "slice normalised sentence embedding to [:N], then re-normalise"
+}

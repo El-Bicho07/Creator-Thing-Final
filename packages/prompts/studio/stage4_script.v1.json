@@ -1,0 +1,41 @@
+{
+  "name": "studio_script",
+  "version": "v1",
+  "purpose": "Generate full script from narrative and research",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "topic": {"type": "string"},
+      "angle": {"type": "string"},
+      "narrative": {"type": "string"},
+      "research": {"type": "string"},
+      "target_format": {"type": "string"},
+      "target_duration_seconds": {"type": "integer"},
+      "voice_profile": {"type": "object"},
+      "relevant_examples": {"type": "array", "items": {"type": "string"}}
+    },
+    "required": ["topic", "angle", "narrative", "target_format", "target_duration_seconds"]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "script": {"type": "string"},
+      "scenes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "scene_number": {"type": "integer"},
+            "visual_description": {"type": "string"},
+            "dialogue": {"type": "string"},
+            "duration_seconds": {"type": "integer"},
+            "b_roll_suggestions": {"type": "array", "items": {"type": "string"}}
+          }
+        }
+      },
+      "hook": {"type": "string"},
+      "cta": {"type": "string"}
+    }
+  },
+  "prompt": "You are a professional short-form content scriptwriter. Create a compelling script that matches the creator's voice.\n\nTopic: {{topic}}\nAngle: {{angle}}\nNarrative: {{narrative}}\nResearch: {{research}}\nTarget Format: {{target_format}}\nTarget Duration: {{target_duration_seconds}} seconds\n\nVoice Profile:\n- Tone: {{voice_profile.tone_keywords}}\n- Sentence Style: {{voice_profile.sentence_style}}\n- Forbidden Words: {{voice_profile.forbidden_words}}\n\nRelevant Past Examples:\n{{#each relevant_examples}}\n- {{this}}\n{{/each}}\n\nWrite a script with:\n1. A powerful hook (first 3 seconds)\n2. Clear scene breakdown with visuals and dialogue\n3. Strong CTA at the end\n4. Voice-matched language throughout\n\nReturn JSON with script, scenes array, hook, and cta."
+}
