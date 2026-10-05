@@ -1,0 +1,54 @@
+{
+  "name": "cta",
+  "version": "v1",
+  "purpose": "Suggest calls to action for specific placements, with freshness steering",
+  "description": "REBUILD. Module 09 (Cue) had the right shape — per-placement CTA slots, an explicit goal strategy, a reach-risk notion, and anti-repetition across sessions — but its entire lib/ tree is absent from the donor (gitignored there), so only the contract and UI survived. This is a platform reimplementation against that contract, not a port.",
+  "donor": ["09_CTA_Generator"],
+  "classification": "REBUILD",
+  "model_requirements": {
+    "temperature": 0.85,
+    "max_tokens": 1200,
+    "structured_output": true
+  },
+  "variables": ["topic", "goal", "placements", "goal_directive", "recent_ctas", "offer", "link_method", "tone", "creator_request", "creator_voice"],
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "topic": {"type": "string", "maxLength": 300},
+      "goal": {"type": "string", "enum": ["reach", "engagement", "education", "authority", "conversion", "community", "trust", "entertainment"]},
+      "offer": {"type": "string", "maxLength": 500},
+      "link_method": {"type": "string", "maxLength": 60}
+    },
+    "required": ["topic", "goal"]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "strategy": {"type": "string"},
+      "slots": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "slot": {"type": "string", "enum": ["reel_spoken", "reel_onscreen", "caption_opener", "caption_close"]},
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "text": {"type": "string"},
+                  "risk": {"type": "string", "enum": ["safe", "reach_risk"]}
+                },
+                "required": ["text"]
+              }
+            }
+          },
+          "required": ["slot", "candidates"]
+        }
+      }
+    },
+    "required": ["slots"]
+  },
+  "system": "You write calls to action for one creator's content.\nRules:\n- A CTA asks for ONE specific action. Two asks is not a CTA.\n- Match the ask to the goal. A reach goal and a conversion goal need different CTAs.\n- Spoken CTAs should be sayable in under six words.\n- Never use urgency the content has not earned. Manufactured scarcity is a reach risk.\n- Do NOT invent offers, prices, deadlines or guarantees.\n- Avoid repeating the creator's recent CTAs unless one is clearly right.\nReturn only the JSON object described in the output schema.",
+  "template": "Suggest calls to action.\n\nContent topic: {{topic}}\nPrimary goal: {{goal}}\nDirection: {{goal_directive}}\nOffer available (may be empty): {{offer}}\nLink method (may be empty): {{link_method}}\nTone: {{tone}}\nPlacements to fill: {{placements}}\n\nCTAs this creator has used recently — do NOT repeat these unless clearly correct:\n{{recent_ctas}}\n\nCreator's request:\n{{creator_request}}\n\nCreator's voice:\n{{creator_voice}}\n\nGive 3 candidates per placement, ordered best-first, and mark any that risk a reach penalty as reach_risk. Choose a strategy for the whole piece and state it in one line.\n\nReturn JSON: {\"strategy\": \"...\", \"slots\": [{\"slot\": \"reel_spoken\", \"candidates\": [{\"text\": \"...\", \"risk\": \"safe\"}]}]}"
+}

@@ -2,6 +2,7 @@
 
 *Last Updated: Phase 1 Foundation - Complete / Verified*
 *Reconciled 2026-10-05 against Phase 2 — see `docs/PHASE_2_FINAL_VERIFICATION.md`.*
+*Phase 3 (Studio) complete 2026-10-05 — see `docs/PHASE_3_FINAL_REPORT.md`.*
 
 > **READ FIRST — this file is a Phase 1 snapshot.** Sections below describing the
 > embedding model, `vector(384)` storage, and "awaiting user approval" are the
@@ -18,8 +19,8 @@
 |-------|------|--------|------------|
 | 0 | Audit, Verification & Architectural Decisions | ✅ Complete | 100% |
 | 1 | Foundation Architecture | ✅ Complete | 100% |
-| 2 | Voice + Memory Engines | ⏳ Pending | 0% |
-| 3 | Studio 7-Stage Pipeline | ⏳ Pending | 0% |
+| 2 | Voice + Memory Engines | ✅ Complete | 100% |
+| 3 | Studio Workspace | ✅ Complete | 100% |
 | 4 | Today & Creative Producer | ⏳ Pending | 0% |
 | 5 | Growth & Analytics Copilot | ⏳ Pending | 0% |
 | 6 | Coach & Closed Learning Loop | ⏳ Pending | 0% |
@@ -355,3 +356,46 @@ Full detail: `docs/porting-log.md` §Phase 2.
    there is no separate worker.
 4. **Voice matcher is calibrated on three synthetic samples**, not on real
    creators. Register detection is heuristic.
+
+---
+
+## Phase 3 — STUDIO (✅ Complete, 2026-10-05)
+
+Studio is the platform's core creation workspace and the **Make** step of the
+Creator Platform loop. It consolidates donor capabilities into one workspace rather
+than separate applications.
+
+### What exists now
+
+| Layer | Status | Location |
+|---|---|---|
+| Orchestration | ✅ | `apps/api/app/studio/orchestrator.py` — the only orchestration authority |
+| Context assembly | ✅ | `apps/api/app/studio/context.py` — Memory + Voice via Phase 2 |
+| Capability registry | ✅ | 8 capabilities: idea, hook, script, caption, repurpose, cta, thumbnail, refine |
+| Prompts | ✅ | 8 versioned assets under `packages/prompts/studio/` |
+| Sessions + versions | ✅ | `studio_sessions`, `studio_generations` (migration 006, RLS) |
+| API | ✅ | 16 routes under `/api/studio` |
+| Frontend | ✅ | `apps/web/app/studio/page.tsx`, generated TS contracts |
+| AI evaluation | ✅ | 28 scenarios, 8 categories — `docs/eval/studio_evaluation.json` |
+
+### Verification
+
+- **587 backend tests pass, 0 skipped** (was 286 at the Phase 2 baseline).
+- Frontend `tsc --noEmit` and `next build` both exit 0.
+- RLS verified for sessions, versions and generated assets, including raw-SQL
+  forgery attempts.
+- `modules/` unchanged: 1065 tracked files, 0 modified.
+
+### Donors consumed
+
+Adapted from Modules 01, 02, 03, 05, 07, 08, 18 and 18-Guruvelah; Module 09
+rebuilt (its implementation is absent from the donor). Modules 12, 22 and the
+export/localStorage/auth infrastructure are deliberately parked. See
+`docs/studio-capability-map.md` and `docs/porting-log.md`.
+
+### Deliberately not in Phase 3
+
+Automated publishing, the performance→insight→lesson loop, trend ingestion, and
+the Creator research assistant. Phase 3 ends at **publish-ready content**.
+
+Full report: `docs/PHASE_3_FINAL_REPORT.md`.

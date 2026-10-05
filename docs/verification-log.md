@@ -426,3 +426,71 @@ Report: `docs/eval/phase2_ai_evaluation.json`.
 | No transliteration pipeline | PASS |
 | `.env` not committed | PASS |
 | No second authorization mechanism | PASS — RLS only; `ADMIN_DATABASE_URL` is operational tooling, never used to serve a request |
+
+---
+
+## Phase 3 — Studio (2026-10-05)
+
+Full evidence and per-item classification in `docs/PHASE_3_FINAL_REPORT.md`.
+
+### Test results
+
+| Suite | Tests | Result |
+|---|---|---|
+| Full backend suite | 588 | **588 passed, 0 skipped, 0 failed** |
+| Studio unit (domain, validation, safety, registry, capabilities, evaluation, contracts) | 172 | passed |
+| Studio API + persistence | 43 | passed |
+| Studio end-to-end flow | 8 | passed |
+| Studio RLS | 24 | passed |
+| Studio AI evaluation | 28 scenarios | 28/28 passed |
+
+```bash
+docker exec creator-api pytest -q
+# 588 passed
+
+docker exec creator-api python -m app.ai.evaluation.studio_runner
+# 28 scenarios, 28 passed, pass rate 1.0
+
+cd apps/web && npm run typecheck   # exit 0
+cd apps/web && npm run build       # exit 0, 11 routes, /studio 8.59 kB
+```
+
+### Scope compliance
+
+| Requirement | Status |
+|---|---|
+| `modules/` unmodified | PASS — 0 files changed, 1065 tracked |
+| No duplicate LLM client | PASS — no provider SDK import anywhere under `app/studio` |
+| No second vector store / embedding model | PASS — Studio never queries `chunks`; a test asserts generation creates no embeddings |
+| No second asset store | PASS — generated bodies live in `content_assets`; a test asserts the join |
+| No second auth path | PASS — Studio uses `get_current_user` + RLS; `ADMIN_DATABASE_URL` is never used to serve a request |
+| No secrets in tracked files | PASS — 0 pattern matches |
+| Frontend types generated from the API contract | PASS — `studio-contracts.ts` generated and drift-guarded by a test |
+| Live LLM provider verification | BLOCKED — `.env` holds placeholder credentials, not real keys |
+
+### Defects found and fixed during Phase 3
+
+| Defect | Impact |
+|---|---|
+| Prompt assets authored under `prompt` but read as `template` loaded empty | 4 Phase 2 assets silently rendered an empty prompt. Fixed with a key alias plus dotted-path resolution; 24 regression tests pin the loader/asset contract. |
+| `render` could not resolve `voice_profile.tone_keywords` | Nested prompt variables raised `KeyError`. Now resolved, with a hard failure on a missing variable. |
+| Assets used Handlebars (`{{#each}}`, `{{this}}`) | The strict renderer cannot express it. Normalised to single pre-joined variables; a test forbids the syntax. |
+| `render_lines` called on the wrong module | `refine` crashed at runtime. Caught by the end-to-end flow test. |
+| Deleting a session orphaned its generated assets | The FK cascades asset→generation only. `delete_session` now removes the assets and their chunks; a test asserts it. |
+| Deleting a version orphaned its asset | Same asymmetry; fixed and tested. |
+| Refinement budget miscounted the chain | Counting consecutive `refine` rows reset every step. Now walks `parent_generation_id`; a test covers it. |
+| Capability input errors returned 502 | A client error was reported as a backend failure. Now 422/409 as appropriate. |
+| Workflow step did not advance after generation | Sessions stayed at `generate` with content already on the page. Step mapping corrected and documented. |
+| Exhaustive RLS matrix rejected the new tables | The Phase 2 guard did its job; both tables registered with parent seeding. |
+| TypeScript contract marked always-present fields optional | Generator now consults Pydantic defaults so consumers need no `?? []`. |
+
+### Negative controls
+
+| Control | Result |
+|---|---|
+| Provider always failing | Creator-safe timeout message; no stack trace, no provider internals |
+| Transient provider failure | Recovered by Gateway retry; the capability made one logical call |
+| Refinement with identical output | Flagged as a warning rather than stored silently |
+| Empty output | Rejected with a 502, not persisted as a blank version |
+| Critique with no content | 409, and never a fake "looks good" review |
+| Forge ownership via raw SQL | Rejected by the `WITH CHECK` clause on both Studio tables |

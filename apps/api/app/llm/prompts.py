@@ -61,6 +61,12 @@ def _parse(raw: dict[str, Any], name: str, version: str) -> PromptTemplate:
     payload.setdefault("name", name)
     payload.setdefault("version", version)
     payload.setdefault("purpose", str(Path(name).parent))
+    # Assets authored before this loader settled on `template` use `prompt`.
+    # Without this alias those assets load with an empty template and silently
+    # render to an empty user message, so a feature gets an empty prompt
+    # instead of an error.
+    if not payload.get("template") and isinstance(payload.get("prompt"), str):
+        payload["template"] = payload["prompt"]
     payload.setdefault("template", "")
     if isinstance(payload.get("variables"), dict):
         payload["variables"] = list(payload["variables"])
@@ -103,12 +109,36 @@ def render(template: str, variables: dict[str, Any]) -> str:
     unevaluated variable silently becoming the empty string) in the AI path.
     """
 
+    def _lookup(variables: dict[str, Any], key: str) -> Any:
+        """Resolve `a.b.c` against nested dicts.
+
+        Prompt assets refer to nested values (e.g. `voice_profile.tone_keywords`),
+        so dotted paths must traverse rather than be treated as a literal key.
+        A MISSING key still raises: an empty prompt is worse than a failure.
+        """
+        if key in variables:
+            return variables[key]
+        head, _, tail = key.partition(".")
+        if not tail or head not in variables:
+            raise KeyError(f"Prompt variable '{key}' was not supplied")
+        cursor: Any = variables[head]
+        for part in tail.split("."):
+            if isinstance(cursor, dict) and part in cursor:
+                cursor = cursor[part]
+            else:
+                raise KeyError(f"Prompt variable '{key}' was not supplied")
+        return cursor
+
     def _sub(match: "re.Match[str]") -> str:
         key = match.group(1).strip()
-        if key not in variables:
-            raise KeyError(f"Prompt variable '{key}' was not supplied")
-        value = variables[key]
-        return value if isinstance(value, str) else json.dumps(value, ensure_ascii=False)
+        value = _lookup(variables, key)
+        if value is None:
+            return ""
+        if isinstance(value, str):
+            return value
+        if isinstance(value, (list, tuple)):
+            return ", ".join(str(item) for item in value) if value else ""
+        return json.dumps(value, ensure_ascii=False)
 
     return re.sub(r"\{\{\s*([a-zA-Z0-9_.]+)\s*\}\}", _sub, template)
 

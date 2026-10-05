@@ -43,6 +43,15 @@ class ScenarioCategory(str, Enum):
     FAITHFULNESS = "faithfulness"
     USEFULNESS = "usefulness"
     CONTEXT_PRESERVATION = "creator_context_preservation"
+    # --- Phase 3 (Studio) ---
+    IDEA_TO_CONTENT = "idea_to_content"
+    HOOK_QUALITY = "hook_quality"
+    SCRIPT_QUALITY = "script_quality"
+    CRITIQUE_USEFULNESS = "critique_usefulness"
+    REFINEMENT_QUALITY = "refinement_quality"
+    INSTRUCTION_FOLLOWING = "instruction_following"
+    CONTEXT_RELEVANCE = "context_relevance"
+    MEMORY_USAGE = "memory_usage"
 
 
 class Scenario(BaseModel):

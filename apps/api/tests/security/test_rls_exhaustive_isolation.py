@@ -43,7 +43,8 @@ USER_B = uuid.UUID("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb")
 EXPECTED_TABLES = {
     "ai_calls", "chunks", "comment_insights", "comments", "content_assets",
     "creator_profiles", "ideas", "jobs", "lessons", "performance_records",
-    "plan_items", "users", "voice_profiles",
+    "plan_items", "studio_generations", "studio_sessions", "users",
+    "voice_profiles",
 }
 
 #: Not user-owned: operational migration bookkeeping. Must have NO RLS.
@@ -169,6 +170,21 @@ def _insert_sql(table: str, owner: uuid.UUID, marker: str) -> tuple[str, dict]:
     if table == "jobs":
         return ("INSERT INTO jobs (user_id, job_type) VALUES (:u, :m) RETURNING id",
                 common)
+    if table == "studio_sessions":
+        return ("INSERT INTO studio_sessions (user_id, title) "
+                "VALUES (:u, :m) RETURNING id", common)
+    if table == "studio_generations":
+        # Needs a parent session AND a parent content asset owned by the same user.
+        return ("""INSERT INTO studio_generations
+                    (user_id, session_id, asset_id, version, capability)
+                   SELECT :u, s.id, a.id, 1, 'idea'
+                   FROM studio_sessions s,
+                        LATERAL (SELECT id FROM content_assets
+                                 WHERE user_id = :u ORDER BY created_at DESC
+                                 LIMIT 1) a
+                   WHERE s.user_id = :u ORDER BY s.created_at DESC LIMIT 1
+                   RETURNING id""",
+                common)
     if table == "ai_calls":
         return ("""INSERT INTO ai_calls (user_id, feature, provider, model,
                                       prompt_version, latency_ms, success)
@@ -185,7 +201,7 @@ def _update_sql(table: str) -> str:
         return "UPDATE chunks SET chunk_text = chunk_text || ' TOUCHED' WHERE id = :id"
     if table in ("content_assets", "ideas", "plan_items", "comments",
                  "comment_insights", "lessons", "jobs", "ai_calls",
-                 "voice_profiles"):
+                 "voice_profiles", "studio_sessions", "studio_generations"):
         return f"UPDATE {table} SET id = id WHERE id = :id"
     return f"UPDATE {table} SET id = id WHERE id = :id"
 
@@ -290,6 +306,19 @@ async def test_cross_user_crud_matrix(table: str):
                          " VALUES (:u, :m, 'manual', 'body')"),
                     {"u": str(owner), "m": marker})
                 await db.commit()
+
+    if table == "studio_generations":
+        # Needs both a parent session and a parent asset for owner A.
+        async with (await _scoped_session(USER_A)) as db:
+            await db.execute(
+                text("INSERT INTO content_assets (user_id, title, source_type, raw_text)"
+                     " VALUES (:u, 'gen-parent', 'manual', 'body')"),
+                {"u": str(USER_A)})
+            await db.execute(
+                text("INSERT INTO studio_sessions (user_id, title)"
+                     " VALUES (:u, 'gen-parent-session')"),
+                {"u": str(USER_A)})
+            await db.commit()
 
     if table == "users":
         # The CREATE step below must be genuinely creating the row.

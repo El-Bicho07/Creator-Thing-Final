@@ -46,7 +46,10 @@ Creator Platform SaaS
 │   │   │   ├── growth/          # Audience Comments & Performance Analytics
 │   │   │   └── library/         # RAG Second Brain & Voice Profile Manager
 │   │   ├── components/          # UI Components & Navigation Shell
-│   │   └── lib/                 # API Client & Auth Client (Supabase)
+│   │   └── lib/                 # API Clients
+│   │       ├── api.ts                  # Phase 2 platform services
+│   │       ├── studio-api.ts           # Phase 3 Studio client (typed, generated contracts)
+│   │       └── studio-contracts.ts     # GENERATED from the OpenAPI spec — do not hand-edit
 │   │
 │   └── api/                     # FastAPI Backend Application (Python 3.10+)
 │       ├── main.py              # Application entrypoint & CORS middleware
@@ -54,7 +57,14 @@ Creator Platform SaaS
 │       ├── llm/                 # Centralized AI Gateway (Retry, Limits, Usage, Prompts)
 │       ├── memory/              # PostgreSQL + pgvector RAG memory engine
 │       ├── voice/               # Centralized Creator Voice & Style Intelligence engine
-│       ├── agents/              # Studio & Producer Workflow Orchestrator
+│       ├── studio/              # Phase 3 Studio workspace
+│       │   ├── orchestrator.py  # StudioOrchestrator — the only orchestration authority
+│       │   ├── context.py       # ContextAssembler → Memory + Voice (Phase 2 services)
+│       │   ├── registry.py      # CapabilityRegistry + StudioCapability contract + Gateway call site
+│       │   ├── capabilities/    # idea, hook, script, caption, repurpose, cta, thumbnail, refine
+│       │   ├── persistence.py   # sessions, versions, content_assets reuse
+│       │   ├── domain/rules.py  # deterministic rules: timing, platforms, formats, goals
+│       │   └── safety.py        # prompt-injection boundary for untrusted text
 │       ├── jobs/                # Async Background Job Tracker
 │       └── features/            # API Router Features (start, today, studio, coach, growth, library)
 │
@@ -268,3 +278,50 @@ Long-Term Memory Engine ┘                              ↓
 There is exactly **one** vector persistence layer and **one** embedding
 abstraction. No feature module knows it is using E5-base. Enforced by
 `tests/integration/test_architecture_contract.py`.
+
+---
+
+## Studio (Phase 3)
+
+Studio is the **Make** step of the Creator Platform loop
+(`Remember → Decide → Make → Distribute → Learn`) and the platform's core creation
+workspace. It consumes the Phase 2 services rather than reimplementing them.
+
+```text
+                         STUDIO
+                           │
+        ┌──────────────────┼──────────────────┐
+        │                  │                  │
+      Context             Create            Critique
+        │                  │                  │
+   Memory + Voice       Capabilities      Feedback
+        │                  │                  │
+        └──────────────────┼──────────────────┘
+                           │
+                      Refinement
+                           │
+                           ▼
+                  Publish-ready content
+```
+
+The creator experiences **one Studio**, not Modules 01/02/03/05/07/08/09/12/18.
+Donor modules are capability sources, not architectural authorities: they supply
+logic that is reimplemented against platform contracts. `modules/` is never imported
+at runtime and remains read-only.
+
+| Concern | Owner |
+|---|---|
+| Orchestration, sessions, capability dispatch | `app/studio/` (platform-owned) |
+| Model access, retries, limits, cost accounting | `LLMGateway` (Phase 2) |
+| Long-term memory and retrieval | `LongTermMemoryEngine` (Phase 2) |
+| Creator voice and style | `CreatorVoiceEngine` (Phase 2) |
+| Embeddings and vectors | `EmbeddingService` → E5-base 768-D (Phase 2) |
+| Authentication and authorization | Supabase Auth + PostgreSQL RLS (Phase 1) |
+| Persistence | PostgreSQL, reusing `content_assets` |
+
+Workflow position is `context → generate → review → refine → done`. Refinement
+appends a version; it never overwrites, so the creator can always go back. Phase 3
+ends at publish-ready content: nothing is published, posted or auto-approved.
+
+Full design in `docs/STUDIO_ARCHITECTURE.md`; donor mapping in
+`docs/studio-capability-map.md`.

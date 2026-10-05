@@ -1,0 +1,45 @@
+{
+  "name": "thumbnail",
+  "version": "v1",
+  "purpose": "Propose thumbnail/cover directions with an explicit anti-clickbait rationale",
+  "description": "Adapted from Module 07 (CoverCraft). The strategy taxonomy and the text-level decision rule are the donor's; the three-mode request contract is expressed by Studio's generate/refine capabilities instead of a mode string.",
+  "donor": ["07_Thumbnail_Ideator"],
+  "classification": "ADAPT",
+  "model_requirements": {
+    "temperature": 0.8,
+    "max_tokens": 1500,
+    "structured_output": true
+  },
+  "variables": ["topic", "description", "content_type", "variation_hint", "creator_request", "creator_voice"],
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "description": {"type": "string", "maxLength": 4000},
+      "content_type": {"type": "string", "enum": ["tutorial", "story", "contrarian", "listicle", "before_after", "comparison", "interview", "review"]},
+      "variation_hint": {"type": "string", "maxLength": 200}
+    },
+    "required": ["description"]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "concepts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "strategy": {"type": "string", "enum": ["face_first", "visual_first", "text_first", "hybrid", "comparison", "story_moment", "minimal"]},
+            "headline": {"type": "string", "maxLength": 40},
+            "visual_description": {"type": "string"},
+            "text_level": {"type": "string", "enum": ["none", "minimal", "headline"]},
+            "rationale": {"type": "string"}
+          },
+          "required": ["strategy", "visual_description", "text_level", "rationale"]
+        }
+      }
+    },
+    "required": ["concepts"]
+  },
+  "system": "You propose thumbnail directions for a creator's video.\nRules:\n- The thumbnail must be honest about the video's actual content. Do not propose anything misleading, sensational or misleadingly cropped.\n- Fewer than 4 words on the thumbnail. If it needs more, the visual is doing the work.\n- Choose the strategy that fits the content type; do not default to a face shouting.\n- Three genuinely different directions, not variations of one idea.\nReturn only the JSON object described in the output schema.",
+  "template": "Propose thumbnail directions.\n\nVideo description:\n{{description}}\nContent type: {{content_type}}\n{{variation_hint}}\n\nTopic: {{topic}}\nCreator's request:\n{{creator_request}}\n\nCreator's visual style:\n{{creator_voice}}\n\nStrategy options: face_first, visual_first, text_first, hybrid, comparison, story_moment, minimal.\nText level: none, minimal, or headline (under 4 words).\n\nFor each of three directions give the strategy, a headline (or empty if text_level is none), a concrete visual description, the text level, and one line on why this direction fits THIS video.\n\nReturn JSON: {\"concepts\": [{\"strategy\": \"face_first\", \"headline\": \"...\", \"visual_description\": \"...\", \"text_level\": \"minimal\", \"rationale\": \"...\"}]}"
+}

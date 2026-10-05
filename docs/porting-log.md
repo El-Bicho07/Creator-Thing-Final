@@ -340,3 +340,62 @@ rank/filter, summarize, update, delete.
 | `app/memory/policy.py` | Memory-write policy (§29) |
 | `app/memory/schemas.py` | `MemoryQuery`/`MemoryResult` contracts |
 | `app/ai/evaluation/` | Platform-wide AI evaluation framework (§36) |
+
+---
+
+## Phase 3 — STUDIO (2026-10-05)
+
+Studio consolidates donor capabilities into **one** creator workspace. Donor
+modules remain read-only and are never imported at runtime; their logic is
+adapted by reimplementing against platform contracts. Full mapping in
+`docs/studio-capability-map.md`.
+
+### Studio donor modules audited
+
+| Module | Audit outcome |
+|---|---|
+| 01 Content Idea Generator | 10 structured ideas; portable scrubber + clamping |
+| 02 Content Repurposer | analyze-then-fan-out; per-platform prompt rules |
+| 03 Hook Generator | 10-style taxonomy; deterministic slot realignment; anti-fabrication rule |
+| 05 Reel Script Builder | hook/body/CTA script; fragile regex JSON extraction **not ported** |
+| 07 Thumbnail Ideator | strategy taxonomy; 3-mode contract (generate/refine/variations) |
+| 08 Caption Assistant | caption variants; heuristic ranker; shape coercion |
+| 09 CTA Generator | backend `lib/` **absent** (gitignored in donor) — REBUILD from contracts only |
+| 12 Creator Research Assistant | parked; its local fallback **fabricates statistics with fake citations** — not ported |
+| 18 AI Content Director | 7-stage pipeline, `buildStagePrompt` cross-stage context threading |
+| 18 AI Content Director (Guruvelah) | richest orchestrator donor: stages, validators, platform/timing/format/goal/lifecycle domain tables, injection defence, prompt versioning |
+| 22 AI Creative Producer | not built in donor; Phase 4 scope |
+
+### Classifications
+
+- **PORT** — hygiene scrubber, schema clamping, slot realignment, heuristic ranker, shape coercion, format taxonomy, fake-provider test harness.
+- **ADAPT** — stage orchestration, stage→prompt dispatch, platform config, timing allocation, goals/lifecycle directives, validators + single retry, injection boundary, prompt provenance, and the 01/02/03/05/07/08 content capabilities.
+- **REBUILD** — CTA kits, CTA freshness/anti-repetition (donor implementation lost).
+- **NEW** — `studio/session.py`, `studio/context.py`, `studio/registry.py`, `studio/orchestrator.py`, `studio/persistence.py`, `studio/safety.py`, Studio API schemas, Studio UI, AI evaluation scenarios.
+- **PARK** — model failover and provider fallback (Gateway owns), export-to-Markdown (library/distribution), localStorage state, donor Supabase auth/service-role DB, trend ingestion (Growth), research assistant, Module 22 (Phase 4).
+
+### Rejected donor infrastructure
+
+Donor SDK calls, hardcoded model names, `localStorage` state, per-module Supabase
+auth/service-role DB access, inline prompts, and per-module frontends are all
+excluded. Studio uses only `LLMGateway`, `EmbeddingService` (indirectly via
+Memory), `LongTermMemoryEngine`, `CreatorVoiceEngine`, `JobService`, the
+versioned prompt registry, and PostgreSQL RLS.
+
+### Phase 3 infrastructure fix (pre-existing Phase 2 defect)
+
+Starting Phase 3 exposed a latent Phase 2 bug: every prompt asset except
+`voice/profile_summary` authored its body under the key `prompt`, while the
+loader reads `template`. Those assets loaded with an **empty** template and
+rendered to an empty user message — a silent empty prompt rather than an error.
+
+- `app/llm/prompts.py` — alias `prompt` → `template`; added dotted-path
+  resolution (`voice_profile.tone_keywords`) with a hard failure on a missing
+  variable.
+- Assets normalised to declare their variables and to avoid Handlebars syntax,
+  which the strict renderer cannot express.
+- `tests/unit/test_prompt_loader.py` — 24 tests pinning the loader/asset contract,
+  including "no shipped asset loads with an empty template".
+
+Phase 2 baseline was **not** otherwise reworked: 286 → 310 tests, all passing,
+with `modules/` unchanged.

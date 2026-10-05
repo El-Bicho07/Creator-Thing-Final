@@ -63,6 +63,13 @@ services:
     volumes:
       - ../apps/api:/app
       - ../packages:/packages
+      # Read-only, purely so the contract-drift guard
+      # (tests/unit/test_studio_contract_generation.py) can compare the committed
+      # TypeScript against freshly generated output. Without these the guard
+      # cannot run in the container and the generated contract could drift
+      # unnoticed.
+      - ../scripts:/scripts:ro
+      - ../apps/web/lib:/web-lib:ro
 
   web:
     build:

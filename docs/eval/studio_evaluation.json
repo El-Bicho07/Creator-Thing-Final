@@ -1,0 +1,971 @@
+{
+  "total": 28,
+  "passed": 28,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "category_means": {
+    "context_relevance": 0.8,
+    "critique_usefulness": 0.7833,
+    "hook_quality": 0.7344,
+    "idea_to_content": 0.8433,
+    "instruction_following": 1.0,
+    "memory_usage": 0.9444,
+    "refinement_quality": 0.5,
+    "script_quality": 0.9719
+  },
+  "results": [
+    {
+      "scenario_id": "studio_001_idea_from_brief",
+      "category": "idea_to_content",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": 1.0,
+        "forbidden_phrases": 1.0,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 1.0,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "required_phrases": 1.0,
+          "forbidden_phrases": 1.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_002_idea_uses_creator_memory",
+      "category": "memory_usage",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": 1.0,
+        "voice_used": null,
+        "required_phrases": 1.0,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": 1.0
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 1.0,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "memory_used": 1.0,
+          "required_phrases": 1.0,
+          "no_fabricated_numbers": 1.0,
+          "context_relevance": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_003_idea_uses_creator_voice",
+      "category": "idea_to_content",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": 0.0,
+        "required_phrases": 1.0,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.8,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "voice_used": 0.0,
+          "required_phrases": 1.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_004_idea_count_respected",
+      "category": "idea_to_content",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 0.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.6667,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "no_fabricated_numbers": 0.0
+        },
+        "fabricated_numbers": [
+          "1",
+          "2"
+        ]
+      }
+    },
+    {
+      "scenario_id": "studio_006_idea_no_fabricated_statistics",
+      "category": "idea_to_content",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 1.0,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_007_hook_full_taxonomy",
+      "category": "hook_quality",
+      "capability": "hook",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": 1.0,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 1.0,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "style_coverage": 1.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_008_hook_realigns_by_position",
+      "category": "hook_quality",
+      "capability": "hook",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": 0.75,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.9375,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "style_coverage": 0.75,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_009_hook_rejects_unknown_styles",
+      "category": "hook_quality",
+      "capability": "hook",
+      "passed": true,
+      "scores": {
+        "output_persisted": null,
+        "provenance_recorded": 0.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": null,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.0,
+        "gating_scores": {
+          "provenance_recorded": 0.0
+        }
+      }
+    },
+    {
+      "scenario_id": "studio_010_hook_hygiene_removes_filler",
+      "category": "hook_quality",
+      "capability": "hook",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": 1.0,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": 1.0,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 1.0,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "style_coverage": 1.0,
+          "forbidden_phrases": 1.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_011_hook_uses_creator_memory",
+      "category": "memory_usage",
+      "capability": "hook",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": 1.0,
+        "segment_structure": null,
+        "memory_used": 1.0,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": 1.0
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 1.0,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "style_coverage": 1.0,
+          "memory_used": 1.0,
+          "no_fabricated_numbers": 1.0,
+          "context_relevance": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_012_script_structure",
+      "category": "script_quality",
+      "capability": "script",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": 0.75,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": 1.0,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.95,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "segment_structure": 0.75,
+          "required_phrases": 1.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_013_script_timing_is_computed",
+      "category": "script_quality",
+      "capability": "script",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": 0.75,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.9375,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "segment_structure": 0.75,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_014_script_reports_structure_warnings",
+      "category": "script_quality",
+      "capability": "script",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 1.0,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_015_script_no_fabricated_statistics",
+      "category": "script_quality",
+      "capability": "script",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 1.0,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_017_critique_actionable",
+      "category": "critique_usefulness",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": 1.0,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 0.0,
+        "critique_actionable": 1.0,
+        "critique_did_not_mutate": 1.0,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.8333,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "required_phrases": 1.0,
+          "no_fabricated_numbers": 0.0,
+          "critique_actionable": 1.0,
+          "critique_did_not_mutate": 1.0
+        },
+        "fabricated_numbers": [
+          "48"
+        ]
+      }
+    },
+    {
+      "scenario_id": "studio_018_critique_preserves_content",
+      "category": "critique_usefulness",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 0.0,
+        "critique_actionable": 1.0,
+        "critique_did_not_mutate": 1.0,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.8,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "no_fabricated_numbers": 0.0,
+          "critique_actionable": 1.0,
+          "critique_did_not_mutate": 1.0
+        },
+        "fabricated_numbers": [
+          "48"
+        ]
+      }
+    },
+    {
+      "scenario_id": "studio_019_critique_multiple_dimensions",
+      "category": "critique_usefulness",
+      "capability": "script",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": 1.0,
+        "critique_did_not_mutate": 1.0,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 1.0,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "no_fabricated_numbers": 1.0,
+          "critique_actionable": 1.0,
+          "critique_did_not_mutate": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_020_critique_on_empty_is_refused",
+      "category": "critique_usefulness",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": null,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 0.0,
+        "critique_actionable": 0.0,
+        "critique_did_not_mutate": 1.0,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.5,
+        "gating_scores": {
+          "provenance_recorded": 1.0,
+          "no_fabricated_numbers": 0.0,
+          "critique_actionable": 0.0,
+          "critique_did_not_mutate": 1.0
+        },
+        "fabricated_numbers": [
+          "48"
+        ]
+      }
+    },
+    {
+      "scenario_id": "studio_021_refine_creates_new_version",
+      "category": "refinement_quality",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 0.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": 0.0,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.5,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "no_fabricated_numbers": 0.0,
+          "previous_version_preserved": 0.0
+        },
+        "fabricated_numbers": [
+          "48"
+        ]
+      }
+    },
+    {
+      "scenario_id": "studio_022_refine_preserves_original",
+      "category": "refinement_quality",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 0.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": 0.0,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.5,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "no_fabricated_numbers": 0.0,
+          "previous_version_preserved": 0.0
+        },
+        "fabricated_numbers": [
+          "48"
+        ]
+      }
+    },
+    {
+      "scenario_id": "studio_023_refine_applies_instruction",
+      "category": "refinement_quality",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 0.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": 0.0,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.5,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "no_fabricated_numbers": 0.0,
+          "previous_version_preserved": 0.0
+        },
+        "fabricated_numbers": [
+          "48"
+        ]
+      }
+    },
+    {
+      "scenario_id": "studio_024_refine_with_modifier",
+      "category": "refinement_quality",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 0.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": 0.0,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.5,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "no_fabricated_numbers": 0.0,
+          "previous_version_preserved": 0.0
+        },
+        "fabricated_numbers": [
+          "48"
+        ]
+      }
+    },
+    {
+      "scenario_id": "studio_025_context_relevance",
+      "category": "context_relevance",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": 1.0,
+        "voice_used": null,
+        "required_phrases": null,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": 1.0
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 1.0,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "memory_used": 1.0,
+          "no_fabricated_numbers": 1.0,
+          "context_relevance": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_026_no_memory_degrades_gracefully",
+      "category": "memory_usage",
+      "capability": "idea",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": 0.0,
+        "voice_used": 1.0,
+        "required_phrases": 1.0,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.8333,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "memory_used": 0.0,
+          "voice_used": 1.0,
+          "required_phrases": 1.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_027_voice_profile_surfaces_rules",
+      "category": "context_relevance",
+      "capability": "caption",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": 0.0,
+        "required_phrases": 0.0,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.6,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "voice_used": 0.0,
+          "required_phrases": 0.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_028_caption_ranked_deterministically",
+      "category": "idea_to_content",
+      "capability": "caption",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": 0.0,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 0.75,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "required_phrases": 0.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_029_repurpose_platform_variants",
+      "category": "instruction_following",
+      "capability": "repurpose",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": 1.0,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 1.0,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "required_phrases": 1.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    },
+    {
+      "scenario_id": "studio_030_cta_placements_filled",
+      "category": "instruction_following",
+      "capability": "cta",
+      "passed": true,
+      "scores": {
+        "output_persisted": 1.0,
+        "provenance_recorded": 1.0,
+        "style_coverage": null,
+        "segment_structure": null,
+        "memory_used": null,
+        "voice_used": null,
+        "required_phrases": 1.0,
+        "forbidden_phrases": null,
+        "no_fabricated_numbers": 1.0,
+        "critique_actionable": null,
+        "critique_did_not_mutate": null,
+        "previous_version_preserved": null,
+        "version_incremented": null,
+        "context_relevance": null
+      },
+      "errors": [],
+      "detail": {
+        "mean_score": 1.0,
+        "gating_scores": {
+          "output_persisted": 1.0,
+          "provenance_recorded": 1.0,
+          "required_phrases": 1.0,
+          "no_fabricated_numbers": 1.0
+        },
+        "fabricated_numbers": []
+      }
+    }
+  ],
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "embedding_dimension": 768,
+  "llm_provider": "mock",
+  "scenarios_file": "app/ai/evaluation/studio_scenarios.json"
+}

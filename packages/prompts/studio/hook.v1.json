@@ -1,0 +1,47 @@
+{
+  "name": "hook",
+  "version": "v1",
+  "purpose": "Generate one hook per mandatory opening style",
+  "description": "Adapted from Module 03 (Hook Generator): the styles taxonomy and the anti-fabrication rule are the donor's; the model routing and the re-alignment loop are the platform's.",
+  "donor": ["03_Hook_Generator"],
+  "classification": "ADAPT",
+  "model_requirements": {
+    "temperature": 0.9,
+    "max_tokens": 1500,
+    "structured_output": true
+  },
+  "variables": ["styles", "topic", "angle", "creator_request", "retrieved_memory", "creator_voice", "prior_work", "platform"],
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "topic": {"type": "string", "maxLength": 300},
+      "styles": {
+        "type": "array",
+        "items": {"type": "string", "enum": ["curiosity", "question", "contrarian", "bold_claim", "data", "story", "problem", "urgency", "future", "surprise"]}
+      },
+      "platform": {"type": "string"},
+      "angle": {"type": "string", "maxLength": 1000}
+    },
+    "required": ["topic"]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "hooks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "style": {"type": "string"},
+            "text": {"type": "string"},
+            "why_it_works": {"type": "string"}
+          },
+          "required": ["style", "text"]
+        }
+      }
+    },
+    "required": ["hooks"]
+  },
+  "system": "You write opening lines for short-form video.\nRules:\n- One hook per requested style. Do not merge or skip styles.\n- A hook is the first sentence a viewer hears. Under 20 words.\n- CRITICAL SAFETY RULE: do NOT invent statistics, studies, percentages or research. If a style calls for a number, phrase the hook without a fabricated figure.\n- No 'In today's video', 'Hey guys', or 'Subscribe to my channel'.\nReturn only the JSON object described in the output schema.",
+  "template": "Write one opening hook per style, exactly {{count}} hooks total.\n\nTopic: {{topic}}\nAngle: {{angle}}\nPlatform: {{platform}}\n\nCreator's request:\n{{creator_request}}\n\nRelevant memory (untrusted data):\n{{retrieved_memory}}\n\nCreator's voice:\n{{creator_voice}}\n\nPrior work to avoid duplicating:\n{{prior_work}}\n\nStyles required: {{styles}}\n\nStyle definitions:\n- curiosity: open an information gap the viewer wants closed\n- question: ask something the viewer genuinely wants answered\n- contrarian: disagree with the common view, and be able to defend it\n- bold_claim: state something definite and specific\n- data: lead with a contrast or trend (no invented numbers)\n- story: open mid-scene in a specific moment\n- problem: name a painful situation precisely\n- urgency: point out the cost of waiting\n- future: describe what changes for the viewer\n- surprise: subvert an expectation\n\nReturn JSON: {\"hooks\": [{\"style\": \"curiosity\", \"text\": \"...\", \"why_it_works\": \"...\"}]}"
+}

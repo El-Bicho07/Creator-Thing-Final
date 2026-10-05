@@ -5,13 +5,33 @@
   "input_schema": {
     "type": "object",
     "properties": {
-      "niche": {"type": "string"},
-      "target_audience": {"type": "string"},
-      "primary_platform": {"type": "string"},
-      "content_goals": {"type": "array", "items": {"type": "string"}},
-      "sample_posts": {"type": "array", "items": {"type": "string"}}
+      "niche": {
+        "type": "string"
+      },
+      "target_audience": {
+        "type": "string"
+      },
+      "primary_platform": {
+        "type": "string"
+      },
+      "content_goals": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "sample_posts": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
     },
-    "required": ["niche", "target_audience", "primary_platform"]
+    "required": [
+      "niche",
+      "target_audience",
+      "primary_platform"
+    ]
   },
   "output_schema": {
     "type": "object",
@@ -19,23 +39,60 @@
       "creator_profile": {
         "type": "object",
         "properties": {
-          "niche": {"type": "string"},
-          "target_audience": {"type": "string"},
-          "primary_platform": {"type": "string"},
-          "content_pillars": {"type": "array", "items": {"type": "string"}},
-          "recommended_formats": {"type": "array", "items": {"type": "string"}},
-          "posting_frequency": {"type": "string"}
+          "niche": {
+            "type": "string"
+          },
+          "target_audience": {
+            "type": "string"
+          },
+          "primary_platform": {
+            "type": "string"
+          },
+          "content_pillars": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "recommended_formats": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "posting_frequency": {
+            "type": "string"
+          }
         }
       },
       "initial_voice_hints": {
         "type": "object",
         "properties": {
-          "tone_keywords": {"type": "array", "items": {"type": "string"}},
-          "sentence_style": {"type": "string"},
-          "formatting_preferences": {"type": "array", "items": {"type": "string"}}
+          "tone_keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sentence_style": {
+            "type": "string"
+          },
+          "formatting_preferences": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
         }
       }
     }
   },
-  "prompt": "You are an expert creator strategist. Based on the creator's niche, audience, platform, goals, and sample posts, create a comprehensive creator profile and initial voice analysis.\n\nNiche: {{niche}}\nTarget Audience: {{target_audience}}\nPrimary Platform: {{primary_platform}}\nContent Goals: {{content_goals}}\nSample Posts:\n{{#each sample_posts}}\n- {{this}}\n{{/each}}\n\nReturn a JSON object with creator_profile and initial_voice_hints."
+  "prompt": "You are an expert creator strategist. Based on the creator's niche, audience, platform, goals, and sample posts, create a comprehensive creator profile and initial voice analysis.\n\nNiche: {{niche}}\nTarget Audience: {{target_audience}}\nPrimary Platform: {{primary_platform}}\nContent Goals: {{content_goals}}\nSample Posts:\nSample posts (comma-separated, may be empty):\n{{sample_posts}}\n\nReturn a JSON object with creator_profile and initial_voice_hints.",
+  "variables": [
+    "niche",
+    "target_audience",
+    "primary_platform",
+    "content_goals",
+    "sample_posts"
+  ]
 }

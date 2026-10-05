@@ -1,0 +1,585 @@
+{
+  "version": "phase3-v1",
+  "description": "Phase 3 Studio evaluation scenarios. Deterministic structural metrics over the real Studio stack; the scripted provider keeps assertions explainable. This is NOT an embedding benchmark.",
+  "capabilities": [
+    "idea",
+    "hook",
+    "script",
+    "caption",
+    "repurpose",
+    "cta",
+    "thumbnail"
+  ],
+  "categories": [
+    "idea_to_content",
+    "hook_quality",
+    "script_quality",
+    "critique_usefulness",
+    "refinement_quality",
+    "instruction_following",
+    "context_relevance",
+    "memory_usage"
+  ],
+  "scenarios": [
+    {
+      "id": "studio_001_idea_from_brief",
+      "category": "idea_to_content",
+      "capability": "idea",
+      "description": "Ideas generated from a plain brief with no creator history.",
+      "input": {
+        "topic": "how solo creators avoid weekday burnout",
+        "count": 3
+      },
+      "scripted_output": "{\"ideas\": [{\"title\": \"Batch on Sunday, not Saturday\", \"angle\": \"Batch on Sunday so Monday-Friday has nothing to produce.\", \"why_it_could_work\": \"Concrete schedule change.\", \"format\": \"tutorial\", \"difficulty\": \"easy\"}, {\"title\": \"The two-day buffer that fixed my week\", \"angle\": \"Pre-warm two days ahead of publishing.\", \"why_it_could_work\": \"Specific personal result.\", \"format\": \"story\", \"difficulty\": \"medium\"}, {\"title\": \"Why Sunday night is the worst time to batch\", \"angle\": \"Late batching leaves no room to fix problems.\", \"why_it_could_work\": \"Contrarian against common advice.\", \"format\": \"contrarian\", \"difficulty\": \"easy\"}]}",
+      "required_phrases": [
+        "Batch on Sunday"
+      ],
+      "forbidden_phrases": [
+        "delve into",
+        "game-changer",
+        "game-changing"
+      ],
+      "tags": [
+        "idea",
+        "hygiene"
+      ]
+    },
+    {
+      "id": "studio_002_idea_uses_creator_memory",
+      "category": "memory_usage",
+      "capability": "idea",
+      "description": "Seeded creator memory must reach the prompt.",
+      "corpus": [
+        "I launched my SaaS landing page on a Tuesday and got 400 signups in 48 hours.",
+        "My mistake was waiting three weeks to email my list before launch.",
+        "Next launch I will pre-warm the audience 48 hours in advance."
+      ],
+      "input": {
+        "topic": "what I learned from my launch",
+        "count": 2
+      },
+      "expect_memory_used": true,
+      "min_expected_score": 0.9,
+      "scripted_output": "{\"ideas\": [{\"title\": \"Launch Tuesday and get 400 signups\", \"angle\": \"Waiting three weeks to email my list cost me the launch.\", \"why_it_could_work\": \"Specific number from the creator's own launch.\", \"format\": \"story\", \"difficulty\": \"easy\"}]}",
+      "required_phrases": [
+        "400 signups",
+        "three weeks"
+      ],
+      "tags": [
+        "idea",
+        "memory"
+      ]
+    },
+    {
+      "id": "studio_003_idea_uses_creator_voice",
+      "category": "idea_to_content",
+      "capability": "idea",
+      "description": "A stored voice profile must be available to the capability.",
+      "voice_samples": [
+        "Most creators burn out because they optimise for output instead of recovery.",
+        "I batch on Sundays. Twelve pieces, zero weekday burnout."
+      ],
+      "input": {
+        "topic": "weekday burnout for solo creators",
+        "count": 2
+      },
+      "expect_voice_used": true,
+      "scripted_output": "{\"ideas\": [{\"title\": \"Batch on Sunday\", \"angle\": \"Sunday is the only day I produce.\", \"why_it_could_work\": \"Personal and specific.\", \"format\": \"story\", \"difficulty\": \"easy\"}, {\"title\": \"Recovery beats output\", \"angle\": \"Output optimisation is why creators burn out.\", \"why_it_could_work\": \"Matches the creator's own framing.\", \"format\": \"contrarian\", \"difficulty\": \"medium\"}]}",
+      "required_phrases": [
+        "Recovery"
+      ],
+      "tags": [
+        "idea",
+        "voice"
+      ]
+    },
+    {
+      "id": "studio_004_idea_count_respected",
+      "category": "idea_to_content",
+      "capability": "idea",
+      "description": "Asking for 3 ideas must return at most 3.",
+      "input": {
+        "topic": "creator economy trends",
+        "count": 3
+      },
+      "scripted_output": "{\"ideas\": [{\"title\": \"Idea 1\", \"angle\": \"angle\"}, {\"title\": \"Idea 2\", \"angle\": \"angle\"}, {\"title\": \"Idea 3\", \"angle\": \"angle\"}, {\"title\": \"Idea 4\", \"angle\": \"angle\"}, {\"title\": \"Idea 5\", \"angle\": \"angle\"}]}",
+      "tags": [
+        "idea",
+        "contract"
+      ]
+    },
+    {
+      "id": "studio_006_idea_no_fabricated_statistics",
+      "category": "idea_to_content",
+      "capability": "idea",
+      "description": "Ideas must not invent numbers absent from the creator's input.",
+      "input": {
+        "topic": "launch day timing",
+        "count": 2
+      },
+      "scripted_output": "{\"ideas\": [{\"title\": \"Launch midweek\", \"angle\": \"Inbox competition is lower midweek.\", \"why_it_could_work\": \"Timing is a free advantage.\", \"format\": \"tutorial\", \"difficulty\": \"easy\"}, {\"title\": \"Skip weekends\", \"angle\": \"Weekend launches compete with personal plans.\", \"why_it_could_work\": \"Relatable.\", \"format\": \"listicle\", \"difficulty\": \"easy\"}]}",
+      "tags": [
+        "idea",
+        "faithfulness"
+      ]
+    },
+    {
+      "id": "studio_007_hook_full_taxonomy",
+      "category": "hook_quality",
+      "capability": "hook",
+      "description": "Ten mandatory styles must yield ten real hooks.",
+      "input": {
+        "topic": "launch day timing",
+        "styles": [
+          "curiosity",
+          "question",
+          "contrarian",
+          "bold_claim",
+          "data",
+          "story",
+          "problem",
+          "urgency",
+          "future",
+          "surprise"
+        ],
+        "limit": 10
+      },
+      "expect_style_count": 10,
+      "min_expected_score": 0.9,
+      "scripted_output": "{\"hooks\": [{\"style\": \"curiosity\", \"text\": \"Nobody tells you why Tuesday works\"}, {\"style\": \"question\", \"text\": \"Why do creators launch on weekends?\"}, {\"style\": \"contrarian\", \"text\": \"Launch day is the least important day\"}, {\"style\": \"bold_claim\", \"text\": \"Launch midweek or do not bother\"}, {\"style\": \"data\", \"text\": \"Midweek inboxes are quieter than weekend ones\"}, {\"style\": \"story\", \"text\": \"I launched on a Saturday and it flopped\"}, {\"style\": \"problem\", \"text\": \"Your launch is competing with everyone's dinner\"}, {\"style\": \"urgency\", \"text\": \"Every day you wait is a day of inbox competition\"}, {\"style\": \"future\", \"text\": \"What changes when you publish on Tuesday\"}, {\"style\": \"surprise\", \"text\": \"The best launch day is the one nobody plans\"}]}",
+      "tags": [
+        "hook",
+        "contract"
+      ]
+    },
+    {
+      "id": "studio_008_hook_realigns_by_position",
+      "category": "hook_quality",
+      "capability": "hook",
+      "description": "Mislabelled styles must still produce one hook per slot.",
+      "input": {
+        "topic": "launch day timing",
+        "styles": [
+          "curiosity",
+          "question"
+        ],
+        "limit": 2
+      },
+      "expect_style_count": 2,
+      "scripted_output": "{\"hooks\": [{\"style\": \"mystery\", \"text\": \"Nobody plans this properly\"}]}",
+      "tags": [
+        "hook",
+        "contract"
+      ]
+    },
+    {
+      "id": "studio_009_hook_rejects_unknown_styles",
+      "category": "hook_quality",
+      "capability": "hook",
+      "description": "A style set with nothing recognised must fail, not silently reset.",
+      "input": {
+        "topic": "launch day timing",
+        "styles": [
+          "interpretive_dance"
+        ],
+        "limit": 1
+      },
+      "scripted_output": "{\"hooks\": []}",
+      "expect_content_persisted": false,
+      "tags": [
+        "hook",
+        "validation"
+      ]
+    },
+    {
+      "id": "studio_010_hook_hygiene_removes_filler",
+      "category": "hook_quality",
+      "capability": "hook",
+      "description": "AI buzzwords and emoji must be stripped from hooks.",
+      "input": {
+        "topic": "launch day timing",
+        "styles": [
+          "curiosity"
+        ],
+        "limit": 1
+      },
+      "expect_style_count": 1,
+      "scripted_output": "{\"hooks\": [{\"style\": \"curiosity\", \"text\": \"Let's delve into the game-changing realm of timing\"}]}",
+      "forbidden_phrases": [
+        "delve into",
+        "game-changing",
+        "realm of"
+      ],
+      "tags": [
+        "hook",
+        "hygiene"
+      ]
+    },
+    {
+      "id": "studio_011_hook_uses_creator_memory",
+      "category": "memory_usage",
+      "capability": "hook",
+      "description": "Hooks may draw on the creator's own launch result.",
+      "corpus": [
+        "I launched my SaaS landing page on a Tuesday and got 400 signups in 48 hours.",
+        "My mistake was waiting three weeks to email my list before launch.",
+        "Next launch I will pre-warm the audience 48 hours in advance."
+      ],
+      "input": {
+        "topic": "what happened when I launched",
+        "styles": [
+          "story",
+          "data"
+        ],
+        "limit": 2
+      },
+      "expect_memory_used": true,
+      "expect_style_count": 2,
+      "min_expected_score": 0.9,
+      "scripted_output": "{\"hooks\": [{\"style\": \"story\", \"text\": \"I launched Tuesday and got 400 signups\"}, {\"style\": \"data\", \"text\": \"400 signups in 48 hours, then nothing\"}]}",
+      "tags": [
+        "hook",
+        "memory"
+      ]
+    },
+    {
+      "id": "studio_012_script_structure",
+      "category": "script_quality",
+      "capability": "script",
+      "description": "Script must open with HOOK and close with CTA.",
+      "input": {
+        "topic": "launch day timing",
+        "duration_sec": 30
+      },
+      "expect_segment_roles": [
+        "HOOK",
+        "SETUP",
+        "VALUE",
+        "PAYOFF",
+        "CTA"
+      ],
+      "scripted_output": "{\"title\": \"Launch timing\", \"segments\": [{\"role\": \"HOOK\", \"text\": \"Nobody tells you this about launch day.\", \"visual\": \"close-up\"}, {\"role\": \"SETUP\", \"text\": \"I launched on a Saturday.\", \"visual\": \"laptop\"}, {\"role\": \"VALUE\", \"text\": \"Weekend inboxes are crowded.\"}, {\"role\": \"VALUE\", \"text\": \"Tuesday was quieter.\"}, {\"role\": \"PAYOFF\", \"text\": \"Timing is a free advantage.\"}, {\"role\": \"CTA\", \"text\": \"Try Tuesday for your next launch.\"}]}",
+      "required_phrases": [
+        "launch day"
+      ],
+      "tags": [
+        "script",
+        "contract"
+      ]
+    },
+    {
+      "id": "studio_013_script_timing_is_computed",
+      "category": "script_quality",
+      "capability": "script",
+      "description": "Segment timings must be filled from the deterministic plan.",
+      "input": {
+        "topic": "launch day timing",
+        "duration_sec": 45
+      },
+      "expect_segment_roles": [
+        "HOOK",
+        "SETUP",
+        "VALUE",
+        "PAYOFF",
+        "CTA"
+      ],
+      "scripted_output": "{\"segments\": [{\"role\": \"HOOK\", \"text\": \"Timing beats effort.\"}, {\"role\": \"SETUP\", \"text\": \"Weekends are crowded.\"}, {\"role\": \"VALUE\", \"text\": \"Midweek is quieter.\"}, {\"role\": \"PAYOFF\", \"text\": \"Pick a quiet day.\"}, {\"role\": \"CTA\", \"text\": \"Try Tuesday.\"}]}",
+      "tags": [
+        "script",
+        "timing"
+      ]
+    },
+    {
+      "id": "studio_014_script_reports_structure_warnings",
+      "category": "script_quality",
+      "capability": "script",
+      "description": "A structurally wrong script must surface a warning, not pass silently.",
+      "input": {
+        "topic": "launch day timing",
+        "duration_sec": 30
+      },
+      "scripted_output": "{\"segments\": [{\"role\": \"SETUP\", \"text\": \"Starts in the wrong place.\"}, {\"role\": \"VALUE\", \"text\": \"Middle.\"}, {\"role\": \"VALUE\", \"text\": \"More middle.\"}]}",
+      "tags": [
+        "script",
+        "validation"
+      ]
+    },
+    {
+      "id": "studio_015_script_no_fabricated_statistics",
+      "category": "script_quality",
+      "capability": "script",
+      "description": "A script must not invent numbers not present in the input.",
+      "input": {
+        "topic": "launch day timing",
+        "duration_sec": 30
+      },
+      "scripted_output": "{\"segments\": [{\"role\": \"HOOK\", \"text\": \"Launch day matters.\"}, {\"role\": \"SETUP\", \"text\": \"I picked a day.\"}, {\"role\": \"VALUE\", \"text\": \"Midweek was quieter.\"}, {\"role\": \"PAYOFF\", \"text\": \"Timing helps.\"}, {\"role\": \"CTA\", \"text\": \"Try Tuesday.\"}]}",
+      "tags": [
+        "script",
+        "faithfulness"
+      ]
+    },
+    {
+      "id": "studio_017_critique_actionable",
+      "category": "critique_usefulness",
+      "capability": "idea",
+      "description": "Critique must return findings with concrete fixes and not edit.",
+      "input": {
+        "topic": "launch day timing",
+        "count": 1
+      },
+      "scripted_output": "{\"ideas\": [{\"title\": \"Pre-warm 48 hours early\", \"angle\": \"Waiting three weeks to email my list cost me signups.\", \"why_it_could_work\": \"Specific number from the creator's own launch.\", \"format\": \"story\", \"difficulty\": \"easy\"}]}",
+      "required_phrases": [
+        "launch"
+      ],
+      "tags": [
+        "idea",
+        "critique"
+      ],
+      "critique_scripted_output": "{\"overall_score\": 6.5, \"verdict\": \"Right idea, weak middle.\", \"items\": [{\"dimension\": \"structure\", \"severity\": \"medium\", \"finding\": \"Two lines repeat the same point.\", \"suggestion\": \"Replace the second with a concrete number.\"}], \"strengths\": [\"The opening is specific.\"]}"
+    },
+    {
+      "id": "studio_018_critique_preserves_content",
+      "category": "critique_usefulness",
+      "capability": "idea",
+      "description": "Reviewing must not mutate the stored version.",
+      "input": {
+        "topic": "launch day timing",
+        "count": 1
+      },
+      "scripted_output": "{\"ideas\": [{\"title\": \"Pre-warm 48 hours early\", \"angle\": \"Waiting three weeks to email my list cost me signups.\", \"why_it_could_work\": \"Specific number from the creator's own launch.\", \"format\": \"story\", \"difficulty\": \"easy\"}]}",
+      "tags": [
+        "idea",
+        "critique",
+        "human_control"
+      ],
+      "critique_scripted_output": "{\"overall_score\": 6.5, \"verdict\": \"Right idea, weak middle.\", \"items\": [{\"dimension\": \"structure\", \"severity\": \"medium\", \"finding\": \"Two lines repeat the same point.\", \"suggestion\": \"Replace the second with a concrete number.\"}], \"strengths\": [\"The opening is specific.\"]}"
+    },
+    {
+      "id": "studio_019_critique_multiple_dimensions",
+      "category": "critique_usefulness",
+      "capability": "script",
+      "description": "A critique may name several dimensions.",
+      "input": {
+        "topic": "launch day timing",
+        "duration_sec": 30
+      },
+      "scripted_output": "{\"title\": \"Timing\", \"segments\": [{\"role\": \"HOOK\", \"text\": \"Launch day matters.\"}, {\"role\": \"SETUP\", \"text\": \"I picked a day.\"}, {\"role\": \"VALUE\", \"text\": \"Midweek was quieter.\"}, {\"role\": \"PAYOFF\", \"text\": \"Timing helps.\"}, {\"role\": \"CTA\", \"text\": \"Try Tuesday.\"}]}",
+      "tags": [
+        "script",
+        "critique"
+      ],
+      "critique_scripted_output": "{\"overall_score\": 6.5, \"verdict\": \"Right idea, weak middle.\", \"items\": [{\"dimension\": \"structure\", \"severity\": \"medium\", \"finding\": \"Two lines repeat the same point.\", \"suggestion\": \"Replace the second with a concrete number.\"}], \"strengths\": [\"The opening is specific.\"]}"
+    },
+    {
+      "id": "studio_020_critique_on_empty_is_refused",
+      "category": "critique_usefulness",
+      "capability": "idea",
+      "description": "Critiquing nothing must fail rather than return an empty review.",
+      "input": {
+        "topic": "launch day timing",
+        "count": 1
+      },
+      "expect_content_persisted": false,
+      "scripted_output": "{\"ideas\": [{\"title\": \"Pre-warm 48 hours early\", \"angle\": \"Waiting three weeks to email my list cost me signups.\", \"why_it_could_work\": \"Specific number from the creator's own launch.\", \"format\": \"story\", \"difficulty\": \"easy\"}]}",
+      "tags": [
+        "critique",
+        "validation"
+      ]
+    },
+    {
+      "id": "studio_021_refine_creates_new_version",
+      "category": "refinement_quality",
+      "capability": "idea",
+      "description": "Refinement must append a version, never overwrite.",
+      "input": {
+        "topic": "launch day timing",
+        "count": 1,
+        "refine_instruction": "add the concrete number"
+      },
+      "scripted_output": "{\"ideas\": [{\"title\": \"Pre-warm 48 hours early\", \"angle\": \"Waiting three weeks to email my list cost me signups.\", \"why_it_could_work\": \"Specific number from the creator's own launch.\", \"format\": \"story\", \"difficulty\": \"easy\"}]}",
+      "tags": [
+        "idea",
+        "refine"
+      ],
+      "refine_scripted_output": "{\"content\": \"Launch midweek. I waited three weeks to email my list and paid for it.\", \"changes\": [{\"change\": \"Added the concrete number\", \"reason\": \"Specificity\"}]}"
+    },
+    {
+      "id": "studio_022_refine_preserves_original",
+      "category": "refinement_quality",
+      "capability": "idea",
+      "description": "The pre-refinement text must remain retrievable.",
+      "input": {
+        "topic": "launch day timing",
+        "count": 1,
+        "refine_instruction": "make it punchier"
+      },
+      "scripted_output": "{\"ideas\": [{\"title\": \"Pre-warm 48 hours early\", \"angle\": \"Waiting three weeks to email my list cost me signups.\", \"why_it_could_work\": \"Specific number from the creator's own launch.\", \"format\": \"story\", \"difficulty\": \"easy\"}]}",
+      "tags": [
+        "idea",
+        "refine",
+        "human_control"
+      ],
+      "refine_scripted_output": "{\"content\": \"Pre-warm 48 hours early. Waiting three weeks to email my list cost me signups. Specific number from the creator's own launch. story easy\", \"changes\": [{\"change\": \"Tightened\", \"reason\": \"It was loose\"}]}"
+    },
+    {
+      "id": "studio_023_refine_applies_instruction",
+      "category": "refinement_quality",
+      "capability": "idea",
+      "description": "The refined text should differ from the original.",
+      "input": {
+        "topic": "launch day timing",
+        "count": 1,
+        "refine_instruction": "tighten the opening"
+      },
+      "scripted_output": "{\"ideas\": [{\"title\": \"Pre-warm 48 hours early\", \"angle\": \"Waiting three weeks to email my list cost me signups.\", \"why_it_could_work\": \"Specific number from the creator's own launch.\", \"format\": \"story\", \"difficulty\": \"easy\"}]}",
+      "tags": [
+        "idea",
+        "refine"
+      ],
+      "refine_scripted_output": "{\"content\": \"Launch midweek. I waited three weeks to email my list and paid for it.\", \"changes\": [{\"change\": \"Added the concrete number\", \"reason\": \"Specificity\"}]}"
+    },
+    {
+      "id": "studio_024_refine_with_modifier",
+      "category": "refinement_quality",
+      "capability": "idea",
+      "description": "A donor modifier must be accepted and recorded.",
+      "input": {
+        "topic": "launch day timing",
+        "count": 1,
+        "refine_instruction": "shorter",
+        "modifier": "shorter"
+      },
+      "scripted_output": "{\"ideas\": [{\"title\": \"Pre-warm 48 hours early\", \"angle\": \"Waiting three weeks to email my list cost me signups.\", \"why_it_could_work\": \"Specific number from the creator's own launch.\", \"format\": \"story\", \"difficulty\": \"easy\"}]}",
+      "tags": [
+        "idea",
+        "refine"
+      ],
+      "refine_scripted_output": "{\"content\": \"Launch midweek. I waited three weeks to email my list and paid for it.\", \"changes\": [{\"change\": \"Added the concrete number\", \"reason\": \"Specificity\"}]}"
+    },
+    {
+      "id": "studio_025_context_relevance",
+      "category": "context_relevance",
+      "capability": "idea",
+      "description": "The assembled prompt must carry creator-specific material.",
+      "corpus": [
+        "I launched my SaaS landing page on a Tuesday and got 400 signups in 48 hours.",
+        "My mistake was waiting three weeks to email my list before launch.",
+        "Next launch I will pre-warm the audience 48 hours in advance."
+      ],
+      "input": {
+        "topic": "what I learned from launching",
+        "count": 2
+      },
+      "expect_memory_used": true,
+      "min_expected_score": 0.9,
+      "scripted_output": "{\"ideas\": [{\"title\": \"Pre-warm 48 hours early\", \"angle\": \"Waiting three weeks cost signups.\", \"why_it_could_work\": \"Specific.\", \"format\": \"story\", \"difficulty\": \"easy\"}, {\"title\": \"Tuesday works\", \"angle\": \"A Tuesday launch faced less competition.\", \"why_it_could_work\": \"Personal.\", \"format\": \"listicle\", \"difficulty\": \"easy\"}]}",
+      "tags": [
+        "idea",
+        "context"
+      ]
+    },
+    {
+      "id": "studio_026_no_memory_degrades_gracefully",
+      "category": "memory_usage",
+      "capability": "idea",
+      "description": "A creator with no history must still generate, and the gap reported.",
+      "input": {
+        "topic": "a brand new idea with no history",
+        "count": 1
+      },
+      "expect_memory_used": false,
+      "expect_voice_used": false,
+      "scripted_output": "{\"ideas\": [{\"title\": \"Start with one idea\", \"angle\": \"One well-made piece beats five rough ones.\", \"why_it_could_work\": \"Clear starting point.\", \"format\": \"listicle\", \"difficulty\": \"easy\"}]}",
+      "required_phrases": [
+        "one idea"
+      ],
+      "tags": [
+        "idea",
+        "degradation"
+      ]
+    },
+    {
+      "id": "studio_027_voice_profile_surfaces_rules",
+      "category": "context_relevance",
+      "capability": "caption",
+      "description": "Voice-derived constraints must be available to captioning.",
+      "voice_samples": [
+        "Most creators burn out because they optimise for output instead of recovery.",
+        "I batch on Sundays. Twelve pieces, zero weekday burnout."
+      ],
+      "input": {
+        "topic": "weekday burnout",
+        "count": 2
+      },
+      "expect_voice_used": true,
+      "scripted_output": "{\"variants\": [{\"hook\": \"You optimised output and lost recovery\", \"body\": \"That is the burnout formula.\", \"cta\": \"Save this\", \"hashtags\": [\"burnout\", \"creators\"]}, {\"hook\": \"Some thoughts\", \"body\": \"A short note.\", \"cta\": \"\", \"hashtags\": []}]}",
+      "required_phrases": [
+        "burnout"
+      ],
+      "tags": [
+        "caption",
+        "voice",
+        "context"
+      ]
+    },
+    {
+      "id": "studio_028_caption_ranked_deterministically",
+      "category": "idea_to_content",
+      "capability": "caption",
+      "description": "Caption variants must be ranked with a recommendation.",
+      "input": {
+        "topic": "launch day timing",
+        "count": 2
+      },
+      "scripted_output": "{\"variants\": [{\"hook\": \"Nobody tells you this about launch day\", \"body\": \"I picked Saturday and it flopped.\", \"cta\": \"Save this for your next launch.\", \"hashtags\": [\"creators\", \"launch\"]}, {\"hook\": \"Thoughts\", \"body\": \"Short.\", \"cta\": \"\", \"hashtags\": []}]}",
+      "required_phrases": [
+        "Save this"
+      ],
+      "tags": [
+        "caption",
+        "ranking"
+      ]
+    },
+    {
+      "id": "studio_029_repurpose_platform_variants",
+      "category": "instruction_following",
+      "capability": "repurpose",
+      "description": "One source must produce one variant per requested platform.",
+      "input": {
+        "source_content": "Launch midweek because weekend inboxes are crowded.",
+        "platforms": [
+          "reel",
+          "x",
+          "linkedin"
+        ]
+      },
+      "scripted_output": "{\"source_summary\": \"A note on launch timing.\", \"core_point\": \"Launch midweek.\", \"variants\": [{\"platform\": \"reel\", \"content\": \"Launch midweek. Weekend inboxes are crowded.\", \"notes\": \"spoken\"}, {\"platform\": \"x\", \"content\": \"Launch midweek, not midweek-end.\", \"notes\": \"short\"}, {\"platform\": \"linkedin\", \"content\": \"A reflection on why launch timing matters for solo creators.\", \"notes\": \"professional\"}]}",
+      "required_phrases": [
+        "midweek"
+      ],
+      "tags": [
+        "repurpose",
+        "contract"
+      ]
+    },
+    {
+      "id": "studio_030_cta_placements_filled",
+      "category": "instruction_following",
+      "capability": "cta",
+      "description": "Every placement must receive candidates.",
+      "input": {
+        "topic": "launch day timing",
+        "goal": "engagement"
+      },
+      "scripted_output": "{\"strategy\": \"One ask per placement.\", \"slots\": [{\"slot\": \"reel_spoken\", \"candidates\": [{\"text\": \"Try Tuesday\", \"risk\": \"safe\"}]}, {\"slot\": \"reel_onscreen\", \"candidates\": [{\"text\": \"Launch Tuesday\", \"risk\": \"safe\"}]}, {\"slot\": \"caption_opener\", \"candidates\": [{\"text\": \"Everyone gets launch day wrong\", \"risk\": \"safe\"}]}, {\"slot\": \"caption_close\", \"candidates\": [{\"text\": \"Save this\", \"risk\": \"safe\"}]}]}",
+      "required_phrases": [
+        "Tuesday"
+      ],
+      "tags": [
+        "cta",
+        "contract"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "repurpose",
+  "version": "v1",
+  "purpose": "Rewrite one source piece into several platform-native formats",
+  "description": "Adapted from Module 02 (Content Repurposer): analyse once, then fan out per platform with platform-specific rules. The donor's analyze-then-fan-out shape is kept; its per-platform prompt files became one capability with a platform table.",
+  "donor": ["02_Content_Repurposer"],
+  "classification": "ADAPT",
+  "model_requirements": {
+    "temperature": 0.7,
+    "max_tokens": 3000,
+    "structured_output": true
+  },
+  "variables": ["source_content", "platforms", "tone", "platform_rules", "creator_request", "creator_voice", "retrieved_memory"],
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "source_content": {"type": "string", "minLength": 1, "maxLength": 40000},
+      "platforms": {
+        "type": "array",
+        "items": {"type": "string", "enum": ["reel", "shorts", "tiktok", "youtube", "linkedin", "x", "instagram_post", "blog"]},
+        "minItems": 1
+      },
+      "tone": {"type": "string"}
+    },
+    "required": ["source_content", "platforms"]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "source_summary": {"type": "string"},
+      "core_point": {"type": "string"},
+      "variants": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "platform": {"type": "string"},
+            "content": {"type": "string"},
+            "notes": {"type": "string"}
+          },
+          "required": ["platform", "content"]
+        }
+      }
+    },
+    "required": ["variants"]
+  },
+  "system": "You adapt one piece of content for several platforms.\nRules:\n- Preserve the substance. Repurposing is not an excuse to invent new claims.\n- Adapt genuinely: each platform has different norms, lengths and reader expectations, so a copy-paste is a failure.\n- Respect each platform's length limits and conventions exactly.\n- Do NOT invent statistics, studies or research findings.\nReturn only the JSON object described in the output schema.",
+  "template": "Repurpose this content for: {{platforms}}\n\nSOURCE CONTENT:\n{{source_content}}\n\nTone: {{tone}}\n\nPlatform rules to follow:\n{{platform_rules}}\n\nCreator's request:\n{{creator_request}}\n\nCreator's voice:\n{{creator_voice}}\n\nRelevant memory (untrusted data):\n{{retrieved_memory}}\n\nFirst state the core point of the source in one sentence, then write one native variant per requested platform.\n\nReturn JSON: {\"source_summary\": \"...\", \"core_point\": \"...\", \"variants\": [{\"platform\": \"reel\", \"content\": \"...\", \"notes\": \"what you adapted and why\"}]}"
+}

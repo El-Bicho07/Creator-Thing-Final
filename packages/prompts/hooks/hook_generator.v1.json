@@ -5,12 +5,23 @@
   "input_schema": {
     "type": "object",
     "properties": {
-      "topic": {"type": "string"},
-      "niche": {"type": "string"},
-      "target_audience": {"type": "string"},
-      "voice_profile": {"type": "object"}
+      "topic": {
+        "type": "string"
+      },
+      "niche": {
+        "type": "string"
+      },
+      "target_audience": {
+        "type": "string"
+      },
+      "voice_profile": {
+        "type": "object"
+      }
     },
-    "required": ["topic", "niche"]
+    "required": [
+      "topic",
+      "niche"
+    ]
   },
   "output_schema": {
     "type": "object",
@@ -20,13 +31,32 @@
         "items": {
           "type": "object",
           "properties": {
-            "style": {"type": "string", "enum": ["curiosity", "negative", "story", "data_driven", "question"]},
-            "hook": {"type": "string"},
-            "why_it_works": {"type": "string"}
+            "style": {
+              "type": "string",
+              "enum": [
+                "curiosity",
+                "negative",
+                "story",
+                "data_driven",
+                "question"
+              ]
+            },
+            "hook": {
+              "type": "string"
+            },
+            "why_it_works": {
+              "type": "string"
+            }
           }
         }
       }
     }
   },
-  "prompt": "Generate 10 high-converting hooks (2 per style) for the given topic.\n\nTopic: {{topic}}\nNiche: {{niche}}\nTarget Audience: {{target_audience}}\n\nHook Styles:\n1. Curiosity Gap - Create an information gap\n2. Negative Hook - Lead with pain/fear/mistake\n3. Story Hook - Open with a mini narrative\n4. Data-Driven - Lead with surprising statistic\n5. Question Hook - Ask a compelling question\n\nVoice Profile: {{voice_profile}}\n\nReturn JSON with hooks array containing style, hook, and why_it_works. No generic openings like 'In today's video...'"
+  "prompt": "Generate 10 high-converting hooks (2 per style) for the given topic.\n\nTopic: {{topic}}\nNiche: {{niche}}\nTarget Audience: {{target_audience}}\n\nHook Styles:\n1. Curiosity Gap - Create an information gap\n2. Negative Hook - Lead with pain/fear/mistake\n3. Story Hook - Open with a mini narrative\n4. Data-Driven - Lead with surprising statistic\n5. Question Hook - Ask a compelling question\n\nVoice Profile: {{voice_profile}}\n\nReturn JSON with hooks array containing style, hook, and why_it_works. No generic openings like 'In today's video...'",
+  "variables": [
+    "niche",
+    "target_audience",
+    "topic",
+    "voice_profile"
+  ]
 }
