@@ -1,5 +1,16 @@
 # Phase 2 — Final Verification
 
+> **Superseded.** This document records the *original* Phase 2 verification run
+> (2026-10-05) and is retained as the historical record for that phase.
+>
+> The **final** Phase 2 verification record, extended by the Phase 2–4
+> consolidated cycle, is `docs/PHASE_2_VERIFICATION_FINAL.md`. The consolidated
+> executive record is `docs/PHASE_2_3_4_CONSOLIDATED_VERIFICATION.md`.
+>
+> One material finding was made after this document was written: `JobService` had
+> insufficient dedicated test coverage. 36 dedicated tests were added during the
+> consolidated cycle. See `docs/PHASE_2_VERIFICATION_FINAL.md` §4.
+
 **Date:** 2026-10-05
 **Scope:** Phase 2 hardening and independent verification only.
 **Baseline commit:** `481532a` — *Phase 2: shared AI primitives (E5-base gateway, voice + memory engines)*

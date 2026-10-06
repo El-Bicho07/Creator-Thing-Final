@@ -3,7 +3,8 @@
 *Last Updated: Phase 1 Foundation - Complete / Verified*
 *Reconciled 2026-10-05 against Phase 2 — see `docs/PHASE_2_FINAL_VERIFICATION.md`.*
 *Phase 4 (Today & Creative Producer) complete 2026-10-06 — see `docs/PHASE_4_FINAL_REPORT.md`.*
-*Phases 2-4 consolidated verification complete 2026-10-06 — see `docs/PHASE_2_3_4_CONSOLIDATED_VERIFICATION.md`.*
+*Phases 2-4 verification cycle CLOSED 2026-10-06 — ACCEPTED WITH DEFERRED LIVE-AI VALIDATION.*
+*Consolidated record: `docs/PHASE_2_3_4_CONSOLIDATED_VERIFICATION.md`. Per-phase: `docs/PHASE_2_VERIFICATION_FINAL.md`, `docs/PHASE_3_VERIFICATION_FINAL.md`, `docs/PHASE_4_VERIFICATION_FINAL.md`.*
 
 > **READ FIRST — this file is a Phase 1 snapshot.** Sections below describing the
 > embedding model, `vector(384)` storage, and "awaiting user approval" are the
@@ -445,52 +446,70 @@ Readiness: `docs/PHASE_4_READINESS.md`.
 
 ---
 
-## Phases 2-4 consolidated verification (✅ Complete, 2026-10-06)
+## Phases 2-4 consolidated verification (✅ CLOSED, 2026-10-06)
 
 A consolidated verification of Phases 2, 3 and 4 was performed: re-execute
 everything, find real coverage gaps, add targeted tests, fix genuine defects, and
-record acceptance. **Phase 5 was not started.**
+record formal acceptance. **Phase 5 was not started.**
 
-### Outcome
+**Final acceptance: ACCEPTED WITH DEFERRED LIVE-AI VALIDATION**
+
+### Final results
 
 | | Baseline | Final |
 |---|---|---|
 | Backend tests | 750 | **845** (+95) |
+| Failed / skipped | 0 | **0 / 0** |
 | Warnings | 13 | **0** |
+| Producer evaluation | 32/32 | **32/32** |
+| Studio evaluation | 28/28 | **28/28** |
 | Frontend functional tests | **0** | **27** |
-| Producer / Studio evaluation | 32/32, 28/28 | **32/32, 28/28** |
 | `modules/` drift | 0 | **0** |
 
-### Gaps closed
+Stability: 3 consecutive full runs at 845, plus a reverse-order full run at 845.
+Run to detect order dependence, fixture leakage, and nondeterminism. Not a proof
+of zero flakiness; evidence the observed runs were stable.
+
+### Coverage gaps closed
 
 | Area | Before | After |
 |---|---|---|
-| **Job system** (`JobService`, 11 operations) | no dedicated tests | **36 tests** |
-| **Generation lineage / asset lifecycle** | 1 reference | **23 tests** |
-| **Today state machine / failure paths** | ~5 incidental refs | **30 tests** |
+| **Job system** (`JobService`, 11 operations) | insufficient dedicated coverage | **36 tests** |
+| **Generation lineage / asset lifecycle** | 1 incidental reference | **23 tests** |
+| **Today state machine / failure paths** | ~5 incidental references | **30 tests** |
 | **Cross-phase journey / combined isolation** | none | **6 tests** |
 | **Frontend functional** | none | **27 tests** (zero new dependencies) |
 
-### Defects found
+### Defects found and fixed
 
-- **Production:** the Today page had no loading state, so it told creators with a
-  full plan that nothing was planned and invited them to re-plan an existing day.
-  Fixed, with a regression test.
+- **Production:** the Today page had no loading-state handling and could display
+  that nothing was planned today. Fixed, with a regression test.
 - **Test harness:** a module-level `pytestmark` marked 14 synchronous tests async
   (the 13 warnings). Fixed -> 0 warnings.
-- **Finding, deliberately not fixed:** Studio-generated content is never chunked by
-  the Memory Engine, so it is not retrievable by memory search. This is a design
-  question to settle before Phase 5.
+- **Test harness:** the Studio evaluation leaked state between runs; an initial fix
+  via an admin connection made results *nondeterministic*. Fixed by resetting
+  through the caller's own RLS-scoped session. Classified as a harness defect, not
+  a platform defect.
+
+### Deferred — future product decision
+
+Studio generated content is not currently ingested/chunked into the Long-Term
+Memory retrieval corpus. This is a **product/schema decision, not a verification
+failure**; changing it would expand Phase 3/4 scope and alter the existing
+Memory/Studio boundary. **It is not a bug.** Decide before Phase 5.
 
 ### Live provider
 
-`ANTHROPIC_API_KEY` and `GROQ_API_KEY` are set in `.env` but both return **HTTP
-401** on a live probe. **LIVE LLM VALIDATION = DEFERRED.** No live test was faked.
+`ANTHROPIC_API_KEY` and `GROQ_API_KEY` are configured but both return **HTTP 401**
+on a live probe (status codes only; no values printed). **LIVE LLM VALIDATION =
+DEFERRED.** The deterministic path passes. A future live-AI acceptance run is
+required when valid credentials are available.
 
-### Status
+### Readiness
 
-**ACCEPTED WITH DEFERRED LIVE-AI VALIDATION**
+Phase 2-4 engineering verification is complete and the platform is ready to begin
+Phase 5 implementation. **Phase 5 has NOT been started.**
 
-Reports: `docs/PHASE_2_VERIFICATION_FINAL.md`,
-`docs/PHASE_3_VERIFICATION_FINAL.md`, `docs/PHASE_4_VERIFICATION_FINAL.md`,
-`docs/PHASE_2_3_4_CONSOLIDATED_VERIFICATION.md`.
+Reports: `docs/PHASE_2_3_4_CONSOLIDATED_VERIFICATION.md` (executive record),
+`docs/PHASE_2_VERIFICATION_FINAL.md`, `docs/PHASE_3_VERIFICATION_FINAL.md`,
+`docs/PHASE_4_VERIFICATION_FINAL.md`.

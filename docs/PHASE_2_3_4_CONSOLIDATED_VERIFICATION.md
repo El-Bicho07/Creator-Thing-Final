@@ -1,446 +1,525 @@
 # Phase 2–4 Consolidated Verification
 
-**Scope:** Phase 2 (Shared AI Primitives), Phase 3 (Studio), Phase 4 (Today + AI
-Creative Producer)
-**Purpose:** consolidated verification, gap analysis, targeted test additions,
-defect fixes, and a formal acceptance record
+**Status:** ACCEPTED WITH DEFERRED LIVE-AI VALIDATION
+**Scope:** Phase 2 (Shared AI Primitives), Phase 3 (Studio), Phase 4 (Today + AI Creative Producer)
+**Type:** Consolidated engineering verification cycle — closed
 **Date:** 2026-10-06
-**Commits verified:** Phase 2 `481532a`/`7e02c87`, Phase 3 `3edd8ae`, Phase 4 `6f7ab59`
+**Branch:** `main`
 
 **Phase 5 was not started.** No Growth, Analytics Copilot, Coach, Learning, or
-Phase 5 architecture work was performed.
+Phase 5 architecture work was performed as part of this verification.
 
 ---
 
-## Executive summary
+## 1. Executive Summary
 
-| Phase | Baseline tests | Final tests | Result |
-|---|---|---|---|
-| Phase 2 — Shared AI Primitives | 286 | 845 (suite total) | **ACCEPTED WITH DEFERRED LIVE-AI VALIDATION** |
-| Phase 3 — Studio | 588 | 845 (suite total) | **ACCEPTED WITH DEFERRED LIVE-AI VALIDATION** |
-| Phase 4 — Today + Producer | 750 | 845 (suite total) | **ACCEPTED WITH DEFERRED LIVE-AI VALIDATION** |
-| Cross-phase | — | 845 (suite total) | **ACCEPTED WITH DEFERRED LIVE-AI VALIDATION** |
+Phases 2, 3 and 4 have completed a consolidated verification cycle. Engineering,
+integration, security, regression, frontend, architecture-boundary and
+donor-boundary verification all pass.
 
-Phase 2–4 are **formally acceptable**. The suite grew from **750 → 845 (+95)**, and
-the **13 pre-existing warnings were eliminated (→ 0)**.
-
-Three things this verification found that earlier reports did not:
-
-1. **The Job system had no tests at all.** `JobService` exposes eleven operations
-   and was covered only incidentally, despite being Phase 2's chosen async
-   mechanism and a Phase 4 dependency. Now 36 dedicated tests.
-2. **The Today page had no loading state.** It told creators with a full plan that
-   nothing was planned, and invited them to re-plan a day that already existed.
-   Fixed, with a regression test.
-3. **Studio-generated content is never chunked**, so it is not retrievable by
-   memory search. Reported, deliberately not fixed (see §9).
-
-Zero new tables, zero new dependencies, zero donor modification.
-
----
-
-## Baseline vs. final
-
-| | Recorded baseline | Final | Delta |
-|---|---|---|---|
-| Backend tests | 750 | **845** | +95 |
-| Skipped | 0 | **0** | — |
-| Failed | 0 | **0** | — |
-| Warnings | 13 | **0** | −13 |
-| Producer evaluation | 32 / 32 | **32 / 32** | — |
-| Studio evaluation | 28 / 28 | **28 / 28** | — |
-| Frontend typecheck | pass | **pass** | — |
-| Frontend build | pass | **pass** | — |
-| Frontend functional tests | **none** | **27** | +27 |
-| `modules/` drift | 0 | **0** | — |
-
-The Phase 2 (286) and Phase 3 (588) figures are cumulative-suite figures from their
-own points in history; 845 is the current whole-suite total. No Phase 2 or Phase 3
-test was weakened, deleted, or skipped.
-
----
-
-## Tests executed
-
-### Backend — full suite, three consecutive runs plus reverse order
-
-```bash
-docker exec creator-api pytest tests -q --no-header -p no:cacheprovider
-```
-
-| Run | Result | Duration |
+| | Recorded baseline | Final verified |
 |---|---|---|
-| 1 | **845 passed**, 0 failed, 0 skipped, 0 warnings | 128.61s |
-| 2 | **845 passed**, 0 failed, 0 skipped, 0 warnings | 128.40s |
-| 3 | **845 passed**, 0 failed, 0 skipped, 0 warnings | 128.08s |
-| reverse order (all files, `tac`) | **845 passed** | 128.57s |
-| canonical (recorded) | **845 passed** | 128.91s |
+| Backend tests | 750 | **845** |
+| Failed | 0 | **0** |
+| Skipped | 0 | **0** |
+| Warnings | 13 | **0** |
+| Producer evaluation | 32 / 32 | **32 / 32** |
+| Studio evaluation | 28 / 28 | **28 / 28** |
+| Frontend typecheck | pass | **pass** |
+| Frontend build | pass | **pass** |
+| Frontend functional tests | **0** | **27** |
+| `modules/` drift | 0 lines | **0 lines** |
 
-### Test-harness integrity
+Three findings materially changed the picture, and are recorded rather than
+buried:
 
-The brief required checking order dependence and fixture leakage. Executed:
+1. **`JobService` had no dedicated test coverage.** Eleven public operations,
+   Phase 2's chosen asynchronous mechanism and a Phase 4 dependency, exercised
+   only incidentally. **36 dedicated tests added.**
+2. **A production defect in the Today page.** It had no loading-state handling and
+   could display that nothing was planned today. **Fixed, with a regression test.**
+3. **Generation lineage and asset lifecycle were under-tested.** One incidental
+   reference. **23 dedicated tests added.**
 
-| Check | Result |
-|---|---|
-| New files, reverse order | 95 passed |
-| Each new file in isolation | 36 / 23 / 30 / 6 passed |
-| Whole suite in reverse file order | 845 passed |
-| Consecutive-run stability | 3 runs, identical counts |
+Zero new tables. Zero new dependencies. Zero donor modification. No new queue,
+LLM abstraction, vector database, or voice system was introduced.
 
-No test depends on state left by a previous test.
+### Final test result
 
-**Known harness weakness found and fixed earlier (carried into this run):**
-`tests/unit/test_studio_evaluation.py` had a module-level
-`pytestmark = pytest.mark.asyncio` applied to 14 *synchronous* tests, producing
-13 warnings. Fixed by removing the module-level mark and decorating the 5 genuinely
-async tests individually. **Warnings: 13 → 0.**
-
-### Frontend
-
-```bash
-cd apps/web
-npm run typecheck     # exit 0
-npm run build         # success — /today 6.48 kB, /studio 8.84 kB
-npm test              # 27 tests, 27 passed, 0 failed
 ```
-
-### Evaluations
-
-```bash
-docker exec creator-api python -m app.ai.evaluation.producer_runner   # 32/32, exit 0
-docker exec creator-api pytest tests/unit/test_studio_evaluation.py    # 28/28
+Full suite: 845 passed, 0 failed, 0 warnings
 ```
 
 ---
 
-## New tests added
+## 2. Verification Scope
 
-| File | Tests | What it proves |
+| Phase | Component | Primary artifacts |
 |---|---|---|
-| `apps/api/tests/integration/test_job_lifecycle.py` | **36** | The entire Phase 2 Job system: create/claim/progress/complete/fail/retry/cancel; **duplicate-claim prevention under two concurrent workers**; progress clamping; metadata merge-not-replace; retry limits; invalid transitions; ownership; RLS incl. raw-SQL forgery; **the absence of stale-job recovery, asserted deliberately** |
-| `apps/api/tests/integration/test_studio_lineage.py` | **23** | Version monotonicity and per-session numbering; `parent_generation_id` chain shape; `ON DELETE SET NULL` semantics; duplicate-version and `version >= 1` constraint enforcement; **asset + chunk cleanup on every deletion path (both tables asserted)**; critique attachment isolation; explicit-approval-only |
-| `apps/api/tests/integration/test_today_lifecycle.py` | **30** | Every legal Today transition and every illegal one; the reopen rules; **declared machine == enforced machine**; persistence read back through fresh connections; **`GET /api/today` is side-effect free**; empty-plan contract; Producer failure paths (dead provider, malformed output, memory failure, handoff failure); prompt injection; the anti-fabrication empty-plan boundary |
-| `apps/api/tests/integration/test_cross_phase_journey.py` | **6** | The full chain auth → RLS → memory → voice → gateway → Producer → Today → Studio → asset → embedding; **the Producer generates nothing itself**; combined cross-user isolation across the entire API surface; interleaved concurrent A/B journeys; provider-failure leak scan |
-| `apps/web/tests/api-client.test.mjs` | **16** | Endpoints, methods, JWT header, `ApiError` mapping, FastAPI `detail` fallback, non-JSON body, 204 handling; **no client call ever sends `user_id`**; the browser never targets a provider origin |
-| `apps/web/tests/pages.test.mjs` | **6** | Today and Studio render; **loading-state regression test**; no provider surface in the UI; no internal detail in markup |
-| `apps/web/tests/contracts.test.mjs` | **5** | Generated-types chain: the client imports the generated module, does not restate a schema, and the contract still declares all five Today statuses |
-
-**Total new: 122** (95 backend + 27 frontend).
-
-Approximately 200 lines of test code written during this verification were
-**deleted** because an equivalent assertion already existed — the brief asked for
-targeted additions, not volume.
+| 2 | LLM Gateway, EmbeddingService (E5-base 768-D), pgvector migration + provenance, Creator Voice Engine, Long-Term Memory Engine, Jobs, Prompt system, Auth, RLS, database identity, security | `tests/unit/test_llm_gateway.py`, `test_embedding_service.py`, `test_memory_core.py`, `test_voice.py`, `test_prompt_loader.py`, `tests/integration/test_vector_provenance.py`, `test_job_lifecycle.py`, `tests/security/*` |
+| 3 | Studio: session → context → generate → critique → refine → publish-ready content; 8 capabilities; asset lifecycle | `tests/unit/test_studio_*.py`, `tests/integration/test_studio_api.py`, `test_studio_flow.py`, `test_studio_lineage.py`, `tests/security/test_studio_rls.py` |
+| 4 | Today, Producer, Recommendation, Planning, Producer → Studio, job integration | `tests/unit/test_producer_*.py`, `tests/integration/test_producer_api.py`, `test_producer_flow.py`, `test_today_lifecycle.py`, `tests/security/test_producer_rls.py` |
+| Cross | Full chain, combined isolation, failure safety | `tests/integration/test_cross_phase_journey.py`, `apps/web/tests/*` |
 
 ---
 
-## Defects found
+## 3. Phase 2 Result
 
-### D1 — Production defect: Today page had no loading state
-
-- **Symptom.** On every load, `app/today/page.tsx` rendered "Nothing planned for
-  today. Run the Producer, or add work yourself." while the request was in flight,
-  even when the creator had a full plan.
-- **Root cause.** `plan` initialised to `null`; `items = plan?.items ?? []`; no
-  `loading` flag existed in the file.
-- **Impact.** A false statement about the creator's own day, and an *actionable*
-  one — it invited re-planning a day that already had a plan. Server-side dedupe
-  would have caught the duplicate, but relying on that to paper over a misleading UI
-  is not acceptable.
-- **Fix.** `loading` state initialised `true`, cleared in `finally` (so it also
-  clears on error), rendering an accessible `role="status"` / `aria-busy` region
-  instead of the empty state.
-- **Regression test.** `test_shows_a_loading_affordance_not_a_false_empty_state_before_data_arrives`.
-- **Verification.** 27 frontend tests pass; typecheck and build clean.
-
-### D2 — Test-harness defect: 13 `pytestmark` warnings
-
-- **Symptom.** 13 `PytestWarning`s on every run.
-- **Root cause.** Module-level `pytestmark = pytest.mark.asyncio` in
-  `test_studio_evaluation.py` applied to 14 synchronous tests.
-- **Classification.** Test issue, not production, not deprecated.
-- **Fix.** Removed the module-level mark; decorated the 5 async tests individually.
-- **Result.** 13 → 0 warnings.
-
-### D3 — Coverage gap: the Job system was untested
-
-- **Symptom.** None observed — that is the problem. `JobService` (eleven
-  operations) had no dedicated tests; a defect in `claim()` would have been
-  invisible.
-- **Root cause.** The service was built in Phase 2 and exercised only indirectly
-  through later features.
-- **Fix.** 36 new tests. Notably `claim()` was found to be correct under two
-  concurrent sessions (`FOR UPDATE SKIP LOCKED`), which had never been proven.
-- **Regression test.** The whole file.
-
-### D4 — Coverage gap: generation lineage and asset lifecycle
-
-- **Symptom.** `max_refinements_per_version` appeared in exactly **one** test.
-  Version ordering, lineage shape, latest-version selection, and orphan prevention
-  were asserted nowhere.
-- **Root cause.** Verified through the API surface but never at the persistence
-  layer, so the deletion cascade — which is where Phase 3 defect 2 lived — was
-  untested.
-- **Fix.** 23 tests asserting on **both** the generation row and the asset row for
-  every deletion path.
-
-### D5 — Coverage gap: Today state machine and failure paths
-
-- **Symptom.** Five incidental references to item statuses; two malformed-input
-  tests for Producer failure.
-- **Root cause.** The state machine was exercised only through the happy paths
-  used by flow tests.
-- **Fix.** 30 tests, including the declared-vs-enforced machine agreement check.
-
-### D6 — Finding: Studio output is never chunked (NOT FIXED)
-
-- **Symptom.** `StudioOrchestrator` persists via `repository.create_asset(...)` and
-  never calls the Memory Engine, so Studio-generated content has no `chunks` rows.
-- **Impact.** Generated content is not retrievable by memory search; the Producer,
-  which reads memory, cannot use a creator's own output as grounding.
-- **Why not fixed.** Making it retrievable is a product/schema decision (chunk on
-  write? separate stores? opt-in?). Changing ingestion behaviour inside a
-  verification task would exceed the mandate and could affect Phase 4 ranking.
-- **Action.** Recorded here and in `PHASE_3_VERIFICATION_FINAL.md` §8. Should be
-  resolved before Phase 5, where performance loops will want generated content as
-  memory.
-
-### D7 — My own test defects, corrected rather than papered over
-
-Recorded because the corrections are informative:
-
-| Initial test | Why it failed | Resolution |
-|---|---|---|
-| Prompt-injection test asserted hostile substrings absent | The Producer **legitimately quotes** retrieved memory as evidence; the quote contains the injection | Rewritten to assert the real property: injected text never becomes a title, kind, or priority escalation |
-| "Profile-only creator gets a recommendation" | The planner's anti-fabrication gate correctly requires memory **or** prior content | Rewrote to assert the *correct* behaviour, and added a test pinning that boundary so it cannot be relaxed |
-| Concurrency test asserted on item-title substrings | Weak assertion that would pass while identities crossed | Rewritten to assert on **item identity sets**, which is what actually proves no boundary crossing |
-
-In every case the **production behaviour was confirmed correct and the test was
-fixed** — no production rule was weakened to make the suite green.
-
----
-
-## Security
+**VERIFIED** — full detail in `docs/PHASE_2_VERIFICATION_FINAL.md`.
 
 | Area | Result |
 |---|---|
-| RLS enabled on all tables | pass — `test_all_tables_have_rls_enabled` |
-| RLS policy coverage | pass — every table has policies |
-| Policies scoped by `user_id` | pass — asserted for `jobs` in the new job tests |
-| User A → own data | allowed |
-| User A → User B data | denied, across every table **and** every Phase 4 route |
-| Unauthenticated → protected data | denied (extended to `/api/today`, `/api/producer/*`) |
-| Invalid JWT → protected data | denied |
-| Missing identity → protected data | denied (claims cleared on scope exit) |
-| **Pooled-connection identity leakage** | denied — 8 dedicated tests incl. pool exhaustion and stale-identity reuse |
-| Raw-SQL forgery (bypassing repositories) | denied for `jobs`, `plan_items`, `studio_*` |
-| SQL injection | none — the only two f-string SQL constructions interpolate **code-defined literal fragments** with bound parameters (`persistence.py` clause builders); user values are always bound |
-| Prompt injection | Producer: 4 eval scenarios + integration test; Studio: 18 `test_studio_safety.py` tests |
-| Error leakage | no `Traceback`, connection string, `asyncpg`, `psycopg`, or SQL in any client-facing error — asserted in new tests |
-| Secrets in tracked files | none. Five test files match a secret-shaped regex; all use the single identical synthetic fixture `sk-abcdef…` proving secrets never leak into responses |
-| `.env` tracked | no — only `.env.example` |
-| CORS | localhost:3000 / 127.0.0.1:3000 only, `allow_credentials=True` |
-| JWT verification | PyJWKClient signing-key lookup, `verify_exp=True`, typed exception handling |
-| Client-controlled identity | none — no router accepts `user_id` in a body or query; the new frontend test asserts no client call sends one |
+| LLM Gateway | PASS — abstraction, validation, normalization, timeout, provider failure, malformed response, retries, token/cost accounting, structured errors |
+| Embedding decision | `intfloat/multilingual-e5-base`, 768-D, `query:` / `passage:` prefixes. **BGE-M3 and Tamil-Embed were benchmark candidates only and are not production implementations. No further embedding benchmark is required.** |
+| E5 embedding behavior | PASS — prefixes, 768-D output, normalization, batch, deterministic, empty/invalid input, model-load failure, provenance |
+| Vector migration | PASS — `002` created `vector(384)`, `003` expanded, `004` contracted to one authoritative `vector(768)` |
+| Vector provenance | PASS — stored dimension, fresh-E5 vs stored agreement, cosine behavior, pgvector index, anti-padding |
+| Memory Engine | PASS — create, retrieve, rank, isolation, empty, no-result, embedding, vector retrieval, delete, cascade, chunk ownership, fail-closed |
+| Voice Engine | PASS — retrieval, missing/empty/malformed profile, context, update, RLS, isolation |
+| **Jobs** | **PASS after adding 36 dedicated tests — see §13** |
+| Prompt system | PASS — versioning, non-empty bodies, missing prompt, invalid version, provenance; `prompt` vs `template` regression |
+| Authentication | PASS — unauthenticated and invalid-JWT denied |
+| RLS | PASS — all tables enabled, all policies present, all scoped by creator |
+| Database identity | PASS — claim scoping, commit vs transaction scope, clearing on exit |
+| Pooled connection isolation | PASS — 8 dedicated tests incl. stale-identity reuse and pool exhaustion |
+| Concurrency | PASS — parallel requests, over HTTP, pool exhaustion |
+| Frontend typecheck / build | PASS |
+| Architecture boundaries | PASS — provider SDK confined to the provider boundary; no alternative embedding model anywhere |
 
 ---
 
-## Architecture
+## 4. Phase 3 Result
 
-| Scan | Result | Inspection |
+**VERIFIED** — full detail in `docs/PHASE_3_VERIFICATION_FINAL.md`.
+
+Lifecycle verified:
+
+```
+Session → Context → Generate → Critique → Refine → Publish-ready content
+```
+
+All eight capabilities verified: `idea`, `hook`, `script`, `caption`,
+`repurpose`, `cta`, `thumbnail`, `refine`.
+
+| Area | Result |
+|---|---|
+| Session lifecycle | PASS — create, retrieve, update, delete, resume, concurrent access, invalid id, cross-user access denied; client cannot override authenticated ownership |
+| Generation lineage | **PASS after adding 23 dedicated tests** — version monotonicity, per-session numbering, `parent_generation_id` chain, `ON DELETE SET NULL`, duplicate-version and `version >= 1` constraints |
+| Critique | PASS — references its generation, is persisted, is user-owned, cannot reference another user's generation, fails safely when absent |
+| Refinement | PASS — appends and never overwrites; budget follows the correct lineage |
+| Asset lifecycle | PASS — asset + chunk cleanup asserted on **both** tables for every deletion path; no orphans |
+| RLS | PASS — 24 dedicated Studio RLS tests |
+| User isolation | PASS |
+| Memory / Voice / LLM integration | PASS — Studio depends on Phase 2 services only |
+| Prompt system | PASS — no shipped asset loads with an empty template |
+| Donor boundaries | PASS — 0 provider SDK imports, 0 `SentenceTransformer`, 0 model names, 0 raw `chunks` SQL under `app/studio/` |
+| Frontend | PASS — typecheck, build, functional render tests |
+| AI evaluation | PASS — 28 / 28 |
+
+---
+
+## 5. Phase 4 Result
+
+**VERIFIED** — full detail in `docs/PHASE_4_VERIFICATION_FINAL.md`.
+
+| Metric | Value |
+|---|---|
+| Previous Phase 4 suite baseline | 750 |
+| Final consolidated suite | **845** |
+| Producer evaluation | **32 / 32** |
+| Studio evaluation | **28 / 28** |
+| Frontend functional tests | **27** |
+
+| Area | Result |
+|---|---|
+| Today | PASS — load, plan exists, items persist, status changes, recommendations appear, no duplication, empty state, sparse-creator state |
+| Producer | PASS — context → structured recommendation → Today item → Studio handoff |
+| Recommendation | PASS — structured contracts; arbitrary unstructured text never becomes an action |
+| Planning | PASS — deterministic-first; a provider outage still yields a plan |
+| Priority logic | PASS — transparent documented weights; overdue carryover crossover pinned |
+| Producer → Studio | PASS — Producer creates zero generations and zero assets; only Studio generates |
+| Today state persistence | PASS — read back through fresh connections; `GET /api/today` proven side-effect free |
+| Jobs | PASS — job lifecycle fully covered (36 tests, §3) |
+| Memory / Voice / LLM Gateway | PASS — consumed as Phase 2 services |
+| Failure paths | PASS — dead provider, malformed output, pgvector failure, handoff failure |
+| Prompt injection | PASS — 4 evaluation scenarios plus an integration test |
+| RLS | PASS — 17 dedicated Producer RLS tests |
+| Concurrency | PASS |
+| Frontend | PASS — **after fixing a production defect, §13** |
+| Generated TypeScript types | PASS — regenerated-and-compared plus source-provenance assertions |
+| Architecture boundaries | PASS |
+
+---
+
+## 6. Cross-Phase Integration
+
+Verified chain, end to end, over real RLS-scoped sessions and the authenticated
+HTTP client with no step bypassing the authorization boundary:
+
+```
+Authentication
+  ↓
+RLS
+  ↓
+Memory
+  ↓
+Voice
+  ↓
+LLM Gateway
+  ↓
+Producer
+  ↓
+Today
+  ↓
+Studio
+  ↓
+Content
+  ↓
+Embedding / retrieval infrastructure where applicable
+```
+
+**6 new cross-phase integration tests** were added
+(`apps/api/tests/integration/test_cross_phase_journey.py`), covering:
+
+1. the full creator journey from memory through to generated content;
+2. the Producer generates nothing itself (zero new assets, zero new generations);
+3. combined cross-user isolation across the entire API surface;
+4. interleaved concurrent A/B journeys asserting on item **identity**, not strings;
+5. two creators receiving independent Today plans;
+6. a provider failure leaking no connection string or traceback.
+
+---
+
+## 7. Security / RLS
+
+Each result below is backed by a named verification artifact.
+
+| Check | Result | Artifact |
 |---|---|---|
-| Provider SDK imports in `app/features/`, `app/producer/`, `app/studio/` | **0** | — |
-| Provider SDK imports anywhere in `app/` | **1** — `app/llm/providers/live.py` | Correct: that *is* the provider boundary |
-| `SentenceTransformer` outside `app/ai/embedding/e5.py` | **0** | — |
-| Hardcoded alternative embedding models (`bge-m3`, `tamil-embed`, `all-MiniLM`, `text-embedding-3`) | **0** | — |
-| Raw `chunks` SQL outside `app/memory/` | **0** | Manually inspected all 12 files mentioning `chunks`: every hit is a comment explaining the prohibition, a response-model field name, or `app/features/memory/router.py` (the Memory feature itself) |
-| Duplicate LLM Gateway / Memory / Voice definitions | **0** — one each | — |
-| Client-controlled `user_id` | **0** | — |
-| Raw engine construction / credential access in feature modules | **0** | — |
-| Redis / Kafka / Celery / Kubernetes | **0** | One docstring noting their absence |
-| `384`-dimension assumptions | **docstrings only**, in `app/memory/reembed.py` describing the migration | No code path assumes it |
-| New tables | **0** | Phase 4 extended `plan_items` |
-| New dependencies | **0** | Frontend tests use Node's runner + React 19 + installed `typescript` |
+| RLS | **PASS** | `test_rls_exhaustive_isolation.py` (7), `test_rls_policies.py` (9), `test_rls_simple.py` (9) |
+| Cross-user isolation | **PASS** | `test_cross_user_isolation.py` (11) |
+| Invalid JWT | **PASS** | `test_cross_user_isolation.py::test_invalid_token_rejected` |
+| Unauthenticated access | **PASS** | `test_cross_user_isolation.py::test_unauthenticated_request_rejected`; extended to the Phase 4 surface |
+| Concurrent A/B user tests | **PASS** | `test_concurrency_isolation.py` (3), `test_cross_phase_journey.py` |
+| Pool-exhaustion identity tests | **PASS** | `test_concurrency_isolation.py::test_pool_exhaustion_does_not_leak_identity` |
+| SQL injection checks | **PASS** | Manual inspection: the only two f-string SQL constructions interpolate code-defined literal fragments with bound parameters |
+| Prompt injection checks | **PASS** | `test_studio_safety.py` (18); Producer: 4 evaluation scenarios + integration test |
+| Error leakage checks | **PASS** | `test_failsafe.py` (8); new assertions on Today/Producer/Studio error surfaces |
+| Secrets scan | **PASS** | No secrets in tracked files. Five matches are one identical synthetic fixture used to prove secrets never leak into responses. `.env` is not tracked; only `.env.example` is |
+
+Additional confirmed properties:
+
+- No router accepts `user_id` in a request body or query string. Ownership is
+  derived from the JWT and enforced by RLS.
+- A frontend test asserts that **no client call ever sends a `user_id`**.
+- CORS is restricted to `localhost:3000` / `127.0.0.1:3000`.
+- JWT verification uses PyJWKClient signing-key lookup with `verify_exp=True`.
 
 ---
 
-## Frontend
+## 8. Concurrency / Isolation
+
+| Check | Result |
+|---|---|
+| Alternating A/B/A/B identity on pooled connections | PASS |
+| Claim scoping survives commit, and is session-scoped not transaction-local | PASS |
+| Claims cleared on scope exit, on the same connection that carried them | PASS |
+| Pool exhaustion does not leak identity | PASS |
+| Two workers racing one job queue deliver every job exactly once | PASS — `FOR UPDATE SKIP LOCKED` proven under two concurrent sessions |
+| Interleaved cross-phase A/B journeys | PASS |
+
+---
+
+## 9. Frontend Verification
+
+Recorded separately, because they are three different claims:
 
 | Gate | Result |
 |---|---|
-| **Typecheck** (`tsc --noEmit`) | **pass**, exit 0 |
-| **Production build** (`next build`) | **pass** — 11/11 pages, `/today` 6.48 kB, `/studio` 8.84 kB |
-| **Functional workflow** (`npm test`) | **27 passed, 0 failed** — previously *zero* tests |
+| **Typecheck** (`tsc --noEmit`) | **PASS**, exit 0 |
+| **Production build** (`next build`) | **PASS** — 11/11 pages; `/today` 6.48 kB, `/studio` 8.84 kB |
+| **Functional frontend tests** (`npm test`) | **27 passed, 0 failed** |
 
-Functional coverage: endpoints/methods/auth header, error mapping (including
-FastAPI `detail` and non-JSON bodies), 204 handling, no `user_id` leakage, Today and
-Studio initial render, loading-state regression, no provider surface in the UI, and
-the generated-TypeScript-types chain.
+Typecheck and build are **not** treated as functional verification. Before this
+cycle the frontend had **zero** functional tests. Functional tests were added for
+the Today and Studio experience:
 
-**Declared limitation.** `react-dom/server` renders initial markup only, so
-post-click behaviour — run Producer → recommendations appear, status change
-round-trip, Studio handoff navigation — is **not** verified in a browser. Closing
-that needs `jsdom`/`happy-dom` or Playwright, which the brief asked not to
-introduce. Documented in `apps/web/tests/README.md`. The backend equivalent *is*
-covered end-to-end.
+| File | Tests | Covers |
+|---|---|---|
+| `apps/web/tests/api-client.test.mjs` | 16 | endpoints, methods, JWT header, error mapping (API envelope, FastAPI `detail`, non-JSON body), 204 handling, no `user_id` leakage, browser never targets a provider origin |
+| `apps/web/tests/pages.test.mjs` | 6 | Today and Studio render, loading-state regression, no provider surface in the UI, no internal detail in markup |
+| `apps/web/tests/contracts.test.mjs` | 5 | generated-types chain: the client imports the generated module, does not restate a schema, and the contract still declares all five Today statuses |
+
+Harness built with **zero new dependencies** — Node's built-in test runner,
+`react-dom/server`, and the already-installed `typescript`.
+
+**Declared limitation:** `react-dom/server` renders initial markup only, so
+post-click behaviour is not covered in a browser. Recorded in
+`apps/web/tests/README.md`. The backend equivalent is covered end to end.
 
 ---
 
-## AI evaluation
+## 10. Architecture Boundary Verification
 
-Deterministic evaluations, both re-run and both green.
-
-**Producer — 32/32 across 10 categories**
-
-| Category | n |
+| Boundary | Result |
 |---|---|
-| `sparse_creator` | 5 |
-| `conflicting_context` | 4 |
-| `multiple_priorities` | 4 |
-| `prompt_injection` | 4 |
-| `studio_handoff` | 4 |
-| `normal_creator` | 3 |
-| `no_useful_action` | 3 |
-| `anti_fabrication` | 2 |
-| `unfinished_work` | 2 |
-| `context_relevance` | 1 |
+| Provider boundary | **PASS** — the only provider-SDK import anywhere under `app/` is `app/llm/providers/live.py`, which *is* the provider boundary. Zero in `app/features/`, `app/producer/`, `app/studio/` |
+| Embedding boundary | **PASS** — `SentenceTransformer` imported only in `app/ai/embedding/e5.py`; zero references to BGE-M3, Tamil-Embed, all-MiniLM, or text-embedding-3 |
+| Memory ownership | **PASS** — zero raw `chunks` SQL outside `app/memory/`; all 12 files mentioning `chunks` were inspected manually and every hit is a comment explaining the prohibition, a response-model field name, or `app/features/memory/router.py` (the Memory feature itself) |
+| Voice ownership | **PASS** — one `VoiceEngine` definition; feature modules consume it |
+| LLM Gateway ownership | **PASS** — one `LLMGateway` definition; no feature module bypasses it |
+| RLS ownership | **PASS** — enforced by PostgreSQL; raw-SQL forgery denied on every table |
 
-**Studio — 28/28 across 8 categories**: `idea_to_content` 5, `script_quality` 4,
-`hook_quality` 4, `refinement_quality` 4, `critique_usefulness` 4, `memory_usage` 3,
-`context_relevance` 2, `instruction_following` 2.
-
-No scenarios were added — the brief asked not to inflate evaluations, and the
-required dimensions were already covered.
-
-**Not claimed:** these are deterministic, scripted-provider evaluations. They verify
-structure, contract adherence, evidence resolution, and instruction separation. They
-do **not** verify factual truth of model output, nor live generation quality.
+No feature module bypasses the shared services. No duplicate LLM gateway, memory
+system, voice system, or vector database exists. No Redis, Kafka, Celery, or
+Kubernetes was introduced. No new queue or LLM abstraction was added.
 
 ---
 
-## Live provider
-
-**LIVE LLM VALIDATION = DEFERRED**
-
-This was checked, not assumed. `.env` sets `ANTHROPIC_API_KEY` and `GROQ_API_KEY`,
-and both look non-placeholder by pattern. A live probe was therefore run, reporting
-**HTTP status only — no credential value was printed**:
-
-```
-ANTHROPIC_API_KEY -> HTTP 401  => NOT USABLE (placeholder)
-GROQ_API_KEY      -> HTTP 401  => NOT USABLE (placeholder)
-```
-
-No live test was faked. What this leaves unverified:
-
-- real model output quality for Studio generation and critique;
-- **the quality of the Producer's wording enrichment** — the one place a model
-  writes prose in Phase 4;
-- real-world latency, rate limiting, and cost behaviour.
-
-Everything verified above ran against the deterministic path and scripted
-providers, which is sufficient for structure, contracts, isolation, and failure
-handling.
-
----
-
-## Donor integrity
+## 11. Donor Integrity
 
 ```
 git diff --stat -- modules   ->  0 lines
 git ls-files modules | wc -l ->  1065
 ```
 
-**`modules/` unchanged.** No donor file was modified, and no test failure was
-solved by touching a donor module.
+**`modules/` unchanged: 1,065 tracked files, 0 diff lines.** No donor module was
+modified, and no verification failure was resolved by touching donor code.
 
 ---
 
-## Warnings
+## 12. Test Stability
 
-All 13 pre-existing warnings were **one class** and are now **zero**.
+```
+Run 1: 845 passed, 0 failed, 0 warnings
+Run 2: 845 passed, 0 failed, 0 warnings
+Run 3: 845 passed, 0 failed, 0 warnings
+Reverse-order full-suite run: 845 passed
+```
 
-| Classification | Count | Detail |
+Each newly added file was additionally run **in isolation** and **in reverse
+order**, all passing.
+
+These runs were performed specifically to detect:
+
+- test-order dependence
+- fixture leakage
+- shared-state contamination
+- flaky behaviour
+- nondeterministic results
+
+**This is not a mathematical proof of zero flakiness.** It is evidence that the
+observed runs were stable across repeated, reordered, and isolated execution.
+Two real instances of shared-state contamination were found and fixed during this
+cycle (a Studio evaluation harness defect and a non-deterministic admin-connection
+reset), which is precisely the class of problem these runs are designed to surface.
+
+---
+
+## 13. Defects Found and Fixed
+
+### D1 — Production defect: Today page had no loading-state handling
+
+- **Symptom.** `app/today/page.tsx` initialised `plan` to `null`, derived
+  `items = plan?.items ?? []`, and contained no loading flag. On every page load it
+  could display that nothing was planned today, even when the creator had a full
+  plan.
+- **Root cause.** No distinction existed between "not fetched yet" and "fetched, and
+  there is genuinely nothing planned".
+- **Impact.** A false statement about the creator's own day, and an actionable one:
+  it invited the creator to run the Producer over a day that already had a plan.
+  Server-side dedupe would have prevented duplication, but relying on a server-side
+  invariant to mask a misleading UI is not acceptable.
+- **Fix.** A `loading` flag initialised `true`, cleared in a `finally` block so it
+  also clears on error, rendering an accessible `role="status"` / `aria-busy`
+  region instead of the empty state.
+- **Regression test.**
+  `test_shows_a_loading_affordance_not_a_false_empty_state_before_data_arrives`.
+- **Status:** **fixed + regression test added.**
+
+### D2 — Test-harness defect: 13 `pytestmark` warnings
+
+- **Symptom.** 13 `PytestWarning`s on every run.
+- **Root cause.** A module-level `pytestmark = pytest.mark.asyncio` in
+  `test_studio_evaluation.py` was applied to 14 synchronous tests.
+- **Classification.** Test issue. Not production, not deprecated, not deferred.
+- **Fix.** Module-level mark removed; the 5 genuinely async tests marked
+  individually.
+- **Status:** **fixed. Suite warnings 13 → 0.**
+
+### D3 — Test-harness defect: Studio evaluation state leakage
+
+- **Classification: test-harness defect, NOT a production platform defect.**
+  The Studio platform produced correct output; the evaluation harness leaked state.
+- **Symptom.** `studio_002_idea_uses_creator_memory` intermittently reported
+  `memory_used: 0.0`, and only in sequence, never in isolation.
+- **Root cause.** Two compounding causes. First, the evaluation user was never
+  reset, so its corpus grew on every run and `memory_used` depended on how many
+  times the suite had been executed. Second, the initial fix — resetting through an
+  **admin** connection — introduced row-lock contention against the long-lived
+  shared session, which made results *nondeterministic*, a worse condition than the
+  original bug.
+- **Fix.** Reset through the caller's own RLS-scoped session, which is sufficient
+  because the evaluation user owns every row it deletes. The harness now also
+  records `context_notes` per result and prints them on failure, so a future
+  `memory_used: 0.0` distinguishes "nothing relevant retrieved" from "retrieval
+  raised".
+- **Status:** **fixed. Results stable across four consecutive runs.**
+
+### D4 — Coverage gap: `JobService` had insufficient dedicated coverage
+
+- **Symptom.** None observed — which was the problem. Eleven public operations with
+  no dedicated test file; a defect in `claim()` would have been invisible.
+- **Root cause.** Built in Phase 2 and exercised only indirectly through later
+  features.
+- **Fix.** **36 dedicated tests added.** `claim()` was confirmed correct under two
+  concurrent sessions (no job lost, none double-delivered). One test deliberately
+  pins the *absence* of stale-job recovery so a future phase must decide the
+  timeout consciously rather than inherit it.
+- **Status:** **closed.**
+
+### D5 — Coverage gap: generation lineage and asset lifecycle
+
+- **Symptom.** `max_refinements_per_version` appeared in exactly one reference.
+  Version ordering, lineage shape, latest-version selection, and orphan prevention
+  were asserted nowhere.
+- **Root cause.** Verified through the API surface but never at the persistence
+  layer, which is where the historical orphan defect lived.
+- **Fix.** **23 dedicated tests added**, asserting on both the generation row and
+  the asset row for every deletion path.
+- **Status:** **closed.**
+
+### D6 — Coverage gap: Today state machine and failure paths
+
+- **Symptom.** Five item states had roughly five incidental references; Producer
+  failure paths were covered by two malformed-input tests.
+- **Fix.** **30 dedicated tests**, including a check that the declared
+  `ALLOWED_TRANSITIONS` matches what the API actually enforces.
+- **Status:** **closed.**
+
+### D7 — Corrections to this verification's own tests
+
+Recorded because they are informative about what the tests were worth. In every
+case production behaviour was confirmed **correct** and the **test** was fixed; no
+production rule was weakened.
+
+| Initial test | Why it failed | Resolution |
 |---|---|---|
-| Test issue — **fixed** | 13 | `pytestmark = pytest.mark.asyncio` applied to 14 synchronous tests in `test_studio_evaluation.py` |
-| Production issue | 0 | — |
-| Actionable defect | 0 | — |
-| Deprecated | 0 | — |
-| Known/deferred | 0 | — |
-| Harmless | 0 | — |
-
-No warning was ignored, and none was allowed to fail the run.
+| Prompt-injection test asserted hostile substrings absent | The Producer legitimately quotes retrieved memory as evidence, and the quote contains the injection | Rewritten to assert the real property: injected text never becomes a title, an actionable kind, or a priority escalation |
+| "Profile-only creator gets a recommendation" | The planner's anti-fabrication gate correctly requires memory **or** prior content | Rewrote to assert the correct behaviour and added a test pinning that boundary |
+| Concurrency test asserted on item-title substrings | A weak assertion that would pass even if identities crossed | Rewritten to assert on item identity sets |
 
 ---
 
-## Acceptance criteria
+## 14. Deferred Items
 
-### Phase 2
-[x] Shared services tested · [x] E5 768-D verified · [x] Vector migration verified ·
-[x] Memory verified · [x] Voice verified · [x] LLM Gateway verified ·
-[x] Prompt system verified · [x] Jobs verified *(36 new tests; previously untested)* ·
-[x] RLS verified · [x] Cross-user concurrency verified · [x] Frontend contracts verified
+### D-1 — Studio generated content is not ingested into the memory retrieval corpus
 
-### Phase 3
-[x] Studio lifecycle verified · [x] All capabilities verified ·
-[x] Session isolation verified · [x] Generation lineage verified *(23 new tests)* ·
-[x] Critique verified · [x] Refinement verified · [x] Asset lifecycle verified ·
-[x] Prompt regression verified · [x] Studio security verified ·
-[x] Frontend workflow verified *(partial — see §Frontend)* · [x] AI evaluation verified
+> **DEFERRED — FUTURE PRODUCT DECISION**
 
-### Phase 4
-[x] Today verified · [x] Producer verified · [x] Recommendation contracts verified ·
-[x] Producer safety verified · [x] Prompt injection verified ·
-[x] Producer → Studio verified · [x] Today persistence verified · [x] Jobs verified ·
-[x] Frontend Today workflow verified *(partial)* · [x] Generated TS types verified ·
-[x] Producer AI evaluation verified
+Studio-generated content is currently **not** automatically ingested and chunked
+into the Long-Term Memory retrieval corpus. `StudioOrchestrator` persists output
+through `repository.create_asset(...)` and does not call the Memory Engine, so
+generated content has no `chunks` rows and is therefore not retrievable by memory
+search.
 
-### Cross-phase
-[x] Full integration verified · [x] Cross-user isolation verified ·
-[x] Failure paths verified · [x] Full regression suite passes ·
-[x] Three consecutive full runs stable · [x] Frontend typecheck passes ·
-[x] Frontend build passes · [x] Donor modules unchanged ·
-[x] Architecture scans clean · [x] Security checks complete · [x] Warnings classified
+**This is intentionally deferred because it is a product/schema decision, not a
+verification failure.** Changing it now would expand Phase 3/4 scope and alter the
+existing Memory/Studio boundary. It is **not** a bug, and it is **not** counted
+against Phase 3 or Phase 4 acceptance.
 
----
+It should be decided before Phase 5, where performance loops will want a creator's
+own generated output available as memory.
 
-## What remains genuinely unverified
+### D-2 — Live provider output quality
 
-Stated plainly, because a green suite is not the same as a verified product:
+**DEFERRED.** The configured provider credentials currently return **HTTP 401**
+(status codes only; no credential values were printed). Live provider output
+quality remains unvalidated. See §15.
 
-1. **Live LLM output quality** — deferred; credentials are placeholders (401).
-   The largest gap, and it is a confidence gap rather than a code gap.
-2. **Post-click frontend behaviour** — no DOM/browser harness. Initial render and
-   the whole client layer are covered; interactions are not.
-3. **Studio output is not retrievable from memory** (D6) — a design question left
-   open deliberately.
-4. **Factual truth of generated content** — not claimed anywhere. Anti-fabrication
-   metrics check the model did not invent numbers *relative to supplied context*.
-5. **No performance/load testing** at any concurrency beyond the correctness-level
-   interleaving in `test_concurrency_isolation.py` and the cross-phase journey.
-6. **Ranking weights are hand-tuned**, not validated against outcome data. Phase 5
-   performance data is the natural input.
+### D-3 — Post-click frontend behaviour
+
+**DEFERRED.** No DOM or browser harness is installed, and this cycle did not
+introduce one. Initial render and the entire API client layer are covered;
+interactions are not. Documented in `apps/web/tests/README.md`.
+
+### D-4 — Factual truth of generated content
+
+**NOT CLAIMED.** Anti-fabrication metrics verify the model did not invent numbers
+relative to supplied context. They do not verify output against reality.
+
+### D-5 — Performance and load testing
+
+**NOT PERFORMED** beyond correctness-level interleaving.
+
+### D-6 — Learned ranking weights
+
+**DEFERRED.** Ranking weights are hand-tuned and documented, not validated against
+outcome data. Phase 5 performance data is the natural input.
 
 ---
 
-## Final status
+## 15. Final Acceptance
 
 ```
 ACCEPTED WITH DEFERRED LIVE-AI VALIDATION
 ```
 
-"100% verified" is **not** claimed: live provider validation remains unavailable,
-and two coverage limitations are documented above.
+**Automated engineering verification** and **live provider quality validation** are
+distinct claims, and only the former is complete.
 
-Phase 5 was **not** started.
+### Automated engineering verification — COMPLETE
+
+Engineering, integration, security, regression, frontend, architecture, and
+donor-boundary verification passed:
+
+```
+Full suite:               845 passed, 0 failed, 0 warnings
+Repeated runs:            3 consecutive runs PASS
+Reverse-order / isolated: PASS
+Cross-phase integration:  PASS
+RLS / security:           PASS
+Concurrency:              PASS
+Frontend typecheck:       PASS
+Frontend build:           PASS
+Frontend functional:      27 passed
+Architecture boundary:    PASS
+Donor integrity:          PASS
+```
+
+### Live provider quality validation — DEFERRED
+
+Live provider output quality remains unvalidated because the configured provider
+credentials are not currently usable. The deterministic verification path is
+passing.
+
+A future live-AI acceptance run is required when valid provider credentials are
+available. Until then:
+
+- No claim is made about real model output quality.
+- No live test was faked.
+- No test was weakened to compensate.
+- The Producer's wording enrichment — the one place a model writes prose in
+  Phase 4 — remains unvalidated against a real provider.
+
+"100% verified" is therefore **not** claimed.
 
 ---
 
-## Documentation index
+## 16. Readiness for Phase 5
 
-| Document | Contents |
-|---|---|
-| `docs/PHASE_2_VERIFICATION_FINAL.md` | Phase 2 detail, incl. the 36 new Job tests |
-| `docs/PHASE_3_VERIFICATION_FINAL.md` | Phase 3 detail, incl. the 23 lineage tests and the unchunked-output finding |
-| `docs/PHASE_4_VERIFICATION_FINAL.md` | Phase 4 detail, incl. the loading-state defect |
-| `docs/PHASE_2_3_4_CONSOLIDATED_VERIFICATION.md` | This document |
-| `apps/web/tests/README.md` | Frontend harness design and its declared limits |
+Phase 2–4 engineering verification is complete.
+
+The platform is ready to begin Phase 5 implementation.
+
+**Phase 5 has NOT been started as part of this verification task.**
+
+Carried forward for Phase 5 planning:
+
+1. **Live-AI acceptance run** when credentials become available.
+2. **D-1 decision** — whether Studio output should enter the memory retrieval
+   corpus. Best resolved before performance loops depend on it.
+3. **D-3** — a DOM or browser harness, if Today/Studio workflows need true
+   end-to-end UI coverage.
+4. `plan_items.status` and `generation_id` are already recorded, and are the
+   natural outcome data for tuning the Producer's ranking weights.
