@@ -1,6 +1,7 @@
-// Studio API types — AUTO-GENERATED, DO NOT EDIT BY HAND.
+// Studio + Today/Producer API types — AUTO-GENERATED, DO NOT EDIT BY HAND.
 //
-// Source: FastAPI OpenAPI spec (`/openapi.json`), Studio schemas only.
+// Source: FastAPI OpenAPI spec (`/openapi.json`), Studio (Phase 3) and
+// Today/Producer (Phase 4) schemas.
 // Regenerate: scripts/generate_studio_contracts.py
 //
 // Ownership note: none of these types carry a `user_id`. The API derives the
@@ -9,10 +10,10 @@
 
 
 // --------------------------------------------------------------------
-// Capability input payloads
+// Phase 3 Studio + Phase 4 Today/Producer contracts
 //
-// Each capability validates its input against a Pydantic model, so these
-// are the shapes the API will accept. Sending an unknown field is a 422.
+// Capability inputs are validated against a Pydantic model, so these are
+// exactly the shapes the API will accept. Sending an unknown field is a 422.
 // --------------------------------------------------------------------
 export interface ApprovalRequest {
   approved: boolean;
@@ -34,6 +35,20 @@ export interface CapabilityInfo {
 export interface CapabilityListResponse {
   capabilities: CapabilityInfo[];
   total: number;
+}
+
+export interface CarryoverItem {
+  id: string;
+  plan_date: string;
+  title: string;
+  status: string;
+  action_kind: string | null;
+  reason: string | null;
+}
+
+export interface CarryoverResponse {
+  items: CarryoverItem[];
+  days_since_last_plan: number | null;
 }
 
 export interface ContextPreviewResponse {
@@ -69,6 +84,24 @@ export interface CritiqueResponse {
   generator_id: string | null;
 }
 
+/** One traceable input to a recommendation. */
+export interface Evidence {
+  kind: "memory" | "content_asset" | "studio_generation" | "idea" | "creator_profile" | "voice_profile" | "performance_record" | "today_item";
+  ref_id: string;
+  summary: string;
+}
+
+/** The Studio handoff. Note this contains NO generated content. */
+export interface ExecuteResponse {
+  item_id: string;
+  studio_session_id: string;
+  capability: string;
+  input: Record<string, unknown>;
+  session_created: boolean;
+  studio_url: string;
+  message: string;
+}
+
 /** Execute one Studio capability inside a session. */
 export interface GenerationRequest {
   session_id: string;
@@ -97,6 +130,69 @@ export interface GenerationResponse {
   latency_ms: number;
   context_summary: Record<string, unknown>;
   warnings: string[];
+}
+
+/** Response of `POST /api/today/plan`, sync or job-backed. */
+export interface PlanResultResponse {
+  date: string;
+  items: TodayItem[];
+  total: number;
+  total_estimated_minutes: number;
+  notes: string[];
+  run: ProducerRun;
+  job_id: string | null;
+  job_status: string | null;
+}
+
+/** Non-sensitive provenance returned to the client. */
+export interface ProducerContextSummary {
+  has_profile: boolean;
+  has_voice: boolean;
+  memory_chunks: number;
+  unfinished_generations: number;
+  open_ideas: number;
+  recent_assets: number;
+  performance_records: number;
+  days_since_last_plan: number | null;
+  notes: string[];
+}
+
+/** A structured, validated proposal. */
+export interface ProducerRecommendation {
+  kind: "create" | "continue" | "refine" | "repurpose" | "triage_idea" | "quick_engage" | "build_trust" | "no_action";
+  title: string;
+  reason: string;
+  reason_kind: "observed" | "suggestion";
+  priority: "high" | "medium" | "low";
+  action_kind: "create_content" | "quick_engage" | "build_trust" | "continue_draft" | "refine_content" | "repurpose" | "review_idea" | "publish_prep";
+  estimated_minutes: number;
+  suggested_capability: string | null;
+  platform: string;
+  next_action: string;
+  evidence: Evidence[];
+  signals: Record<string, unknown>;
+}
+
+/** The outcome of one planning pass, mirrored into a `jobs` row. */
+export interface ProducerRun {
+  job_id: string | null;
+  plan_date: string;
+  status: string;
+  recommendations: number;
+  created_items: number;
+  skipped_duplicates: number;
+  latency_ms: number;
+  notes: string[];
+}
+
+export interface RecommendResponse {
+  date: string;
+  recommendations: ProducerRecommendation[];
+  total: number;
+  has_action: boolean;
+  context: ProducerContextSummary;
+  run: ProducerRun;
+  message: string;
 }
 
 export interface RefineRequest {
@@ -139,6 +235,44 @@ export interface SessionUpdateRequest {
   idea_id: string | null;
 }
 
+/** One unit of planned work (a `plan_items` row). */
+export interface TodayItem {
+  id: string;
+  plan_date: string;
+  title: string;
+  status: "planned" | "in_progress" | "completed" | "skipped" | "blocked";
+  priority: "high" | "medium" | "low";
+  priority_rank: number;
+  rank: number;
+  action_kind: "create_content" | "quick_engage" | "build_trust" | "continue_draft" | "refine_content" | "repurpose" | "review_idea" | "publish_prep" | null;
+  capability: string | null;
+  platform: string;
+  estimated_minutes: number;
+  reason: string | null;
+  reason_kind: "observed" | "suggestion" | null;
+  source: string;
+  idea_id: string | null;
+  studio_session_id: string | null;
+  generation_id: string | null;
+  dedupe_key: string | null;
+  evidence: Evidence[];
+  recommendation: ProducerRecommendation | null;
+  completed: boolean;
+  created_at: string | null;
+  updated_at: string | null;
+}
+
+export interface TodayPlanResponse {
+  date: string;
+  items: TodayItem[];
+  total: number;
+  total_estimated_minutes: number;
+  priority_item_id: string | null;
+  counts: Record<string, number>;
+  notes: string[];
+  run: ProducerRun | null;
+}
+
 export interface VersionInfo {
   id: string;
   version: number;
@@ -166,14 +300,23 @@ export interface VersionListResponse {
 // --------------------------------------------------------------------
 // Enumerations
 // --------------------------------------------------------------------
+export type ActionKind = "create_content" | "quick_engage" | "build_trust" | "continue_draft" | "refine_content" | "repurpose" | "review_idea" | "publish_prep";
+export type ClaimKind = "observed" | "suggestion";
 export type CritiqueSeverity = "strong" | "medium" | "light";
+export type EvidenceKind = "memory" | "content_asset" | "studio_generation" | "idea" | "creator_profile" | "voice_profile" | "performance_record" | "today_item";
+export type Priority = "high" | "medium" | "low";
+export type RecommendationKind = "create" | "continue" | "refine" | "repurpose" | "triage_idea" | "quick_engage" | "build_trust" | "no_action";
 export type RefinementModifier = "shorter" | "more_casual" | "more_bold" | "more_educational" | "simpler";
 export type SessionStatus = "active" | "completed" | "archived";
 export type SessionStep = "context" | "generate" | "review" | "refine" | "done";
+export type TodayItemStatus = "planned" | "in_progress" | "completed" | "skipped" | "blocked";
 
 // --------------------------------------------------------------------
 // Operations
 // --------------------------------------------------------------------
+// POST /api/producer/execute — Execute
+// GET /api/producer/health — Producer Health
+// POST /api/producer/recommend — Recommend
 // GET /api/studio/capabilities — List Capabilities
 // POST /api/studio/critique — Critique
 // POST /api/studio/generate — Generate
@@ -190,3 +333,12 @@ export type SessionStep = "context" | "generate" | "review" | "refine" | "done";
 // DELETE /api/studio/versions/{generation_id} — Delete Version
 // POST /api/studio/versions/{generation_id}/approve — Approve Version
 // GET /api/studio/workflow — Get Workflow
+// GET /api/today — Get Today
+// GET /api/today/carryover — Get Carryover
+// GET /api/today/health — Today Health
+// POST /api/today/items — Create Item
+// DELETE /api/today/items/{item_id} — Delete Item
+// GET /api/today/items/{item_id} — Get Item
+// PATCH /api/today/items/{item_id} — Update Item
+// PATCH /api/today/items/{item_id}/status — Change Status
+// POST /api/today/plan — Create Plan

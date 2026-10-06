@@ -197,11 +197,18 @@ async def test_all_scenarios_pass(scenarios):
     async with rls_session(user_id) as db:
         report = await run_all(scenarios, db=db, user_id=user_id)
 
+    # Include the context notes in the failure message: a `memory_used: 0.0`
+    # cannot be diagnosed without knowing whether retrieval found nothing or
+    # raised.
     failures = [
-        (r.scenario_id, r.errors or r.detail.get("gating_scores"))
+        (
+            r.scenario_id,
+            r.errors or r.detail.get("gating_scores"),
+            r.detail.get("context_notes"),
+        )
         for r in report.results if not r.passed
     ]
-    assert not failures, f"failing scenarios: {failures}"
+    assert not failures, f"failing scenarios (id, gating, context_notes): {failures}"
     assert report.total == len(scenarios)
     assert report.pass_rate == 1.0
 

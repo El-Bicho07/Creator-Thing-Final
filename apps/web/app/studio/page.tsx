@@ -22,7 +22,8 @@
  * Ownership is never sent from the browser.
  */
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   AlertTriangle,
   Brain,
@@ -96,7 +97,34 @@ function buildInput(
   }
 }
 
+/**
+ * Suspense wrapper.
+ *
+ * `useSearchParams` opts a route out of static prerendering unless it sits under
+ * a Suspense boundary, so the workspace is split out and wrapped. Without this,
+ * `next build` fails to prerender `/studio`.
+ */
 export default function StudioPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="pt-24 pb-16 px-4 max-w-7xl mx-auto">
+          <p className="text-sm text-gray-500 dark:text-gray-400">Loading Studio…</p>
+        </div>
+      }
+    >
+      <StudioWorkspace />
+    </Suspense>
+  );
+}
+
+function StudioWorkspace() {
+  // Today deep-links here with `?session=<id>` after the creator accepts a
+  // recommendation (Phase 4 §17). Honour it, otherwise the handoff would drop
+  // the creator into an unrelated session.
+  const searchParams = useSearchParams();
+  const deepLinkSession = searchParams.get("session");
+
   // ---- server state ----
   const [sessions, setSessions] = useState<SessionResponse[]>([]);
   const [capabilities, setCapabilities] = useState<CapabilityInfo[]>([]);
@@ -181,6 +209,12 @@ export default function StudioPage() {
     })();
     void loadSessions();
   }, [getToken, loadSessions]);
+
+  useEffect(() => {
+    if (deepLinkSession) {
+      setSelectedId(deepLinkSession);
+    }
+  }, [deepLinkSession]);
 
   useEffect(() => {
     if (!selectedId) {

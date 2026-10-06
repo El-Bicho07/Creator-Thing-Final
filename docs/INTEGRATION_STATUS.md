@@ -2,7 +2,7 @@
 
 *Last Updated: Phase 1 Foundation - Complete / Verified*
 *Reconciled 2026-10-05 against Phase 2 — see `docs/PHASE_2_FINAL_VERIFICATION.md`.*
-*Phase 3 (Studio) complete 2026-10-05 — see `docs/PHASE_3_FINAL_REPORT.md`.*
+*Phase 4 (Today & Creative Producer) complete 2026-10-06 — see `docs/PHASE_4_FINAL_REPORT.md`.*
 
 > **READ FIRST — this file is a Phase 1 snapshot.** Sections below describing the
 > embedding model, `vector(384)` storage, and "awaiting user approval" are the
@@ -21,7 +21,7 @@
 | 1 | Foundation Architecture | ✅ Complete | 100% |
 | 2 | Voice + Memory Engines | ✅ Complete | 100% |
 | 3 | Studio Workspace | ✅ Complete | 100% |
-| 4 | Today & Creative Producer | ⏳ Pending | 0% |
+| 4 | Today & Creative Producer | ✅ Complete | 100% |
 | 5 | Growth & Analytics Copilot | ⏳ Pending | 0% |
 | 6 | Coach & Closed Learning Loop | ⏳ Pending | 0% |
 | 7 | SaaS Hardening & Verification | ⏳ Pending | 0% |
@@ -125,18 +125,16 @@
 
 ---
 
-## Phase 4 — Today & Creative Producer (⏳ Pending)
+## Phase 4 — Today & Creative Producer (✅ Complete)
 
-### Required Work
-- [ ] `apps/api/app/features/today/producer.py` — Creative Producer engine (NEW)
-- [ ] Inputs: creator profile, voice, memory, performance, lessons, time budget
-- [ ] Outputs: ranked daily plan, fallback ideas, rationale per item
-- [ ] `apps/api/app/features/today/planner.py` — Daily planning utilities
-- [ ] Frontend: `/today` dashboard with Producer recommendation, "Launch in Studio"
+Required-work list superseded by `docs/PHASE_4_FINAL_REPORT.md`. The engine landed
+in `apps/api/app/producer/` (contracts, context, planner, persistence, service)
+rather than inside `features/today/`, to keep ranking policy out of the transport
+layer.
 
-### Exit Criteria
-- [ ] Producer generates personalized daily plan matching creator budget
-- [ ] Plan uses voice, memory, performance, and lessons
+### Exit Criteria — met
+- [x] Producer generates a personalized daily plan matching creator budget
+- [x] Plan uses voice, memory, performance, and lessons
 
 ---
 
@@ -399,3 +397,47 @@ Automated publishing, the performance→insight→lesson loop, trend ingestion, 
 the Creator research assistant. Phase 3 ends at **publish-ready content**.
 
 Full report: `docs/PHASE_3_FINAL_REPORT.md`.
+
+---
+
+## Phase 4 — TODAY & CREATIVE PRODUCER (✅ Complete, 2026-10-06)
+
+Today + Producer is the platform's **decide** step: a persisted, evidence-backed
+daily plan. The Producer decides *what*; Studio remains the only generation
+authority.
+
+### What exists now
+
+| Layer | Status | Location |
+|---|---|---|
+| Producer core | ✅ | `apps/api/app/producer/` — contracts, context, planner, persistence, service |
+| Ranking | ✅ | Deterministic scoring in `planner.py`; the model only rephrases selections |
+| Plan storage | ✅ | `plan_items` **extended**, not duplicated — migration 007, **0 new tables** |
+| Async runs | ✅ | Reuses `jobs` + `JobService` |
+| Prompts | ✅ | `packages/prompts/producer/enrich.v1.json` |
+| API | ✅ | 12 routes under `/api/today` and `/api/producer` |
+| Frontend | ✅ | `apps/web/app/today/page.tsx`, `/studio?session=` deep link |
+| AI evaluation | ✅ | 32 scenarios, 10 categories — `docs/eval/producer_evaluation.json` |
+
+### Verification
+
+- **750 backend tests pass, 0 skipped, on two consecutive full runs** (was 588).
+- Producer evaluation **32 / 32**; Studio evaluation **28 / 28** re-verified.
+- Frontend `tsc --noEmit` and `next build` both exit 0 (`/today` 6.39 kB).
+- RLS verified for `plan_items`, including raw-SQL forgery attempts.
+- `modules/` unchanged: 1065 tracked files, 0 modified.
+
+### Donors consumed
+
+Neither Module 04 nor Module 21 contains prioritization logic (Module 04's engine
+and storage are absent from the donor; Module 21 is largely stubs). Taken: Module
+04's 3-slot day shape, Module 21's evidence forcing, anti-fabrication rule, and
+bounded-loop discipline. See `docs/producer-donor-adaptation.md`.
+
+### Deliberately not in Phase 4
+
+Learning from plan outcomes, growth loops, trend ingestion, and the Coach loop.
+Phase 4 ends at **a decided, persisted plan handed to Studio**.
+
+Full report: `docs/PHASE_4_FINAL_REPORT.md`.
+Readiness: `docs/PHASE_4_READINESS.md`.

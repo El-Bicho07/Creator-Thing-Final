@@ -325,3 +325,57 @@ ends at publish-ready content: nothing is published, posted or auto-approved.
 
 Full design in `docs/STUDIO_ARCHITECTURE.md`; donor mapping in
 `docs/studio-capability-map.md`.
+
+---
+
+## Today & Creative Producer (Phase 4)
+
+Today + Producer is the platform's **decide** step, sitting between Studio
+(Make) and any future growth loop (Learn). Its output is a persisted, ranked
+daily plan — never content.
+
+The governing split: **the Producer decides *what* to do; Studio decides *how* to
+make it.** Producer never drafts copy and never calls a provider for generation.
+
+| Concern | Owner |
+|---|---|
+| Candidate eligibility, scoring, slot shape | `app/producer/planner.py` (deterministic) |
+| Evidence assembly (profile, memory, voice, prior work, plans) | `app/producer/context.py` |
+| Orchestration of one plan run | `app/producer/service.py` |
+| Plan persistence and status transitions | `app/producer/persistence.py` → `plan_items` |
+| Wording enrichment only | `LLMGateway` (Phase 2), degrades to deterministic |
+| Background execution | `JobService` (Phase 2) → existing `jobs` |
+| Actual generation | `app/studio/` (Phase 3) |
+
+### Zero new tables
+
+Phase 4 added **no tables**. `plan_items` (created in migration 001 and unused)
+was extended by migration 007 with `status`, `reason`, `reason_kind`,
+`action_kind`, `capability`, `rank`, `dedupe_key`, `studio_session_id`,
+`generation_id`, `source`, `recommendation`, and `priority_band`, plus a
+transition trigger and a partial unique index on `dedupe_key` that prevents a
+repeated Producer run from double-booking a day.
+
+Async runs reuse `jobs`; generated content stays in `content_assets`.
+
+### Deterministic-first by construction
+
+Candidate generation and ordering happen in Python. The LLM Gateway is called
+only to rephrase recommendations already selected, and its output is discarded on
+failure. A provider outage therefore still yields a full, correct plan. Every
+recommendation carries a `reason_kind` and must resolve to a real record;
+unresolvable evidence drops the recommendation rather than rendering a vague one.
+
+### Day shape
+
+One main action plus optional secondary actions, adapted from Module 04. The
+Planner may legitimately recommend **nothing** — a high-fatigue creator with a
+full portfolio and no unfinished work gets an honest empty plan rather than
+invented filler.
+
+Workflow position is `decide → (Studio) → generate → done`. Plan item status and
+`generation_id` are recorded even though Phase 4 does not consume them, because
+Phase 5 needs the outcome data.
+
+Full design in `docs/PHASE_4_FINAL_REPORT.md`; donor mapping in
+`docs/producer-donor-adaptation.md`.

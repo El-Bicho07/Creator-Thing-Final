@@ -296,6 +296,7 @@ class EvaluationSuite:
                     query=scenario.query, top_k=top_k,
                     purpose=f"eval:{scenario.id}"))
                 context["memory_results"] = hits
+                result.detail["memory_notes"] = context.get("memory_notes")
                 context["retrieved_blob"] = " ".join(h.text for h in hits)
                 context["on_topic_score"] = hits[0].score if hits else None
 

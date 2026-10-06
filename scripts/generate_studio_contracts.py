@@ -36,9 +36,10 @@ import re
 import sys
 from typing import Any, Dict, List
 
-HEADER = """// Studio API types — AUTO-GENERATED, DO NOT EDIT BY HAND.
+HEADER = """// Studio + Today/Producer API types — AUTO-GENERATED, DO NOT EDIT BY HAND.
 //
-// Source: FastAPI OpenAPI spec (`/openapi.json`), Studio schemas only.
+// Source: FastAPI OpenAPI spec (`/openapi.json`), Studio (Phase 3) and
+// Today/Producer (Phase 4) schemas.
 // Regenerate: scripts/generate_studio_contracts.py
 //
 // Ownership note: none of these types carry a `user_id`. The API derives the
@@ -158,11 +159,21 @@ def _fields_with_defaults() -> Dict[str, set[str]]:
     """
     import importlib
 
+    from app.producer import contracts as producer_contracts
     from app.studio.api import schemas as studio_schemas
 
+    sources = [studio_schemas, producer_contracts]
     out: Dict[str, set[str]] = {}
-    for attr in dir(studio_schemas):
-        model = getattr(studio_schemas, attr)
+    for source in sources:
+        out.update(_defaults_from(source))
+    return out
+
+
+def _defaults_from(module) -> Dict[str, set[str]]:
+    """Field names carrying a default, per Pydantic model in `module`."""
+    out: Dict[str, set[str]] = {}
+    for attr in dir(module):
+        model = getattr(module, attr)
         fields = getattr(model, "model_fields", None)
         if not isinstance(fields, dict):
             continue
@@ -212,7 +223,7 @@ def _emit_interface(name: str, schema: Dict[str, Any],
 
 
 def generate(prefix: str = "Studio") -> str:
-    """Return the TypeScript contract source for Studio schemas."""
+    """Return the TypeScript contract source for Studio + Phase 4 schemas."""
     from app.main import app
 
     spec = app.openapi()
@@ -229,6 +240,13 @@ def generate(prefix: str = "Studio") -> str:
             "CapabilityListResponse", "VersionInfo", "VersionListResponse",
             "ApprovalRequest", "ContextPreviewResponse", "SessionStatus",
             "SessionStep",
+            # --- Phase 4: Today + AI Creative Producer ---
+            "ProducerRecommendation", "Evidence", "ProducerContextSummary",
+            "ProducerRun", "TodayPlan", "TodayItem", "EvidenceKind",
+            "ClaimKind", "RecommendationKind", "ActionKind", "Priority",
+            "TodayItemStatus",
+            "TodayPlanResponse", "PlanResultResponse", "RecommendResponse",
+            "ExecuteResponse", "CarryoverItem", "CarryoverResponse",
         }
     )
 
@@ -244,10 +262,10 @@ def generate(prefix: str = "Studio") -> str:
 
     chunks: List[str] = [HEADER]
     chunks.append("// --------------------------------------------------------------------")
-    chunks.append("// Capability input payloads")
+    chunks.append("// Phase 3 Studio + Phase 4 Today/Producer contracts")
     chunks.append("//")
-    chunks.append("// Each capability validates its input against a Pydantic model, so these")
-    chunks.append("// are the shapes the API will accept. Sending an unknown field is a 422.")
+    chunks.append("// Capability inputs are validated against a Pydantic model, so these are")
+    chunks.append("// exactly the shapes the API will accept. Sending an unknown field is a 422.")
     chunks.append("// --------------------------------------------------------------------")
 
     emitted = set()
@@ -303,7 +321,8 @@ def generate(prefix: str = "Studio") -> str:
     chunks.append("// Operations")
     chunks.append("// --------------------------------------------------------------------")
     for path, methods in sorted(spec["paths"].items()):
-        if not path.startswith("/api/studio"):
+        if not (path.startswith("/api/studio") or path.startswith("/api/today")
+                or path.startswith("/api/producer")):
             continue
         for method, operation in sorted(methods.items()):
             if method not in ("get", "post", "patch", "delete", "put"):

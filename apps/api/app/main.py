@@ -13,6 +13,7 @@ from app.features.studio.router import router as studio_router
 from app.features.coach.router import router as coach_router
 from app.features.growth.router import router as growth_router
 from app.features.library.router import router as library_router
+from app.features.producer.router import router as producer_router
 from app.features.memory.router import router as memory_router
 from app.features.voice.router import router as voice_router
 
@@ -66,3 +67,7 @@ app.include_router(library_router, prefix="/api")
 # Phase 2: shared platform services
 app.include_router(memory_router, prefix="/api")
 app.include_router(voice_router, prefix="/api")
+
+# Phase 4: Today + AI Creative Producer. The Producer decides what to work on;
+# Studio (Phase 3) still does all content generation.
+app.include_router(producer_router, prefix="/api")

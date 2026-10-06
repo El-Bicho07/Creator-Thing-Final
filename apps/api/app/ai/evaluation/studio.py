@@ -494,6 +494,35 @@ def load_studio_scenarios(path: str = SCENARIO_FILE) -> List[StudioScenario]:
     return [StudioScenario(**item) for item in raw["scenarios"]]
 
 
+#: Tables the evaluation owns for its user. Reset before every scenario so a run
+#: does not depend on what previous runs left behind.
+_EVAL_TABLES = (
+    "studio_generations", "studio_sessions", "plan_items", "chunks",
+    "content_assets", "voice_profiles", "ideas", "performance_records",
+    "creator_profiles",
+)
+
+
+async def reset_eval_user(db, user_id: uuid.UUID) -> None:
+    """Clear the evaluation creator's rows.
+
+    Nothing else ever deletes them, so without this the evaluation user
+    accumulates assets and chunks on every run and a later run's retrieval sees a
+    corpus many times larger than the one the scenario describes -- `memory_used`
+    then depends on how many times the suite had been run.
+
+    The deletes go through the caller's RLS-scoped session on purpose. The
+    evaluation creator owns every row it is about to delete, so an admin
+    connection would add nothing except a second set of row locks that can
+    deadlock against the long-lived session the suite runs every scenario in.
+    """
+    from sqlalchemy import text
+
+    for table in _EVAL_TABLES:
+        await db.execute(text(f"DELETE FROM {table} WHERE user_id = :u"), {"u": str(user_id)})
+    await db.commit()
+
+
 async def _seed_creator(db, user_id: uuid.UUID, scenario: StudioScenario) -> None:
     """Seed memory and voice through the real Phase 2 engines."""
     if scenario.corpus:
@@ -552,6 +581,7 @@ async def run_scenario(
     try:
         from app.studio import StudioOrchestrator
 
+        await reset_eval_user(db, user_id)
         await _seed_creator(db, user_id, scenario)
 
         orchestrator = StudioOrchestrator(db, user_id)
@@ -579,6 +609,12 @@ async def run_scenario(
         # Taken from the orchestrator's real assembled blocks, not reconstructed.
         context["prompt_blocks"] = dict(execution.prompt_blocks or {})
         context["prompt_text"] = "\n".join(context["prompt_blocks"].values())
+        # Surface the assembler's notes: without them a `memory_used: 0.0`
+        # failure cannot be distinguished from "nothing relevant retrieved"
+        # from "memory retrieval raised".
+        result.detail["context_notes"] = list(
+            execution.context_summary.get("notes") or []
+        )
 
         # ---- critique, when the scenario calls for it ----
         if "critique" in scenario.tags:

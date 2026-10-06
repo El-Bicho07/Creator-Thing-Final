@@ -399,3 +399,43 @@ rendered to an empty user message — a silent empty prompt rather than an error
 
 Phase 2 baseline was **not** otherwise reworked: 286 → 310 tests, all passing,
 with `modules/` unchanged.
+
+---
+
+## Phase 4 — Today & Creative Producer
+
+### Module 04 (Content Calendar / Daily Planner)
+
+Audited for prioritization logic and found to have **none**. The module's
+planner engine and its persistence layer are absent from the donor — only the
+data shapes and the calendar UI remain. Nothing was ported.
+
+One pattern was worth taking: the **3-slot day shape** (one main action, plus
+smaller actions). Adopted as the Producer's day structure, because it forces an
+explicit choice about what matters most today rather than presenting a flat list.
+
+### Module 21 (Creative Producer / agent)
+
+Predominantly stubs — prompts, placeholder interfaces, and an agent skeleton with
+no ranking, scoring, or evidence resolution behind it. No implementation to port.
+
+Three disciplines were adopted deliberately:
+
+1. **Evidence forcing** — every recommendation must resolve to a real record.
+   This is the single most important property in Phase 4; it is why
+   `reason_kind` is required and why unresolvable evidence drops a
+   recommendation.
+2. **Anti-fabrication** — the agent may not invent creator history, numbers, or
+   performance. Enforced by requiring resolvable evidence rather than by
+   prompting against it.
+3. **Bounded-loop discipline** — a run terminates with a decision, not a
+   conversation. Reflected in the fixed slot/budget caps in `planner.py`.
+
+### Net result
+
+**Zero lines of donor implementation were ported in Phase 4.** The Producer is
+written against platform contracts (`LLMGateway`, `MemoryEngine`, `VoiceEngine`,
+`JobService`, `plan_items`) and adds no infrastructure. `modules/` remains
+read-only at 1065 tracked files with 0 diff.
+
+Full classification in `docs/producer-donor-adaptation.md`.

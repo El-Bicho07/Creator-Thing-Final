@@ -494,3 +494,59 @@ cd apps/web && npm run build       # exit 0, 11 routes, /studio 8.59 kB
 | Empty output | Rejected with a 502, not persisted as a blank version |
 | Critique with no content | 409, and never a fake "looks good" review |
 | Forge ownership via raw SQL | Rejected by the `WITH CHECK` clause on both Studio tables |
+
+---
+
+## Phase 4 — Today & Creative Producer (2026-10-06)
+
+### Runs
+
+| Check | Command | Result |
+|---|---|---|
+| Backend suite | `docker exec creator-api pytest tests -q` | **750 passed, 0 failed** (run 1: 117.44s, run 2: 137.58s) |
+| Producer evaluation | `python -m app.ai.evaluation.producer_runner` | **32 / 32**, exit 0 |
+| Studio evaluation | `pytest tests/unit/test_studio_evaluation.py` | **28 / 28**, 4 consecutive runs |
+| Frontend typecheck | `npm run typecheck` | exit 0 |
+| Frontend build | `npm run build` | success — `/today` 6.39 kB, `/studio` 8.84 kB |
+| Donor integrity | `git status --porcelain modules` | empty; 1065 tracked, 0 diff |
+
+### Two failures found and fixed
+
+**Stale ranking test.** `test_rich_creator_gets_the_higher_scoring_main_slot`
+failed because its premise ("create outranks carryover") had been deliberately
+changed in Phase 4 when overdue carryover was made to outrank new work. The
+production rule was kept and the test rewritten as
+`test_overdue_carryover_overtakes_new_work`, pinning the real crossover: one day
+of slippage yields to a fresh concept, a week does not.
+
+**Phase 3 evaluation harness defect.** `studio_002_idea_uses_creator_memory`
+reported `memory_used: 0.0`. Two compounding causes:
+
+- the evaluation user was never reset, so its corpus grew on every run;
+- the first fix — resetting through an **admin** connection — introduced row-lock
+  contention against the long-lived shared session and made results
+  *nondeterministic*, which was worse than the original bug.
+
+Correct fix: reset through the caller's own RLS-scoped session. The evaluation user
+owns every row it deletes, so an admin connection added nothing but deadlock risk.
+The harness now records `context_notes` on each result and prints them on failure,
+so a future `memory_used: 0.0` can distinguish "nothing relevant retrieved" from
+"retrieval raised".
+
+### Negative controls
+
+| Control | Result |
+|---|---|
+| LLM provider unavailable | Deterministic plan still produced; no error surfaced to the creator |
+| Repeated Producer runs | `dedupe_key` unique index prevents double-booking |
+| Evidence referencing a deleted record | Recommendation dropped, not rendered with vague reasoning |
+| Creator-profile marker with non-UUID value | Validated before binding; no database error path |
+| Forge plan-item ownership via raw SQL | Rejected by RLS `WITH CHECK` |
+| Cross-user plan read / update / delete | Rejected (17 RLS tests) |
+| Corpus with no memory at all | Honest empty plan; `no_relevant_memory` recorded |
+
+### Carried-forward limitation
+
+Live provider output quality remains **unvalidated** — `.env` contains
+placeholder credentials. All Phase 4 verification used the deterministic path and
+scripted providers. This is an open confidence gap, not a completed item.
