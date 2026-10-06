@@ -42,10 +42,13 @@ USER_B = uuid.UUID("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb")
 #: The complete set of user-owned tables in the live schema.
 EXPECTED_TABLES = {
     "ai_calls", "chunks", "comment_insights", "comments", "content_assets",
-    "creator_profiles", "ideas", "jobs", "lessons", "performance_records",
-    "plan_items", "studio_generations", "studio_sessions", "users",
-    "voice_profiles",
+    "creator_profiles", "experiments", "growth_insights", "ideas", "jobs",
+    "lessons", "performance_records", "plan_items", "studio_generations",
+    "studio_sessions", "users", "voice_profiles",
 }
+# Phase 5 added `growth_insights` and `experiments` (migration 008). Registering
+# them here is what puts them through the full CRUD isolation matrix below -- this
+# guard is precisely what caught them being added without RLS coverage.
 
 #: Not user-owned: operational migration bookkeeping. Must have NO RLS.
 NON_USER_TABLES = {"schema_migrations"}
@@ -105,7 +108,8 @@ async def _wipe() -> None:
     maker = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
     tables = ["chunks", "comment_insights", "comments", "content_assets",
               "creator_profiles", "ideas", "plan_items", "performance_records",
-              "lessons", "jobs", "ai_calls", "voice_profiles"]
+              "lessons", "jobs", "ai_calls", "voice_profiles",
+              "growth_insights", "experiments"]
     async with maker() as admin:
         for table in tables:
             await admin.execute(
@@ -185,6 +189,17 @@ def _insert_sql(table: str, owner: uuid.UUID, marker: str) -> tuple[str, dict]:
                    WHERE s.user_id = :u ORDER BY s.created_at DESC LIMIT 1
                    RETURNING id""",
                 common)
+    if table == "growth_insights":
+        # evidence is NOT NULL by design: an insight with no evidence is not an
+        # insight, so the insert recipe must supply one.
+        return ("""INSERT INTO growth_insights
+                    (user_id, insight_type, title, summary, evidence)
+                   VALUES (:u, 'performance_trend', CAST(:m AS varchar),
+                           CAST(:m AS text), CAST(:e AS jsonb))
+                   RETURNING id""", {**common, "e": "{}"})
+    if table == "experiments":
+        return ("INSERT INTO experiments (user_id, hypothesis) "
+                "VALUES (:u, :m) RETURNING id", common)
     if table == "ai_calls":
         return ("""INSERT INTO ai_calls (user_id, feature, provider, model,
                                       prompt_version, latency_ms, success)
@@ -239,11 +254,18 @@ async def test_expected_table_set_is_complete():
         f"  extra   : {sorted(user_tables - EXPECTED_TABLES)}\n"
         f"  missing : {sorted(EXPECTED_TABLES - user_tables)}"
     )
-    # The brief assumed a table that was never created.
-    assert "experiments" not in actual, (
-        "`experiments` was assumed by the task brief but does not exist in the "
-        "schema; nothing was fabricated to satisfy it."
-    )
+    # HISTORY: through Phase 4 this file asserted the opposite --
+    #   "`experiments` was assumed by the task brief but does not exist in the
+    #    schema; nothing was fabricated to satisfy it."
+    # That was the correct call at the time: no phase needed an experiment record,
+    # so inventing one would have been an unjustified table.
+    #
+    # Phase 5 changed the requirement, not the principle. The Growth loop
+    # (hypothesis -> content -> performance -> result -> lesson) has no other home
+    # for `status`, `outcome_metric`, `result_verdict` and `lesson_id`, so the table
+    # is now created deliberately in migration 008 and -- unlike the original
+    # brief's assumption -- is registered here, so it goes through the full
+    # cross-user CRUD matrix below.
 
 
 @pytest.mark.parametrize("table", sorted(EXPECTED_TABLES))

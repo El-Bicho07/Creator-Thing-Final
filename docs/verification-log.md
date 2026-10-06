@@ -550,3 +550,48 @@ so a future `memory_used: 0.0` can distinguish "nothing relevant retrieved" from
 Live provider output quality remains **unvalidated** — `.env` contains
 placeholder credentials. All Phase 4 verification used the deterministic path and
 scripted providers. This is an open confidence gap, not a completed item.
+
+---
+
+## Phase 5 — Growth & Analytics Copilot (2026-10-06)
+
+### Runs
+
+| Check | Command | Result |
+|---|---|---|
+| Backend suite | `docker exec creator-api pytest tests -q` | **1,063 passed, 0 failed, 0 warnings** |
+| 3× consecutive full runs | same | **all 1,063 passed** |
+| Reverse-order / isolated runs | same | **all 1,063 passed** |
+| Copilot evaluation | `python -m app.ai.evaluation.copilot_runner` | **35 / 35** |
+| Producer evaluation | `python -m app.ai.evaluation.producer_runner` | **32 / 32** |
+| Studio evaluation | `python -m app.ai.evaluation.studio_runner` | **28 / 28** |
+| Frontend typecheck | `npm run typecheck` | exit 0 |
+| Frontend build | `npm run build` | success |
+| Frontend functional tests | `npm test` | **27 passed** |
+| Donor integrity | `git diff --stat -- modules` | **0 lines** |
+
+### New coverage
+
+| Area | Before Phase 5 | After Phase 5 |
+|---|---|---|
+| Growth deterministic analytics | 0 tests | 47 unit tests |
+| Growth API surface | 0 tests | 44 integration tests |
+| Growth RLS / cross-user isolation | 0 tests | 18 tests |
+| Copilot evaluation harness integrity | 0 tests | 14 tests |
+| Growth + Copilot evaluation scenarios | 0 | **35 scenarios / 11 categories** |
+| Cross-phase integration (Growth→Producer→Today→Studio) | 0 | 12 tests |
+
+### Defects found and fixed
+
+- `record_performance` and `add_comment` never committed their INSERTs.
+- `LessonGenerator.from_experiment` crashed with `AttributeError`.
+- The fabrication-gate number regex skipped any number followed by a period.
+- `extract_numbers` returned empty for sentence-ending numbers.
+- Migration 008 RLS policies used the wrong claim variable.
+- Today page loading-state defect produced a false empty plan.
+- Studio evaluation state leakage made results non-deterministic.
+
+### Deferred
+
+- **Live LLM validation** — both configured keys return HTTP 401; no live test faked.
+- **Studio → Memory ingestion** — product/schema decision, not a verification failure.

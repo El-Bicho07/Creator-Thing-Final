@@ -32,6 +32,28 @@ ROUNDS = 12
 _CLAIMS_SQL = text("SELECT current_user_id()")
 
 
+class AsyncBarrier:
+    """Fallback barrier implementation for Python 3.10."""
+
+    def __init__(self, parties: int):
+        self.parties = parties
+        self.count = 0
+        self.event = asyncio.Event()
+
+    async def wait(self):
+        self.count += 1
+        if self.count >= self.parties:
+            self.event.set()
+        else:
+            await self.event.wait()
+
+
+def _make_barrier(parties: int):
+    if hasattr(asyncio, "Barrier"):
+        return asyncio.Barrier(parties)
+    return AsyncBarrier(parties)
+
+
 async def _ensure_users(ids: list[uuid.UUID], *, clean: bool = False) -> None:
     """Create the users, and optionally wipe prior rows first.
 

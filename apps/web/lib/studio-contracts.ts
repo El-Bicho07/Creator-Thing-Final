@@ -15,6 +15,33 @@
 // Capability inputs are validated against a Pydantic model, so these are
 // exactly the shapes the API will accept. Sending an unknown field is a 422.
 // --------------------------------------------------------------------
+export interface AddCommentRequest {
+  comment_text: string;
+  asset_id: string | null;
+  author_hash: string | null;
+  posted_at: string | null;
+}
+
+/** A comment id, and whether it was newly stored or already present. */
+export interface AddCommentResponse {
+  id: string;
+  duplicate: boolean;
+}
+
+export interface AnalyzeCommentsRequest {
+  asset_id: string | null;
+  limit?: number;
+}
+
+export interface AnalyzeCommentsResponse {
+  analyzed: number;
+  skipped_duplicate?: number;
+  categories?: Record<string, number>;
+  intents?: Record<string, number>;
+  questions_extracted?: number;
+  degraded?: boolean;
+}
+
 export interface ApprovalRequest {
   approved: boolean;
 }
@@ -51,6 +78,38 @@ export interface CarryoverResponse {
   days_since_last_plan: number | null;
 }
 
+export interface CommentInsightResponse {
+  id: string;
+  category: string | null;
+  summary: string;
+  extracted_questions?: string[];
+  actionable_idea: string | null;
+  comment_ids?: string[];
+  confidence: ConfidenceResponse | null;
+  demand_score: number | null;
+}
+
+export interface CommentResponse {
+  id: string;
+  asset_id: string | null;
+  comment_text: string;
+  author_hash: string | null;
+  posted_at: string | null;
+  category: "theme" | "question" | "complaint" | "opportunity" | "spam" | null;
+  intent: "request" | "pain_point" | "question" | "confusion" | "more_of_this" | "criticism" | "praise" | "other" | null;
+  actionable?: boolean;
+  sentiment: string | null;
+  summary: string | null;
+  analyzed_at: string | null;
+}
+
+export interface ConfidenceResponse {
+  score: number;
+  band: "low" | "medium" | "high";
+  reasons?: string[];
+  factors?: Record<string, number>;
+}
+
 export interface ContextPreviewResponse {
   session_id: string;
   memory_used: number;
@@ -60,6 +119,57 @@ export interface ContextPreviewResponse {
   creator_voice: string;
   prior_work: string;
   notes: string[];
+}
+
+export interface CopilotCitation {
+  table: string;
+  record_id: string;
+  label: string | null;
+}
+
+export interface CopilotRequest {
+  question: string;
+  window_days?: number;
+}
+
+/** What happened, why it matters, what to do next. */
+export interface CopilotResponse {
+  question: string;
+  what_happened: string;
+  why_it_matters: string;
+  what_next: string;
+  citations?: CopilotCitation[];
+  insufficient_data?: boolean;
+  suggested_action: string | null;
+  confidence: ConfidenceResponse | null;
+  degraded?: boolean;
+  provider: string | null;
+  model: string | null;
+}
+
+export interface CreateCommentInsightResponse {
+  id: string;
+  category: string | null;
+  summary: string;
+  extracted_questions?: string[];
+  actionable_idea: string | null;
+  comment_ids?: string[];
+}
+
+export interface CreateOpportunityRequest {
+  title: string;
+  angle: string;
+  target_format?: string;
+  comment_ids?: string[];
+}
+
+export interface CreatePerformanceRequest {
+  asset_id: string | null;
+  title: string | null;
+  platform: string;
+  values: Record<string, number>;
+  published_at: string | null;
+  metrics_measured: string[] | null;
 }
 
 export interface CritiqueItem {
@@ -102,6 +212,32 @@ export interface ExecuteResponse {
   message: string;
 }
 
+export interface ExperimentCreateRequest {
+  hypothesis: string;
+  outcome_metric: string | null;
+  variant_asset_id: string | null;
+  baseline_asset_id: string | null;
+  insight_id: string | null;
+}
+
+export interface ExperimentResponse {
+  id: string;
+  hypothesis: string;
+  status: "planned" | "running" | "completed" | "abandoned";
+  outcome_metric: string | null;
+  observed_value: number | null;
+  baseline_value: number | null;
+  result_verdict: "supported" | "not_supported" | "inconclusive" | null;
+  result_summary: string | null;
+  variant_asset_id: string | null;
+  baseline_asset_id: string | null;
+  insight_id: string | null;
+  lesson_id: string | null;
+  started_at: string | null;
+  completed_at: string | null;
+  created_at: string | null;
+}
+
 /** Execute one Studio capability inside a session. */
 export interface GenerationRequest {
   session_id: string;
@@ -130,6 +266,101 @@ export interface GenerationResponse {
   latency_ms: number;
   context_summary: Record<string, unknown>;
   warnings: string[];
+}
+
+/** What changed. Not a chart wall -- the numbers that drive a decision. */
+export interface GrowthOverviewResponse {
+  window_start: string;
+  window_end: string;
+  record_count: number;
+  available_metrics?: MetricValue[];
+  unsupported_metrics?: string[];
+  engagement_rate: MetricValue | null;
+  median_engagement_rate: number | null;
+  trends?: TrendResponse[];
+  top_performers?: RankingEntry[];
+  underperformers?: RankingEntry[];
+  insight_count?: number;
+  opportunity_count?: number;
+  lesson_count?: number;
+  experiment_count?: number;
+  unanalyzed_comments?: number;
+  data_gaps?: string[];
+  has_enough_data?: boolean;
+}
+
+export interface InsightResponse {
+  id: string;
+  insight_type: "performance_trend" | "content_pattern" | "audience_signal" | "underperforming_pattern" | "opportunity" | "experiment_result";
+  title: string;
+  summary: string;
+  evidence?: Record<string, unknown>;
+  source_records?: string[];
+  confidence: ConfidenceResponse;
+  impact: "low" | "medium" | "high";
+  rule_key: string;
+  recommended_action: string | null;
+  is_stale?: boolean;
+  window_start: string | null;
+  window_end: string | null;
+  created_at: string | null;
+}
+
+/** Deterministic verdict on whether an experiment's hypothesis held. */
+export interface LessonEvaluationResponse {
+  experiment_id: string;
+  verdict: "supported" | "not_supported" | "inconclusive";
+  observed_value: number | null;
+  baseline_value: number | null;
+  change_pct: number | null;
+  explanation: string;
+  has_enough_data?: boolean;
+}
+
+export interface LessonResponse {
+  id: string;
+  source_feature: string;
+  insight_summary: string;
+  actionable_rule: string;
+  applied_count?: number;
+  confidence: ConfidenceResponse | null;
+  insight_id: string | null;
+  evidence?: Record<string, unknown>;
+  created_at: string | null;
+}
+
+export interface MetricValue {
+  metric: string;
+  value: number | null;
+  available?: boolean;
+  unit: string | null;
+}
+
+export interface OpportunityResponse {
+  id: string;
+  title: string;
+  angle: string;
+  target_format: string;
+  demand_score: number | null;
+  origin: "comment" | "performance" | "experiment" | "manual";
+  status?: string;
+  evidence?: Record<string, unknown>;
+  source_comment_ids?: string[];
+  insight_id: string | null;
+}
+
+export interface PerformanceRecordResponse {
+  id: string;
+  asset_id: string | null;
+  asset_title: string | null;
+  platform: string;
+  views: number | null;
+  likes: number | null;
+  comments_count: number | null;
+  shares: number | null;
+  published_at: string | null;
+  recorded_at: string;
+  engagement_rate: number | null;
 }
 
 /** Response of `POST /api/today/plan`, sync or job-backed. */
@@ -183,6 +414,17 @@ export interface ProducerRun {
   skipped_duplicates: number;
   latency_ms: number;
   notes: string[];
+}
+
+export interface RankingEntry {
+  asset_id: string | null;
+  title: string;
+  platform: string;
+  engagement_rate: number | null;
+  views: number | null;
+  engagement_total: number;
+  vs_baseline_ratio: number | null;
+  rank?: number;
 }
 
 export interface RecommendResponse {
@@ -273,6 +515,17 @@ export interface TodayPlanResponse {
   run: ProducerRun | null;
 }
 
+export interface TrendResponse {
+  metric: string;
+  current: number;
+  previous: number;
+  change_pct: number | null;
+  direction: string;
+  current_sample: number;
+  previous_sample: number;
+  has_enough_data?: boolean;
+}
+
 export interface VersionInfo {
   id: string;
   version: number;
@@ -302,8 +555,16 @@ export interface VersionListResponse {
 // --------------------------------------------------------------------
 export type ActionKind = "create_content" | "quick_engage" | "build_trust" | "continue_draft" | "refine_content" | "repurpose" | "review_idea" | "publish_prep";
 export type ClaimKind = "observed" | "suggestion";
+export type CommentCategory = "theme" | "question" | "complaint" | "opportunity" | "spam";
+export type CommentIntent = "request" | "pain_point" | "question" | "confusion" | "more_of_this" | "criticism" | "praise" | "other";
+export type ConfidenceBand = "low" | "medium" | "high";
 export type CritiqueSeverity = "strong" | "medium" | "light";
 export type EvidenceKind = "memory" | "content_asset" | "studio_generation" | "idea" | "creator_profile" | "voice_profile" | "performance_record" | "today_item";
+export type ExperimentStatus = "planned" | "running" | "completed" | "abandoned";
+export type ExperimentVerdict = "supported" | "not_supported" | "inconclusive";
+export type ImpactLevel = "low" | "medium" | "high";
+export type InsightType = "performance_trend" | "content_pattern" | "audience_signal" | "underperforming_pattern" | "opportunity" | "experiment_result";
+export type OpportunityOrigin = "comment" | "performance" | "experiment" | "manual";
 export type Priority = "high" | "medium" | "low";
 export type RecommendationKind = "create" | "continue" | "refine" | "repurpose" | "triage_idea" | "quick_engage" | "build_trust" | "no_action";
 export type RefinementModifier = "shorter" | "more_casual" | "more_bold" | "more_educational" | "simpler";

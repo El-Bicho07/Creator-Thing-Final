@@ -247,6 +247,20 @@ def generate(prefix: str = "Studio") -> str:
             "TodayItemStatus",
             "TodayPlanResponse", "PlanResultResponse", "RecommendResponse",
             "ExecuteResponse", "CarryoverItem", "CarryoverResponse",
+            # --- Phase 5: Growth + Analytics Copilot ---
+            "MetricValue", "EvidenceItem", "ConfidenceResponse", "InsightResponse",
+            "OpportunityResponse", "CommentResponse", "CommentInsightResponse",
+            "PerformanceRecordResponse", "TrendResponse", "RankingEntry",
+            "GrowthOverviewResponse", "CopilotCitation", "CopilotResponse",
+            "CopilotRequest", "LessonResponse", "LessonEvaluationResponse",
+            "ExperimentResponse", "ExperimentCreateRequest",
+            "AnalyzeCommentsRequest", "AnalyzeCommentsResponse",
+            "AddCommentRequest", "AddCommentResponse",
+            "CreatePerformanceRequest", "CreateOpportunityRequest",
+            "CreateCommentInsightResponse",
+            "InsightType", "ImpactLevel", "ConfidenceBand", "CommentCategory",
+            "CommentIntent", "OpportunityOrigin", "ExperimentStatus",
+            "ExperimentVerdict",
         }
     )
 

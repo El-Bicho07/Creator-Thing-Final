@@ -158,6 +158,9 @@ _TEST_TABLES = [
     "chunks", "content_assets", "creator_profiles", "voice_profiles",
     "ideas", "plan_items", "performance_records", "comments",
     "comment_insights", "lessons", "jobs", "ai_calls",
+    # Phase 5. Ordered so dependants go before parents: an experiment may point at
+    # a lesson or an insight, and an opportunity may point at an insight.
+    "growth_insights", "experiments",
 ]
 
 

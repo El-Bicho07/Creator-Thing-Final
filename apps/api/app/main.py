@@ -11,6 +11,7 @@ from app.features.start.router import router as start_router
 from app.features.today.router import router as today_router
 from app.features.studio.router import router as studio_router
 from app.features.coach.router import router as coach_router
+from app.features.growth.router import copilot_router as analytics_copilot_router
 from app.features.growth.router import router as growth_router
 from app.features.library.router import router as library_router
 from app.features.producer.router import router as producer_router
@@ -61,7 +62,11 @@ app.include_router(start_router, prefix="/api")
 app.include_router(today_router, prefix="/api")
 app.include_router(studio_router, prefix="/api")
 app.include_router(coach_router, prefix="/api")
+# Phase 5: Growth + Analytics Copilot. Growth understands performance and turns it
+# into evidence-backed recommendations; it never generates content (Studio's job)
+# and never plans (Producer's job).
 app.include_router(growth_router, prefix="/api")
+app.include_router(analytics_copilot_router, prefix="/api")
 app.include_router(library_router, prefix="/api")
 
 # Phase 2: shared platform services

@@ -439,3 +439,32 @@ written against platform contracts (`LLMGateway`, `MemoryEngine`, `VoiceEngine`,
 read-only at 1065 tracked files with 0 diff.
 
 Full classification in `docs/producer-donor-adaptation.md`.
+
+---
+
+## Phase 5 — Growth & Analytics Copilot
+
+### Module 10 — Comment Analyzer
+
+- Accepted the category model (`question | how_to | praise | request | complaint | other`).
+- Replaced direct Gemini SDK calls with rule-based classification first. LLM refinement is allowed but constrained.
+- Replaced invented sentiment certainty with a simple category table.
+- Dropped direct API keys from prompts.
+
+### Module 11 — Comment-to-Content
+
+- Kept the useful product mapping `audience question → content opportunity`.
+- Rejected Module 11’s habit of generating finished content inside comment analysis.
+- Opportunities now live on `ideas` so Phase 4’s Producer can consume them.
+
+### Module 19 — Creator Second Brain
+
+- Rejected the whole second-memory architecture. The platform already has `MemoryEngine`.
+- Rejected BGE embeddings (incompatible with the platform’s E5-base 768-D decision).
+- Rejected local vector store (platform uses pgvector through `MemoryEngine`).
+- Rejected agent supervisor framework (platform uses explicit service layer + JobService).
+- Kept the idea of “grounded learning” but implemented it as evidence-backed insights, not a second brain.
+
+### Net result
+
+**Zero donor architectural patterns were imported wholesale.** Every useful product concept was reimplemented against platform contracts. `modules/` remains unmodified.

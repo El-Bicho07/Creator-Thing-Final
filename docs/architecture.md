@@ -379,3 +379,69 @@ Phase 5 needs the outcome data.
 
 Full design in `docs/PHASE_4_FINAL_REPORT.md`; donor mapping in
 `docs/producer-donor-adaptation.md`.
+
+## Phase 5 — Growth & Analytics Copilot
+
+Growth occupies the **Learn** step of the product loop.
+
+```text
+Performance data
+  ↓
+Deterministic analysis (`analysis.py`)
+  ↓
+Insight generation (`insights.py`)
+  ↓
+Analytics Copilot (`copilot.py`)
+  ↓
+Opportunity / recommendation
+  ↓
+Today (Phase 4)
+  ↓
+Producer → Studio
+  ↓
+Content
+  ↓
+Performance
+```
+
+### Deterministic boundary
+
+All numbers originate in application code. The LLM is used for interpretation,
+explanation, hypothesis generation and wording — never for arithmetic, counting,
+or certainty.
+
+Engagement rate is only computed when every input is measured. If `likes`,
+`comments_count`, `shares`, or `views` are absent, the rate is unknown, not 0.
+
+### Confidence
+
+Confidence is a deterministic 0–1 score derived from observable factors: sample
+size, consistency, recency, completeness. Every score carries explicit reasons.
+
+### Copilot anti-fabrication gate
+
+Before returning an answer, the Copilot re-extracts every numeric token and
+rejects the whole answer if any token cannot be traced to the deterministic
+analysis block. If the answer cites a metric the platform does not collect, it is
+also rejected and replaced with an honest “insufficient data” response.
+
+### Opportunities stored on `ideas`
+
+Content opportunities live in the existing `ideas` table, not a new table. Phase
+4’s Producer already reads `ideas` into its context, so older table would create
+an invisible second source of truth.
+
+### New schema (migration 008)
+
+Only two new tables: `growth_insights` and `experiments`. All other Phase 5
+state extends existing tables: `lessons`, `ideas`, `comments`,
+`comment_insights`, `performance_records`.
+
+`performance_records.metrics_measured` makes metric availability explicit so a
+default 0 is never read as a measured zero.
+
+### Security
+
+All new/extended tables use the shared `current_user_id()` RLS policy. No client
+can be told another user’s performance, insights, comments, opportunities,
+experiments, or lessons.
