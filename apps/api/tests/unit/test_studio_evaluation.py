@@ -31,12 +31,11 @@ from app.ai.evaluation.studio import (
 from app.core.db import admin_session_maker
 from sqlalchemy import text
 
-pytestmark = pytest.mark.asyncio
-
 EVAL_USER = "5e5e5e5e-0000-4000-8000-000000000004"
 
 
 @pytest.fixture(autouse=True)
+@pytest.mark.asyncio
 async def _eval_user():
     async with admin_session_maker() as db:
         await db.execute(
@@ -188,6 +187,7 @@ def test_critique_fallback_is_valid_json():
 # Live smoke runs against the real stack
 # --------------------------------------------------------------------------- #
 
+@pytest.mark.asyncio
 async def test_all_scenarios_pass(scenarios):
     """The whole suite, against real PostgreSQL and the real Memory/Voice engines."""
     from tests.conftest import rls_session
@@ -220,6 +220,7 @@ async def test_all_scenarios_pass(scenarios):
     "studio_017_critique_actionable",
     "studio_021_refine_creates_new_version",
 ])
+@pytest.mark.asyncio
 async def test_individual_scenarios_pass(scenario_id, scenarios):
     from tests.conftest import rls_session
     import uuid
@@ -232,6 +233,7 @@ async def test_individual_scenarios_pass(scenario_id, scenarios):
     assert result.passed, (result.errors, result.detail.get("gating_scores"))
 
 
+@pytest.mark.asyncio
 async def test_evaluation_exercises_no_gating_metric_is_a_failure(scenarios):
     """A scenario with no gating metric must not vacuously pass."""
     empty = StudioScenario(
@@ -254,6 +256,7 @@ async def test_evaluation_exercises_no_gating_metric_is_a_failure(scenarios):
     assert result.passed is False or bool(result.detail.get("gating_scores"))
 
 
+@pytest.mark.asyncio
 async def test_prompt_blocks_are_not_leaked_in_context_summary(scenarios):
     """`prompt_blocks` holds creator memory text and must stay out of the API view."""
     scenario = next(s for s in scenarios if s.id == "studio_001_idea_from_brief")

@@ -70,6 +70,11 @@ export default function TodayPage() {
 
   // ---- server state ----
   const [plan, setPlan] = useState<TodayPlanResponse | null>(null);
+  // Distinguishes "not fetched yet" from "fetched, and there is genuinely nothing
+  // planned". Without this the page briefly claims the day is empty while the
+  // request is in flight -- and invites the creator to run the Producer over a plan
+  // that already exists.
+  const [loading, setLoading] = useState(true);
   const [producerMessage, setProducerMessage] = useState<string | null>(null);
 
   // ---- client state ----
@@ -92,6 +97,8 @@ export default function TodayPage() {
       setPlan(await todayApi.getPlan(undefined, getToken));
     } catch (exc) {
       setError(messageOf(exc));
+    } finally {
+      setLoading(false);
     }
   }, [getToken]);
 
@@ -302,7 +309,17 @@ export default function TodayPage() {
           Recommended actions
         </h2>
 
-        {open.length === 0 ? (
+        {loading ? (
+          <div
+            className="rounded-xl border border-dashed border-gray-300 dark:border-gray-700 p-8 text-center"
+            role="status"
+            aria-live="polite"
+            aria-busy="true"
+          >
+            <Loader2 className="h-8 w-8 mx-auto text-gray-400 mb-2 animate-spin" />
+            <p className="text-sm text-gray-600 dark:text-gray-400">Loading today&rsquo;s plan&hellip;</p>
+          </div>
+        ) : open.length === 0 ? (
           <div className="rounded-xl border border-dashed border-gray-300 dark:border-gray-700 p-8 text-center">
             <CircleDashed className="h-8 w-8 mx-auto text-gray-400 mb-2" />
             <p className="text-sm text-gray-600 dark:text-gray-400">

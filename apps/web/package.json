@@ -1,13 +1,12 @@
 {
-  "name": "creator-platform-web",
-  "version": "0.1.0",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node tests/build.mjs && node --test \"tests/*.test.mjs\"",
+    "test:build": "node tests/build.mjs"
   },
   "dependencies": {
     "next": "^15.1.0",
@@ -33,5 +32,8 @@
     "eslint-config-next": "^15.1.0",
     "prettier": "^3.5.0",
     "prettier-plugin-tailwindcss": "^0.6.0"
-  }
+  },
+  "name": "creator-platform-web",
+  "version": "0.1.0",
+  "private": true
 }

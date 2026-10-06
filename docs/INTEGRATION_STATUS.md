@@ -3,6 +3,7 @@
 *Last Updated: Phase 1 Foundation - Complete / Verified*
 *Reconciled 2026-10-05 against Phase 2 — see `docs/PHASE_2_FINAL_VERIFICATION.md`.*
 *Phase 4 (Today & Creative Producer) complete 2026-10-06 — see `docs/PHASE_4_FINAL_REPORT.md`.*
+*Phases 2-4 consolidated verification complete 2026-10-06 — see `docs/PHASE_2_3_4_CONSOLIDATED_VERIFICATION.md`.*
 
 > **READ FIRST — this file is a Phase 1 snapshot.** Sections below describing the
 > embedding model, `vector(384)` storage, and "awaiting user approval" are the
@@ -441,3 +442,55 @@ Phase 4 ends at **a decided, persisted plan handed to Studio**.
 
 Full report: `docs/PHASE_4_FINAL_REPORT.md`.
 Readiness: `docs/PHASE_4_READINESS.md`.
+
+---
+
+## Phases 2-4 consolidated verification (✅ Complete, 2026-10-06)
+
+A consolidated verification of Phases 2, 3 and 4 was performed: re-execute
+everything, find real coverage gaps, add targeted tests, fix genuine defects, and
+record acceptance. **Phase 5 was not started.**
+
+### Outcome
+
+| | Baseline | Final |
+|---|---|---|
+| Backend tests | 750 | **845** (+95) |
+| Warnings | 13 | **0** |
+| Frontend functional tests | **0** | **27** |
+| Producer / Studio evaluation | 32/32, 28/28 | **32/32, 28/28** |
+| `modules/` drift | 0 | **0** |
+
+### Gaps closed
+
+| Area | Before | After |
+|---|---|---|
+| **Job system** (`JobService`, 11 operations) | no dedicated tests | **36 tests** |
+| **Generation lineage / asset lifecycle** | 1 reference | **23 tests** |
+| **Today state machine / failure paths** | ~5 incidental refs | **30 tests** |
+| **Cross-phase journey / combined isolation** | none | **6 tests** |
+| **Frontend functional** | none | **27 tests** (zero new dependencies) |
+
+### Defects found
+
+- **Production:** the Today page had no loading state, so it told creators with a
+  full plan that nothing was planned and invited them to re-plan an existing day.
+  Fixed, with a regression test.
+- **Test harness:** a module-level `pytestmark` marked 14 synchronous tests async
+  (the 13 warnings). Fixed -> 0 warnings.
+- **Finding, deliberately not fixed:** Studio-generated content is never chunked by
+  the Memory Engine, so it is not retrievable by memory search. This is a design
+  question to settle before Phase 5.
+
+### Live provider
+
+`ANTHROPIC_API_KEY` and `GROQ_API_KEY` are set in `.env` but both return **HTTP
+401** on a live probe. **LIVE LLM VALIDATION = DEFERRED.** No live test was faked.
+
+### Status
+
+**ACCEPTED WITH DEFERRED LIVE-AI VALIDATION**
+
+Reports: `docs/PHASE_2_VERIFICATION_FINAL.md`,
+`docs/PHASE_3_VERIFICATION_FINAL.md`, `docs/PHASE_4_VERIFICATION_FINAL.md`,
+`docs/PHASE_2_3_4_CONSOLIDATED_VERIFICATION.md`.

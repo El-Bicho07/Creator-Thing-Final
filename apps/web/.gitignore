@@ -1,0 +1,3 @@
+
+# build output for the frontend functional tests
+.test-build/
