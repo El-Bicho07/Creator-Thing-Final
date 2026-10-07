@@ -15,6 +15,7 @@ import { after, beforeEach, describe, it } from "node:test";
 
 const { todayApi, producerApi } = await import("../.test-build/lib/today-api.js");
 const { studioApi } = await import("../.test-build/lib/studio-api.js");
+const { listGoals, createGoal, provideFeedback, listLearnings } = await import("../.test-build/lib/coach-api.js");
 const { ApiError } = await import("../.test-build/lib/api.js");
 
 process.env.NEXT_PUBLIC_API_URL = "https://api.test.local";
@@ -231,6 +232,40 @@ describe("Studio client", () => {
     const { hostname, pathname } = new URL(calls[0].url);
     assert.equal(hostname, "api.test.local");
     assert.ok(!/(openai|anthropic|generativelanguage|mistral|cohere)/i.test(pathname));
+  });
+});
+
+describe("Coach client", () => {
+  it("fetches goals from GET /api/coach/goals", async () => {
+    const calls = stubFetch([{ body: [] }]);
+    await listGoals(token);
+
+    assert.equal(calls[0].url, "https://api.test.local/api/coach/goals");
+    assert.equal(calls[0].init.method, "GET");
+  });
+
+  it("posts new goal to /api/coach/goals", async () => {
+    const calls = stubFetch([{ body: { id: "g-1", title: "Hook practice", category: "hook_retention" } }]);
+    await createGoal(token, { title: "Hook practice", category: "hook_retention" });
+
+    assert.equal(calls[0].url, "https://api.test.local/api/coach/goals");
+    assert.equal(calls[0].init.method, "POST");
+  });
+
+  it("requests feedback from /api/coach/feedback", async () => {
+    const calls = stubFetch([{ body: { id: "f-1", observation: "Good hook" } }]);
+    await provideFeedback(token, { session_topic: "Hook critique" });
+
+    assert.equal(calls[0].url, "https://api.test.local/api/coach/feedback");
+    assert.equal(calls[0].init.method, "POST");
+  });
+
+  it("fetches learnings from /api/learning", async () => {
+    const calls = stubFetch([{ body: [] }]);
+    await listLearnings(token);
+
+    assert.equal(calls[0].url, "https://api.test.local/api/learning");
+    assert.equal(calls[0].init.method, "GET");
   });
 });
 

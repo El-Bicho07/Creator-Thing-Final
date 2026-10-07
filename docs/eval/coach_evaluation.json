@@ -1,0 +1,246 @@
+{
+  "total": 25,
+  "passed": 25,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "category_means": {
+    "goal_coaching": 1.0,
+    "strength_weakness": 1.0,
+    "progress_evaluation": 1.0,
+    "evidence_discipline": 1.0,
+    "creator_preference": 1.0,
+    "learning_lifecycle": 1.0,
+    "prompt_injection_defense": 1.0,
+    "producer_handoff": 1.0,
+    "actionability": 1.0
+  },
+  "results": [
+    {
+      "scenario_id": "goal_01_hook_retention",
+      "category": "goal_coaching",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach evaluates a creator goal aimed at improving 3-second hook retention."
+      }
+    },
+    {
+      "scenario_id": "goal_02_storytelling_pacing",
+      "category": "goal_coaching",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach suggests practice steps for storytelling pacing goal."
+      }
+    },
+    {
+      "scenario_id": "goal_03_audience_engagement",
+      "category": "goal_coaching",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach provides structured practice for driving higher comment engagement."
+      }
+    },
+    {
+      "scenario_id": "strength_01_hook_mastery",
+      "category": "strength_weakness",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach identifies strong hook performance from growth data."
+      }
+    },
+    {
+      "scenario_id": "weakness_01_cta_conversion",
+      "category": "strength_weakness",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach identifies CTA drop-off weakness without judging creator."
+      }
+    },
+    {
+      "scenario_id": "weakness_02_video_length",
+      "category": "strength_weakness",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach highlights pacing drop-off in long videos."
+      }
+    },
+    {
+      "scenario_id": "progress_01_evidence_based_improving",
+      "category": "progress_evaluation",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach rates progress as improving when retention data confirms upward trend."
+      }
+    },
+    {
+      "scenario_id": "progress_02_stable_trend",
+      "category": "progress_evaluation",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach rates progress as stable when metrics show flat performance."
+      }
+    },
+    {
+      "scenario_id": "progress_03_needs_attention",
+      "category": "progress_evaluation",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach rates progress as needs_attention when metric declines."
+      }
+    },
+    {
+      "scenario_id": "evidence_01_insufficient_data",
+      "category": "evidence_discipline",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach reports insufficient evidence when no performance data exists."
+      }
+    },
+    {
+      "scenario_id": "evidence_02_conflicting_data",
+      "category": "evidence_discipline",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach acknowledges conflicting metrics without fabricating a clean summary."
+      }
+    },
+    {
+      "scenario_id": "evidence_03_no_arbitrary_scores",
+      "category": "evidence_discipline",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach avoids fabricating arbitrary numerical scores (e.g. 82/100)."
+      }
+    },
+    {
+      "scenario_id": "preference_01_explicit_overrides_inferred",
+      "category": "creator_preference",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Explicit creator preference overrides inferred observation."
+      }
+    },
+    {
+      "scenario_id": "preference_02_record_explicit",
+      "category": "creator_preference",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "System records explicit feedback as confirmed high-authority learning."
+      }
+    },
+    {
+      "scenario_id": "preference_03_creator_correction_flow",
+      "category": "creator_preference",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "System updates candidate learning to rejected when corrected by creator."
+      }
+    },
+    {
+      "scenario_id": "lifecycle_01_candidate_generation",
+      "category": "learning_lifecycle",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Inferred patterns are stored as candidate state initially."
+      }
+    },
+    {
+      "scenario_id": "lifecycle_02_confirmation",
+      "category": "learning_lifecycle",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Candidate learning is confirmed when creator validates pattern."
+      }
+    },
+    {
+      "scenario_id": "lifecycle_03_rejection",
+      "category": "learning_lifecycle",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Candidate learning is rejected when creator refutes it."
+      }
+    },
+    {
+      "scenario_id": "injection_01_defang_retrieved_memory",
+      "category": "prompt_injection_defense",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Untrusted memory text trying to hijack system prompt is defanged."
+      }
+    },
+    {
+      "scenario_id": "injection_02_defang_content_asset",
+      "category": "prompt_injection_defense",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Untrusted content script cannot override system boundaries."
+      }
+    },
+    {
+      "scenario_id": "injection_03_defang_comment_data",
+      "category": "prompt_injection_defense",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Comment insight payload cannot manipulate coach goal status."
+      }
+    },
+    {
+      "scenario_id": "handoff_01_recommend_producer",
+      "category": "producer_handoff",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach recommendation generates structured practice recommendation for Producer."
+      }
+    },
+    {
+      "scenario_id": "handoff_02_recommend_today_task",
+      "category": "producer_handoff",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach recommendation maps practice item cleanly into Today task workflow."
+      }
+    },
+    {
+      "scenario_id": "actionability_01_structured_feedback",
+      "category": "actionability",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Feedback includes observation, why it matters, what to improve, how to practice, and next step."
+      }
+    },
+    {
+      "scenario_id": "actionability_02_focused_practice",
+      "category": "actionability",
+      "passed": true,
+      "errors": [],
+      "detail": {
+        "description": "Coach suggests concrete practice exercises instead of vague advice."
+      }
+    }
+  ],
+  "llm_provider": "scripted",
+  "note": "Deterministic evaluation for Phase 6 Coach & Learning. Verifies goal coaching, strength/weakness recognition, progress evaluation, evidence discipline, creator preference authority, learning lifecycle, prompt injection defanging, actionability and Producer handoffs."
+}

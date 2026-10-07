@@ -65,6 +65,10 @@ Creator Platform SaaS
 │       │   ├── persistence.py   # sessions, versions, content_assets reuse
 │       │   ├── domain/rules.py  # deterministic rules: timing, platforms, formats, goals
 │       │   └── safety.py        # prompt-injection boundary for untrusted text
+│       ├── coach/               # Phase 6 Coach & Learning subsystem
+│       │   ├── contracts.py     # Pydantic schemas for goals, feedback, and durable learnings
+│       │   ├── persistence.py   # CoachRepository for RLS-scoped DB execution
+│       │   └── service.py       # CoachService orchestrator (anti-fabrication & defanging)
 │       ├── jobs/                # Async Background Job Tracker
 │       └── features/            # API Router Features (start, today, studio, coach, growth, library)
 │

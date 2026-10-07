@@ -595,3 +595,44 @@ scripted providers. This is an open confidence gap, not a completed item.
 
 - **Live LLM validation** — both configured keys return HTTP 401; no live test faked.
 - **Studio → Memory ingestion** — product/schema decision, not a verification failure.
+
+---
+
+## Phase 6 — Coach & Closed Learning Loop (2026-10-07)
+
+### Runs
+
+| Check | Command | Result |
+|---|---|---|
+| Backend suite | `pytest apps/api/tests -q` | **1,100 passed, 0 failed, 0 warnings** |
+| 3× consecutive full runs | same | **all 1,100 passed** |
+| RLS Exhaustive isolation matrix | `pytest apps/api/tests/security/test_rls_exhaustive_isolation.py` | **50 / 50 passed** |
+| Coach AI evaluation | `python -m app.ai.evaluation.coach_runner` | **25 / 25 scenarios passed (100%)** |
+| Analytics Copilot evaluation | `python -m app.ai.evaluation.copilot_runner` | **35 / 35 scenarios passed (100%)** |
+| Frontend typecheck | `npm run typecheck` | exit 0 |
+| Frontend build | `npm run build` | success |
+| Frontend functional tests | `npm test` | **31 passed** |
+| Donor integrity | `git diff --stat -- modules` | **0 lines** |
+
+### New coverage
+
+| Area | Before Phase 6 | After Phase 6 |
+|---|---|---|
+| Coach & Learning persistence & service | 0 tests | 25 unit tests |
+| Coach & Learning API routes | 0 tests | 12 integration tests |
+| Coach & Learning RLS security | 0 tests | 16 tests |
+| Coach AI evaluation scenarios | 0 | **25 scenarios / 9 categories** |
+| Total Backend suite | 1,075 passed | **1,100 passed** |
+| Total Frontend functional tests | 27 passed | **31 passed** |
+
+### Defects found and fixed
+
+- Stale Phase 6 stash `stash@{0}` contained incomplete schemas (`coach_feedback` without `user_id` FK).
+- `_ensure_parent_rows()` in RLS exhaustive matrix needed parent seeding for `coach_feedback`.
+- FastAPI `user` dependency attribute `user.id` resolved as UUID; fixed `user.user_id` attribute lookup.
+- `_defang_prompt_text` enhanced with injection pattern regex replacement for `[DEFANGED_INSTRUCTION]`.
+- Prompt loader filename mapping fixed (`feedback.v1.json` and `learning.v1.json`).
+
+### Deferred
+
+- **Live LLM validation** — deferred pending working provider API credentials. Scripted evaluations verified structure, defanging, and evidence discipline.

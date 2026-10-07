@@ -41,8 +41,9 @@ USER_B = uuid.UUID("bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb")
 
 #: The complete set of user-owned tables in the live schema.
 EXPECTED_TABLES = {
-    "ai_calls", "chunks", "comment_insights", "comments", "content_assets",
-    "creator_profiles", "experiments", "growth_insights", "ideas", "jobs",
+    "ai_calls", "chunks", "coach_feedback", "coach_goals", "coach_sessions",
+    "comment_insights", "comments", "content_assets", "creator_profiles",
+    "experiments", "growth_insights", "ideas", "jobs", "learning_records",
     "lessons", "performance_records", "plan_items", "studio_generations",
     "studio_sessions", "users", "voice_profiles",
 }
@@ -109,7 +110,8 @@ async def _wipe() -> None:
     tables = ["chunks", "comment_insights", "comments", "content_assets",
               "creator_profiles", "ideas", "plan_items", "performance_records",
               "lessons", "jobs", "ai_calls", "voice_profiles",
-              "growth_insights", "experiments"]
+              "growth_insights", "experiments", "coach_goals", "coach_sessions",
+              "coach_feedback", "learning_records"]
     async with maker() as admin:
         for table in tables:
             await admin.execute(
@@ -200,6 +202,20 @@ def _insert_sql(table: str, owner: uuid.UUID, marker: str) -> tuple[str, dict]:
     if table == "experiments":
         return ("INSERT INTO experiments (user_id, hypothesis) "
                 "VALUES (:u, :m) RETURNING id", common)
+    if table == "coach_goals":
+        return ("INSERT INTO coach_goals (user_id, title) VALUES (:u, :m) RETURNING id", common)
+    if table == "coach_sessions":
+        return ("INSERT INTO coach_sessions (user_id, topic) VALUES (:u, :m) RETURNING id", common)
+    if table == "coach_feedback":
+        return ("""INSERT INTO coach_feedback
+                    (session_id, user_id, observation, why_it_matters, what_to_improve, how_to_practice, what_to_try_next)
+                   SELECT s.id, :u, :m, :m, :m, :m, :m
+                   FROM coach_sessions s WHERE s.user_id = :u LIMIT 1
+                   RETURNING id""", common)
+    if table == "learning_records":
+        return ("""INSERT INTO learning_records
+                    (user_id, category, summary, confidence, status)
+                   VALUES (:u, 'lesson', :m, 0.5, 'candidate') RETURNING id""", common)
     if table == "ai_calls":
         return ("""INSERT INTO ai_calls (user_id, feature, provider, model,
                                       prompt_version, latency_ms, success)
@@ -216,7 +232,8 @@ def _update_sql(table: str) -> str:
         return "UPDATE chunks SET chunk_text = chunk_text || ' TOUCHED' WHERE id = :id"
     if table in ("content_assets", "ideas", "plan_items", "comments",
                  "comment_insights", "lessons", "jobs", "ai_calls",
-                 "voice_profiles", "studio_sessions", "studio_generations"):
+                 "voice_profiles", "studio_sessions", "studio_generations",
+                 "coach_goals", "coach_sessions", "coach_feedback", "learning_records"):
         return f"UPDATE {table} SET id = id WHERE id = :id"
     return f"UPDATE {table} SET id = id WHERE id = :id"
 
@@ -339,6 +356,15 @@ async def test_cross_user_crud_matrix(table: str):
             await db.execute(
                 text("INSERT INTO studio_sessions (user_id, title)"
                      " VALUES (:u, 'gen-parent-session')"),
+                {"u": str(USER_A)})
+            await db.commit()
+
+    if table == "coach_feedback":
+        # Needs a parent session for owner A.
+        async with (await _scoped_session(USER_A)) as db:
+            await db.execute(
+                text("INSERT INTO coach_sessions (user_id, topic)"
+                     " VALUES (:u, 'feedback-parent-session')"),
                 {"u": str(USER_A)})
             await db.commit()
 
