@@ -107,14 +107,33 @@ class Settings(BaseSettings):
     port: int = 8000
 
 
-settings = Settings()
+def validate_settings(s: Settings) -> None:
+    """Validate settings invariants and fail closed in production."""
+    if s.embedding_dimension <= 0:
+        raise RuntimeError("EMBEDDING_DIMENSION must be a positive integer")
+    if not s.embedding_normalize:
+        # Cosine similarity against un-normalised vectors silently changes ranking.
+        raise RuntimeError(
+            "EMBEDDING_NORMALIZE must be true: pgvector vector_cosine_ops assumes "
+            "L2-normalised embeddings"
+        )
 
-# --- Fail fast on a configuration that cannot work. -----------------------
-if settings.embedding_dimension <= 0:
-    raise RuntimeError("EMBEDDING_DIMENSION must be a positive integer")
-if not settings.embedding_normalize:
-    # Cosine similarity against un-normalised vectors silently changes ranking.
-    raise RuntimeError(
-        "EMBEDDING_NORMALIZE must be true: pgvector vector_cosine_ops assumes "
-        "L2-normalised embeddings"
-    )
+    if s.app_env.lower() in ("production", "prod"):
+        insecure_db_patterns = ["api_password", "changeme", "postgres:postgres", "root:root"]
+        if any(p in s.database_url for p in insecure_db_patterns):
+            raise RuntimeError("Insecure default DATABASE_URL detected in production environment")
+        if any(p in s.admin_database_url for p in insecure_db_patterns):
+            raise RuntimeError("Insecure default ADMIN_DATABASE_URL detected in production environment")
+        if not s.supabase_jwt_secret or s.supabase_jwt_secret in ("changeme", "test-secret", "secret"):
+            raise RuntimeError("SUPABASE_JWT_SECRET must be securely set in production environment")
+        if s.llm_provider != "mock":
+            if s.llm_provider == "gemini" and not s.gemini_api_key:
+                raise RuntimeError("GEMINI_API_KEY is required when LLM_PROVIDER is set to gemini in production")
+            elif s.llm_provider == "anthropic" and not s.anthropic_api_key:
+                raise RuntimeError("ANTHROPIC_API_KEY is required when LLM_PROVIDER is set to anthropic in production")
+            elif s.llm_provider == "openai" and not s.openai_api_key:
+                raise RuntimeError("OPENAI_API_KEY is required when LLM_PROVIDER is set to openai in production")
+
+
+settings = Settings()
+validate_settings(settings)
