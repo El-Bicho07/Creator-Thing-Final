@@ -111,7 +111,7 @@ async def test_concurrent_requests_never_cross_identity():
         await _seed_distinct_marker(db, user_b, marker_b)
 
     # `None` acts as a barrier: tasks run until all have reached this point.
-    barrier = asyncio.Barrier(2 * ROUNDS)
+    barrier = _make_barrier(2 * ROUNDS)
     failures: list[str] = []
 
     async def worker(user_id: uuid.UUID, own_marker: str,
@@ -183,7 +183,7 @@ async def test_concurrent_requests_over_http_api():
     user_b = uuid.UUID("ffffffff-2222-4222-8222-ffffffffffff")
     await _ensure_users([user_a, user_b], clean=True)
 
-    barrier = asyncio.Barrier(8)
+    barrier = _make_barrier(8)
     failures: list[str] = []
 
     async def hammer(client, expect_count: int, own_title: str,

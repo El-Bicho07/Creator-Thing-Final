@@ -26,7 +26,7 @@ Final automated verification:
 
 | Category | Result |
 |---|---|
-| Backend tests (full suite) | **1,063 passed** — 0 failed, 0 warnings, 0 skipped |
+| Backend tests (full suite) | **1,075 passed** — 0 failed, 0 warnings, 0 skipped |
 | Backend regression (3 consecutive full-suite runs) | **all passed** |
 | Reverse-order / isolated verification | **all passed** |
 | AI evaluation — Copilot | **35 / 35 scenarios** across 11 categories |

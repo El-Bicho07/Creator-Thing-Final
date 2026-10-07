@@ -22,10 +22,10 @@ import pytest
 def _repo_root() -> pathlib.Path:
     candidates = [
         pathlib.Path("/app"),                                  # container
-        pathlib.Path(__file__).resolve().parents[3],           # host checkout
+        pathlib.Path(__file__).resolve().parents[4],           # host checkout
     ]
     for base in candidates:
-        if (base / "app" / "main.py").is_file():
+        if (base / "apps" / "api" / "app" / "main.py").is_file() or (base / "app" / "main.py").is_file():
             return base
     return candidates[0]
 

@@ -19,7 +19,7 @@ class Settings(BaseSettings):
 
     # ------------------------------------------------------------------ Database
     database_url: str = (
-        "postgresql+asyncpg://creator:changeme@localhost:5432/creator_platform"
+        "postgresql+asyncpg://api_user:api_password@localhost:5432/creator_platform"
     )
 
     # Database role used ONLY by offline operational tooling (migrations,
@@ -29,7 +29,9 @@ class Settings(BaseSettings):
     # The application NEVER uses this. The API deliberately connects as the
     # non-superuser `api_user`, so an application bug cannot read another
     # creator's data. Do not point the API at this URL.
-    admin_database_url: str = ""
+    admin_database_url: str = (
+        "postgresql+asyncpg://creator:changeme@localhost:5432/creator_platform"
+    )
 
     # ------------------------------------------------------------- Supabase Auth
     supabase_url: str = ""
