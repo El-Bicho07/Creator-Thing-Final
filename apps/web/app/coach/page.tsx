@@ -35,16 +35,10 @@ import {
   updateLearningStatus,
   CoachRecommendation,
 } from "@/lib/coach-api";
-
-// Dummy token provider for web app environment or local testing
-const getMockToken = async (): Promise<string | null> => {
-  if (typeof window !== "undefined") {
-    return localStorage.getItem("supabase_token") ?? "mock_jwt_token";
-  }
-  return "mock_jwt_token";
-};
+import { useAuth } from "@/lib/auth-context";
 
 export default function CoachPage() {
+  const { getToken, user } = useAuth();
   const [activeTab, setActiveTab] = useState<"goals" | "sessions" | "learnings">("goals");
 
   // Goals state
@@ -81,7 +75,7 @@ export default function CoachPage() {
   const fetchGoals = async () => {
     setLoadingGoals(true);
     try {
-      const data = await listGoals(getMockToken);
+      const data = await listGoals(getToken);
       setGoals(data);
     } catch (err: any) {
       console.warn("Failed to fetch goals:", err);
@@ -93,7 +87,7 @@ export default function CoachPage() {
   const fetchLearnings = async () => {
     setLoadingLearnings(true);
     try {
-      const data = await listLearnings(getMockToken);
+      const data = await listLearnings(getToken);
       setLearnings(data);
     } catch (err: any) {
       console.warn("Failed to fetch learnings:", err);
@@ -107,7 +101,7 @@ export default function CoachPage() {
     if (!goalTitle.trim()) return;
     setErrorMessage(null);
     try {
-      const newGoal = await createGoal(getMockToken, {
+      const newGoal = await createGoal(getToken, {
         title: goalTitle,
         category: goalCategory,
         description: goalDescription || undefined,
@@ -124,7 +118,7 @@ export default function CoachPage() {
   const handleEvaluateGoal = async (goalId: string) => {
     setErrorMessage(null);
     try {
-      const updated = await evaluateGoalProgress(getMockToken, goalId);
+      const updated = await evaluateGoalProgress(getToken, goalId);
       setGoals((prev) => prev.map((g) => (g.id === goalId ? updated : g)));
       setInfoMessage(`Evaluated progress for goal: ${updated.progress_status}`);
     } catch (err: any) {
@@ -135,7 +129,7 @@ export default function CoachPage() {
   const handleRecommendAction = async (goalId: string) => {
     setErrorMessage(null);
     try {
-      const rec = await recommendProducerAction(getMockToken, goalId);
+      const rec = await recommendProducerAction(getToken, goalId);
       setRecommendationMap((prev) => ({ ...prev, [goalId]: rec }));
       setInfoMessage(`Recommendation generated for ${rec.recommendation_target.toUpperCase()}`);
     } catch (err: any) {
@@ -149,7 +143,7 @@ export default function CoachPage() {
     setAnalyzingFeedback(true);
     setErrorMessage(null);
     try {
-      const fb = await provideFeedback(getMockToken, {
+      const fb = await provideFeedback(getToken, {
         session_topic: sessionTopic || "General Content Feedback",
         draft_text: draftText,
       });
@@ -167,7 +161,7 @@ export default function CoachPage() {
   const handleUpdateStatus = async (learningId: string, status: LearningStatus) => {
     setErrorMessage(null);
     try {
-      const updated = await updateLearningStatus(getMockToken, learningId, status);
+      const updated = await updateLearningStatus(getToken, learningId, status);
       setLearnings((prev) => prev.map((l) => (l.id === learningId ? updated : l)));
     } catch (err: any) {
       setErrorMessage(err?.message || "Failed to update learning status.");
@@ -178,7 +172,7 @@ export default function CoachPage() {
     if (!correctionText.trim()) return;
     setErrorMessage(null);
     try {
-      const updated = await applyCreatorCorrection(getMockToken, {
+      const updated = await applyCreatorCorrection(getToken, {
         learning_id: learningId,
         correction_text: correctionText,
       });
@@ -196,7 +190,7 @@ export default function CoachPage() {
     if (!newLearningSummary.trim()) return;
     setErrorMessage(null);
     try {
-      const record = await createLearning(getMockToken, {
+      const record = await createLearning(getToken, {
         category: newLearningCategory,
         summary: newLearningSummary,
         confidence: 1.0,

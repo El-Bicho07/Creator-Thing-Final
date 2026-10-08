@@ -43,6 +43,7 @@ import type {
   TodayItemStatus,
   TodayPlanResponse,
 } from "@/lib/today-api";
+import { useAuth } from "@/lib/auth-context";
 
 type TokenProvider = () => Promise<string | null>;
 
@@ -87,10 +88,7 @@ export default function TodayPage() {
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
 
-  const getToken = useCallback(async (): Promise<string | null> => {
-    if (typeof window === "undefined") return null;
-    return window.localStorage.getItem("sb-access-token");
-  }, []);
+  const { getToken, user, loading: authLoading } = useAuth();
 
   const load = useCallback(async () => {
     try {

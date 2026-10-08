@@ -52,6 +52,7 @@ import type {
   SessionStep,
   VersionInfo,
 } from "@/lib/studio-api";
+import { useAuth } from "@/lib/auth-context";
 
 type TokenProvider = () => Promise<string | null>;
 
@@ -150,10 +151,7 @@ function StudioWorkspace() {
   const [notice, setNotice] = useState<string | null>(null);
   const [lastOutput, setLastOutput] = useState<GenerationResponse | null>(null);
 
-  const getToken = useCallback(async (): Promise<string | null> => {
-    if (typeof window === "undefined") return null;
-    return window.localStorage.getItem("sb-access-token");
-  }, []);
+  const { getToken, user } = useAuth();
 
   const selected = useMemo(
     () => sessions.find((s) => s.id === selectedId) ?? null,

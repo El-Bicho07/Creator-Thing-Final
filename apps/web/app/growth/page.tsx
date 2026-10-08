@@ -38,6 +38,7 @@ import {
 } from "lucide-react";
 
 import { growthApi } from "@/lib/growth-api";
+import { useAuth } from "@/lib/auth-context";
 import type {
   CommentInsightResponse,
   CommentResponse,
@@ -61,10 +62,7 @@ const COPILOT_PRESETS = [
 export default function GrowthPage() {
   const router = useRouter();
 
-  const getToken = useCallback(async (): Promise<string | null> => {
-    if (typeof window === "undefined") return null;
-    return window.localStorage.getItem("sb-access-token");
-  }, []);
+  const { getToken, user } = useAuth();
 
   // ---- Server State ----
   const [loading, setLoading] = useState(true);

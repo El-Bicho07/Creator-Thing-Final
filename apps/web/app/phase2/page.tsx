@@ -17,10 +17,12 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { platformApi, type MemoryResult, type VoiceProfile } from "@/lib/api";
+import { useAuth } from "@/lib/auth-context";
 
 type ServiceStatus = "unknown" | "ok" | "error";
 
 export default function Phase2VerificationPage() {
+  const { getToken, user } = useAuth();
   const [memoryStatus, setMemoryStatus] = useState<ServiceStatus>("unknown");
   const [voiceStatus, setVoiceStatus] = useState<ServiceStatus>("unknown");
   const [authState, setAuthState] = useState<string>("unknown");
@@ -32,17 +34,7 @@ export default function Phase2VerificationPage() {
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
-  /**
-   * Injected token provider. Wire this to the Supabase client:
-   *   const supabase = createClient(url, anonKey);
-   *   supabase.auth.getSession().then(s => s.data.session?.access_token ?? null);
-   */
-  const getToken = useCallback(async (): Promise<string | null> => {
-    const stored = typeof window !== "undefined"
-      ? window.localStorage.getItem("sb-access-token")
-      : null;
-    return stored;
-  }, []);
+
 
   useEffect(() => {
     void (async () => {

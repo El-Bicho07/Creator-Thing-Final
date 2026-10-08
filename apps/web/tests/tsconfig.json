@@ -23,6 +23,8 @@
     "../lib/**/*.tsx",
     "../app/today/page.tsx",
     "../app/studio/page.tsx",
+    "../app/coach/page.tsx",
+    "../app/login/page.tsx",
     "../app/page.tsx"
   ]
 }
