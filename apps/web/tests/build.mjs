@@ -112,13 +112,26 @@ export function build() {
   // `useRouter` / `useSearchParams`, so the render tests get an inert stub with the
   // same shape. Anything real (a redirect, a navigation) is out of scope for a
   // server-render smoke test, and stubbing it is honest about that.
+  //
+  // The stub RECORDS every navigation instead of discarding it. Render tests still
+  // cannot observe a real redirect, but a behavioural test can assert that the code
+  // under test *asked* to navigate -- which is what a regression test for
+  // "signing out must leave the authenticated page" needs.
   const stubDir = join(outRoot, "__stubs__");
   mkdirSync(stubDir, { recursive: true });
   writeFileSync(
     join(stubDir, "next-navigation.js"),
     [
+      "export const __navigations = [];",
+      "export function __resetNavigations() { __navigations.length = 0; }",
       "export function useRouter() {",
-      "  return { push() {}, replace() {}, back() {}, refresh() {}, prefetch() {} };",
+      "  return {",
+      "    push(href) { __navigations.push({ method: \"push\", href }); },",
+      "    replace(href) { __navigations.push({ method: \"replace\", href }); },",
+      "    back() { __navigations.push({ method: \"back\" }); },",
+      "    refresh() { __navigations.push({ method: \"refresh\" }); },",
+      "    prefetch() {},",
+      "  };",
       "}",
       "export function useSearchParams() {",
       "  return new URLSearchParams();",

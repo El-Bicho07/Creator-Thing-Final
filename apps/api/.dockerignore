@@ -1,0 +1,23 @@
+# Version control
+.git
+.gitignore
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+.venv
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# IDE and OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store

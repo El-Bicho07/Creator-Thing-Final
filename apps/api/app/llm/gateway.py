@@ -164,6 +164,13 @@ class LLMGateway:
                 chain.append(candidate)
         return chain
 
+    DEFAULT_MODELS: dict[str, str] = {
+        "gemini": "gemini-3.8-flash",
+        "groq": "openai/gpt-oss-120b",
+        "anthropic": "claude-3-5-sonnet-20241022",
+        "mock": "mock-deterministic",
+    }
+
     def _model_for(self, provider: str, requested: Optional[str]) -> str:
         """Resolve the model id for a provider.
 
@@ -171,15 +178,17 @@ class LLMGateway:
         When we have already fallen back to a different provider, that provider's
         own default is used -- sending another vendor's model name would fail.
         """
+        default_model = self.DEFAULT_MODELS.get(provider, settings.llm_default_model)
         if not requested:
-            return settings.llm_default_model
+            return default_model
         if self._explicit_registry:
-            return requested if provider in self._providers else f"{provider}:default"
+            return requested if provider in self._providers else default_model
         if provider == (settings.llm_default_provider or provider):
             return requested
-        return f"{provider}:default"
+        return default_model
 
     # -- public API --------------------------------------------------------
+
 
     async def generate(
         self,

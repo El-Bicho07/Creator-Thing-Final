@@ -1,0 +1,41 @@
+# Version control
+.git
+.gitignore
+
+# Environment and secrets (CRITICAL: Never bake secrets into image)
+.env
+.env.*
+!.env.example
+
+# Python
+.venv
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node.js
+node_modules/
+.next/
+.test-build/
+npm-debug.log*
+
+# Donor modules (historical reference, not used at runtime)
+modules/
+
+# Archives and build artifacts
+apps.zip
+*.tar.gz
+
+# IDE and OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

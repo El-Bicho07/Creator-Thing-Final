@@ -19,3 +19,16 @@ export_stage/
 # TypeScript incremental build artifact
 *.tsbuildinfo
 apps/api/docs/
+
+# Archives and build artifacts
+*.zip
+*.tar.gz
+
+# Local agent configs and skills cache
+.agents/
+skills-lock.json
+
+# Test and coverage caches
+.pytest_cache/
+.coverage
+htmlcov/

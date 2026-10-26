@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import type { User, Session } from "@supabase/supabase-js";
 import { supabase, getSupabaseToken } from "@/lib/supabase";
 
@@ -25,6 +26,7 @@ const AuthContext = createContext<AuthContextType>({
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -67,7 +69,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     await supabase.auth.signOut();
     setUser(null);
     setSession(null);
-  }, []);
+    // Leave the authenticated page. Clearing the session alone is not enough:
+    // the page already holds the creator's fetched data in React state, so on a
+    // shared machine the previous user's plan stays on screen after sign-out.
+    router.push("/login");
+    router.refresh();
+  }, [router]);
 
   const getToken = useCallback(async (): Promise<string | null> => {
     return getSupabaseToken();
